@@ -20,8 +20,4 @@ public class Eetakemon {
         this.level = level;
         this.ps = ps;
     }
-
-
-
-
 }

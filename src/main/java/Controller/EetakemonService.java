@@ -2,7 +2,7 @@ package Controller;
 
 
 
-import DAO.EetakemonDAO;
+import Dao.EetakemonDao;
 import Model.Eetakemon;
 import Model.EetakemonAtack;
 import Model.EetakemonType;
@@ -12,9 +12,11 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
+public class EetakemonService{
+/*
 public class EetakemonService implements IEetakemonService {
-
-    private static EetakemonDAO _eetakemonDAO = EetakemonDAO.getInstance();
+/*
+    private static EetakemonDao _eetakemonDAO = EetakemonDao.getInstance();
 
     @Override
     public boolean createEetakemon(Eetakemon eetakemon) {
@@ -50,4 +52,5 @@ public class EetakemonService implements IEetakemonService {
         return 0;
 
     }
+    */
 }

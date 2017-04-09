@@ -14,7 +14,6 @@ public interface IEetakemonService {
     boolean createEetakemon(Eetakemon eetakemon);
     boolean removeEetakemon(int id);
     boolean updateEetakemon(int id, Eetakemon eetakemon);
-
     Eetakemon getEetakemon(int id);
 
     List<EetakemonAtack> getRandomAttacks(EetakemonType type);
