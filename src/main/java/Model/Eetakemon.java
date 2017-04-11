@@ -20,4 +20,12 @@ public class Eetakemon {
         this.level = level;
         this.ps = ps;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
