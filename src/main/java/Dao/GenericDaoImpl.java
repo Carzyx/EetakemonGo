@@ -137,13 +137,11 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         //DELETE FROM table_name WHERE condition;
         try{
             StringBuffer query = new StringBuffer();
-
             Class nameClass = t.getClass();
             String simpleNameClass = nameClass.getSimpleName();
 
             query.append("DELETE FROM ");
             query.append(simpleNameClass);
-
             Field[] propertyClass = nameClass.getDeclaredFields();
             for (int i = 0; i < propertyClass.length; i++) {
                 if (i == 0) {

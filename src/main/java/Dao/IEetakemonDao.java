@@ -13,6 +13,6 @@ public interface IEetakemonDao{
     boolean add(Eetakemon eetakemon) throws IllegalAccessException;
     boolean updateById(Eetakemon eetakemon) throws IllegalAccessException;
     boolean removeById(Eetakemon eetakemon) throws IllegalAccessException;
-    Eetakemon getById(Eetakemon eetakemon) throws IllegalAccessException;
+    Eetakemon getById(int id) throws IllegalAccessException;
     List<Eetakemon> getAll();
 }

@@ -59,6 +59,7 @@ public class UserDao implements IUserDao{
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
+
         User result = _service.getByParameter(user, conditions);
         return result.username != null;
     }
