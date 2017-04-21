@@ -14,11 +14,6 @@ public interface IUserDao {
     boolean updateById(User user);
     boolean removeById(User user);
     List<User> getAll();
-
-
-
-
-
     User getUserById(int user);
     User getUserByUsernameAndPassword(String username, String password);
     boolean isUsernameAlreadyInUse(String username);

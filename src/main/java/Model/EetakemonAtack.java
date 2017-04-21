@@ -7,6 +7,4 @@ public class EetakemonAtack {
     EetakemonType type;
     String atack;
     int damageBase;
-
-
 }
