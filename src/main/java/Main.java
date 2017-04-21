@@ -20,28 +20,28 @@ public class Main {
         UserService service = new UserService(userDao);
 
         User user = new User(
-                "miguel",
+                "mig'uel",
                 "angel",
                 "SuperUser",
                 "miguel1234",
                 "miguel@gmail.com"
         );
         User userA = new User(
-                "testA",
+                "test'A",
                 "testApA",
                 "SuperTestA",
                 "testA1234",
                 "testA@gmail.com"
         );
         User userB = new User(
-                "testB",
+                "test'B",
                 "testApB",
                 "SuperTestB",
                 "testB1234",
                 "testB@gmail.com"
         );
 
-        boolean createUser = service.createUser("miguel",
+        boolean createUser = service.createUser("migu'el",
                 "angel",
                 "SuperUser",
                 "miguel1234",
@@ -53,7 +53,7 @@ public class Main {
         boolean isUserSignIn = (userSignUp.username != null);
         System.out.println("signIn : "+isUserSignIn);
 
-        service.createUser("testA",
+        service.createUser("test'A",
                 "testApA",
                 "SuperTestA",
                 "testA1234",
@@ -61,8 +61,7 @@ public class Main {
 
         boolean isUserDeleted = service.deleteUser(userA.username, userA.password);
         System.out.println("isUserDeleted : "+isUserDeleted);
-
-
         System.out.print("");
+        //PRUEBA EETAKEMON
     }
 }
