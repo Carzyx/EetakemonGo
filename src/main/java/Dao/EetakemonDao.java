@@ -40,8 +40,9 @@ public class EetakemonDao implements IEetakemonDao {
     }
 
     @Override
-    public List<Eetakemon> getAll() {
-        return _service.getAll(Eetakemon.class);
+    public List<Eetakemon> getAll() throws Exception {
+        Eetakemon eetakemon=new Eetakemon();
+        return _service.getAll(eetakemon);
     }
 
 

@@ -2,25 +2,30 @@ package Dao;
 
 import javax.rmi.CORBA.Util;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.List;
 import java.util.Properties;
 
 /**
  * Created by Miguel Angel on 06/04/2017.
  */
 public class MySQLRepository<T> {
-
-    //SELECT --> executeQuery
-    //INSERT, UPDATE or DELETE --> executeUpdate
-
-
-    public void add(String query) {
+//INSERT echo
+    public void add(String query,T t) throws Exception {
         Connection con = getConnection();
         try {
-            Statement stmt = con.createStatement();
-            int rs = stmt.executeUpdate(query);
-            stmt.close();
+           PreparedStatement stm=con.prepareStatement(query);
+           Class nameClass = t.getClass();
+           Field[] propertyClass = nameClass.getDeclaredFields();
+           for(int i=0;i<propertyClass.length;i++){
+               stm.setObject(i+1,getMethod(t,propertyClass[i].getName()));
+           }
+            stm.execute();
             con.close();
 
         } catch (SQLException sqle) {
@@ -28,13 +33,20 @@ public class MySQLRepository<T> {
                     + sqle.getErrorCode() + " " + sqle.getMessage());
         }
     }
-
-    public void delete(String query) {
+//DELETE echo
+    public void delete(String query,T t) throws Exception {
         Connection con = getConnection();
         try {
-            Statement stmt = con.createStatement();
-            int rs = stmt.executeUpdate(query);
-            stmt.close();
+            PreparedStatement stm = con.prepareStatement(query);
+            Class nameClass = t.getClass();
+            Field[] propertyClass = nameClass.getDeclaredFields();
+            for (int i = 0; i < propertyClass.length; i++) {
+                if (propertyClass[i].getName().toUpperCase().equals("ID")) {
+                    stm.setObject(1,getMethod(t,propertyClass[i].getName()));
+                }
+            }
+            stm.execute();
+            stm.close();
             con.close();
 
         } catch (SQLException sqle) {
@@ -42,34 +54,48 @@ public class MySQLRepository<T> {
                     + sqle.getErrorCode() + " " + sqle.getMessage());
         }
     }
-
-    public void update(String query) {
+//SET echo
+    public void update(String query,T t) throws Exception {
         Connection con = getConnection();
+        PreparedStatement stm=con.prepareStatement(query);
+        Class nameClass = t.getClass();
+        Field[] propertyClass = nameClass.getDeclaredFields();
         try {
-            Statement stmt = con.createStatement();
-            int rs = stmt.executeUpdate(query);
-            stmt.close();
+            for (int i = 1; i <=propertyClass.length; i++) {
+                stm.setObject(i,getMethod(t,propertyClass[i].getName()));
+                if (propertyClass[i].getName().toUpperCase().equals("ID")) {
+                    stm.setObject(propertyClass.length+1,getMethod(t,propertyClass[i].getName()));
+                }
+            }
+            stm.execute();
+            stm.close();
             con.close();
-
         } catch (SQLException sqle) {
             System.out.println("Error en la ejecución MySQLRepository.update"
                     + sqle.getErrorCode() + " " + sqle.getMessage());
         }
     }
-
-    public T select(T t, String query) {
+//SELECT echo
+    public T select(T t, String query, Hashtable<String,String> conditions) throws Exception {
         Connection con = getConnection();
         try {
-            Statement stmt = con.createStatement();
-            ResultSet resultSet = stmt.executeQuery(query);
+            PreparedStatement stm = con.prepareStatement(query);
+            Class nameClass = t.getClass();
+            int max=conditions.size()+1;
+            Field[] propertyClass = nameClass.getDeclaredFields();
+            for (int i = 0; i <propertyClass.length; i++) {
+                if (conditions.containsKey(propertyClass[i].getName())) {
+                    stm.setObject(max-conditions.size(),conditions.get(propertyClass[i].getName()));
+                    conditions.remove(propertyClass[i].getName());
+                }
+            }
+            stm.execute();
+            ResultSet resultSet =stm.getResultSet();
             T result = getMapObject(t, resultSet);
-            stmt.close();
+            stm.close();
             con.close();
-
             return result;
-
-
-        } catch (SQLException sqle) {
+        }catch (SQLException sqle) {
             System.out.println("Error en la ejecucion MySQLRepository.select"
                     + sqle.getErrorCode() + " " + sqle.getMessage());
             return null;
@@ -83,7 +109,6 @@ public class MySQLRepository<T> {
         Properties properties = new Properties();
         properties.setProperty("user", "root");
         properties.setProperty("password", "root");
-
         properties.setProperty("useSSL", "false");
         properties.setProperty("serverTimezone", "UTC");
         try {
@@ -99,7 +124,6 @@ public class MySQLRepository<T> {
 
         try {
             Class nameClass = t.getClass();
-
             Field[] propertyClass = nameClass.getDeclaredFields();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             while (resultSet.next())
@@ -109,12 +133,12 @@ public class MySQLRepository<T> {
                     String columnType = resultSetMetaData.getColumnTypeName(i);
 
                     for(int x = 0; x <= propertyClass.length; x++) {
-
                         if (columnName.equals(propertyClass[x].getName()) || columnType.equals(propertyClass[x].getType().toString())) {
                             Object value = getConvertValueType(columnType, resultSet, i);
                             if(value != null)
                             {
-                                propertyClass[x].set(t, value);
+                                Method m = t.getClass().getMethod(setProperty(propertyClass[x].getName()),propertyClass[x].getType());
+                                m.invoke(t,value);
                             }
                             break;
                         }
@@ -129,18 +153,6 @@ public class MySQLRepository<T> {
     }
 
     private Object getConvertValueType(String columnType, ResultSet resultSet, int index) throws SQLException {
-       /*
-        if( Boolean.class.isAssignableFrom( type ) ) return resultSet.getBoolean(index);
-        if( Byte.class.isAssignableFrom( type) ) return resultSet.getByte(index);
-        if( Short.class.isAssignableFrom(type ) ) return resultSet.getShort(index);
-        if( int.class.isAssignableFrom(type ) ) return resultSet.getInt(index);
-        if( Long.class.isAssignableFrom( type ) ) return resultSet.getLong(index);
-        if( Float.class.isAssignableFrom(type ) ) return resultSet.getFloat(index);
-        if( Double.class.isAssignableFrom(type ) ) return resultSet.getDouble(index);
-        if( String.class.isAssignableFrom(type)) return resultSet.getString(index);
-        return null;
-
-       */
        try{
            switch (columnType) {
                case "VARCHAR":
@@ -164,8 +176,27 @@ public class MySQLRepository<T> {
            return null;
        }
     }
+    private String getMethod(T t,String key) throws Exception {
+        try {
+            Method m = t.getClass().getMethod(getProperty(key));
+            Object object=m.invoke(t, null);
+            String ret = String.valueOf(object);
+            return ret;}
+            catch (Exception ex){ex.printStackTrace();
+            return null;}
 
+    }
 
+    public String getProperty(String key) {
+            String m=key.substring(0,1).toUpperCase();
+            StringBuffer f=new StringBuffer("get").append(m).append(key.substring(1));
+            return f.toString();
+    }
+    public String setProperty(String key) {
+        String m=key.substring(0,1).toUpperCase();
+        StringBuffer f=new StringBuffer("set").append(m).append(key.substring(1));
+        return f.toString();
+    }
 
 }
 

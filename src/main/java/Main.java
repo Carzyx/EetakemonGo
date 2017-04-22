@@ -18,50 +18,26 @@ public class Main {
 
         UserDao userDao = new UserDao(new GenericDaoImpl<User>());
         UserService service = new UserService(userDao);
-
-        User user = new User(
-                "mig'uel",
+        /*boolean createUser = service.createUser("Prueba",
                 "angel",
-                "SuperUser",
+                "MyUser",
                 "miguel1234",
-                "miguel@gmail.com"
-        );
-        User userA = new User(
-                "test'A",
-                "testApA",
-                "SuperTestA",
-                "testA1234",
-                "testA@gmail.com"
-        );
-        User userB = new User(
-                "test'B",
-                "testApB",
-                "SuperTestB",
-                "testB1234",
-                "testB@gmail.com"
-        );
-
-        boolean createUser = service.createUser("migu'el",
-                "angel",
-                "SuperUser",
-                "miguel1234",
-                "miguel@gmail.com");
-
-        System.out.println("createUser : "+createUser);
-
-        User userSignUp = service.signIn(user.username, user.password);
-        boolean isUserSignIn = (userSignUp.username != null);
+                "miguel@gmail.com",
+                1);*/
+        User user =new User("Prueba","sadsadas","MyUser","miguel1234","miguel1234",1);
+        User userSignUp = service.signIn(user.getUsername(), user.getPassword());
+        boolean isUserSignIn = (userSignUp.getUsername() != null);
         System.out.println("signIn : "+isUserSignIn);
-
         service.createUser("test'A",
                 "testApA",
                 "SuperTestA",
                 "testA1234",
-                "testA@gmail.com");
+                "testA@gmail.com",
+                1);
 
-        boolean isUserDeleted = service.deleteUser(userA.username, userA.password);
+        boolean isUserDeleted = service.deleteUser("SuperTestA", "testA1234");
         System.out.println("isUserDeleted : "+isUserDeleted);
         System.out.print("");
-        //PRUEBA EETAKEMON
+
     }
 }
