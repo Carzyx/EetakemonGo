@@ -1,5 +1,6 @@
 package Dao;
 
+import Model.Eetakemon;
 import Model.User;
 import org.omg.CORBA.UShortSeqHelper;
 
@@ -31,23 +32,19 @@ public class UserDao implements IUserDao{
         return _service.removeById(user);
     }
 
-    public List<User> getAll() {
-        return _service.getAll(User.class);
+    public List<User> getAll() throws Exception {
+        User user=new User();
+        return _service.getAll(user);
     }
-
-
 
     public User getUserByUsernameAndPassword(String username, String password)
     {
         User user = new User();
-
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
         conditions.put("password", password);
         return _service.getByParameter(user, conditions);
-
     }
-
     public User getUserById(int id) {
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
@@ -59,9 +56,8 @@ public class UserDao implements IUserDao{
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
-
         User result = _service.getByParameter(user, conditions);
-        return result.username != null;
+        return result.getUsername() != null;
     }
 
     public boolean isEmailAlreadyInUse(String email) {
@@ -69,11 +65,8 @@ public class UserDao implements IUserDao{
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("email", email);
         User result = _service.getByParameter(user, conditions);
-        return result.email != null;
+        return result.getEmail() != null;
     }
-
-
-
 /*
     private User getByParameter(User user, Hashtable<String,String> condition) {
         return _service.getByParameter(user, condition);

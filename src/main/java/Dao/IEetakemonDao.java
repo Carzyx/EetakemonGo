@@ -14,5 +14,5 @@ public interface IEetakemonDao{
     boolean updateById(Eetakemon eetakemon) throws IllegalAccessException;
     boolean removeById(Eetakemon eetakemon) throws IllegalAccessException;
     Eetakemon getById(int id) throws IllegalAccessException;
-    List<Eetakemon> getAll();
+    List<Eetakemon> getAll() throws Exception;
 }

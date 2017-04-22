@@ -18,11 +18,11 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public boolean createUser(String name, String surname, String username, String password, String email) {
+    public boolean createUser(String name, String surname, String username, String password, String email,int rol) {
 
-        User user = new User(name, surname, username, password, email);
+        User user = new User(name, surname, username, password, email,rol);
 
-        if(!isUsernameAlreadyInUse(user.username) || !isEmailAlreadyInUse(user.email))
+        if(!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail()))
         {
             return _service.add(user);
         }

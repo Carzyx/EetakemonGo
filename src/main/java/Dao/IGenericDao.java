@@ -11,7 +11,7 @@ public interface IGenericDao <T> {
     boolean updateById(T t);
     boolean removeById(T t);
     T getByParameter(T t, Hashtable<String, String> conditions);
-    List<T> getAll(Class t);
+    List<T> getAll(T t) throws Exception;
     //T getById(T t);
 
 }
