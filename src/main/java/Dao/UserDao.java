@@ -24,9 +24,9 @@ public class UserDao implements IUserDao{
         return _service.add(user);
     }
 
-    public boolean updateById(User user) {
+    public boolean updateById(User user,String oldName) {
         Hashtable<String,String>table=new Hashtable<String, String>();
-        table.put("username",user.getUsername());
+        table.put("username",oldName);
         User user1=_service.getByParameter(user,table);
         user.setId(user1.getId());
         return _service.updateById(user);
