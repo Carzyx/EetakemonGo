@@ -28,13 +28,21 @@ public class Main {
         User userSignUp = service.signIn(user.getUsername(), user.getPassword());
         boolean isUserSignIn = (userSignUp.getUsername() != null);
         System.out.println("signIn : "+isUserSignIn);
-        service.createUser("test'A",
+        service.createUser(new User("test'A",
                 "testApA",
                 "SuperTestA",
                 "testA1234",
                 "testA@gmail.com",
-                1);
+                1));
 
+
+        boolean isUserUpdated = service.upadteUser(new User("TESTA",
+                "testApA",
+                "SuperTestA",
+                "testA1234",
+                "testA@gmail.com",
+                1));
+        System.out.println("isUserUpdated : "+isUserUpdated);
         boolean isUserDeleted = service.deleteUser("SuperTestA", "testA1234");
         System.out.println("isUserDeleted : "+isUserDeleted);
         System.out.print("");

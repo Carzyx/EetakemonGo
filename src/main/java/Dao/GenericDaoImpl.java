@@ -32,7 +32,6 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
                 else
                     query.append("?)");
             }
-            System.out.println(query);
             add(query.toString(),t);
             return true;
         }
@@ -48,9 +47,7 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             StringBuffer query = new StringBuffer("UPDATE ").append(nameClass.getSimpleName().toLowerCase()).append(" SET ");
             Field[] propertyClass = nameClass.getDeclaredFields();
             for (int i = 0; i < propertyClass.length; i++) {
-                query.append("'");
                 query.append(propertyClass[i].getName());
-                query.append("' ");
                 query.append("= ?");
 
                 if (i < propertyClass.length - 1) {
@@ -58,7 +55,6 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
                 }
             }
             query.append(" WHERE id =?");
-            System.out.println(query);
             update(query.toString(),t);
             return true;
         }
@@ -74,7 +70,6 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         try{
             Class nameClass = t.getClass();
             StringBuffer query = new StringBuffer("DELETE FROM ").append(nameClass.getSimpleName().toLowerCase()).append(" WHERE id = ?");
-            System.out.println(query);
             delete(query.toString(),t);
             return true;
         }
@@ -106,7 +101,6 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
                     }
                 }
             }
-            System.out.println(query);
             return (T) select(t, query.toString(),conditions);
         }
         catch (Exception e)
