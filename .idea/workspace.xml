@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="Intro Web and Api-rest">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/Register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8d6856f7-5ddb-437c-9235-f0fa5863ffdf.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8d6856f7-5ddb-437c-9235-f0fa5863ffdf.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -881,7 +877,7 @@
       <workItem from="1492757668276" duration="1183000" />
       <workItem from="1492763979301" duration="3575000" />
       <workItem from="1492785138051" duration="10880000" />
-      <workItem from="1492854203249" duration="1715000" />
+      <workItem from="1492854203249" duration="2104000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -904,11 +900,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492774471923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="BBDD">
+      <created>1492856148745</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1492856148745</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113285000" />
+    <option name="totallyTimeSpent" value="113674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1001,7 +1004,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Add own ORM, Add MySQL connection, Add Structure DAO and Repository, Add Simple User" />
     <MESSAGE value="Intro Web and Api-rest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intro Web and Api-rest" />
+    <MESSAGE value="BBDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="BBDD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1281,6 +1285,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="10" column="53" lean-forward="false" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
