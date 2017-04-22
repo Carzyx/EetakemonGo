@@ -18,8 +18,9 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public boolean createUser(User user ) {
+    public boolean createUser(String name, String surname, String username, String password, String email,int rol) {
 
+        User user = new User(name, surname, username, password, email,rol);
 
         if(!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail()))
         {
@@ -38,9 +39,7 @@ public class UserService implements IUserService {
         return _service.getUserByUsernameAndPassword(username, password);
 
     }
-    public boolean upadteUser(User user){
-        return _service.updateById(user);
-    }
+
     @Override
     public boolean deleteUser(String username, String password) {
         if(StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils.isEmptyOrWhitespaceOnly(password))
