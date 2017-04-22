@@ -1,4 +1,10 @@
 package ApiRest;
+import Controller.IUserService;
+import Controller.UserService;
+import Dao.GenericDaoImpl;
+import Dao.UserDao;
+import Model.User;
+
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -11,21 +17,24 @@ import java.util.List;
 @Path("/web")
 @Singleton
 public class JSONService {
+    private UserDao userDao = new UserDao(new GenericDaoImpl<User>());
+    private UserService service = new UserService(userDao);
     public JSONService(){
     }
     @GET
-    @Path("/getPass/{name}")
+    @Path("/getPass/{name}/{pass}")
     @Produces(MediaType.TEXT_PLAIN)
-    public String getPass(@PathParam("name") String name){
+    public String getPass(@PathParam("name") String name,@PathParam("pass") String pass){
+        service.signIn(name,pass);
         return null;
     }
-
-    @POST
-    @Path("/setNewUser")
+/*
+    @GET
+    @Path("/setNewUser/{name}/{pass}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String setNewUser(){
-        return null;
-    }
+    public String setNewUser(@PathParam("name") String name,@PathParam("pass") String pass){
+        return service.createUser(name,pass);
+    }*/
 }
 
