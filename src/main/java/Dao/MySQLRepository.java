@@ -61,8 +61,8 @@ public class MySQLRepository<T> {
         Class nameClass = t.getClass();
         Field[] propertyClass = nameClass.getDeclaredFields();
         try {
-            for (int i = 1; i <=propertyClass.length; i++) {
-                stm.setObject(i,getMethod(t,propertyClass[i].getName()));
+            for (int i = 0; i < propertyClass.length; i++) {
+                stm.setObject(i+1,getMethod(t,propertyClass[i].getName()));
                 if (propertyClass[i].getName().toUpperCase().equals("ID")) {
                     stm.setObject(propertyClass.length+1,getMethod(t,propertyClass[i].getName()));
                 }
