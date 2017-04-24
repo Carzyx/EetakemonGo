@@ -18,51 +18,34 @@ public class Main {
 
         UserDao userDao = new UserDao(new GenericDaoImpl<User>());
         UserService service = new UserService(userDao);
-
-        User user = new User(
-                "miguel",
+        /*boolean createUser = service.createUser("Prueba",
                 "angel",
-                "SuperUser",
+                "MyUser",
                 "miguel1234",
-                "miguel@gmail.com"
-        );
-        User userA = new User(
-                "testA",
-                "testApA",
-                "SuperTestA",
-                "testA1234",
-                "testA@gmail.com"
-        );
-        User userB = new User(
-                "testB",
-                "testApB",
-                "SuperTestB",
-                "testB1234",
-                "testB@gmail.com"
-        );
-
-        boolean createUser = service.createUser("miguel",
-                "angel",
-                "SuperUser",
-                "miguel1234",
-                "miguel@gmail.com");
-
-        System.out.println("createUser : "+createUser);
-
-        User userSignUp = service.signIn(user.username, user.password);
-        boolean isUserSignIn = (userSignUp.username != null);
+                "miguel@gmail.com",
+                1);*/
+        User user =new User("Prueba","sadsadas","MyUser","miguel1234","miguel1234",1);
+        User userSignUp = service.signIn(user.getUsername(), user.getPassword());
+        boolean isUserSignIn = (userSignUp.getUsername() != null);
         System.out.println("signIn : "+isUserSignIn);
-
-        service.createUser("testA",
+        service.createUser(new User("test'A",
                 "testApA",
                 "SuperTestA",
                 "testA1234",
-                "testA@gmail.com");
+                "testA@gmail.com",
+                1));
 
-        boolean isUserDeleted = service.deleteUser(userA.username, userA.password);
+
+        boolean isUserUpdated = service.upadteUser(new User("TESTA",
+                "testApA",
+                "SuperTestA",
+                "testA1234",
+                "testA@gmail.com",
+                1));
+        System.out.println("isUserUpdated : "+isUserUpdated);
+        boolean isUserDeleted = service.deleteUser("SuperTestA", "testA1234");
         System.out.println("isUserDeleted : "+isUserDeleted);
-
-
         System.out.print("");
+
     }
 }

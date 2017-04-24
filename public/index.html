@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>EetakemonGo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var URI = "http://localhost:8080/myapp/";
+            $("#btn1").click(function () {
+                var nombre = $("#nombre").val();
+                var pass = $("#pass").val();
+                $.get(URI + "web/getPass/" + nombre+"/"+pass, function (resPonseText) {
+                    if (resPonseText = "Valido")
+                        window.location.href = "WEB.html";
+                });
+            });
+            $("#btn2").click(function () { window.location.href = "Register.html";
+            })
+        });
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://atenea.upc.edu/moodle/">DSA</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome </h1>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input class="form-control" id="nombre" type="text">
+
+        </div>
+        <div class="form-group">
+            <label>Pass</label>
+            <input class="form-control" id="pass" type="text">
+        </div>
+
+        <button id = "btn1" class="btn btn-primary rigth-block"> LogIn</button>
+        <button id = "btn2" class="btn btn-primary rigth-block"> Register</button>
+    </div>
+</div>
+</body>
+</html>

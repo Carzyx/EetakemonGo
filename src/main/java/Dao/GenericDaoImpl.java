@@ -3,6 +3,7 @@ package Dao;
 import Model.User;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
@@ -12,117 +13,49 @@ import java.util.List;
  */
 public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao<T> {
 
-
     public boolean add(T t){
-
         try{
-            StringBuffer query = new StringBuffer();
-
             Class nameClass = t.getClass();
-            String simpleNameClass = nameClass.getSimpleName();
-
-            query.append("INSERT INTO ");
-            query.append(simpleNameClass);
-
+            StringBuffer query = new StringBuffer("INSERT INTO ").append(nameClass.getSimpleName().toLowerCase()).append("(");
             Field[] propertyClass = nameClass.getDeclaredFields();
             for(int i=0; i< propertyClass.length; i++)
             {
-                if(i == 0){
-                    //todo first
-                    query.append("(");
-                }
                 query.append(propertyClass[i].getName());
-
-                if(i != propertyClass.length-1)
-                {
+                if(i < propertyClass.length-1)
                     query.append(", ");
-                }
-                if(i == propertyClass.length-1)
-                {
-                    query.append(") ");
-                }
             }
+            query.append(") VALUES (");
             for(int i=0; i< propertyClass.length; i++)
             {
-                if(i == 0){
-                    //todo first
-                    query.append("VALUES (");
-                }
-                query.append("'");
-                query.append(propertyClass[i].get(t).toString());
-                query.append("'");
-
-                if(i != propertyClass.length-1)
-                {
-                    query.append(", ");
-                }
-                if(i == propertyClass.length-1)
-                {
-                    query.append(") ");
-                }
+                if(i<propertyClass.length-1)
+                    query.append("?,");
+                else
+                    query.append("?)");
             }
-            System.out.println(query);
-            add(query.toString());
+            add(query.toString(),t);
             return true;
         }
         catch (Exception e)
         {
             return false;
         }
-
     }
 
-
     public boolean updateById(T t)  {
-
-        //UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
         try{
-            StringBuffer query = new StringBuffer();
-
             Class nameClass = t.getClass();
-            String simpleNameClass = nameClass.getSimpleName();
-
-            query.append(" UPDATE ");
-            query.append(simpleNameClass);
-
-
+            StringBuffer query = new StringBuffer("UPDATE ").append(nameClass.getSimpleName().toLowerCase()).append(" SET ");
             Field[] propertyClass = nameClass.getDeclaredFields();
             for (int i = 0; i < propertyClass.length; i++) {
-                if (i == 0) {
-                    //todo first
-                    query.append("SET ");
-                }
-                query.append("'");
                 query.append(propertyClass[i].getName());
-                query.append("' ");
+                query.append("= ?");
 
-                query.append("= ");
-                query.append("'");
-                query.append(propertyClass[i].get(t));
-                query.append("'");
-
-                if (i != propertyClass.length - 1) {
+                if (i < propertyClass.length - 1) {
                     query.append(", ");
                 }
             }
-
-            for (int i = 0; i < propertyClass.length; i++) {
-                if (i == 0) {
-                    //todo first
-                    query.append(" WHERE id =");
-                }
-                if (propertyClass[i].getName().toUpperCase().equals("ID")) {
-                    System.out.println("1- "+propertyClass[i].get(t));
-                    System.out.println("1- "+propertyClass[i].get(t).toString());
-
-
-                    query.append("'");
-                    query.append(propertyClass[i].get(t).toString());
-                    query.append("'");
-                }
-            }
-            System.out.println(query);
-            update(query.toString());
+            query.append(" WHERE id =?");
+            update(query.toString(),t);
             return true;
         }
         catch (Exception e)
@@ -134,31 +67,10 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
 
     public boolean removeById(T t)  {
 
-        //DELETE FROM table_name WHERE condition;
         try{
-            StringBuffer query = new StringBuffer();
-
             Class nameClass = t.getClass();
-            String simpleNameClass = nameClass.getSimpleName();
-
-            query.append("DELETE FROM ");
-            query.append(simpleNameClass);
-
-            Field[] propertyClass = nameClass.getDeclaredFields();
-            for (int i = 0; i < propertyClass.length; i++) {
-                if (i == 0) {
-                    //todo first
-                    query.append(" WHERE id =");
-                }
-                if (propertyClass[i].getName().toUpperCase().equals("ID")) {
-                    query.append("'");
-                    query.append(propertyClass[i].get(t).toString());
-                    query.append("'");
-                }
-            }
-
-            System.out.println(query);
-            delete(query.toString());
+            StringBuffer query = new StringBuffer("DELETE FROM ").append(nameClass.getSimpleName().toLowerCase()).append(" WHERE id = ?");
+            delete(query.toString(),t);
             return true;
         }
         catch (Exception e)
@@ -173,36 +85,23 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         //SELECT * FROM table_name;
         try{
             StringBuffer query = new StringBuffer();
-
             Class nameClass = t.getClass();
             String simpleNameClass = nameClass.getSimpleName();
-
-            query.append("SELECT * FROM ");
-            query.append(simpleNameClass);
-
+            query.append("SELECT * FROM ").append(simpleNameClass.toLowerCase()).append(" WHERE ");
             Field[] propertyClass = nameClass.getDeclaredFields();
+            int j=1;
             for (int i = 0; i < propertyClass.length; i++) {
-                if (i == 0) {
-                    //todo first
-                    query.append(" WHERE ");
-                }
                 if (conditions.containsKey(propertyClass[i].getName())) {
                     query.append(propertyClass[i].getName());
-                    query.append(" = '");
-                    query.append(conditions.get(propertyClass[i].getName()));
-                    query.append("' ");
-                    conditions.remove(propertyClass[i].getName());
-                    if(conditions.size() != 0)
+                    query.append(" = ?");
+                    if(j<conditions.size())
                     {
-                        query.append("AND ");
+                        query.append(" AND ");
+                        j++;
                     }
                 }
             }
-
-            System.out.println(query);
-            return (T) select(t, query.toString());
-
-
+            return (T) select(t, query.toString(),conditions);
         }
         catch (Exception e)
         {
@@ -210,58 +109,42 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         }
     }
 
+    public List<T> getAll(T t) throws Exception {
+        List<T> list=new ArrayList<T>();
+        boolean fin=false;
+        Hashtable<String,String> conditions=new Hashtable<String, String>();
+        StringBuffer query;
+        for (int i=0;!fin;i++){
+            query = new StringBuffer();
+            Class nameClass = t.getClass();
+            query.append("SELECT * FROM ").append(nameClass.getSimpleName().toLowerCase()).append(" WHERE id=?");
+            conditions.put("id",String.valueOf(i));
+            T a=select(t,query.toString(),conditions);
+            if(a==null)
+                fin=true;
+            else
+                list.add(a);
+        }
 
-    public List<T> getAll(Class nameClass){
-        //SELECT * FROM table_name;
-        StringBuffer query = new StringBuffer();
-
-        String simpleNameClass = nameClass.getSimpleName();
-
-        query.append("SELECT * FROM ");
-        query.append("'");
-        query.append(simpleNameClass);
-        query.append("' ");
-
-        System.out.println(query);
-        return null;
-
+        return list;
     }
 
-    public T getById(T t) {
-/*
+    public T getById(T t,int i) {
         //SELECT * FROM table_name;
         try{
-            StringBuffer query = new StringBuffer();
-
+            Hashtable<String,String> conditions=new Hashtable<String, String>();
+            StringBuffer query;
+            query = new StringBuffer();
             Class nameClass = t.getClass();
-            String simpleNameClass = nameClass.getSimpleName();
-
-            query.append("SELECT * FROM ");
-            query.append(simpleNameClass);
-
-            Field[] propertyClass = nameClass.getDeclaredFields();
-            for (int i = 0; i < propertyClass.length; i++) {
-                if (i == 0) {
-                    //todo first
-                    query.append(" WHERE id =");
-                }
-                if (propertyClass[i].getName().toUpperCase().equals("ID")) {
-                    query.append("'");
-                    query.append(propertyClass[i].get(t).toString());
-                    query.append("'");
-                }
-            }
-
-            System.out.println(query);
-            return null;
-
+            query.append("SELECT * FROM ").append(nameClass.getSimpleName().toLowerCase()).append(" WHERE id=?");
+            conditions.put("id",String.valueOf(i));
+            T a=select(t,query.toString(),conditions);
+            return a;
         }
         catch (Exception e)
         {
             return null;
         }
-     */
-        return null;
     }
 
 
