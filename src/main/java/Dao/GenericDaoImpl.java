@@ -1,10 +1,7 @@
 package Dao;
 
-import Model.User;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -18,29 +15,51 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             Class nameClass = t.getClass();
             StringBuffer query = new StringBuffer("INSERT INTO ").append(nameClass.getSimpleName().toLowerCase()).append("(");
             Field[] propertyClass = nameClass.getDeclaredFields();
-            for(int i=0; i< propertyClass.length; i++)
+            for(int i=1; (i< propertyClass.length-1)||(i<3); i++)
             {
                 query.append(propertyClass[i].getName());
-                if(i < propertyClass.length-1)
-                    query.append(", ");
+                if((i < propertyClass.length-2)||(i<2))
+                    query.append(",");
             }
             query.append(") VALUES (");
-            for(int i=0; i< propertyClass.length; i++)
+            for(int i=1; i< propertyClass.length-1; i++)
             {
-                if(i<propertyClass.length-1)
+                if((i < propertyClass.length-2)||(i<2))
                     query.append("?,");
-                else
-                    query.append("?)");
             }
+            query.append("?)");
             add(query.toString(),t);
             return true;
         }
         catch (Exception e)
         {
+            System.out.println(e.getStackTrace());
             return false;
         }
     }
-
+   /* public boolean addForeingTables(String bbdd,int i,int j){
+        try
+        {
+            StringBuffer query = new StringBuffer("INSERT INTO ").append(bbdd).append(" (iduser,ideetakemon) VALUES (?,?)");
+            add(query.toString(),i,j);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+    public boolean getForeingTables(String bbdd,int i){
+        try
+        {
+            StringBuffer query = new StringBuffer("SELECT * FROM ").append(bbdd).append(" WHERE id==?");
+            getForeing(query.toString(),i);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+    */
     public boolean updateById(T t)  {
         try{
             Class nameClass = t.getClass();
@@ -64,7 +83,6 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         }
     }
 
-
     public boolean removeById(T t)  {
 
         try{
@@ -80,7 +98,7 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
     }
 
 
-    public T getByParameter(T t, Hashtable<String, String> conditions) {
+    public List<T> getByParameter(T t, Hashtable<String, String> conditions) {
 
         //SELECT * FROM table_name;
         try{
@@ -101,13 +119,22 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
                     }
                 }
             }
-            return (T) select(t, query.toString(),conditions);
+            return select(t, query.toString(),conditions);
         }
         catch (Exception e)
         {
             return null;
         }
     }
+    /*public  getListInClassByParameter(T t, Hashtable<String, String> conditions) {
+        StringBuffer query = new StringBuffer();
+        Class nameClass = t.getClass();
+        String simpleNameClass = nameClass.getSimpleName();
+        query.append("SELECT * FROM ").append(simpleNameClass.toLowerCase()).append(" JOIN WHERE ");
+        Hashtable<String,String>conditions=new Hashtable<String, String>();
+        conditions.p
+        return (T) select(t, query.toString(),conditions);
+    }*/
 
     public List<T> getAll(T t) throws Exception {
         List<T> list=new ArrayList<T>();
@@ -119,17 +146,13 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             Class nameClass = t.getClass();
             query.append("SELECT * FROM ").append(nameClass.getSimpleName().toLowerCase()).append(" WHERE id=?");
             conditions.put("id",String.valueOf(i));
-            T a=select(t,query.toString(),conditions);
-            if(a==null)
-                fin=true;
-            else
-                list.add(a);
+            return select(t,query.toString(),conditions);
         }
 
         return list;
     }
 
-    public T getById(T t,int i) {
+    public List<T> getById(T t,int i) {
         //SELECT * FROM table_name;
         try{
             Hashtable<String,String> conditions=new Hashtable<String, String>();
@@ -138,8 +161,7 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             Class nameClass = t.getClass();
             query.append("SELECT * FROM ").append(nameClass.getSimpleName().toLowerCase()).append(" WHERE id=?");
             conditions.put("id",String.valueOf(i));
-            T a=select(t,query.toString(),conditions);
-            return a;
+            return select(t,query.toString(),conditions);
         }
         catch (Exception e)
         {

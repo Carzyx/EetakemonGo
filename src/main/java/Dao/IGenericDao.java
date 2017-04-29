@@ -10,7 +10,7 @@ public interface IGenericDao <T> {
     boolean add(T t);
     boolean updateById(T t);
     boolean removeById(T t);
-    T getByParameter(T t, Hashtable<String, String> conditions);
+    List<T> getByParameter(T t, Hashtable<String, String> conditions);
     List<T> getAll(T t) throws Exception;
     //T getById(T t);
 

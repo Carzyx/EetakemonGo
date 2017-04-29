@@ -1,15 +1,14 @@
 package Dao;
 
+import Model.EetakemonType;
+
 import javax.rmi.CORBA.Util;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * Created by Miguel Angel on 06/04/2017.
@@ -22,12 +21,25 @@ public class MySQLRepository<T> {
            PreparedStatement stm=con.prepareStatement(query);
            Class nameClass = t.getClass();
            Field[] propertyClass = nameClass.getDeclaredFields();
-           for(int i=0;i<propertyClass.length;i++){
-               stm.setObject(i+1,getMethod(t,propertyClass[i].getName()));
+           for(int i=1;(i<propertyClass.length-1)||(i<3);i++){
+               stm.setObject(i,getMethod(t,propertyClass[i].getName()));
            }
             stm.execute();
             con.close();
 
+        } catch (SQLException sqle) {
+            System.out.println("Error en la ejecución MySQLRepository.add:"
+                    + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+    }
+    public void add(String query,int i,int j) throws Exception {
+        Connection con = getConnection();
+        try {
+            PreparedStatement stm=con.prepareStatement(query);
+            stm.setObject(1,i);
+            stm.setObject(2,j);
+            stm.execute();
+            con.close();
         } catch (SQLException sqle) {
             System.out.println("Error en la ejecución MySQLRepository.add:"
                     + sqle.getErrorCode() + " " + sqle.getMessage());
@@ -76,7 +88,7 @@ public class MySQLRepository<T> {
         }
     }
 //SELECT echo
-    public T select(T t, String query, Hashtable<String,String> conditions) throws Exception {
+    public List<T> select(T t, String query, Hashtable<String,String> conditions) throws Exception {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
@@ -91,7 +103,7 @@ public class MySQLRepository<T> {
             }
             stm.execute();
             ResultSet resultSet =stm.getResultSet();
-            T result = getMapObject(t, resultSet);
+            List<T> result = getMapObject(t, resultSet);
             stm.close();
             con.close();
             return result;
@@ -101,7 +113,7 @@ public class MySQLRepository<T> {
             return null;
         }
     }
-
+    public List getForeing(String query,int i){return null;}
     private Connection getConnection() {
         Connection con = null;
         String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -120,10 +132,11 @@ public class MySQLRepository<T> {
         return con;
     }
 
-    private T getMapObject(T t, ResultSet resultSet){
+    private List<T> getMapObject(T t, ResultSet resultSet){
 
         try {
             Class nameClass = t.getClass();
+            List<T> list=new ArrayList<T>();
             Field[] propertyClass = nameClass.getDeclaredFields();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             while (resultSet.next())
@@ -144,8 +157,9 @@ public class MySQLRepository<T> {
                         }
                     }
                 }
+                list.add(t);
             }
-            return t;
+            return list;
         }
         catch(Exception e) {
             return null;
@@ -160,12 +174,16 @@ public class MySQLRepository<T> {
 
                case "INT":
                    return resultSet.getInt(index);
+               case "INT UNSIGNED":
+                   return resultSet.getInt(index);
 
                case "DOUBLE":
                    return resultSet.getDouble(index);
 
                case "TINYINT":
                    return resultSet.getBoolean(index);
+               case "CHAR"://PARA EL ENUM
+                   return EetakemonType.valueOf(resultSet.getString(index));
 
                default:
                    return null;
@@ -184,7 +202,6 @@ public class MySQLRepository<T> {
             return ret;}
             catch (Exception ex){ex.printStackTrace();
             return null;}
-
     }
 
     public String getProperty(String key) {

@@ -1,8 +1,8 @@
 package Dao;
 
+import Model.EetakemonsUser;
 import Model.User;
 
-import java.util.Hashtable;
 import java.util.List;
 
 /**

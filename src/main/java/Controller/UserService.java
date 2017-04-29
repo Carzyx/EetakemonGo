@@ -16,7 +16,7 @@ public class UserService implements IUserService {
     public UserService(IUserDao service) {
         _service = service;
     }
-
+//Usuario
     @Override
     public boolean createUser(User user ) {
 
@@ -27,7 +27,7 @@ public class UserService implements IUserService {
         }
         return false;
     }
-
+    public User getUser(int id){return _service.getUserById(id);}
     @Override
     public User signIn(String username, String password) {
         if(StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils.isEmptyOrWhitespaceOnly(password))
@@ -38,8 +38,8 @@ public class UserService implements IUserService {
         return _service.getUserByUsernameAndPassword(username, password);
 
     }
-    public boolean upadteUser(User user){
-        return _service.updateById(user);
+    public boolean upadteUser(User user,String oldname){
+        return _service.updateById(user,oldname);
     }
     @Override
     public boolean deleteUser(String username, String password) {
