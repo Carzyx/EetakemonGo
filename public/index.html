@@ -13,8 +13,10 @@
                 var nombre = $("#nombre").val();
                 var pass = $("#pass").val();
                 $.get(URI + "web/getPass/" + nombre+"/"+pass, function (resPonseText) {
-                    if (resPonseText = "Valido")
+                    if (resPonseText == "Valido")
                         window.location.href = "WEB.html";
+                    else
+                        alert("Nombre no valido");
                 });
             });
             $("#btn2").click(function () { window.location.href = "Register.html";

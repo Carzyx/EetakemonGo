@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.Hashtable;
+import java.util.List;
+
 /**
  * Created by histo on 06/03/2017.
  */
@@ -12,11 +15,11 @@ public class User {
     private String email;
     private int rol;
     private String image;
+    private List<Eetakemon> eetakemons;
 
-    public User(){
+    public User(){}
 
-    }
-    public User(String name, String surname, String username, String password, String email,int rol)
+    public User(String name, String surname, String username, String password, String email,int rol,String image)
     {
         this.name = name;
         this.surname  = surname;
@@ -24,6 +27,7 @@ public class User {
         this.password = password;
         this.rol=rol;
         this.email = email;
+        this.image=image;
     }
     public int getId() {
         return id;
@@ -87,5 +91,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Eetakemon> getEetakemons() {
+        return eetakemons;
+    }
+
+    public void setEetakemons(List<Eetakemon> eetakemons) {
+        this.eetakemons = eetakemons;
     }
 }
