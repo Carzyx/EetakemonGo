@@ -25,8 +25,11 @@ public class JSONService {
     @Path("/getPass/{name}/{pass}")
     @Produces(MediaType.TEXT_PLAIN)
     public String getPass(@PathParam("name") String name,@PathParam("pass") String pass){
-        service.signIn(name,pass);
-        return null;
+        if(service.signIn(name,pass).getName()==name){
+            System.out.println(service.signIn(name,pass).getName());
+            return "Valido";}
+        else
+            return "No vale";
     }
 /*
     @GET

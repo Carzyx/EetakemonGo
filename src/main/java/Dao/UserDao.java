@@ -1,9 +1,9 @@
 package Dao;
-
 import Model.Eetakemon;
+import Model.EetakemonsUser;
 import Model.User;
-import org.omg.CORBA.UShortSeqHelper;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -20,6 +20,7 @@ public class UserDao implements IUserDao{
         _service = service;
     }
 
+
     public boolean add(User user){
         return _service.add(user);
     }
@@ -27,7 +28,7 @@ public class UserDao implements IUserDao{
     public boolean updateById(User user,String oldName) {
         Hashtable<String,String>table=new Hashtable<String, String>();
         table.put("username",oldName);
-        User user1=_service.getByParameter(user,table);
+        User user1=_service.getByParameter(user,table).get(0);
         user.setId(user1.getId());
         return _service.updateById(user);
     }
@@ -40,27 +41,26 @@ public class UserDao implements IUserDao{
         User user=new User();
         return _service.getAll(user);
     }
-
     public User getUserByUsernameAndPassword(String username, String password)
     {
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
         conditions.put("password", password);
-        return _service.getByParameter(user, conditions);
+        return _service.getByParameter(user, conditions).get(0);
     }
     public User getUserById(int id) {
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("id", Integer.toString(id));
-        return _service.getByParameter(user, conditions);
+        return _service.getByParameter(user, conditions).get(0);
     }
 
     public boolean isUsernameAlreadyInUse(String username) {
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
-        User result = _service.getByParameter(user, conditions);
+        User result = _service.getByParameter(user, conditions).get(0);
         return result.getUsername() != null;
     }
 
@@ -68,7 +68,7 @@ public class UserDao implements IUserDao{
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("email", email);
-        User result = _service.getByParameter(user, conditions);
+        User result = _service.getByParameter(user, conditions).get(0);
         return result.getEmail() != null;
     }
 /*
