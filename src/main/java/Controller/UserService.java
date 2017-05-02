@@ -16,35 +16,40 @@ public class UserService implements IUserService {
     public UserService(IUserDao service) {
         _service = service;
     }
-//Usuario
+
+    //Usuario
     @Override
-    public boolean createUser(User user ) {
+    public boolean createUser(User user) {
 
-
-        if(!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail()))
-        {
+        if (!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail())) {
             return _service.add(user);
         }
         return false;
     }
-    public User getUser(int id){return _service.getUserById(id);}
+
+    public User getUser(int id) {
+        return _service.getUserById(id);
+    }
+
     @Override
     public User signIn(String username, String password) {
-        if(StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils.isEmptyOrWhitespaceOnly(password))
-        {
+        if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
+            .isEmptyOrWhitespaceOnly(password)) {
             return null;
         }
 
         return _service.getUserByUsernameAndPassword(username, password);
 
     }
-    public boolean upadteUser(User user,String oldname){
-        return _service.updateById(user,oldname);
+
+    public boolean upadteUser(User user, String oldname) {
+        return _service.updateById(user, oldname);
     }
+
     @Override
     public boolean deleteUser(String username, String password) {
-        if(StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils.isEmptyOrWhitespaceOnly(password))
-        {
+        if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
+            .isEmptyOrWhitespaceOnly(password)) {
             return false;
         }
 
@@ -53,10 +58,10 @@ public class UserService implements IUserService {
     }
 
 
-
     private boolean isUsernameAlreadyInUse(String username) {
 
-        return StringUtils.isEmptyOrWhitespaceOnly(username) || _service.isUsernameAlreadyInUse(username);
+        return StringUtils.isEmptyOrWhitespaceOnly(username) || _service
+            .isUsernameAlreadyInUse(username);
     }
 
     private boolean isEmailAlreadyInUse(String email) {

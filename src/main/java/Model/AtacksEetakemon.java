@@ -4,12 +4,16 @@ package Model;
  * Created by Ignacio on 24/04/2017.
  */
 public class AtacksEetakemon {
+
     private int id;
-    private int ideetakemon;
-    private int idatack;
-    public AtacksEetakemon(){}
-    public int getIdeetakemon() {
-        return ideetakemon;
+    private int idEetakemon;
+    private int idAtack;
+
+    public AtacksEetakemon() {
+    }
+
+    public int getIdEetakemon() {
+        return idEetakemon;
     }
 
     public int getId() {
@@ -20,15 +24,15 @@ public class AtacksEetakemon {
         this.id = id;
     }
 
-    public void setIdeetakemon(int ideetakemon) {
-        this.ideetakemon = ideetakemon;
+    public void setIdEetakemon(int ideetakemon) {
+        this.idEetakemon = ideetakemon;
     }
 
-    public int getIdatack() {
-        return idatack;
+    public int getIdAtack() {
+        return idAtack;
     }
 
-    public void setIdatack(int idatack) {
-        this.idatack = idatack;
+    public void setIdAtack(int idatack) {
+        this.idAtack = idatack;
     }
 }

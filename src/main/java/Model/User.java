@@ -7,6 +7,7 @@ import java.util.List;
  * Created by histo on 06/03/2017.
  */
 public class User {
+
     private int id;
     private String name;
     private String surname;
@@ -17,18 +18,20 @@ public class User {
     private String image;
     private List<Eetakemon> eetakemons;
 
-    public User(){}
+    public User() {
+    }
 
-    public User(String name, String surname, String username, String password, String email,int rol,String image)
-    {
+    public User(String name, String surname, String username, String password, String email,
+        int rol, String image) {
         this.name = name;
-        this.surname  = surname;
+        this.surname = surname;
         this.username = username;
         this.password = password;
-        this.rol=rol;
+        this.rol = rol;
         this.email = email;
-        this.image=image;
+        this.image = image;
     }
+
     public int getId() {
         return id;
     }

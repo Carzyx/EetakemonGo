@@ -4,12 +4,16 @@ package Model;
  * Created by Ignacio on 29/04/2017.
  */
 public class Atack {
+
     private int id;
     private String name;
     private EetakemonType type;
-    private int damagebase;
+    private int damageBase;
     private String description;
-    public Atack(){}
+
+    public Atack() {
+    }
+
     public int getId() {
         return id;
     }
@@ -34,12 +38,12 @@ public class Atack {
         this.type = type;
     }
 
-    public int getDamagebase() {
-        return damagebase;
+    public int getDamageBase() {
+        return damageBase;
     }
 
     public void setDamagebase(int damagebase) {
-        this.damagebase = damagebase;
+        this.damageBase = damagebase;
     }
 
     public String getDescription() {

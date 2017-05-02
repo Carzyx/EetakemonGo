@@ -1,0 +1,53 @@
+DROP DATABASE eetakemonbbddtest;
+CREATE DATABASE eetakemonbbddtest;
+
+USE eetakemonbbddtest;
+CREATE TABLE Atack(
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NOT NULL,
+  type ENUM('FUEGO', 'TIERRA', 'AGUA', 'AIRE', 'NEUTRO') NOT NULL,
+  damageBase INT NOT NULL,
+  description VARCHAR(45),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE Eetakemon(
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NOT NULL,
+  level INT,
+  ps INT NOT NULL,
+  type ENUM('FUEGO', 'TIERRA', 'AGUA', 'AIRE', 'NEUTRO') NOT NULL,
+  image VARCHAR(45),
+  description VARCHAR (250),
+  PRIMARY KEY (id, name)
+);
+
+CREATE TABLE AtacksEetakemon(
+  id INT NOT NULL AUTO_INCREMENT,
+  idAtack INT NOT NULL,
+  idEetakemon INT NOT NULL,
+  PRIMARY  KEY (id),
+  FOREIGN  KEY (idAtack) REFERENCES Atack(id),
+  FOREIGN  KEY (idEetakemon) REFERENCES Eetakemon(id)
+);
+
+CREATE TABLE User(
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NOT NULL,
+  surname VARCHAR(45),
+  username VARCHAR(45) NOT NULL,
+  password VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  rol INT NOT NULL,
+  image VARCHAR(45),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE EetakemonsUser(
+  id INT NOT NULL AUTO_INCREMENT,
+  idUser INT NOT NULL,
+  idEetakemon INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN  KEY (idUser) REFERENCES Eetakemon(id),
+  FOREIGN  KEY (idUser) REFERENCES User(id)
+);
