@@ -1,8 +1,14 @@
 package ApiRest;
+import Controller.EetakemonService;
+import Controller.IEetakemonService;
 import Controller.IUserService;
 import Controller.UserService;
+import Dao.AtackDao;
+import Dao.EetakemonDao;
 import Dao.GenericDaoImpl;
 import Dao.UserDao;
+import Model.Atack;
+import Model.Eetakemon;
 import Model.User;
 
 import javax.inject.Singleton;
@@ -17,27 +23,26 @@ import java.util.List;
 @Path("/web")
 @Singleton
 public class JSONService {
-    private UserDao userDao = new UserDao(new GenericDaoImpl<User>());
-    private UserService service = new UserService(userDao);
-    public JSONService(){
-    }
-    @GET
-    @Path("/getPass/{name}/{pass}")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getPass(@PathParam("name") String name,@PathParam("pass") String pass){
-        if(service.signIn(name,pass).getName()==name){
-            System.out.println(service.signIn(name,pass).getName());
-            return "Valido";}
-        else
-            return "No vale";
-    }
-/*
-    @GET
-    @Path("/setNewUser/{name}/{pass}")
+
+    // User implementation
+    private IUserService _serviceUser = new UserService(new UserDao(new GenericDaoImpl<User>()));
+
+    @Path("createUser")
+    @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public String setNewUser(@PathParam("name") String name,@PathParam("pass") String pass){
-        return service.createUser(name,pass);
-    }*/
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response createUser(User user){
+        if(_serviceUser.createUser(user))
+        {
+            return Response.status(201).entity("User created OK").build();
+        }
+        return Response.status(200).entity("User created KO").build();
+    }
+
+/*
+    //Eetakemon implementation
+    private IEetakemonService _serviceEetakemon = new EetakemonService(new EetakemonDao(new GenericDaoImpl<Eetakemon>()), new AtackDao(new GenericDaoImpl<Atack>()));
+*/
+
 }
 

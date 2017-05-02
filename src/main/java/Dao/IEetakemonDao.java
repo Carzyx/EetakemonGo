@@ -11,18 +11,28 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
-public interface IEetakemonDao{
+public interface IEetakemonDao {
+
     //Acctions for Eetakemon BBDD
-    boolean add(Eetakemon eetakemon) throws IllegalAccessException;
-    boolean updateById(Eetakemon eetakemon) throws IllegalAccessException;
-    boolean remove(Eetakemon eetakemon) throws IllegalAccessException;
-    Eetakemon getById(int id) throws IllegalAccessException;
-    List<Eetakemon> getAll() throws Exception;
-   //Actions for EetakemonsUser
-    boolean addEetakemonToUser(int i,int j);
-    boolean updateEetakemonToUserId(Hashtable<String,Integer> conditions);
+    boolean add(Eetakemon eetakemon);
+
+    boolean updateById(Eetakemon eetakemon);
+
+    boolean remove(Eetakemon eetakemon);
+
+    Eetakemon getById(int id);
+
+    List<Eetakemon> getAll();
+
+    //Actions for EetakemonsUser
+    boolean addEetakemonToUser(int i, int j);
+
+    boolean updateEetakemonToUserId(Hashtable<String, Integer> conditions);
+
     boolean removeEetakemonToUserById(int i);
-    List<EetakemonsUser> getAllEetakemonsToUser(int i) throws Exception;
+
+    List<EetakemonsUser> getAllEetakemonsToUser(int i);
+
     EetakemonsUser getEetakemonToUserById(int i);
 
 }
