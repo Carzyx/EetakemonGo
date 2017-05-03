@@ -7,9 +7,10 @@
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>memory</secret-storage>
       <user-name>root</user-name>
+      <introspection-schemas>*:eetakemonbbddtest</introspection-schemas>
       <resolve-scope>EetakemonBBDDTest:</resolve-scope>
+      <unqualified-resolve-schemas>EetakemonBBDDTest:</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>
