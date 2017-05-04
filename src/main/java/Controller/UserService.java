@@ -11,15 +11,14 @@ import java.util.Hashtable;
  */
 public class UserService implements IUserService {
 
-    private static IUserDao _service;
+    private static IUserDao _serviceUser;
 
-    public UserService(IUserDao service) {
-        _service = service;
+    public UserService(IUserDao serviceUser) {
+        _serviceUser = serviceUser;
     }
 
     //Usuario
-    @Override
-    public boolean createUser(User user) {
+    public boolean create(User user) {
 
         if (!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail())) {
             return _service.add(user);
@@ -27,26 +26,25 @@ public class UserService implements IUserService {
         return false;
     }
 
-    public User getUser(int id) {
-        return _service.getUserById(id);
+    @Override
+    public boolean removeById(int id) {
+        return false;
     }
 
     @Override
-    public User signIn(String username, String password) {
-        if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
-            .isEmptyOrWhitespaceOnly(password)) {
-            return null;
-        }
-
-        return _service.getUserByUsernameAndPassword(username, password);
-
+    public boolean updateById(int id, User item) {
+        return false;
     }
+
+    public User getById(int id) {
+        return _serviceUser.getUserById(id);
+    }
+
 
     public boolean upadteUser(User user, String oldname) {
-        return _service.updateById(user, oldname);
+        return _serviceUser.updateById(user, oldname);
     }
 
-    @Override
     public boolean deleteUser(String username, String password) {
         if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
             .isEmptyOrWhitespaceOnly(password)) {
@@ -55,6 +53,17 @@ public class UserService implements IUserService {
 
         User user = _service.getUserByUsernameAndPassword(username, password);
         return _service.removeById(user);
+    }
+
+
+
+    public User signIn(String username, String password) {
+        if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
+            .isEmptyOrWhitespaceOnly(password)) {
+            return null;
+        }
+
+        return _service.getUserByUsernameAndPassword(username, password);
     }
 
 

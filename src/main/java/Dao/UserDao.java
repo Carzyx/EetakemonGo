@@ -61,16 +61,16 @@ public class UserDao implements IUserDao {
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
-        User result = _service.getByParameter(user, conditions).get(0);
-        return result.getUsername() != null;
+        List<User> resultUsers = _service.getByParameter(user, conditions);
+        return resultUsers.size() > 0;
     }
 
     public boolean isEmailAlreadyInUse(String email) {
         User user = new User();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("email", email);
-        User result = _service.getByParameter(user, conditions).get(0);
-        return result.getEmail() != null;
+        List<User> resultUsers = _service.getByParameter(user, conditions);
+        return resultUsers.size() > 0;
     }
 /*
     private User getByParameter(User user, Hashtable<String,String> condition) {

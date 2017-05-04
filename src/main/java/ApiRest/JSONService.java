@@ -39,10 +39,12 @@ public class JSONService {
         return Response.status(200).entity("User created KO").build();
     }
 
-/*
+    //SignIn deberia de responder toda la info del usuario que necesitariamos en la cookie
+
+
     //Eetakemon implementation
-    private IEetakemonService _serviceEetakemon = new EetakemonService(new EetakemonDao(new GenericDaoImpl<Eetakemon>()), new AtackDao(new GenericDaoImpl<Atack>()));
-*/
+    private IEetakemonService _serviceEetakemon = new EetakemonService(new EetakemonDao(new GenericDaoImpl<Eetakemon>(), new AtackDao(new GenericDaoImpl<Atack>())));
+
 
 }
 

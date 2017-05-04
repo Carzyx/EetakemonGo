@@ -9,19 +9,13 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
-public interface IEetakemonService {
+public interface IEetakemonService extends IBasicService<Eetakemon> {
 
-    boolean createEetakemon(Eetakemon eetakemon);
 
     boolean addEetakemonToUser(int id_user, Eetakemon eetakemon);
 
     List<Eetakemon> getUserEetakemons(int id);
 
-    boolean removeEetakemon(int id);
-
-    boolean updateEetakemon(int id, Eetakemon eetakemon);
-
-    Eetakemon getEetakemon(int id);
 
     List<AtacksEetakemon> getAtacks(String name);
 

@@ -99,11 +99,11 @@ public class MySQLRepository<T> {
         try {
             PreparedStatement stm = con.prepareStatement(query);
             Class nameClass = t.getClass();
-            int max = conditions.size();
+            int maxIndex = 1 + conditions.size();
             Field[] propertyClass = nameClass.getDeclaredFields();
             for (int i = 0; i < propertyClass.length; i++) {
-                if (conditions.containsKey(propertyClass[i].getName())) {
-                    stm.setObject(1, conditions.get(propertyClass[i].getName()));
+                if (conditions.containsKey(propertyClass[i].getName()) && conditions.size() > 0) {
+                    stm.setObject(maxIndex - conditions.size(), conditions.get(propertyClass[i].getName()));
                     conditions.remove(propertyClass[i].getName());
                 }
             }
