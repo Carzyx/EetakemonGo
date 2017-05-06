@@ -14,6 +14,8 @@ public interface IGenericDao<T>  {
 
     boolean removeById(T t);
 
+    boolean removeByConditions(T t, Hashtable<String, String> conditions);
+
     T getByParameters(T t, Hashtable<String, String> conditions);
 
     List<T> getAllByParameters(T t, Hashtable<String, String> conditions);

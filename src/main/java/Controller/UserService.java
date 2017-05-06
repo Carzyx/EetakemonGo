@@ -1,5 +1,6 @@
 package Controller;
 
+import Controller.Interfaces.IUserService;
 import Dao.Interfaces.IUserDao;
 import Model.User;
 import com.mysql.jdbc.StringUtils;
@@ -37,7 +38,7 @@ public class UserService implements IUserService {
     }
 
     public User getById(int id) {
-        return _serviceUser.getUserById(id);
+        return _serviceUser.getById(id);
     }
 
     @Override

@@ -12,7 +12,11 @@ public interface IUserDao extends IBasicDao <User>{
 
     boolean addAEetakemonsToUser(User user);
 
+    boolean removeEetakemonsToUser(User user);
+
     User getUserByUsernameAndPassword(String username, String password);
+
+    User getCompleteUserById(int id);
 
     boolean isUsernameAlreadyInUse(String username);
 

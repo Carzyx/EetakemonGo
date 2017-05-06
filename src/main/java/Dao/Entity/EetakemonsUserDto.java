@@ -8,6 +8,8 @@ public class EetakemonsUserDto {
     private int idUser;
     private int idEetakemon;
 
+    public EetakemonsUserDto(){}
+
     public EetakemonsUserDto(int idUser, int idEetakemon)
     {
         this.idUser = idUser;

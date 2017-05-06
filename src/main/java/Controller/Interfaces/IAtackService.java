@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Interfaces;
 
 import Model.Atack;
 import Model.AtacksEetakemon;

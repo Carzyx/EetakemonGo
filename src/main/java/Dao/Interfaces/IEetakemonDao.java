@@ -1,6 +1,7 @@
 package Dao.Interfaces;
 
 
+import Dao.Entity.EetakemonsUserDto;
 import Model.AtacksEetakemon;
 import Model.Eetakemon;
 import Model.EetakemonsUser;
@@ -14,8 +15,9 @@ import java.util.List;
 public interface IEetakemonDao extends IBasicDao <Eetakemon> {
 
     boolean addAtacksToEetakemon(Eetakemon eetakemon);
-
-
+    boolean removeAtacksToEetakemon(Eetakemon eetakemon);
+    Eetakemon getCompleteEetakemonById (int id);
+    List<Eetakemon> getAllCompleteEetakemonById (List<EetakemonsUserDto> eetakemonsToUserList);
 
     /*
 

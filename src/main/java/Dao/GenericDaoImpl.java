@@ -73,6 +73,20 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         }
     }
 
+    public boolean removeByConditions(T t, Hashtable<String, String> conditions)
+    {
+        try {
+            Class nameClass = t.getClass();
+            String simpleNameClass = nameClass.getSimpleName();
+            StringBuffer query = new StringBuffer("DELETE FROM ").append(simpleNameClass.toLowerCase());
+            Field[] propertyClass = nameClass.getDeclaredFields();
+            query = registerConditions(propertyClass, conditions, query);
+            return delete(query.toString(), t);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public T getByParameters(T t, Hashtable<String, String> conditions) {
           try {
               return getAllByParameters(t, conditions).get(0);

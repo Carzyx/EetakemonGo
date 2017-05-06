@@ -15,11 +15,10 @@ import java.util.List;
 public class AtackDao implements IAtackDao {
 
     private static IGenericDao<Atack> _service;
-    private static IGenericDao<AtacksEetakemon> _extra;
 
-    public AtackDao(IGenericDao<Atack> service, IGenericDao<AtacksEetakemon> extra) {
-        _service = service;
-        _extra = extra;
+    public AtackDao() {
+
+        _service = new GenericDaoImpl<>();
     }
 
     public boolean add(Atack atack) {

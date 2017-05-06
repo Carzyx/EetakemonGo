@@ -1,22 +1,15 @@
 package ApiRest;
-import Controller.EetakemonService;
-import Controller.IEetakemonService;
-import Controller.IUserService;
+import Controller.Interfaces.IUserService;
 import Controller.UserService;
-import Dao.AtackDao;
-import Dao.EetakemonDao;
 import Dao.GenericDaoImpl;
 import Dao.UserDao;
-import Model.Atack;
-import Model.Eetakemon;
 import Model.User;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.List;
+
 /**
  * Created by Ignacio on 21/04/2017.
  */
@@ -25,7 +18,7 @@ import java.util.List;
 public class JSONService {
 
     // User implementation
-    private IUserService _serviceUser = new UserService(new UserDao(new GenericDaoImpl<User>(User.class)));
+    private IUserService _serviceUser = new UserService(new UserDao());
 
     @Path("createUser")
     @POST

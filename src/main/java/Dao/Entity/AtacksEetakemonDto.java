@@ -8,6 +8,7 @@ public class AtacksEetakemonDto {
     private int idEetakemon;
     private int idAtack;
 
+    public AtacksEetakemonDto(){};
     public AtacksEetakemonDto(int idEetakemon, int idAtack)
     {
         this.idEetakemon = idEetakemon;

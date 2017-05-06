@@ -2,6 +2,7 @@ package Dao;
 
 import Dao.Entity.EetakemonsUserDto;
 import Dao.Entity.UserDto;
+import Dao.Interfaces.IEetakemonDao;
 import Dao.Interfaces.IGenericDao;
 import Dao.Interfaces.IUserDao;
 import Model.Eetakemon;
@@ -19,12 +20,15 @@ public class UserDao implements IUserDao {
 
     private static IGenericDao<UserDto> _service;
     private static IGenericDao<EetakemonsUserDto> _serviceEetakemonsUser;
+    private static IEetakemonDao _serviceEetakemon;
 
 
     private ModelMapper modelMapper = new ModelMapper();
 
-    public UserDao(IGenericDao<UserDto> service) {
-        _service = service;
+    public UserDao() {
+        _service = new GenericDaoImpl<>();
+        _serviceEetakemonsUser = new GenericDaoImpl<>();
+        _serviceEetakemon = new EetakemonDao();
     }
 
     public boolean add(User user) {
@@ -47,7 +51,13 @@ public class UserDao implements IUserDao {
 
     public boolean removeById(User user) {
         UserDto userDto = modelMapper.map(user, UserDto.class);
-        return _service.removeById(userDto);
+        boolean userConfirmation = _service.removeById(userDto);
+        if(!(user.getEetakemons().size() <= 0) || !userConfirmation)
+        {
+            return userConfirmation;
+        }
+
+        return removeAtacksToEetakemon(user);
     }
 
     public User getById(int id) {
@@ -68,8 +78,16 @@ public class UserDao implements IUserDao {
         return result;
     }
 
+    public User getCompleteUserById(int id) {
+        User user = getById(id);
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("idUser", Integer.toString(user.getId()));
+        List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
 
+        user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonById(result));
 
+        return user;
+    }
 
 
     public boolean addAEetakemonsToUser(User user) {
@@ -86,9 +104,22 @@ public class UserDao implements IUserDao {
         return actionResult;
     }
 
-
-
-
+    public boolean removeEetakemonsToUser(User user) {
+        boolean actionResult = true;
+        for (Eetakemon eetakemon : user.getEetakemons())
+        {
+            Hashtable<String, String> conditions = new Hashtable<>();
+            conditions.put("idUser", Integer.toString(user.getId()));
+            conditions.put("idEetakemon", Integer.toString(eetakemon.getId()));
+            EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getId(), eetakemon.getId());
+            boolean result = _serviceEetakemonsUser.removeByConditions(eetakemonsUserDto, conditions);
+            if(result == false)
+            {
+                actionResult = false;
+            }
+        }
+        return actionResult;
+    }
 
 
     public User getUserByUsernameAndPassword(String username, String password) {

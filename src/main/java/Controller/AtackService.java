@@ -1,5 +1,6 @@
 package Controller;
 
+import Controller.Interfaces.IAtackService;
 import Dao.Interfaces.IAtackDao;
 import Model.Atack;
 import Model.AtacksEetakemon;
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 03/05/2017.
  */
-public class AtackService implements IAtackService{
+public class AtackService implements IAtackService {
 
     private static IAtackDao _serviceAtack;
 
@@ -18,7 +19,7 @@ public class AtackService implements IAtackService{
     }
 
     public boolean create(Atack atack) {
-        return _serviceAtack.create(atack);
+        return _serviceAtack.add(atack);
     }
 
     public boolean removeById(int id) {
