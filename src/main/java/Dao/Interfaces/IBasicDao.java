@@ -13,7 +13,7 @@ public interface IBasicDao <T> {
 
     boolean removeById(T item);
 
-    T getUserById(int itemId);
+    T getById(int itemId);
 
     List<T> getAll();
 }

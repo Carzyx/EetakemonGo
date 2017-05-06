@@ -11,21 +11,13 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
-public interface IEetakemonDao {
+public interface IEetakemonDao extends IBasicDao <Eetakemon> {
 
-    //Acctions for Eetakemon BBDD
-    boolean add(Eetakemon eetakemon);
+    boolean addAtacksToEetakemon(Eetakemon eetakemon);
 
-    boolean updateById(Eetakemon eetakemon);
 
-    boolean remove(Eetakemon eetakemon);
 
-    Eetakemon getById(int id);
-
-    List<Eetakemon> getAll();
-
-    //Actions for EetakemonsUser
-    boolean addEetakemonToUser(int i, int j);
+    /*
 
     boolean updateEetakemonToUserId(Hashtable<String, Integer> conditions);
 
@@ -34,5 +26,6 @@ public interface IEetakemonDao {
     List<EetakemonsUser> getAllEetakemonsToUser(int i);
 
     EetakemonsUser getEetakemonToUserById(int i);
+    */
 
 }

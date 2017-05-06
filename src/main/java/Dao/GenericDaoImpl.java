@@ -73,7 +73,7 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         }
     }
 
-    public T getByParameter(T t, Hashtable<String, String> conditions) {
+    public T getByParameters(T t, Hashtable<String, String> conditions) {
           try {
               return getAllByParameters(t, conditions).get(0);
           } catch (Exception e) {

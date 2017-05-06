@@ -10,6 +10,8 @@ import java.util.List;
  */
 public interface IUserDao extends IBasicDao <User>{
 
+    boolean addAEetakemonsToUser(User user);
+
     User getUserByUsernameAndPassword(String username, String password);
 
     boolean isUsernameAlreadyInUse(String username);

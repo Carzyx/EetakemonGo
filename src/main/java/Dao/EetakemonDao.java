@@ -1,10 +1,15 @@
 package Dao;
 
+import Dao.Entity.AtacksEetakemonDto;
+import Dao.Entity.EetakemonDto;
+import Dao.Entity.UserDto;
+import Dao.Interfaces.IAtackDao;
 import Dao.Interfaces.IEetakemonDao;
 import Dao.Interfaces.IGenericDao;
-import Model.Eetakemon;
-import Model.EetakemonsUser;
+import Model.*;
+import org.modelmapper.ModelMapper;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -14,8 +19,9 @@ import java.util.List;
 public class EetakemonDao implements IEetakemonDao {
 
     //Acctions for Eetakemon BBDD
-    private static IGenericDao<Eetakemon> _service;
-    private static IGenericDao<EetakemonsUser> _extra;
+    private static IGenericDao<EetakemonDto> _service;
+    private static IGenericDao<AtacksEetakemonDto> _serviceAtackEetakemon;
+    private ModelMapper modelMapper = new ModelMapper();
 
     public EetakemonDao(IGenericDao<Eetakemon> service, IGenericDao<EetakemonsUser> extra) {
         _service = service;
@@ -23,46 +29,66 @@ public class EetakemonDao implements IEetakemonDao {
     }
 
     public boolean add(Eetakemon eetakemon) {
-        return _service.add(eetakemon);
+        EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
+        boolean eetakemonConfirmation = _service.add(eetakemonDto);
+
+        if(!(eetakemon.getEetakemonAtack().size() <= 0) || !eetakemonConfirmation)
+        {
+            return eetakemonConfirmation;
+        }
+
+       return addAtacksToEetakemon(eetakemon);
     }
 
-    @Override
     public boolean updateById(Eetakemon eetakemon) {
-        return _service.updateById(eetakemon);
+        EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
+        return _service.updateById(eetakemonDto);
     }
 
-    @Override
-    public boolean remove(Eetakemon eetakemon) {
-        return _service.removeById(eetakemon);
+    public boolean removeById(Eetakemon eetakemon) {
+        EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
+        return _service.removeById(eetakemonDto);
     }
 
-    public boolean addEetakemon(int id, String name) {
-        return true;
-    }
-
-    @Override
     public Eetakemon getById(int id) {
 
         Eetakemon eetakemon = new Eetakemon();
         Hashtable<String, String> condition = new Hashtable<String, String>();
         condition.put("id", Integer.toString(id));
-        return _service.getByParameter(eetakemon, condition).get(0);
+        EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
+
+        return modelMapper.map(_service.getByParameters(eetakemonDto, condition), Eetakemon.class);
     }
 
-    @Override
     public List<Eetakemon> getAll() {
-        Eetakemon eetakemon = new Eetakemon();
-        return _service.getAll(eetakemon);
+
+        List<EetakemonDto> responseList = _service.getAllByParameters(new EetakemonDto(), null);
+        List<Eetakemon> result = new ArrayList<>();
+        for(EetakemonDto response : responseList)
+        {
+            result.add(modelMapper.map(response, Eetakemon.class));
+        }
+        return result;
     }
 
-    //Actions for EetakemonsUser
-    public boolean addEetakemonToUser(int id_user, int id_eetakemon) {
-        EetakemonsUser eetakemonsUser = new EetakemonsUser();
-        eetakemonsUser.setIduser(id_user);
-        eetakemonsUser.setIdEetakemon(id_eetakemon);
-        _extra.add(eetakemonsUser);
-        return true;
+
+
+
+    public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
+        boolean actionResult = true;
+        for (Atack atack : eetakemon.getEetakemonAtack())
+        {
+            AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getId(), atack.getId());
+            boolean result = _serviceAtackEetakemon.add(atacksEetakemonDto);
+            if(result == false)
+            {
+                actionResult = false;
+            }
+        }
+        return actionResult;
     }
+
+
 
     public boolean updateEetakemonToUserId(Hashtable<String, Integer> conditions) {
         return true;
