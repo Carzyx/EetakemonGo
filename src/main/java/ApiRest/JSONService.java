@@ -18,7 +18,7 @@ import javax.ws.rs.core.Response;
 public class JSONService {
 
     // User implementation
-    private IUserService _serviceUser = new UserService(new UserDao());
+    private IUserService _serviceUser = new UserService();
 
     @Path("createUser")
     @POST

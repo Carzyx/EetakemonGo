@@ -2,6 +2,7 @@ package Controller;
 
 import Controller.Interfaces.IUserService;
 import Dao.Interfaces.IUserDao;
+import Dao.UserDao;
 import Model.User;
 import com.mysql.jdbc.StringUtils;
 
@@ -14,11 +15,10 @@ public class UserService implements IUserService {
 
     private static IUserDao _serviceUser;
 
-    public UserService(IUserDao serviceUser) {
-        _serviceUser = serviceUser;
+    public UserService() {
+        _serviceUser = new UserDao();
     }
 
-    //Usuario
     public boolean create(User user) {
 
         if (!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail())) {
@@ -27,21 +27,18 @@ public class UserService implements IUserService {
         return false;
     }
 
-    @Override
-    public boolean removeById(int id) {
-        return false;
+    public boolean removeById(User user) {
+        return _serviceUser.removeById(user);
     }
 
-    @Override
-    public boolean updateById(int id, User item) {
-        return false;
+    public boolean updateById(User newUser) {
+        return _serviceUser.updateById(newUser);
     }
 
     public User getById(int id) {
         return _serviceUser.getById(id);
     }
 
-    @Override
     public List<User> getAll() {
         return _serviceUser.getAll();
     }
@@ -68,13 +65,13 @@ public class UserService implements IUserService {
         return _serviceUser.getUserByUsernameAndPassword(username, password);
     }
 
-    private boolean isUsernameAlreadyInUse(String username) {
+    public boolean isUsernameAlreadyInUse(String username) {
 
         return StringUtils.isEmptyOrWhitespaceOnly(username) || _serviceUser
             .isUsernameAlreadyInUse(username);
     }
 
-    private boolean isEmailAlreadyInUse(String email) {
+    public boolean isEmailAlreadyInUse(String email) {
 
         return StringUtils.isEmptyOrWhitespaceOnly(email) || _serviceUser.isEmailAlreadyInUse(email);
     }

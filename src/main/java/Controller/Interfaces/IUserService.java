@@ -8,6 +8,8 @@ import Model.User;
 public interface IUserService extends IBasicService <User> {
 
     User signIn(String username, String password);
+    boolean isUsernameAlreadyInUse(String username);
+    boolean isEmailAlreadyInUse(String email);
 
 
 }

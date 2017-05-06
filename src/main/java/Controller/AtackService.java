@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 03/05/2017.
  */
-public class AtackService implements IAtackService {
+public class AtackService  {
 
     private static IAtackDao _serviceAtack;
 
@@ -38,27 +38,22 @@ public class AtackService implements IAtackService {
         return null;
     }
 
-    @Override
     public boolean addAtackToEetakemon(int i, int j) {
         return false;
     }
 
-    @Override
     public boolean updateAtackToEetakemon(int i, int j) {
         return false;
     }
 
-    @Override
     public boolean removeAtackToEetakemonById(int i) {
         return false;
     }
 
-    @Override
     public List<AtacksEetakemon> getAllAtacksToEetakemon(int i) {
         return null;
     }
 
-    @Override
     public AtacksEetakemon getAtackToEetakekonById(int i) {
         return null;
     }
