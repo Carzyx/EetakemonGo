@@ -20,13 +20,13 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             Field[] propertyClass = nameClass.getDeclaredFields();
             for (int i = 1; (i < propertyClass.length ); i++) {
                 query.append(propertyClass[i].getName());
-                if (i < propertyClass.length) {
+                if (i < propertyClass.length -1) {
                     query.append(",");
                 }
             }
             query.append(") VALUES (");
             for (int i = 1; i < propertyClass.length; i++) {
-                if (i < propertyClass.length) {
+                if (i < propertyClass.length -1) {
                     query.append("?,");
                 }
             }
@@ -114,18 +114,20 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
 
     private StringBuffer registerConditions(Field[] propertyClass, Hashtable<String, String> conditions, StringBuffer query)
     {
-        if(conditions.size() == 0)
+        Hashtable<String, String> conditionsToAdd = new Hashtable<>();
+        conditionsToAdd.putAll(conditions);
+        if(conditionsToAdd.size() == 0)
         {
             return query;
         }
 
         query.append(" WHERE ");
         for (int i = 0; i < propertyClass.length; i++) {
-            if (conditions.containsKey(propertyClass[i].getName())) {
+            if (conditionsToAdd.containsKey(propertyClass[i].getName())) {
                 query.append(propertyClass[i].getName());
                 query.append(" = ?");
-                conditions.remove(propertyClass[i].getName());
-                if ( conditions.size() > 0) {
+                conditionsToAdd.remove(propertyClass[i].getName());
+                if ( conditionsToAdd.size() > 0) {
                     query.append(" AND ");
                 }
             }

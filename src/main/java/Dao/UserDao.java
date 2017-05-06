@@ -36,7 +36,7 @@ public class UserDao implements IUserDao {
         UserDto userDto = modelMapper.map(user, UserDto.class);
         boolean userConfirmation = _service.add(userDto);
 
-        if(!(user.getEetakemons().size() <= 0) || !userConfirmation)
+        if(user.getEetakemons() == null || !(user.getEetakemons().size() <= 0) || !userConfirmation)
         {
             return userConfirmation;
         }

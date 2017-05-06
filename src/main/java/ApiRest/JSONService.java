@@ -1,8 +1,6 @@
 package ApiRest;
 import Controller.Interfaces.IUserService;
 import Controller.UserService;
-import Dao.GenericDaoImpl;
-import Dao.UserDao;
 import Model.User;
 
 import javax.inject.Singleton;

@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="BBDD add and get">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Controller/AtackService.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Controller/Interfaces/IAtackService.class" afterPath="$PROJECT_DIR$/target/classes/Controller/Interfaces/IAtackService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8d6856f7-5ddb-437c-9235-f0fa5863ffdf.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8d6856f7-5ddb-437c-9235-f0fa5863ffdf.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/databaseInfo.txt" afterPath="$PROJECT_DIR$/databaseInfo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/AtackService.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/AtackService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IAtackService.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IAtackService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/Dao/UserDao.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,42 +44,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MySQLRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="220" column="32" lean-forward="false" selection-start-line="220" selection-start-column="32" selection-end-line="220" selection-end-column="32" />
-              <folding>
-                <element signature="method#add#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#update#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#delete#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#select#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#selectByCondition#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#getConnection#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#getMapObject#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#getConvertValueType#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#getProperty#0;class#MySQLRepository#0" expanded="false" />
-                <element signature="method#setProperty#0;class#MySQLRepository#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AtackService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/AtackService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-              <folding>
-                <element signature="e#569#570#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#686#687#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="databaseInfo.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/databaseInfo.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -104,21 +64,105 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JSONService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JSONService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+            <state relative-caret-position="312">
+              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="method#signIn#0;class#UserService#0" expanded="false" />
+                <element signature="method#isEmailAlreadyInUse#0;class#UserService#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+              <folding>
+                <element signature="method#UserDao#0;class#UserDao#0" expanded="false" />
+                <element signature="method#getById#0;class#UserDao#0" expanded="false" />
+                <element signature="method#getAll#0;class#UserDao#0" expanded="false" />
+                <element signature="method#getCompleteUserById#0;class#UserDao#0" expanded="false" />
+                <element signature="method#addAEetakemonsToUser#0;class#UserDao#0" expanded="false" />
+                <element signature="method#removeEetakemonsToUser#0;class#UserDao#0" expanded="false" />
+                <element signature="method#getUserByUsernameAndPassword#0;class#UserDao#0" expanded="false" />
+                <element signature="method#isEmailAlreadyInUse#0;class#UserDao#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenericDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <folding>
+                <element signature="method#updateById#0;class#GenericDaoImpl#0" expanded="false" />
+                <element signature="method#removeById#0;class#GenericDaoImpl#0" expanded="false" />
+                <element signature="method#removeByConditions#0;class#GenericDaoImpl#0" expanded="false" />
+                <element signature="method#getByParameters#0;class#GenericDaoImpl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="658">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+              <folding>
+                <element signature="method#update#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#delete#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#select#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#getConnection#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#getMapObject#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#getConvertValueType#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#getMethod#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#getProperty#0;class#MySQLRepository#0" expanded="false" />
+                <element signature="method#setProperty#0;class#MySQLRepository#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eetakemonbbddtest.userdto" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/dc117d6b/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/eetakemonbbddtest.userdto">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IAtackService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Interfaces/IAtackService.java">
+      <file leaf-file-name="JDBC42PreparedStatement.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar!/com/mysql/jdbc/JDBC42PreparedStatement.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="410">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -219,7 +263,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IAtackDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IGenericDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IBasicService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/EetakemonService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IEetakemonService.java" />
@@ -231,12 +274,13 @@
         <option value="$PROJECT_DIR$/src/main/java/Dao/AtackDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IAtackService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/AtackService.java" />
         <option value="$PROJECT_DIR$/databaseInfo.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/UserDao.java" />
       </list>
     </option>
   </component>
@@ -350,7 +394,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="Dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,10 +421,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Interfaces" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -906,7 +946,7 @@
       <workItem from="1493828732104" duration="11828000" />
       <workItem from="1493927481307" duration="6951000" />
       <workItem from="1494008941748" duration="13446000" />
-      <workItem from="1494062027680" duration="23106000" />
+      <workItem from="1494062027680" duration="24554000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -975,7 +1015,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261813000" />
+    <option name="totallyTimeSpent" value="263261000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1001,7 +1041,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31241283" sideWeight="0.2596875" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31241283" sideWeight="0.2596875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256625" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1011,7 +1051,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34369886" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22290322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1051,21 +1091,78 @@
           <properties />
           <option name="timeStamp" value="187" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/UserDao.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java</url>
+          <line>108</line>
+          <properties />
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java</url>
+          <line>115</line>
+          <properties />
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java</url>
+          <line>114</line>
+          <properties />
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java</url>
+          <line>111</line>
+          <properties />
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Controller/UserService.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/UserDao.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="202" />
+      <option name="time" value="220" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="propertyClass[i].getName()" />
+        <watch expression="maxIndex - conditions.size()" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/AtacksEetakemonImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/IAtacksEetakemon.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/IEetakemonsUsers.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/EetakemonsUserImp.java" />
     <entry file="dbDummy://dbtable:/31633d8/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/eetakemonbbddtest.eetakemonsuser" />
@@ -1158,20 +1255,6 @@
         <state relative-caret-position="421">
           <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar!/com/mysql/jdbc/JDBC42PreparedStatement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="35" column="75" lean-forward="false" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1311,21 +1394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="97" column="19" lean-forward="false" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
-          <folding>
-            <element signature="method#add#0;class#GenericDaoImpl#0" expanded="false" />
-            <element signature="method#updateById#0;class#GenericDaoImpl#0" expanded="false" />
-            <element signature="method#removeById#0;class#GenericDaoImpl#0" expanded="false" />
-            <element signature="method#removeByConditions#0;class#GenericDaoImpl#0" expanded="false" />
-            <element signature="method#getByParameters#0;class#GenericDaoImpl#0" expanded="false" />
-            <element signature="method#registerConditions#0;class#GenericDaoImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Entity/AtacksEetakemonDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1428,56 +1496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="114" column="51" lean-forward="false" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="51" />
-          <folding>
-            <element signature="method#UserDao#0;class#UserDao#0" expanded="false" />
-            <element signature="method#add#0;class#UserDao#0" expanded="false" />
-            <element signature="method#getById#0;class#UserDao#0" expanded="false" />
-            <element signature="method#getAll#0;class#UserDao#0" expanded="false" />
-            <element signature="method#getCompleteUserById#0;class#UserDao#0" expanded="false" />
-            <element signature="method#addAEetakemonsToUser#0;class#UserDao#0" expanded="false" />
-            <element signature="method#getUserByUsernameAndPassword#0;class#UserDao#0" expanded="false" />
-            <element signature="method#isUsernameAlreadyInUse#0;class#UserDao#0" expanded="false" />
-            <element signature="method#isEmailAlreadyInUse#0;class#UserDao#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="method#create#0;class#UserService#0" expanded="false" />
-            <element signature="method#signIn#0;class#UserService#0" expanded="false" />
-            <element signature="method#isUsernameAlreadyInUse#0;class#UserService#0" expanded="false" />
-            <element signature="method#isEmailAlreadyInUse#0;class#UserService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="220" column="32" lean-forward="false" selection-start-line="220" selection-start-column="32" selection-end-line="220" selection-end-column="32" />
-          <folding>
-            <element signature="method#add#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#update#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#delete#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#select#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#selectByCondition#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#getConnection#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#getMapObject#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#getConvertValueType#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#getProperty#0;class#MySQLRepository#0" expanded="false" />
-            <element signature="method#setProperty#0;class#MySQLRepository#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Interfaces/IAtackService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1515,10 +1533,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar!/com/mysql/jdbc/JDBC42PreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+        <state relative-caret-position="312">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="method#signIn#0;class#UserService#0" expanded="false" />
+            <element signature="method#isEmailAlreadyInUse#0;class#UserService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/ResourceMethodInvoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding>
+            <element signature="method#UserDao#0;class#UserDao#0" expanded="false" />
+            <element signature="method#getById#0;class#UserDao#0" expanded="false" />
+            <element signature="method#getAll#0;class#UserDao#0" expanded="false" />
+            <element signature="method#getCompleteUserById#0;class#UserDao#0" expanded="false" />
+            <element signature="method#addAEetakemonsToUser#0;class#UserDao#0" expanded="false" />
+            <element signature="method#removeEetakemonsToUser#0;class#UserDao#0" expanded="false" />
+            <element signature="method#getUserByUsernameAndPassword#0;class#UserDao#0" expanded="false" />
+            <element signature="method#isEmailAlreadyInUse#0;class#UserDao#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding>
+            <element signature="method#updateById#0;class#GenericDaoImpl#0" expanded="false" />
+            <element signature="method#removeById#0;class#GenericDaoImpl#0" expanded="false" />
+            <element signature="method#removeByConditions#0;class#GenericDaoImpl#0" expanded="false" />
+            <element signature="method#getByParameters#0;class#GenericDaoImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding>
+            <element signature="method#update#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#delete#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#select#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#getConnection#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#getMapObject#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#getConvertValueType#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#getMethod#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#getProperty#0;class#MySQLRepository#0" expanded="false" />
+            <element signature="method#setProperty#0;class#MySQLRepository#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/dc117d6b/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/eetakemonbbddtest.userdto">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
