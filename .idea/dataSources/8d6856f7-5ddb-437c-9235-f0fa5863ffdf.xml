@@ -6,18 +6,18 @@
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="beeterdb"/>
-    <schema id="4" parent="1" name="information_schema"/>
-    <schema id="5" parent="1" name="mysql"/>
-    <schema id="6" parent="1" name="performance_schema"/>
-    <schema id="7" parent="1" name="sakila"/>
-    <schema id="8" parent="1" name="sys"/>
-    <schema id="9" parent="1" name="world"/>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="world"/>
+    <schema id="9" parent="1" name="examendsa"/>
     <table id="10" parent="2" name="atack"/>
     <table id="11" parent="2" name="atackseetakemon"/>
-    <table id="12" parent="2" name="eetakemon"/>
+    <table id="12" parent="2" name="eetakemondto"/>
     <table id="13" parent="2" name="eetakemonsuser"/>
-    <table id="14" parent="2" name="user"/>
+    <table id="14" parent="2" name="userdto"/>
     <column id="15" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
@@ -82,7 +82,7 @@
     <foreign-key id="28" parent="11" name="atackseetakemon_ibfk_2">
       <ColNames>idEetakemon</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
-      <RefTableName>eetakemon</RefTableName>
+      <RefTableName>eetakemondto</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="29" parent="12" name="id">
@@ -149,13 +149,13 @@ name</ColNames>
     <foreign-key id="42" parent="13" name="eetakemonsuser_ibfk_1">
       <ColNames>idUser</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
-      <RefTableName>eetakemon</RefTableName>
+      <RefTableName>eetakemondto</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="43" parent="13" name="eetakemonsuser_ibfk_2">
       <ColNames>idUser</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
-      <RefTableName>user</RefTableName>
+      <RefTableName>userdto</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="44" parent="14" name="id">

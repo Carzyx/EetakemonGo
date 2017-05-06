@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 03/05/2017.
  */
-public class AtackService  {
+public class AtackService implements IAtackService {
 
     private static IAtackDao _serviceAtack;
 
@@ -20,6 +20,16 @@ public class AtackService  {
 
     public boolean create(Atack atack) {
         return _serviceAtack.add(atack);
+    }
+
+    @Override
+    public boolean removeById(Atack atack) {
+        return _serviceAtack.removeById(atack);
+    }
+
+    @Override
+    public boolean updateById(Atack newAtack) {
+        return _serviceAtack.updateById(newAtack);
     }
 
     public boolean removeById(int id) {
@@ -38,23 +48,4 @@ public class AtackService  {
         return null;
     }
 
-    public boolean addAtackToEetakemon(int i, int j) {
-        return false;
-    }
-
-    public boolean updateAtackToEetakemon(int i, int j) {
-        return false;
-    }
-
-    public boolean removeAtackToEetakemonById(int i) {
-        return false;
-    }
-
-    public List<AtacksEetakemon> getAllAtacksToEetakemon(int i) {
-        return null;
-    }
-
-    public AtacksEetakemon getAtackToEetakekonById(int i) {
-        return null;
-    }
 }

@@ -10,16 +10,5 @@ import java.util.List;
  */
 public interface IAtackService extends IBasicService <Atack>{
 
-    //Actions for Atacks Eetakemon
-
-    boolean addAtackToEetakemon(int i, int j);
-
-    boolean updateAtackToEetakemon(int i, int j);
-
-    boolean removeAtackToEetakemonById(int i);
-
-    List<AtacksEetakemon> getAllAtacksToEetakemon(int i);
-
-    AtacksEetakemon getAtackToEetakekonById(int i);
 
 }

@@ -57,7 +57,7 @@ public class UserDao implements IUserDao {
             return userConfirmation;
         }
 
-        return removeAtacksToEetakemon(user);
+        return removeEetakemonsToUser(user);
     }
 
     public User getById(int id) {

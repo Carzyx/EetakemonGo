@@ -11,7 +11,7 @@ CREATE TABLE Atack(
   PRIMARY KEY (id)
 );
 
-CREATE TABLE Eetakemon(
+CREATE TABLE EetakemonDto(
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(45) NOT NULL,
   level INT,
@@ -31,7 +31,7 @@ CREATE TABLE AtacksEetakemon(
   FOREIGN  KEY (idEetakemon) REFERENCES Eetakemon(id)
 );
 
-CREATE TABLE User(
+CREATE TABLE UserDto(
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(45) NOT NULL,
   surname VARCHAR(45),
