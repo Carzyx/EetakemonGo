@@ -1,12 +1,14 @@
-package Model;
+package Dao.Entity;
 
-import java.util.Hashtable;
+import Model.Eetakemon;
+import Model.User;
+
 import java.util.List;
 
 /**
  * Created by histo on 06/03/2017.
  */
-public class User {
+public class UserDto {
 
     private int id;
     private String name;
@@ -16,25 +18,18 @@ public class User {
     private String email;
     private int rol;
     private String image;
-    private List<Eetakemon> eetakemons;
 
-    public User() {
+    public UserDto() {
     }
-    public User(String name, String surname, String username, String password, String email) {
-        this.name = name;
-        this.surname = surname;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-    }
-    public User(String name, String surname, String username, String password, String email, int rol, String image) {
-        this.name = name;
-        this.surname = surname;
-        this.username = username;
-        this.password = password;
-        this.rol = rol;
-        this.email = email;
-        this.image = image;
+
+    public UserDto(User user) {
+        this.name = user.getName();
+        this.surname = user.getSurname();
+        this.username = user.getUsername();
+        this.password = user.getPassword();
+        this.rol = user.getRol();
+        this.email = user.getEmail();
+        this.image = user.getImage();
     }
 
     public int getId() {
@@ -101,11 +96,4 @@ public class User {
         this.email = email;
     }
 
-    public List<Eetakemon> getEetakemons() {
-        return eetakemons;
-    }
-
-    public void setEetakemons(List<Eetakemon> eetakemons) {
-        this.eetakemons = eetakemons;
-    }
 }

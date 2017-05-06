@@ -25,14 +25,14 @@ import java.util.List;
 public class JSONService {
 
     // User implementation
-    private IUserService _serviceUser = new UserService(new UserDao(new GenericDaoImpl<User>()));
+    private IUserService _serviceUser = new UserService(new UserDao(new GenericDaoImpl<User>(User.class)));
 
     @Path("createUser")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Response createUser(User user){
-        if(_serviceUser.createUser(user))
+        if(_serviceUser.create(user))
         {
             return Response.status(201).entity("User created OK").build();
         }
@@ -43,7 +43,6 @@ public class JSONService {
 
 
     //Eetakemon implementation
-    private IEetakemonService _serviceEetakemon = new EetakemonService(new EetakemonDao(new GenericDaoImpl<Eetakemon>(), new AtackDao(new GenericDaoImpl<Atack>())));
 
 
 }

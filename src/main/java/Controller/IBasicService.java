@@ -9,7 +9,7 @@ public interface IBasicService <T> {
 
     boolean removeById(int id);
 
-    boolean updateById(int id, T item);
+    boolean updateById(int id, T newItem);
 
     T getById(int id);
 

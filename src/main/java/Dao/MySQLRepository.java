@@ -16,40 +16,49 @@ import java.util.*;
 public class MySQLRepository<T> {
 
     //INSERT echo
-    public void add(String query, T t) throws Exception {
+    public boolean add(String query, T t) {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
             Class nameClass = t.getClass();
             Field[] propertyClass = nameClass.getDeclaredFields();
-            for (int i = 1; (i < propertyClass.length - 1) || (i < 3); i++) {
+            for (int i = 1; (i < propertyClass.length); i++) {
                 stm.setObject(i, getMethod(t, propertyClass[i].getName()));
             }
             stm.execute();
             con.close();
+            return true;
 
         } catch (SQLException sqle) {
             System.out.println("Error en la ejecución MySQLRepository.add:"
                 + sqle.getErrorCode() + " " + sqle.getMessage());
+            return false;
         }
     }
 
-    public void add(String query, int i, int j) throws Exception {
+    public void update(String query, T t) {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
-            stm.setObject(1, i);
-            stm.setObject(2, j);
+            Class nameClass = t.getClass();
+            Field[] propertyClass = nameClass.getDeclaredFields();
+
+            for (int i = 0; i < propertyClass.length; i++) {
+                stm.setObject(i + 1, getMethod(t, propertyClass[i].getName()));
+                if (propertyClass[i].getName().toUpperCase().equals("ID")) {
+                    stm.setObject(propertyClass.length + 1,
+                        getMethod(t, propertyClass[i].getName()));
+                }
+            }
             stm.execute();
             con.close();
         } catch (SQLException sqle) {
-            System.out.println("Error en la ejecución MySQLRepository.add:"
+            System.out.println("Error en la ejecución MySQLRepository.update"
                 + sqle.getErrorCode() + " " + sqle.getMessage());
         }
     }
 
-    //DELETE echo
-    public void delete(String query, T t) throws Exception {
+    public boolean delete(String query, T t) throws Exception {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
@@ -63,38 +72,34 @@ public class MySQLRepository<T> {
             stm.execute();
             stm.close();
             con.close();
+            return true;
 
         } catch (SQLException sqle) {
             System.out.println("Error en la ejecución MySQLRepository.delete:"
                 + sqle.getErrorCode() + " " + sqle.getMessage());
+            return false;
         }
     }
 
-    //SET echo
-    public void update(String query, T t) throws Exception {
+    public List<T> select(String query, T t) {
         Connection con = getConnection();
-        PreparedStatement stm = con.prepareStatement(query);
-        Class nameClass = t.getClass();
-        Field[] propertyClass = nameClass.getDeclaredFields();
         try {
-            for (int i = 0; i < propertyClass.length; i++) {
-                stm.setObject(i + 1, getMethod(t, propertyClass[i].getName()));
-                if (propertyClass[i].getName().toUpperCase().equals("ID")) {
-                    stm.setObject(propertyClass.length + 1,
-                        getMethod(t, propertyClass[i].getName()));
-                }
-            }
+            PreparedStatement stm = con.prepareStatement(query);
             stm.execute();
+            ResultSet resultSet = stm.getResultSet();
+            List<T> result = getMapObject(t, resultSet);
             stm.close();
             con.close();
+            return result;
         } catch (SQLException sqle) {
-            System.out.println("Error en la ejecución MySQLRepository.update"
+            System.out.println("Error en la ejecucion MySQLRepository.select"
                 + sqle.getErrorCode() + " " + sqle.getMessage());
+            return null;
         }
     }
 
-    //SELECT echo
-    public List<T> select(T t, String query, Hashtable<String, String> conditions) {
+    //revisar bucle
+    public List<T> selectByCondition(String query, Hashtable<String, String> conditions, T t) {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
@@ -123,6 +128,9 @@ public class MySQLRepository<T> {
     public List getForeing(String query, int i) {
         return null;
     }
+
+
+
 
     private Connection getConnection() {
         Connection con = null;
@@ -177,7 +185,7 @@ public class MySQLRepository<T> {
     }
 
     private Object getConvertValueType(String columnType, ResultSet resultSet, int index)
-        throws SQLException {
+        {
         try {
             switch (columnType) {
                 case "VARCHAR":
@@ -204,7 +212,7 @@ public class MySQLRepository<T> {
         }
     }
 
-    private String getMethod(T t, String key) throws Exception {
+    private String getMethod(T t, String key){
         try {
             Method m = t.getClass().getMethod(getProperty(key));
             Object object = m.invoke(t, null);
@@ -216,18 +224,17 @@ public class MySQLRepository<T> {
         }
     }
 
-    public String getProperty(String key) {
+    private String getProperty(String key) {
         String m = key.substring(0, 1).toUpperCase();
         StringBuffer f = new StringBuffer("get").append(m).append(key.substring(1));
         return f.toString();
     }
 
-    public String setProperty(String key) {
+    private String setProperty(String key) {
         String m = key.substring(0, 1).toUpperCase();
         StringBuffer f = new StringBuffer("set").append(m).append(key.substring(1));
         return f.toString();
     }
-
 }
 
 

@@ -1,4 +1,4 @@
-package Dao;
+package Dao.Interfaces;
 
 
 import Model.AtacksEetakemon;

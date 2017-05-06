@@ -1,10 +1,10 @@
 package Controller;
 
-import Dao.IUserDao;
+import Dao.Interfaces.IUserDao;
 import Model.User;
 import com.mysql.jdbc.StringUtils;
 
-import java.util.Hashtable;
+import java.util.List;
 
 /**
  * Created by histo on 07/03/2017.
@@ -21,7 +21,7 @@ public class UserService implements IUserService {
     public boolean create(User user) {
 
         if (!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail())) {
-            return _service.add(user);
+            return _serviceUser.add(user);
         }
         return false;
     }
@@ -40,10 +40,11 @@ public class UserService implements IUserService {
         return _serviceUser.getUserById(id);
     }
 
-
-    public boolean upadteUser(User user, String oldname) {
-        return _serviceUser.updateById(user, oldname);
+    @Override
+    public List<User> getAll() {
+        return _serviceUser.getAll();
     }
+
 
     public boolean deleteUser(String username, String password) {
         if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
@@ -51,8 +52,8 @@ public class UserService implements IUserService {
             return false;
         }
 
-        User user = _service.getUserByUsernameAndPassword(username, password);
-        return _service.removeById(user);
+        User user = _serviceUser.getUserByUsernameAndPassword(username, password);
+        return _serviceUser.removeById(user);
     }
 
 
@@ -63,18 +64,17 @@ public class UserService implements IUserService {
             return null;
         }
 
-        return _service.getUserByUsernameAndPassword(username, password);
+        return _serviceUser.getUserByUsernameAndPassword(username, password);
     }
-
 
     private boolean isUsernameAlreadyInUse(String username) {
 
-        return StringUtils.isEmptyOrWhitespaceOnly(username) || _service
+        return StringUtils.isEmptyOrWhitespaceOnly(username) || _serviceUser
             .isUsernameAlreadyInUse(username);
     }
 
     private boolean isEmailAlreadyInUse(String email) {
 
-        return StringUtils.isEmptyOrWhitespaceOnly(email) || _service.isEmailAlreadyInUse(email);
+        return StringUtils.isEmptyOrWhitespaceOnly(email) || _serviceUser.isEmailAlreadyInUse(email);
     }
 }

@@ -1,8 +1,10 @@
 package Dao;
 
-import Model.Eetakemon;
-import Model.EetakemonsUser;
+import Dao.Entity.UserDto;
+import Dao.Interfaces.IGenericDao;
+import Dao.Interfaces.IUserDao;
 import Model.User;
+import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -14,67 +16,71 @@ import java.util.List;
  */
 public class UserDao implements IUserDao {
 
-    private static IGenericDao<User> _service;
+    private static IGenericDao<UserDto> _service;
 
-    public UserDao(IGenericDao<User> service) {
+    private ModelMapper modelMapper = new ModelMapper();
+
+    public UserDao(IGenericDao<UserDto> service) {
         _service = service;
     }
 
-
     public boolean add(User user) {
-        return _service.add(user);
+
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        return _service.add(userDto);
     }
 
-    public boolean updateById(User user, String oldName) {
-        Hashtable<String, String> table = new Hashtable<String, String>();
-        table.put("username", oldName);
-        User user1 = _service.getByParameter(user, table).get(0);
-        user.setId(user1.getId());
-        return _service.updateById(user);
+    public boolean updateById(User user) {
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        return _service.updateById(userDto);
     }
 
     public boolean removeById(User user) {
-        return _service.removeById(user);
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        return _service.removeById(userDto);
     }
 
-    public List<User> getAll() throws Exception {
-        User user = new User();
-        return _service.getAll(user);
+    public List<User> getAll() {
+
+        List<UserDto> responseList = _service.getAllByParameters(new UserDto(), null);
+        List<User> result = new ArrayList<>();
+        for(UserDto response : responseList)
+        {
+            result.add(modelMapper.map(response, User.class));
+        }
+        return result;
     }
+
 
     public User getUserByUsernameAndPassword(String username, String password) {
-        User user = new User();
+        UserDto userDto = new UserDto();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
         conditions.put("password", password);
-        return _service.getByParameter(user, conditions).get(0);
+        return modelMapper.map(_service.getByParameter(userDto, conditions), User.class);
     }
 
     public User getUserById(int id) {
-        User user = new User();
+        UserDto userDto = new UserDto();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("id", Integer.toString(id));
-        return _service.getByParameter(user, conditions).get(0);
+        return modelMapper.map(_service.getByParameter(userDto, conditions), User.class);
     }
 
     public boolean isUsernameAlreadyInUse(String username) {
-        User user = new User();
+        UserDto userDto = new UserDto();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
-        List<User> resultUsers = _service.getByParameter(user, conditions);
+        List<UserDto> resultUsers = _service.getAllByParameters(userDto, conditions);
         return resultUsers.size() > 0;
     }
 
     public boolean isEmailAlreadyInUse(String email) {
-        User user = new User();
+        UserDto userDto = new UserDto();
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("email", email);
-        List<User> resultUsers = _service.getByParameter(user, conditions);
+        List<UserDto> resultUsers = _service.getAllByParameters(userDto, conditions);
         return resultUsers.size() > 0;
     }
-/*
-    private User getByParameter(User user, Hashtable<String,String> condition) {
-        return _service.getByParameter(user, condition);
-    }
-*/
+
 }

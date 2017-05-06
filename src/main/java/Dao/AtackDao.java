@@ -1,9 +1,9 @@
 package Dao;
 
+import Dao.Interfaces.IGenericDao;
 import Model.Atack;
 import Model.AtacksEetakemon;
 import Model.EetakemonsUser;
-import Model.User;
 
 import java.util.Hashtable;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Ignacio on 29/04/2017.
  */
-public class AtackDao implements IAtackDao {
+public class AtackDao  {
 
     private static IGenericDao<Atack> _service;
     private static IGenericDao<AtacksEetakemon> _extra;

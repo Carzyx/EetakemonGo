@@ -8,7 +8,7 @@ import java.security.Key;
 /**
  * Created by Miguel Angel on 03/05/2017.
  */
-public class getSignatureControl {
+public class SignatureControl {
 
     public String getKeySignature(String username)
     {

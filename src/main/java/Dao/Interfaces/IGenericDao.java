@@ -1,4 +1,4 @@
-package Dao;
+package Dao.Interfaces;
 
 import java.util.Hashtable;
 import java.util.List;
@@ -14,9 +14,7 @@ public interface IGenericDao<T> {
 
     boolean removeById(T t);
 
-    List<T> getByParameter(T t, Hashtable<String, String> conditions);
+    T getByParameter(T t, Hashtable<String, String> conditions);
 
-    List<T> getAll(T t);
-    //T getById(T t);
-
+    List<T> getAllByParameters(T t, Hashtable<String, String> conditions);
 }

@@ -1,7 +1,8 @@
 package Controller;
 
-import Dao.IAtackDao;
+import Dao.Interfaces.IAtackDao;
 import Model.Atack;
+import Model.AtacksEetakemon;
 
 import java.util.List;
 
@@ -33,6 +34,31 @@ public class AtackService implements IAtackService{
     }
 
     public List<Atack> getAll() {
+        return null;
+    }
+
+    @Override
+    public boolean addAtackToEetakemon(int i, int j) {
+        return false;
+    }
+
+    @Override
+    public boolean updateAtackToEetakemon(int i, int j) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAtackToEetakemonById(int i) {
+        return false;
+    }
+
+    @Override
+    public List<AtacksEetakemon> getAllAtacksToEetakemon(int i) {
+        return null;
+    }
+
+    @Override
+    public AtacksEetakemon getAtackToEetakekonById(int i) {
         return null;
     }
 }

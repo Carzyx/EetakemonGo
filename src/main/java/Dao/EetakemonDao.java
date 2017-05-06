@@ -1,5 +1,7 @@
 package Dao;
 
+import Dao.Interfaces.IEetakemonDao;
+import Dao.Interfaces.IGenericDao;
 import Model.Eetakemon;
 import Model.EetakemonsUser;
 

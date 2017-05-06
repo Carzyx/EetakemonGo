@@ -1,4 +1,4 @@
-package Dao;
+package Dao.Interfaces;
 
 import Controller.IBasicService;
 import Model.Atack;

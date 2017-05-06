@@ -1,17 +1,10 @@
 package Controller;
 
-import Dao.IAtackDao;
-import Model.*;
-import Dao.IEetakemonDao;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
-public class EetakemonService implements IEetakemonService {
-
+public class EetakemonService  {
+/*
     private static IEetakemonDao _serviceEetakemon;
     private static IAtackService _serviceAtack;
 
@@ -42,6 +35,10 @@ public class EetakemonService implements IEetakemonService {
         return _serviceEetakemon.getById(id);
     }
 
+    @Override
+    public List<Eetakemon> getAll() {
+        return null;
+    }
 
 
     public List<Eetakemon> getUserEetakemons(int id) {
@@ -91,4 +88,5 @@ public class EetakemonService implements IEetakemonService {
     public boolean addAtack(Atack atack) {
         return _serviceAtack.addAtack(atack);
     }
+    */
 }
