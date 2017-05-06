@@ -6,6 +6,7 @@ import java.util.List;
  * Created by Miguel Angel on 13/03/2017.
  */
 public class Eetakemon {
+
     private int id;
     private String name;
     private int level;
@@ -14,31 +15,40 @@ public class Eetakemon {
     private String image;
     private String description;
     private List<Atack> eetakemonAtack;
-    public Eetakemon(){}
-    public Eetakemon(String name, int level,int ps,EetakemonType type,String image,String descrption)
-    {
+
+    public Eetakemon() {
+    }
+
+    public Eetakemon(String name, int level, int ps, EetakemonType type, String image,
+        String descrption) {
         this.type = type;
         this.name = name;
         this.level = level;
         this.ps = ps;
-        this.image=image;
-        this.description=descrption;
+        this.image = image;
+        this.description = descrption;
     }
+
     public int getId() {
         return id;
     }
+
     public EetakemonType getType() {
         return type;
     }
+
     public String getName() {
         return name;
     }
+
     public int getLevel() {
         return level;
     }
+
     public int getPs() {
-        return ps*level;
+        return ps * level;
     }
+
     public List<Atack> getEetakemonAtack() {
         return eetakemonAtack;
     }

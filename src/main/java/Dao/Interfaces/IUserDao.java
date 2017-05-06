@@ -1,4 +1,4 @@
-package Dao;
+package Dao.Interfaces;
 
 import Model.EetakemonsUser;
 import Model.User;
@@ -8,15 +8,18 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 04/04/2017.
  */
-public interface IUserDao {
+public interface IUserDao extends IBasicDao <User>{
 
-    boolean add(User user);
-    boolean updateById(User user,String oldName);
-    boolean removeById(User user);
-    List<User> getAll() throws Exception;
-    User getUserById(int user);
+    boolean addAEetakemonsToUser(User user);
+
+    boolean removeEetakemonsToUser(User user);
+
     User getUserByUsernameAndPassword(String username, String password);
+
+    User getCompleteUserById(int id);
+
     boolean isUsernameAlreadyInUse(String username);
+
     boolean isEmailAlreadyInUse(String email);
 
 }

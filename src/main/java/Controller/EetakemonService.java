@@ -1,83 +1,56 @@
 package Controller;
-import Dao.IAtackDao;
-import Model.*;
-import Dao.IEetakemonDao;
 
-import java.util.ArrayList;
+import Dao.Interfaces.IEetakemonDao;
+import Model.Eetakemon;
+
 import java.util.List;
 
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
-public class EetakemonService implements IEetakemonService {
+public class EetakemonService  {
 
-    private static IEetakemonDao _eetakemonDAO;
-    private static IAtackDao _atackDao;
+    private static IEetakemonDao _serviceEetakemon;
 
-    public EetakemonService(IEetakemonDao service,IAtackDao _extra){
-        _eetakemonDAO=service;
-        _atackDao=_extra;
-    }
-    //Eetakemon
-    @Override
-    public boolean createEetakemon(Eetakemon eetakemon) {
-    try {
-    return _eetakemonDAO.add(eetakemon);
-    }
-    catch (Exception e){}
-        //before need to Check null values and input ID?
-        //_eetakemonDAO.createEetakemon(eetakemon);
-    return false;
-    }
-    public  List<Eetakemon> getUserEetakemons(int id) {
-        try {
-            List<EetakemonsUser> list = _eetakemonDAO.getAllEetakemonsToUser(id);
-            List<Eetakemon> eetakemons = new ArrayList<Eetakemon>();
-            for (int i=0;i<list.size();i++){
-                Eetakemon eetakemon=new Eetakemon();
-                List<Atack> atackList=new ArrayList<Atack>();
-                eetakemon=_eetakemonDAO.getById(list.get(i).getIdeetakemon());
-                List<AtacksEetakemon> atacksEetakemons=_atackDao.getAllAtacksToEetakemon(eetakemon.getId());
-                for(int j=0;j<atacksEetakemons.size();j++){
-                atackList.add(_atackDao.getAtackTById(atacksEetakemons.get(j).getIdatack()));}
-                eetakemon.setEetakemonAtack(atackList);
-                eetakemons.add(eetakemon);
-            }
-            return eetakemons;
-        } catch (Exception e) {
-            return null;
-        }
-    }
-    public List<AtacksEetakemon> getAtacks(String name){return null;}
-    @Override
-    public boolean removeEetakemon(int id) {
-        return false;
+    public EetakemonService(IEetakemonDao serviceEetakemonDao) {
+        _serviceEetakemon = serviceEetakemonDao;
     }
 
-    @Override
-    public boolean updateEetakemon(int id, Eetakemon eetakemon) {
-        return false;
+
+    public boolean create(Eetakemon eetakemon) {
+
+        return _serviceEetakemon.add(eetakemon);
     }
 
-    @Override
-    public Eetakemon getEetakemon(int id) {
-       try {
-           return _eetakemonDAO.getById(id);
-       }
-       catch (Exception e){e.printStackTrace();
-       return null;}
-    }
-    //Eetakemons To User
-    public List<AtacksEetakemon> getRandomAtacks(EetakemonType type) {
-        return null;
+    public boolean removeById(Eetakemon eetakemon) {
+        return _serviceEetakemon.removeById(eetakemon);
     }
 
-    public boolean addEetakemonToUser(int id_user,Eetakemon eetakemon){
-        //return _eetakemonDAO.addEetakemonToUser(id_user,eetakemon.getId());}
-        return _eetakemonDAO.addEetakemonToUser(id_user,1);}//CAMBIAR
-    public boolean addAtackToEetakemon(int id_Eetakemon,AtacksEetakemon atacksEetakemon){
-        return _atackDao.addAtackToEetakemon(id_Eetakemon,1);//CAMBIAR
+    public boolean updateById(Eetakemon eetakemon) {
+        return _serviceEetakemon.updateById(eetakemon);
     }
-    //Atakcs
-    public boolean addAtack(Atack atack){return _atackDao.addAtack(atack);}
+
+    public Eetakemon getById(int id) {
+
+        return _serviceEetakemon.getById(id);
+    }
+
+    public List<Eetakemon> getAll() {
+        return _serviceEetakemon.getAll();
+    }
+
+    public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
+        return _serviceEetakemon.addAtacksToEetakemon(eetakemon);
+    }
+
+    public boolean removeAtacksToEetakemon(Eetakemon eetakemon) {
+        return _serviceEetakemon.removeAtacksToEetakemon(eetakemon);
+    }
+
+
+
+
+
+
+
 }

@@ -1,66 +1,78 @@
 package Controller;
 
-import Dao.IUserDao;
+import Controller.Interfaces.IUserService;
+import Dao.Interfaces.IUserDao;
+import Dao.UserDao;
 import Model.User;
 import com.mysql.jdbc.StringUtils;
 
-import java.util.Hashtable;
+import java.util.List;
 
 /**
  * Created by histo on 07/03/2017.
  */
 public class UserService implements IUserService {
 
-    private static IUserDao _service;
+    private static IUserDao _serviceUser;
 
-    public UserService(IUserDao service) {
-        _service = service;
+    public UserService() {
+        _serviceUser = new UserDao();
     }
-//Usuario
-    @Override
-    public boolean createUser(User user ) {
 
+    public boolean create(User user) {
 
-        if(!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail()))
-        {
-            return _service.add(user);
+        if (!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail())) {
+            return _serviceUser.add(user);
         }
         return false;
     }
-    public User getUser(int id){return _service.getUserById(id);}
-    @Override
-    public User signIn(String username, String password) {
-        if(StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils.isEmptyOrWhitespaceOnly(password))
-        {
-            return null;
-        }
 
-        return _service.getUserByUsernameAndPassword(username, password);
+    public boolean removeById(User user) {
+        return _serviceUser.removeById(user);
+    }
 
+    public boolean updateById(User newUser) {
+        return _serviceUser.updateById(newUser);
     }
-    public boolean upadteUser(User user,String oldname){
-        return _service.updateById(user,oldname);
+
+    public User getById(int id) {
+        return _serviceUser.getById(id);
     }
-    @Override
+
+    public List<User> getAll() {
+        return _serviceUser.getAll();
+    }
+
+
     public boolean deleteUser(String username, String password) {
-        if(StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils.isEmptyOrWhitespaceOnly(password))
-        {
+        if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
+            .isEmptyOrWhitespaceOnly(password)) {
             return false;
         }
 
-        User user = _service.getUserByUsernameAndPassword(username, password);
-        return _service.removeById(user);
+        User user = _serviceUser.getUserByUsernameAndPassword(username, password);
+        return _serviceUser.removeById(user);
     }
 
 
 
-    private boolean isUsernameAlreadyInUse(String username) {
+    public User signIn(String username, String password) {
+        if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
+            .isEmptyOrWhitespaceOnly(password)) {
+            return null;
+        }
 
-        return StringUtils.isEmptyOrWhitespaceOnly(username) || _service.isUsernameAlreadyInUse(username);
+        return _serviceUser.getUserByUsernameAndPassword(username, password);
     }
 
-    private boolean isEmailAlreadyInUse(String email) {
+    public boolean isUsernameAlreadyInUse(String username) {
 
-        return StringUtils.isEmptyOrWhitespaceOnly(email) || _service.isEmailAlreadyInUse(email);
+        return StringUtils.isEmptyOrWhitespaceOnly(username) || _serviceUser
+            .isUsernameAlreadyInUse(username);
+    }
+
+    public boolean isEmailAlreadyInUse(String email) {
+
+        return StringUtils.isEmptyOrWhitespaceOnly(email) || _serviceUser.isEmailAlreadyInUse(email);
     }
 }

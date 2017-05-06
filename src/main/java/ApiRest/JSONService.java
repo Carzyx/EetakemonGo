@@ -1,43 +1,40 @@
 package ApiRest;
-import Controller.IUserService;
+import Controller.Interfaces.IUserService;
 import Controller.UserService;
-import Dao.GenericDaoImpl;
-import Dao.UserDao;
 import Model.User;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.List;
+
 /**
  * Created by Ignacio on 21/04/2017.
  */
 @Path("/web")
 @Singleton
 public class JSONService {
-    private UserDao userDao = new UserDao(new GenericDaoImpl<User>());
-    private UserService service = new UserService(userDao);
-    public JSONService(){
-    }
-    @GET
-    @Path("/getPass/{name}/{pass}")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getPass(@PathParam("name") String name,@PathParam("pass") String pass){
-        if(service.signIn(name,pass).getName()==name){
-            System.out.println(service.signIn(name,pass).getName());
-            return "Valido";}
-        else
-            return "No vale";
-    }
-/*
-    @GET
-    @Path("/setNewUser/{name}/{pass}")
+
+    // User implementation
+    private IUserService _serviceUser = new UserService();
+
+    @Path("createUser")
+    @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public String setNewUser(@PathParam("name") String name,@PathParam("pass") String pass){
-        return service.createUser(name,pass);
-    }*/
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response createUser(User user){
+        if(_serviceUser.create(user))
+        {
+            return Response.status(201).entity("User created OK").build();
+        }
+        return Response.status(200).entity("User created KO").build();
+    }
+
+    //SignIn deberia de responder toda la info del usuario que necesitariamos en la cookie
+
+
+    //Eetakemon implementation
+
+
 }
 
