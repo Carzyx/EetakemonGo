@@ -21,6 +21,7 @@ public class AtackDao implements IAtackDao {
         _service = new GenericDaoImpl<>();
     }
 
+    //TODO -- Validar: si existe Atack, no crearlo (repetir check de UserService/UserDao)
     public boolean add(Atack atack) {
         return _service.add(atack);
     }
@@ -43,7 +44,7 @@ public class AtackDao implements IAtackDao {
     }
 
     public List<Atack> getAll() {
-       return _service.getAllByParameters(new Atack(), null);
+       return _service.getAll(new Atack());
     }
 
 

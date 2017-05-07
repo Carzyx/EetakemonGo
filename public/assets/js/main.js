@@ -98,3 +98,43 @@
 	});
 
 })(jQuery);
+
+
+function RegisterUser()
+{
+
+    var name = $("#name").val();
+    var surname = $("#surname").val();
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var email = $("#email").val();
+
+    var sendInfo = {
+        name: name,
+        surname: surname,
+        username: username,
+        password: password,
+        email: email
+    };
+
+    $.ajax({
+        type: "POST",
+        url: " http://localhost:8080/myapp/web/createUser",
+        dataType: "json",
+        success: function (msg) {
+            if (msg) {
+                alert("Somebody" + name + " was added in list !");
+                location.reload(true);
+            } else {
+                alert("Cannot add to list !");
+            }
+        },
+
+        data: sendInfo
+    });
+};
+
+function TestAlert()
+{
+    alert("hello world");
+}

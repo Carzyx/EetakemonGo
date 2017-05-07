@@ -450,6 +450,7 @@
 							}
 
 						});
+					RegisterUser();
 
 				})
 				.on('reset', function(event) {

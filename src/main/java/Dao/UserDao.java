@@ -36,7 +36,7 @@ public class UserDao implements IUserDao {
         UserDto userDto = modelMapper.map(user, UserDto.class);
         boolean userConfirmation = _service.add(userDto);
 
-        if(user.getEetakemons() == null || !(user.getEetakemons().size() <= 0) || !userConfirmation)
+        if(!userConfirmation || user.getEetakemons() == null || !(user.getEetakemons().size() > 0) )
         {
             return userConfirmation;
         }
@@ -69,7 +69,7 @@ public class UserDao implements IUserDao {
 
     public List<User> getAll() {
 
-        List<UserDto> responseList = _service.getAllByParameters(new UserDto(), null);
+        List<UserDto> responseList = _service.getAll(new UserDto());
         List<User> result = new ArrayList<>();
         for(UserDto response : responseList)
         {
@@ -92,13 +92,14 @@ public class UserDao implements IUserDao {
 
     public boolean addAEetakemonsToUser(User user) {
         boolean actionResult = true;
-        for (Eetakemon eetakemon : user.getEetakemons())
-        {
-            EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getId(), eetakemon.getId());
-            boolean result = _serviceEetakemonsUser.add(eetakemonsUserDto);
-            if(result == false)
-            {
-                actionResult = false;
+        if(isValidEetakemonToUser(user)) {
+
+            for (Eetakemon eetakemon : user.getEetakemons()) {
+                EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getId(), eetakemon.getId());
+                boolean result = _serviceEetakemonsUser.add(eetakemonsUserDto);
+                if (result == false) {
+                    actionResult = false;
+                }
             }
         }
         return actionResult;
@@ -144,6 +145,20 @@ public class UserDao implements IUserDao {
         conditions.put("email", email);
         List<UserDto> resultUsers = _service.getAllByParameters(userDto, conditions);
         return resultUsers.size() > 0;
+    }
+
+    private boolean isValidEetakemonToUser(User user) {
+        if(user.getEetakemons().size() > 0)
+        {
+            for (Eetakemon eetakemon : user.getEetakemons())
+            {
+                if(eetakemon.getEetakemonAtack().size() != 4)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }

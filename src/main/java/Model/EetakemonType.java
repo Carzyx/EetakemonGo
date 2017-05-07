@@ -7,5 +7,6 @@ public enum EetakemonType {
     FUEGO,
     AGUA,
     TIERRA,
-    VIENTO
+    AIRE,
+    NEUTRO
 }

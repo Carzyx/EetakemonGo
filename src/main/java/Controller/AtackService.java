@@ -1,6 +1,7 @@
 package Controller;
 
 import Controller.Interfaces.IAtackService;
+import Dao.AtackDao;
 import Dao.Interfaces.IAtackDao;
 import Model.Atack;
 import Model.AtacksEetakemon;
@@ -14,8 +15,8 @@ public class AtackService implements IAtackService {
 
     private static IAtackDao _serviceAtack;
 
-    public AtackService(IAtackDao serviceAtackDao) {
-        _serviceAtack = serviceAtackDao;
+    public AtackService() {
+        _serviceAtack = new AtackDao();
     }
 
     public boolean create(Atack atack) {
@@ -41,11 +42,11 @@ public class AtackService implements IAtackService {
     }
 
     public Atack getById(int id) {
-        return null;
+        return _serviceAtack.getById(id);
     }
 
     public List<Atack> getAll() {
-        return null;
+        return _serviceAtack.getAll();
     }
 
 }

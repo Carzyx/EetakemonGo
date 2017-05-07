@@ -1,5 +1,7 @@
 package Controller;
 
+import Controller.Interfaces.IEetakemonService;
+import Dao.EetakemonDao;
 import Dao.Interfaces.IEetakemonDao;
 import Model.Eetakemon;
 
@@ -8,12 +10,12 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
-public class EetakemonService  {
+public class EetakemonService implements IEetakemonService{
 
     private static IEetakemonDao _serviceEetakemon;
 
-    public EetakemonService(IEetakemonDao serviceEetakemonDao) {
-        _serviceEetakemon = serviceEetakemonDao;
+    public EetakemonService() {
+        _serviceEetakemon = new EetakemonDao();
     }
 
 

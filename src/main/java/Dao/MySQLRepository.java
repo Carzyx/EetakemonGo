@@ -22,8 +22,8 @@ public class MySQLRepository<T> {
             PreparedStatement stm = con.prepareStatement(query);
             Class nameClass = t.getClass();
             Field[] propertyClass = nameClass.getDeclaredFields();
-            for (int i = 1; (i < propertyClass.length); i++) {
-                stm.setObject(i, getMethod(t, propertyClass[i].getName()));
+            for (int i = 0; (i < propertyClass.length); i++) {
+                stm.setObject(i+1, getMethod(t, propertyClass[i].getName()));
             }
             stm.execute();
             con.close();
@@ -125,13 +125,6 @@ public class MySQLRepository<T> {
         }
     }
 
-    public List getForeing(String query, int i) {
-        return null;
-    }
-
-
-
-
     private Connection getConnection() {
         Connection con = null;
         String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -162,14 +155,11 @@ public class MySQLRepository<T> {
                     String columnName = resultSetMetaData.getColumnLabel(i);
                     String columnType = resultSetMetaData.getColumnTypeName(i);
 
-                    for (int x = 0; x <= propertyClass.length; x++) {
-                        if (columnName.equals(propertyClass[x].getName()) || columnType
-                            .equals(propertyClass[x].getType().toString())) {
+                    for (int x = 0; x < propertyClass.length; x++) {
+                        if (columnName.equals(propertyClass[x].getName()) || columnType.equals(propertyClass[x].getType().toString())) {
                             Object value = getConvertValueType(columnType, resultSet, i);
                             if (value != null) {
-                                Method m = t.getClass()
-                                    .getMethod(setProperty(propertyClass[x].getName()),
-                                        propertyClass[x].getType());
+                                Method m = t.getClass().getMethod(setProperty(propertyClass[x].getName()), propertyClass[x].getType());
                                 m.invoke(t, value);
                             }
                             break;

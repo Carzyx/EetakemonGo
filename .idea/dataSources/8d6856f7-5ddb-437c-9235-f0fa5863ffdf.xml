@@ -16,7 +16,7 @@
     <table id="10" parent="2" name="atack"/>
     <table id="11" parent="2" name="atackseetakemon"/>
     <table id="12" parent="2" name="eetakemondto"/>
-    <table id="13" parent="2" name="eetakemonsuser"/>
+    <table id="13" parent="2" name="eetakemonsuserdto"/>
     <table id="14" parent="2" name="userdto"/>
     <column id="15" parent="10" name="id">
       <Position>1</Position>
@@ -146,13 +146,13 @@ name</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="42" parent="13" name="eetakemonsuser_ibfk_1">
+    <foreign-key id="42" parent="13" name="eetakemonsuserdto_ibfk_1">
       <ColNames>idUser</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
       <RefTableName>eetakemondto</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="43" parent="13" name="eetakemonsuser_ibfk_2">
+    <foreign-key id="43" parent="13" name="eetakemonsuserdto_ibfk_2">
       <ColNames>idUser</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
       <RefTableName>userdto</RefTableName>
