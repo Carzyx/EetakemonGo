@@ -42,7 +42,7 @@ public class Atack {
         return damageBase;
     }
 
-    public void setDamagebase(int damagebase) {
+    public void setDamageBase(int damagebase) {
         this.damageBase = damagebase;
     }
 

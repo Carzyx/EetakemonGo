@@ -3,7 +3,6 @@ package Dao;
 import Dao.Entity.AtacksEetakemonDto;
 import Dao.Entity.EetakemonDto;
 import Dao.Entity.EetakemonsUserDto;
-import Dao.Entity.UserDto;
 import Dao.Interfaces.IAtackDao;
 import Dao.Interfaces.IEetakemonDao;
 import Dao.Interfaces.IGenericDao;
@@ -31,15 +30,20 @@ public class EetakemonDao implements IEetakemonDao {
         _serviceAtack = new AtackDao();
     }
 
+    //TODO -- Validar: si existe Eetakemon, no crearlo (repetir check de UserService/UserDao)
     public boolean add(Eetakemon eetakemon) {
-        EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
-        boolean eetakemonConfirmation = _service.add(eetakemonDto);
 
-        if (!(eetakemon.getEetakemonAtack().size() <= 0) || !eetakemonConfirmation) {
-            return eetakemonConfirmation;
+        if(isValidAtackToEetakemon(eetakemon))
+        {
+            EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
+            boolean eetakemonConfirmation = _service.add(eetakemonDto);
+            if (eetakemonConfirmation)
+            {
+                return addAtacksToEetakemon(eetakemon);
+            }
         }
 
-        return addAtacksToEetakemon(eetakemon);
+        return false;
     }
 
     public boolean updateById(Eetakemon eetakemon) {
@@ -71,7 +75,7 @@ public class EetakemonDao implements IEetakemonDao {
 
     public List<Eetakemon> getAll() {
 
-        List<EetakemonDto> responseList = _service.getAllByParameters(new EetakemonDto(), null);
+        List<EetakemonDto> responseList = _service.getAll(new EetakemonDto());
         List<Eetakemon> result = new ArrayList<>();
         for (EetakemonDto response : responseList) {
             result.add(modelMapper.map(response, Eetakemon.class));
@@ -79,13 +83,19 @@ public class EetakemonDao implements IEetakemonDao {
         return result;
     }
 
-
     public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
         boolean actionResult = true;
         for (Atack atack : eetakemon.getEetakemonAtack()) {
-            AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getId(), atack.getId());
-            boolean result = _serviceAtackEetakemon.add(atacksEetakemonDto);
-            if (result == false) {
+            if(_serviceAtack.add(atack))
+            {
+                AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getId(), atack.getId());
+                boolean result = _serviceAtackEetakemon.add(atacksEetakemonDto);
+                if (result == false) {
+                    actionResult = false;
+                }
+            }
+            else {
+
                 actionResult = false;
             }
         }
@@ -130,6 +140,15 @@ public class EetakemonDao implements IEetakemonDao {
             eetakemonResult.add(getCompleteEetakemonById(item.getIdEetakemon()));
         }
         return eetakemonResult;
+    }
+
+    private boolean isValidAtackToEetakemon(Eetakemon eetakemon)
+    {
+        if(eetakemon.getEetakemonAtack().size() == 4)
+        {
+            return true;
+        }
+        return false;
     }
 
 }

@@ -43,6 +43,11 @@ public class UserService implements IUserService {
         return _serviceUser.getAll();
     }
 
+    public User getCompleteUserById(int id)
+    {
+       return _serviceUser.getCompleteUserById(id);
+    }
+
 
     public boolean deleteUser(String username, String password) {
         if (StringUtils.isEmptyOrWhitespaceOnly(username) || StringUtils
@@ -54,6 +59,14 @@ public class UserService implements IUserService {
         return _serviceUser.removeById(user);
     }
 
+    public boolean addAEetakemonsToUser(User user)
+    {
+        return _serviceUser.addAEetakemonsToUser(user);
+    }
+
+    public boolean removeEetakemonsToUser(User user) {
+    return _serviceUser.removeEetakemonsToUser(user);
+}
 
 
     public User signIn(String username, String password) {
