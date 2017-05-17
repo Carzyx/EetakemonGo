@@ -10,9 +10,7 @@ public interface IGenericDao<T>  {
 
     boolean add(T t);
 
-    boolean updateById(T t);
-
-    boolean removeById(T t);
+    boolean updateByConditions(T t, Hashtable<String, String> conditions);
 
     boolean removeByConditions(T t, Hashtable<String, String> conditions);
 
@@ -23,4 +21,6 @@ public interface IGenericDao<T>  {
     T getByParameters(T t, Hashtable<String, String> conditions);
 
     List<T> getAllByParameters(T t, Hashtable<String, String> conditions);
+
+
 }

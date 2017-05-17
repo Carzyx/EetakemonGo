@@ -44,15 +44,28 @@ public class UserDao implements IUserDao {
         return addAEetakemonsToUser(user);
     }
 
-    public boolean updateById(User user) {
+    public boolean updateByName(User user) {
         UserDto userDto = modelMapper.map(user, UserDto.class);
-        return _service.updateById(userDto);
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("username",user.getUsername());
+        return _service.updateByConditions(userDto, conditions);
     }
 
-    public boolean removeById(User user) {
+    public boolean updateByUsernameAndPassword(User user) {
         UserDto userDto = modelMapper.map(user, UserDto.class);
-        boolean userConfirmation = _service.removeById(userDto);
-        if(!(user.getEetakemons().size() <= 0) || !userConfirmation)
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("username", user.getUsername());
+        conditions.put("password", user.getPassword());
+        return _service.updateByConditions(userDto, conditions);
+    }
+
+
+    public boolean removeByName(User user) {
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("username", user.getUsername());
+        boolean userConfirmation = _service.removeByConditions(userDto, conditions);
+        if( !(user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation)
         {
             return userConfirmation;
         }
@@ -60,10 +73,25 @@ public class UserDao implements IUserDao {
         return removeEetakemonsToUser(user);
     }
 
-    public User getById(int id) {
+    public boolean removeByUsernameAndPassword(User user) {
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("username", user.getUsername());
+        conditions.put("password", user.getPassword());
+
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        boolean userConfirmation = _service.removeByConditions(userDto, conditions);
+        if((user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation)
+        {
+            return userConfirmation;
+        }
+
+        return removeEetakemonsToUser(user);
+    }
+
+    public User getByName(String namer) {
         UserDto userDto = new UserDto();
         Hashtable<String, String> conditions = new Hashtable<>();
-        conditions.put("id", Integer.toString(id));
+        conditions.put("username", namer);
         return modelMapper.map(_service.getByParameters(userDto, conditions), User.class);
     }
 
@@ -78,24 +106,23 @@ public class UserDao implements IUserDao {
         return result;
     }
 
-    public User getCompleteUserById(int id) {
-        User user = getById(id);
+    public User getCompleteUserByUsername(String username) {
+        User user = getByName(username);
         Hashtable<String, String> conditions = new Hashtable<>();
-        conditions.put("idUser", Integer.toString(user.getId()));
+        conditions.put("username", user.getUsername());
         List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
 
-        user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonById(result));
+        user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));
 
         return user;
     }
-
 
     public boolean addAEetakemonsToUser(User user) {
         boolean actionResult = true;
         if(isValidEetakemonToUser(user)) {
 
             for (Eetakemon eetakemon : user.getEetakemons()) {
-                EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getId(), eetakemon.getId());
+                EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getUsername(), eetakemon.getName());
                 boolean result = _serviceEetakemonsUser.add(eetakemonsUserDto);
                 if (result == false) {
                     actionResult = false;
@@ -110,9 +137,9 @@ public class UserDao implements IUserDao {
         for (Eetakemon eetakemon : user.getEetakemons())
         {
             Hashtable<String, String> conditions = new Hashtable<>();
-            conditions.put("idUser", Integer.toString(user.getId()));
-            conditions.put("idEetakemon", Integer.toString(eetakemon.getId()));
-            EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getId(), eetakemon.getId());
+            conditions.put("username", user.getUsername());
+            conditions.put("eetakemonName", eetakemon.getName());
+            EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getUsername(), eetakemon.getName());
             boolean result = _serviceEetakemonsUser.removeByConditions(eetakemonsUserDto, conditions);
             if(result == false)
             {
@@ -121,7 +148,6 @@ public class UserDao implements IUserDao {
         }
         return actionResult;
     }
-
 
     public User getUserByUsernameAndPassword(String username, String password) {
         UserDto userDto = new UserDto();

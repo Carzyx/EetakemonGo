@@ -7,11 +7,11 @@ public interface IBasicService <T> {
 
     boolean create(T item);
 
-    boolean removeById(T item);
+    boolean removeByName(T item);
 
-    boolean updateById(T newItem);
+    boolean updateByName(T newItem);
 
-    T getById(int id);
+    T getByName(String name);
 
     List<T> getAll();
 

@@ -5,34 +5,27 @@ package Model;
  */
 public class EetakemonsUser {
 
-    private int id;
-    private int iduser;
-    private int ideetakemon;
+
+    private String username;
+    private String eetakemonName;
 
     public EetakemonsUser() {
     }
 
-    public int getIduser() {
-        return iduser;
+
+    public String getUsername() {
+        return username;
     }
 
-    public int getId() {
-        return id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getEetakemonName() {
+        return eetakemonName;
     }
 
-    public void setIduser(int iduser) {
-        this.iduser = iduser;
-    }
-
-    public int getIdEetakemon() {
-        return ideetakemon;
-    }
-
-    public void setIdEetakemon(int ideetakemon) {
-        this.ideetakemon = ideetakemon;
+    public void setEetakemonName(String eetakemonName) {
+        this.eetakemonName = eetakemonName;
     }
 }

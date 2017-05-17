@@ -8,11 +8,14 @@ import Model.User;
 public interface IUserService extends IBasicService <User> {
 
     User signIn(String username, String password);
+    boolean removeByUsernameAndPassword(User user);
+    boolean updateByUsernameAndPassword(User user);
+
     boolean addAEetakemonsToUser(User user);
     boolean removeEetakemonsToUser(User user);
     boolean isUsernameAlreadyInUse(String username);
     boolean isEmailAlreadyInUse(String email);
-    User getCompleteUserById(int id);
+    User getCompleteUserByUsername(String username);
 
 
 }

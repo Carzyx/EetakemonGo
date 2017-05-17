@@ -10,13 +10,17 @@ import java.util.List;
  */
 public interface IUserDao extends IBasicDao <User>{
 
+    boolean removeByUsernameAndPassword(User user);
+
+    boolean updateByUsernameAndPassword(User user);
+
     boolean addAEetakemonsToUser(User user);
 
     boolean removeEetakemonsToUser(User user);
 
     User getUserByUsernameAndPassword(String username, String password);
 
-    User getCompleteUserById(int id);
+    User getCompleteUserByUsername(String username);
 
     boolean isUsernameAlreadyInUse(String username);
 

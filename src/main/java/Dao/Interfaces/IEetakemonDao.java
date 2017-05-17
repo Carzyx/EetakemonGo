@@ -16,18 +16,8 @@ public interface IEetakemonDao extends IBasicDao <Eetakemon> {
 
     boolean addAtacksToEetakemon(Eetakemon eetakemon);
     boolean removeAtacksToEetakemon(Eetakemon eetakemon);
-    Eetakemon getCompleteEetakemonById (int id);
-    List<Eetakemon> getAllCompleteEetakemonById (List<EetakemonsUserDto> eetakemonsToUserList);
+    Eetakemon getCompleteEetakemonByName (String name);
+    List<Eetakemon> getAllCompleteEetakemonByName (List<EetakemonsUserDto> eetakemonsToUserList);
 
-    /*
-
-    boolean updateEetakemonToUserId(Hashtable<String, Integer> conditions);
-
-    boolean removeEetakemonToUserById(int i);
-
-    List<EetakemonsUser> getAllEetakemonsToUser(int i);
-
-    EetakemonsUser getEetakemonToUserById(int i);
-    */
 
 }

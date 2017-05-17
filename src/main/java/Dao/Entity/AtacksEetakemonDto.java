@@ -1,33 +1,36 @@
 package Dao.Entity;
 
+import Model.AtacksEetakemon;
+
 /**
  * Created by Miguel Angel on 06/05/2017.
  */
 public class AtacksEetakemonDto {
 
-    private int idEetakemon;
-    private int idAtack;
+    private String atackName;
+    private String eetakemonName;
 
-    public AtacksEetakemonDto(){};
-    public AtacksEetakemonDto(int idEetakemon, int idAtack)
+    public AtacksEetakemonDto() { }
+
+    public AtacksEetakemonDto(String eetakemonName, String atackName)
     {
-        this.idEetakemon = idEetakemon;
-        this.idAtack = idAtack;
+        this.eetakemonName = eetakemonName;
+        this.atackName = atackName;
     }
 
-    public int getIdEetakemon() {
-        return idEetakemon;
+    public String getAtackName() {
+        return atackName;
     }
 
-    public void setIdEetakemon(int idEetakemon) {
-        this.idEetakemon = idEetakemon;
+    public void setAtackName(String atackName) {
+        this.atackName = atackName;
     }
 
-    public int getIdAtack() {
-        return idAtack;
+    public String getEetakemonName() {
+        return eetakemonName;
     }
 
-    public void setIdAtack(int idAtack) {
-        this.idAtack = idAtack;
+    public void setEetakemonName(String eetakemonName) {
+        this.eetakemonName = eetakemonName;
     }
 }

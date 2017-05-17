@@ -3,36 +3,32 @@ CREATE DATABASE eetakemonbbddtest;
 
 USE eetakemonbbddtest;
 CREATE TABLE Atack(
-  id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(45) NOT NULL,
   type ENUM('FUEGO', 'TIERRA', 'AGUA', 'AIRE', 'NEUTRO') NOT NULL,
   damageBase INT NOT NULL,
   description VARCHAR(45),
-  PRIMARY KEY (id)
+  PRIMARY KEY (name)
 );
 
 CREATE TABLE EetakemonDto(
-  id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(45) NOT NULL,
   level INT,
   ps INT NOT NULL,
   type ENUM('FUEGO', 'TIERRA', 'AGUA', 'AIRE', 'NEUTRO') NOT NULL,
   image VARCHAR(45),
   description VARCHAR (250),
-  PRIMARY KEY (id, name)
+  PRIMARY KEY (name)
 );
 
 CREATE TABLE AtacksEetakemon(
-  id INT NOT NULL AUTO_INCREMENT,
-  idAtack INT NOT NULL,
-  idEetakemon INT NOT NULL,
-  PRIMARY  KEY (id),
-  FOREIGN  KEY (idAtack) REFERENCES Atack(id),
-  FOREIGN  KEY (idEetakemon) REFERENCES Eetakemon(id)
+  atackName VARCHAR(45) NOT NULL,
+  eetakemonName VARCHAR(45) NOT NULL,
+  PRIMARY  KEY (atackName),
+  FOREIGN  KEY (atackName) REFERENCES Atack(name),
+  FOREIGN  KEY (eetakemonName) REFERENCES Eetakemon(name)
 );
 
 CREATE TABLE UserDto(
-  id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(45) NOT NULL,
   surname VARCHAR(45),
   username VARCHAR(45) NOT NULL,
@@ -40,14 +36,13 @@ CREATE TABLE UserDto(
   email VARCHAR(45) NOT NULL,
   rol INT NOT NULL,
   image VARCHAR(45),
-  PRIMARY KEY (id)
+  PRIMARY KEY (username)
 );
 
 CREATE TABLE EetakemonsUser(
-  id INT NOT NULL AUTO_INCREMENT,
-  idUser INT NOT NULL,
-  idEetakemon INT NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN  KEY (idUser) REFERENCES Eetakemon(id),
-  FOREIGN  KEY (idUser) REFERENCES User(id)
+  username VARCHAR(45) NOT NULL,
+  eetakemonName VARCHAR(45) NOT NULL,
+  PRIMARY KEY (username),
+  FOREIGN  KEY (eetakemonName) REFERENCES Eetakemon(name),
+  FOREIGN  KEY (username) REFERENCES User(username)
 );

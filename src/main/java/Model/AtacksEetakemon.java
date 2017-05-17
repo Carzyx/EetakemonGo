@@ -5,34 +5,25 @@ package Model;
  */
 public class AtacksEetakemon {
 
-    private int id;
-    private int idEetakemon;
-    private int idAtack;
+    private String atackName;
+    private String eetakemonName;
 
     public AtacksEetakemon() {
     }
 
-    public int getIdEetakemon() {
-        return idEetakemon;
+    public String getAtackName() {
+        return atackName;
     }
 
-    public int getId() {
-        return id;
+    public void setAtackName(String atackName) {
+        this.atackName = atackName;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getEetakemonName() {
+        return eetakemonName;
     }
 
-    public void setIdEetakemon(int ideetakemon) {
-        this.idEetakemon = ideetakemon;
-    }
-
-    public int getIdAtack() {
-        return idAtack;
-    }
-
-    public void setIdAtack(int idatack) {
-        this.idAtack = idatack;
+    public void setEetakemonName(String eetakemonName) {
+        this.eetakemonName = eetakemonName;
     }
 }

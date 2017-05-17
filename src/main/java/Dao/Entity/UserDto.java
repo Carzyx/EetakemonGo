@@ -10,7 +10,6 @@ import java.util.List;
  */
 public class UserDto {
 
-    private int id;
     private String name;
     private String surname;
     private String username;
@@ -30,14 +29,6 @@ public class UserDto {
         this.rol = user.getRol();
         this.email = user.getEmail();
         this.image = user.getImage();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

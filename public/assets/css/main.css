@@ -2931,8 +2931,8 @@
 			-webkit-animation: none;
 			-ms-animation: none;
 			animation: none;
-			background: none;
-			color: rgba(255, 255, 255, 0.75);
+			background:  rgb(101, 101, 101);
+			color: rgb(101, 101, 101);
 			position: absolute;
 		}
 		#header.alt22 {
@@ -2940,10 +2940,19 @@
 			-webkit-animation: none;
 			-ms-animation: none;
 			animation: none;
-			background: #64BEEB;
-			color: rgba(255, 255, 255, 0.75);
+			background: rgb(101, 101, 101);
+			color: rgb(101, 101, 101);
 			position: absolute;
 		}
+#selectOptionDatabase {
+    width: 10%;
+    height: 10%;
+
+}
+#databaseForm{
+    display:none;
+}
+
 
 			#header.alt nav > ul > li a:not(.button).icon:before {
 				color: rgba(255, 255, 255, 0.75);
