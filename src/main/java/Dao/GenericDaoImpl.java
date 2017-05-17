@@ -38,8 +38,7 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         }
     }
 
-
-    public boolean updateById(T t) {
+    public boolean updateByConditions(T t, Hashtable<String, String> conditions) {
         try {
             Class nameClass = t.getClass();
             StringBuffer query = new StringBuffer("UPDATE ")
@@ -53,21 +52,8 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
                     query.append(", ");
                 }
             }
-            query.append(" WHERE id =?");
-            update(query.toString(), t);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    public boolean removeById(T t) {
-
-        try {
-            Class nameClass = t.getClass();
-            StringBuffer query = new StringBuffer("DELETE FROM ")
-                .append(nameClass.getSimpleName().toLowerCase()).append(" WHERE id = ?");
-            return delete(query.toString(), t);
+            query = registerConditions(propertyClass, conditions, query);
+            return update(query.toString(), conditions, t);
         } catch (Exception e) {
             return false;
         }
@@ -80,14 +66,13 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             StringBuffer query = new StringBuffer("DELETE FROM ").append(simpleNameClass.toLowerCase());
             Field[] propertyClass = nameClass.getDeclaredFields();
             query = registerConditions(propertyClass, conditions, query);
-            return delete(query.toString(), t);
+            return delete(query.toString(), conditions, t);
         } catch (Exception e) {
             return false;
         }
     }
 
-    public T get(T t)
-    {
+    public T get(T t) {
         List<T> result = getAll(t);
 
         if(result != null && result.size() > 0)
@@ -98,8 +83,7 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         return t;
     }
 
-    public List<T> getAll(T t)
-    {
+    public List<T> getAll(T t) {
         try {
             StringBuffer query = new StringBuffer();
             Class nameClass = t.getClass();
@@ -146,8 +130,7 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         }
     }
 
-    private StringBuffer registerConditions(Field[] propertyClass, Hashtable<String, String> conditions, StringBuffer query)
-    {
+    private StringBuffer registerConditions(Field[] propertyClass, Hashtable<String, String> conditions, StringBuffer query) {
         Hashtable<String, String> conditionsToAdd = new Hashtable<>();
         conditionsToAdd.putAll(conditions);
         if(conditionsToAdd.size() == 0)
@@ -168,41 +151,5 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
         }
         return query;
     }
-
-    //TODO
-     /* public boolean addForeingTables(String bbdd,int i,int j){
-         try
-         {
-             StringBuffer query = new StringBuffer("INSERT INTO ").append(bbdd).append(" (iduser,ideetakemon) VALUES (?,?)");
-             add(query.toString(),i,j);
-             return true;
-         }
-         catch (Exception e){
-             return false;
-         }
-     }
-     public boolean getForeingTables(String bbdd,int i){
-         try
-         {
-             StringBuffer query = new StringBuffer("SELECT * FROM ").append(bbdd).append(" WHERE id==?");
-             getForeing(query.toString(),i);
-             return true;
-         }
-         catch (Exception e){
-             return false;
-         }
-     }
-     */
-
-    //TODO GET WITH JOIN
-    /*public  getListInClassByParameter(T t, Hashtable<String, String> conditions) {
-        StringBuffer query = new StringBuffer();
-        Class nameClass = t.getClass();
-        String simpleNameClass = nameClass.getSimpleName();
-        query.append("SELECT * FROM ").append(simpleNameClass.toLowerCase()).append(" JOIN WHERE ");
-        Hashtable<String,String>conditions=new Hashtable<String, String>();
-        conditions.p
-        return (T) selectByConditions(t, query.toString(),conditions);
-    }*/
 
 }

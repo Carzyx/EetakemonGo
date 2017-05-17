@@ -100,8 +100,7 @@
 })(jQuery);
 
 
-function RegisterUser()
-{
+function RegisterUser() {
 
     var name = $("#name").val();
     var surname = $("#surname").val();
@@ -120,7 +119,7 @@ function RegisterUser()
     $.ajax({
         type: "POST",
         url: " http://localhost:8080/myapp/web/createUser",
-        dataType: "json",
+        contentType: "application/json",
         success: function (msg) {
             if (msg) {
                 alert("Somebody" + name + " was added in list !");
@@ -130,11 +129,262 @@ function RegisterUser()
             }
         },
 
-        data: sendInfo
+        data: JSON.stringify(sendInfo)
     });
 };
 
-function TestAlert()
-{
+
+
+function GetAllUsers(selector) {
+    var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
+    var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
+
+    var jsonResult;
+    $.ajax({
+        type: "GET",
+        url: " http://localhost:8080/myapp/web/getAllUsers",
+        dataType: 'application/json',
+        complete: function (data) {
+            jsonResult = JSON.parse(data.responseText);
+            buildHtmlTable(selector, jsonResult)
+
+        }
+    });
+
+};
+
+function GetAllAtacks(selector) {
+    var arr = [ "name", "type", "damageBase", "description"];
+    var obj  = { name:1, type:2, damageBase:3, description:4};
+
+    var jsonResult;
+    $.ajax({
+        type: "GET",
+        url: " http://localhost:8080/myapp/web/getAllAtacks",
+        dataType: 'application/json',
+        complete: function (data) {
+            jsonResult = JSON.parse(data.responseText);
+            buildHtmlTable(selector, jsonResult)
+
+        }
+    });
+
+};
+
+function buildHtmlTable(selector, myList) {
+    var columns = addAllColumnHeaders(myList, selector);
+
+    for (var i = 0; i < myList.length; i++) {
+        var row$ = $('<tr/>');
+        for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+            var cellValue = myList[i][columns[colIndex]];
+            if (cellValue == null) cellValue = "";
+            row$.append($('<td/>').html(cellValue));
+        }
+        $(selector).append(row$);
+    }
+}
+
+function addAllColumnHeaders(myList, selector) {
+    var columnSet = [];
+    var headerTr$ = $('<tr/>');
+
+    for (var i = 0; i < myList.length; i++) {
+        var rowHash = myList[i];
+        for (var key in rowHash) {
+            if ($.inArray(key, columnSet) == -1) {
+                columnSet.push(key);
+                headerTr$.append($('<th/>').html(key));
+            }
+        }
+    }
+    $(selector).append(headerTr$);
+
+    return columnSet;
+}
+
+function showDiv(elem){
+    if(elem.value == 1)
+    {
+        document.getElementById('databaseForm').style.display = "block";
+    }
+    else
+    {
+        document.getElementById('databaseForm').style.display = "none";
+    }
+}
+
+function doActionDatabaseUser() {
+    var option = document.getElementById('selectOptionDatabase');
+    var optionSelected = option.options[option.selectedIndex].text;
+    var urlAction;
+
+    switch(optionSelected)
+    {
+        case "Add":
+            urlAction = "http://localhost:8080/myapp/web/createUser";
+            break;
+
+        case "Remove":
+            urlAction = "http://localhost:8080/myapp/web/removeUserByUsernameAndPassword";
+            break;
+
+        case "Update":
+            urlAction = "http://localhost:8080/myapp/web/updateByUsernameAndPassword";
+            break;
+    }
+
+    var name = $("#name").val();
+    var surname = $("#surname").val();
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var email = $("#email").val();
+
+    var sendInfo = {
+        name: name,
+        surname: surname,
+        username: username,
+        password: password,
+        email: email
+    };
+
+    $.ajax({
+        type: "POST",
+        url: urlAction,
+        contentType: "application/json",
+        success: function (msg) {
+            if (msg) {
+                alert(msg);
+                location.reload(true);
+                var table = document.getElementById('jsonTableUsersResult')
+                table.parentNode.removeChild(table);
+                GetAllUsers('#jsonTableUsersResult');
+
+            } else {
+                alert("Error in the execution...");
+            }
+        },
+
+        data: JSON.stringify(sendInfo)
+    });
+
+}
+
+function doActionDatabaseEetakemon() {
+    var option = document.getElementById('selectOptionDatabase');
+    var optionSelected = option.options[option.selectedIndex].text;
+    var urlAction;
+
+    switch(optionSelected)
+    {
+        case "Add":
+            urlAction = "http://localhost:8080/myapp/web/createEetakemon";
+            break;
+
+        case "Remove":
+            urlAction = "http://localhost:8080/myapp/web/removeEetakemon";
+            break;
+
+        case "Update":
+            urlAction = "http://localhost:8080/myapp/web/updateEetakemon";
+            break;
+    }
+
+    var name = $("#name").val();
+
+    var atackType = document.getElementById('OptionAtackType');
+    var atackTypeSelected = atackType.options[atackType.selectedIndex].text;
+
+    var type = $("#type").val();
+    var description = $("#description").val();
+
+    var sendInfo = {
+        name: name,
+        type: atackTypeSelected,
+        dagameBase: damage,
+        description: description,
+    };
+
+    $.ajax({
+        type: "POST",
+        url: urlAction,
+        contentType: "application/json",
+        success: function (msg) {
+            if (msg) {
+                alert(msg);
+                location.reload(true);
+                var table = document.getElementById('jsonTableAtacksResult')
+                table.parentNode.removeChild(table);
+                GetAllUsers('#jsonTableAtacksResult');
+
+            } else {
+                alert("Error in the execution...");
+            }
+        },
+
+        data: JSON.stringify(sendInfo)
+    });
+
+}
+
+
+function doActionDatabaseAtack() {
+    var option = document.getElementById('selectOptionDatabase');
+    var optionSelected = option.options[option.selectedIndex].text;
+    var urlAction;
+
+    switch(optionSelected)
+    {
+        case "Add":
+            urlAction = "http://localhost:8080/myapp/web/createAtack";
+            break;
+
+        case "Remove":
+            urlAction = "http://localhost:8080/myapp/web/removeAtack";
+            break;
+
+        case "Update":
+            urlAction = "http://localhost:8080/myapp/web/updateAtack";
+            break;
+    }
+
+    var name = $("#name").val();
+
+    var atackType = document.getElementById('OptionAtackType');
+    var atackTypeSelected = atackType.options[atackType.selectedIndex].text;
+
+    var type = $("#type").val();
+    var description = $("#description").val();
+
+    var sendInfo = {
+        name: name,
+        type: atackTypeSelected,
+        dagameBase: damage,
+        description: description,
+    };
+
+    $.ajax({
+        type: "POST",
+        url: urlAction,
+        contentType: "application/json",
+        success: function (msg) {
+            if (msg) {
+                alert(msg);
+                location.reload(true);
+                var table = document.getElementById('jsonTableAtacksResult')
+                table.parentNode.removeChild(table);
+                GetAllUsers('#jsonTableAtacksResult');
+
+            } else {
+                alert("Error in the execution...");
+            }
+        },
+
+        data: JSON.stringify(sendInfo)
+    });
+
+}
+
+function TestAlert() {
     alert("hello world");
 }

@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class User {
 
-    private int id;
     private String name;
     private String surname;
     private String username;
@@ -35,14 +34,6 @@ public class User {
         this.rol = rol;
         this.email = email;
         this.image = image;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

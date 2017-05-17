@@ -1,0 +1,1 @@
+Error en la ejecucion MySQLRepository.update, Query: UPDATE atack SET name= ?, type= ?, damageBase= ?, description= ? WHERE name = ?

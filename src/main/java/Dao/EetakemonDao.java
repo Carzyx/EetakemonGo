@@ -46,14 +46,19 @@ public class EetakemonDao implements IEetakemonDao {
         return false;
     }
 
-    public boolean updateById(Eetakemon eetakemon) {
+    public boolean updateByName(Eetakemon eetakemon) {
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("name", eetakemon.getName());
         EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
-        return _service.updateById(eetakemonDto);
+
+        return _service.updateByConditions(eetakemonDto, conditions);
     }
 
-    public boolean removeById(Eetakemon eetakemon) {
+    public boolean removeByName(Eetakemon eetakemon) {
         EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
-        boolean eetakemonConfirmation = _service.removeById(eetakemonDto);
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("name", eetakemon.getName());
+        boolean eetakemonConfirmation = _service.removeByConditions(eetakemonDto, conditions);
 
         if (!(eetakemon.getEetakemonAtack().size() <= 0) || !eetakemonConfirmation) {
             return eetakemonConfirmation;
@@ -62,15 +67,14 @@ public class EetakemonDao implements IEetakemonDao {
         return removeAtacksToEetakemon(eetakemon);
     }
 
-    public Eetakemon getById(int id) {
+    public Eetakemon getByName(String name) {
 
         Eetakemon eetakemon = new Eetakemon();
         EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("name", name);
 
-        Hashtable<String, String> condition = new Hashtable<String, String>();
-        condition.put("id", Integer.toString(id));
-
-        return modelMapper.map(_service.getByParameters(eetakemonDto, condition), Eetakemon.class);
+        return modelMapper.map(_service.getByParameters(eetakemonDto, conditions), Eetakemon.class);
     }
 
     public List<Eetakemon> getAll() {
@@ -88,7 +92,7 @@ public class EetakemonDao implements IEetakemonDao {
         for (Atack atack : eetakemon.getEetakemonAtack()) {
             if(_serviceAtack.add(atack))
             {
-                AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getId(), atack.getId());
+                AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
                 boolean result = _serviceAtackEetakemon.add(atacksEetakemonDto);
                 if (result == false) {
                     actionResult = false;
@@ -106,9 +110,9 @@ public class EetakemonDao implements IEetakemonDao {
         boolean actionResult = true;
         for (Atack atack : eetakemon.getEetakemonAtack()) {
             Hashtable<String, String> conditions = new Hashtable<>();
-            conditions.put("idEetakemon", Integer.toString(eetakemon.getId()));
-            conditions.put("idAtack", Integer.toString(atack.getId()));
-            AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getId(), atack.getId());
+            conditions.put("eetakemonName", eetakemon.getName());
+            conditions.put("atackName", atack.getName());
+            AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
             boolean result = _serviceAtackEetakemon.removeByConditions(atacksEetakemonDto, conditions);
             if (result == false) {
                 actionResult = false;
@@ -117,27 +121,27 @@ public class EetakemonDao implements IEetakemonDao {
         return actionResult;
     }
 
-    public Eetakemon getCompleteEetakemonById (int id) {
-        Eetakemon eetakemonResult = getById(id);
+    public Eetakemon getCompleteEetakemonByName (String name) {
+        Eetakemon eetakemonResult = getByName(name);
         Hashtable<String, String> conditions = new Hashtable<>();
-        conditions.put("idEetakemon", Integer.toString(eetakemonResult.getId()));
+        conditions.put("eetakemonName", eetakemonResult.getName());
         List<AtacksEetakemonDto> atacksEetakemonDto = _serviceAtackEetakemon.getAllByParameters(new AtacksEetakemonDto(), conditions);
         List<Atack> atackList = new ArrayList<>();
         for(AtacksEetakemonDto relation : atacksEetakemonDto)
         {
-            atackList.add(_serviceAtack.getById(relation.getIdAtack()));
+            atackList.add(_serviceAtack.getByName(relation.getAtackName()));
         }
         return eetakemonResult;
     }
 
 
-    public List<Eetakemon> getAllCompleteEetakemonById (List<EetakemonsUserDto> eetakemonsToUserList)
+    public List<Eetakemon> getAllCompleteEetakemonByName (List<EetakemonsUserDto> eetakemonsToUserList)
     {
         List<Eetakemon> eetakemonResult = new ArrayList<>();
 
         for (EetakemonsUserDto item : eetakemonsToUserList)
         {
-            eetakemonResult.add(getCompleteEetakemonById(item.getIdEetakemon()));
+            eetakemonResult.add(getCompleteEetakemonByName(item.getEetakemonName()));
         }
         return eetakemonResult;
     }
@@ -153,28 +157,4 @@ public class EetakemonDao implements IEetakemonDao {
 
 }
 
-    //TODO REVISAR
-
-    /*
-
-    public boolean updateEetakemonToUserId(Hashtable<String, Integer> conditions) {
-        return true;
-    }
-
-    public boolean removeEetakemonToUserById(int i) {
-        return true;
-    }
-
-    public List<EetakemonsUser> getAllEetakemonsToUser(int id) {
-        EetakemonsUser eetakemonsUser = new EetakemonsUser();
-        Hashtable<String, String> condition = new Hashtable<String, String>();
-        condition.put("iduser", Integer.toString(id));
-        return _extra.getByParameter(eetakemonsUser, condition);
-    }
-
-    public EetakemonsUser getEetakemonToUserById(int i) {
-        return null;
-    }
-
-    */
 

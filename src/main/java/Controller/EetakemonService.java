@@ -24,17 +24,17 @@ public class EetakemonService implements IEetakemonService{
         return _serviceEetakemon.add(eetakemon);
     }
 
-    public boolean removeById(Eetakemon eetakemon) {
-        return _serviceEetakemon.removeById(eetakemon);
+    public boolean removeByName(Eetakemon eetakemon) {
+        return _serviceEetakemon.removeByName(eetakemon);
     }
 
-    public boolean updateById(Eetakemon eetakemon) {
-        return _serviceEetakemon.updateById(eetakemon);
+    public boolean updateByName(Eetakemon eetakemon) {
+        return _serviceEetakemon.updateByName(eetakemon);
     }
 
-    public Eetakemon getById(int id) {
+    public Eetakemon getByName(String name) {
 
-        return _serviceEetakemon.getById(id);
+        return _serviceEetakemon.getByName(name);
     }
 
     public List<Eetakemon> getAll() {

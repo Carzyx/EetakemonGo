@@ -7,7 +7,6 @@ import java.util.List;
  */
 public class Eetakemon {
 
-    private int id;
     private String name;
     private int level;
     private int ps;
@@ -29,10 +28,6 @@ public class Eetakemon {
         this.description = descrption;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public EetakemonType getType() {
         return type;
     }
@@ -51,10 +46,6 @@ public class Eetakemon {
 
     public List<Atack> getEetakemonAtack() {
         return eetakemonAtack;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setType(EetakemonType type) {

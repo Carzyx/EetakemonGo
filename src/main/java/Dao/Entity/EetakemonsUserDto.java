@@ -5,30 +5,29 @@ package Dao.Entity;
  */
 public class EetakemonsUserDto {
 
-    private int idUser;
-    private int idEetakemon;
+    private String username;
+    private String eetakemonName;
 
     public EetakemonsUserDto(){}
-
-    public EetakemonsUserDto(int idUser, int idEetakemon)
-    {
-        this.idUser = idUser;
-        this.idEetakemon = idEetakemon;
+    public EetakemonsUserDto(String username, String eetakemonName) {
+        this.username = username;
+        this.eetakemonName = eetakemonName;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public String getUsername() {
+        return username;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public int getIdEetakemon() {
-        return idEetakemon;
+    public String getEetakemonName() {
+        return eetakemonName;
     }
 
-    public void setIdEetakemon(int idEetakemon) {
-        this.idEetakemon = idEetakemon;
+    public void setEetakemonName(String eetakemonName) {
+        this.eetakemonName = eetakemonName;
     }
 }
+

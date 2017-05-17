@@ -9,11 +9,11 @@ import java.util.List;
 public interface IBasicDao <T> {
     boolean add(T item);
 
-    boolean updateById(T newItem);
+    boolean updateByName(T newItem);
 
-    boolean removeById(T item);
+    boolean removeByName(T item);
 
-    T getById(int itemId);
+    T getByName(String name);
 
     List<T> getAll();
 }

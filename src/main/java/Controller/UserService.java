@@ -21,31 +21,40 @@ public class UserService implements IUserService {
 
     public boolean create(User user) {
 
-        if (!isUsernameAlreadyInUse(user.getUsername()) || !isEmailAlreadyInUse(user.getEmail())) {
+        if (!isUsernameAlreadyInUse(user.getUsername()) & !isEmailAlreadyInUse(user.getEmail())) {
             return _serviceUser.add(user);
         }
         return false;
     }
 
-    public boolean removeById(User user) {
-        return _serviceUser.removeById(user);
+    public boolean removeByName(User user) {
+        return _serviceUser.removeByName(user);
     }
 
-    public boolean updateById(User newUser) {
-        return _serviceUser.updateById(newUser);
+    public boolean removeByUsernameAndPassword(User user)
+    {
+        return _serviceUser.removeByUsernameAndPassword(user);
     }
 
-    public User getById(int id) {
-        return _serviceUser.getById(id);
+    public boolean updateByName(User newUser) {
+        return _serviceUser.updateByName(newUser);
+    }
+
+    public boolean updateByUsernameAndPassword(User newUser) {
+        return _serviceUser.updateByUsernameAndPassword(newUser);
+    }
+
+    public User getByName(String username) {
+        return _serviceUser.getByName(username);
     }
 
     public List<User> getAll() {
         return _serviceUser.getAll();
     }
 
-    public User getCompleteUserById(int id)
+    public User getCompleteUserByUsername(String username)
     {
-       return _serviceUser.getCompleteUserById(id);
+       return _serviceUser.getCompleteUserByUsername(username);
     }
 
 
@@ -56,7 +65,7 @@ public class UserService implements IUserService {
         }
 
         User user = _serviceUser.getUserByUsernameAndPassword(username, password);
-        return _serviceUser.removeById(user);
+        return _serviceUser.removeByUsernameAndPassword(user);
     }
 
     public boolean addAEetakemonsToUser(User user)

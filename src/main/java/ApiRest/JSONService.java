@@ -25,6 +25,7 @@ public class JSONService {
     // User implementation
     private IUserService _serviceUser = new UserService();
 
+
     @Path("createUser")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -37,11 +38,48 @@ public class JSONService {
         return Response.status(200).entity("User created KO").build();
     }
 
-    @Path("getUserById/{id}")
+
+    @Path("removeUserByUsernameAndPassword")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response removeUserByUsernameAndPassword(User user){
+        if(_serviceUser.removeByUsernameAndPassword(user))
+        {
+            return Response.status(201).entity("User removed OK").build();
+        }
+        return Response.status(200).entity("User removed KO").build();
+    }
+
+    @Path("updateUser")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateUser(User user){
+        if(_serviceUser.updateByName(user))
+        {
+            return Response.status(201).entity("User updated OK").build();
+        }
+        return Response.status(200).entity("User updated KO").build();
+    }
+
+    @Path("updateByUsernameAndPassword")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateByUsernameAndPassword(User user){
+        if(_serviceUser.updateByUsernameAndPassword(user))
+        {
+            return Response.status(201).entity("User updated OK").build();
+        }
+        return Response.status(200).entity("User updated KO").build();
+    }
+
+    @Path("getUserByUsername/{username}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public User getUserById(@PathParam("id") int id) {
-        return _serviceUser.getById(id);
+    public User getUserByUsername(@PathParam("username") String username) {
+        return _serviceUser.getByName(username);
     }
 
     @Path("addAEetakemonsToUser")
@@ -56,15 +94,20 @@ public class JSONService {
         return Response.status(200).entity("Eetakemons added KO").build();
     }
 
-    @Path("getCompleteUserById/{id}")
+    @Path("getCompleteUserByUsername/{username}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public User getCompleteUserById(@PathParam("id") int id) {
-        return _serviceUser.getCompleteUserById(id);
+    public User getCompleteUserByUsername(@PathParam("username") String username) {
+        return _serviceUser.getCompleteUserByUsername(username);
     }
 
-
-
+    @Path("getAllUsers")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<User> getAllUsers()
+    {
+        return _serviceUser.getAll();
+    }
 
 
 
@@ -95,6 +138,12 @@ public class JSONService {
         return _serviceEetakemon.getAll();
     }
 
+
+
+
+
+
+
     //Atack implementation
     private IAtackService _serviceAtack = new AtackService();
 
@@ -110,12 +159,28 @@ public class JSONService {
         return Response.status(200).entity("Atack created KO").build();
     }
 
-    @Path("getById/{id}")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Atack getById(@PathParam("id") int id) {
+    @Path("updateAtack")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateAtack(Atack atack){
+        if(_serviceAtack.updateByName(atack))
+        {
+            return Response.status(201).entity("Atack updated OK").build();
+        }
+        return Response.status(200).entity("Atack updated KO").build();
+    }
 
-        return _serviceAtack.getById(id);
+    @Path("removeAtack")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response removeAtack(Atack atack){
+        if(_serviceAtack.removeByName(atack))
+        {
+            return Response.status(201).entity("Atack removed OK").build();
+        }
+        return Response.status(200).entity("Atack removed KO").build();
     }
 
     @Path("getAllAtacks")

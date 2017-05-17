@@ -101,7 +101,7 @@
 	}
 
 		#header.alt nav > ul > li a:not(.button).icon:before {
-			color: rgba(255, 255, 255, 0.75);
+			color: rgb(101, 101, 101);
 		}
 
 		#header.alt nav > ul > li.active a:not(.button) {

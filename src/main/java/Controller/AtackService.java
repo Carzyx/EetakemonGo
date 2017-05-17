@@ -23,26 +23,24 @@ public class AtackService implements IAtackService {
         return _serviceAtack.add(atack);
     }
 
-    @Override
-    public boolean removeById(Atack atack) {
-        return _serviceAtack.removeById(atack);
+    public boolean removeByName(Atack atack) {
+        return _serviceAtack.removeByName(atack);
     }
 
-    @Override
-    public boolean updateById(Atack newAtack) {
-        return _serviceAtack.updateById(newAtack);
+    public boolean updateByName(Atack newAtack) {
+        return _serviceAtack.updateByName(newAtack);
     }
 
-    public boolean removeById(int id) {
+    public boolean removeByName(int id) {
         return false;
     }
 
-    public boolean updateById(int id, Atack atack) {
+    public boolean updateByName(int id, Atack atack) {
         return false;
     }
 
-    public Atack getById(int id) {
-        return _serviceAtack.getById(id);
+    public Atack getByName(String name) {
+        return _serviceAtack.getByName(name);
     }
 
     public List<Atack> getAll() {
