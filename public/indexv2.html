@@ -16,6 +16,56 @@
 <script type='text/javascript' src='https://www.boastr.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
 <script type='text/javascript' src='https://www.boastr.net/wp-content/themes/Avada/assets/js/main.min.js?ver=5.0.6' async ></script> 
 <script type='text/javascript' src='js/jflipcards.js' async ></script> 
+<link rel="stylesheet" id="fusion-dynamic-css-css" href="//www.boastr.net/wp-content/uploads/fusion-styles/fusion-10709.css?ver=4.7.5" type="text/css" media="all">
+
+
+
+<style type='text/css'>/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {/*imagen tanaño*/
+	width: 120px;
+	height: 120px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}</style>
+
+
+
+
 <!--ACABA AQUI NUEVO-->
 	</head>
 	<body class="landing">
@@ -151,6 +201,71 @@
 							</section>
 						</div>
 					</section>
+				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class="flipper">
+						<div class="front" style="background: url(dwflip.jpg) 0 0 no-repeat;">
+						<span class="name">David Walsh</span>
+				</div>
+			<div class="back" style="background:#f8f8f8;">
+				<!-- back content -->
+						</div>
+					</div>
+				</div>
+
+					<div class="box">
+						
+						<div class="row">
+							<div class="3u 12u(mobilep)">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front" style="background: url(pokemons/blissey.png) 0 0 no-repeat;">
+											<span class="name">Blissey</span>
+										</div>
+										<div class="back" style="background:#f8f8f8;">
+											<p> El mas rosa</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="3u 12u(mobilep)">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front" style="background: url(pokemons/hypno-f.png) 0 0 no-repeat;">
+											<span class="name">Hypno</span>
+										</div>
+										<div class="back" style="background:#f8f8f8;">
+											<p> El mas hipnotico</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="3u 12u(mobilep)">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front" style="background: url(pokemons/hariyama.png) 0 0 no-repeat;">
+											<span class="name">Hariyama</span>
+										</div>
+										<div class="back" style="background:#f8f8f8;">
+											<p> El mas dulce</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="3u 12u(mobilep)">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front" style="background: url(pokemons/charizard.png) 0 0 no-repeat;">
+											<span class="name">Charizard</span>
+										</div>
+										<div class="back" style="background:#f8f8f8;">
+											<p> El mas quemado</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</section>
 
 			
