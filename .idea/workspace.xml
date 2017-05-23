@@ -2,7 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/generic.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/public/assets/css/font-awesome.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/ie8.css" afterPath="$PROJECT_DIR$/public/assets/css/ie8.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/main.css" afterPath="$PROJECT_DIR$/public/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/ie/PIE.htc" afterPath="$PROJECT_DIR$/public/assets/js/ie/PIE.htc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/ie/backgroundsize.min.htc" afterPath="$PROJECT_DIR$/public/assets/js/ie/backgroundsize.min.htc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/ie/html5shiv.js" afterPath="$PROJECT_DIR$/public/assets/js/ie/html5shiv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/ie/respond.min.js" afterPath="$PROJECT_DIR$/public/assets/js/ie/respond.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/jquery.dropotron.min.js" afterPath="$PROJECT_DIR$/public/assets/js/jquery.dropotron.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/jquery.min.js" afterPath="$PROJECT_DIR$/public/assets/js/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/jquery.scrollgress.min.js" afterPath="$PROJECT_DIR$/public/assets/js/jquery.scrollgress.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/main.js" afterPath="$PROJECT_DIR$/public/assets/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/skel.min.js" afterPath="$PROJECT_DIR$/public/assets/js/skel.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/util.js" afterPath="$PROJECT_DIR$/public/assets/js/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/atacksdatabase.html" afterPath="$PROJECT_DIR$/public/atacksdatabase.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/contact.html" afterPath="$PROJECT_DIR$/public/contact.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/eetakemonsdatabase.html" afterPath="$PROJECT_DIR$/public/eetakemonsdatabase.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/indexv2.html" afterPath="$PROJECT_DIR$/public/indexv2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jflipcards.js" afterPath="$PROJECT_DIR$/public/js/jflipcards.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pokedex.html" afterPath="$PROJECT_DIR$/public/pokedex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/register2.html" afterPath="$PROJECT_DIR$/public/register2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/signIn.html" afterPath="$PROJECT_DIR$/public/signIn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/usersdatabase.html" afterPath="$PROJECT_DIR$/public/usersdatabase.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -14,16 +40,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/EetakemonGo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1493490180667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/EetakemonGo$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1494189670865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ApiRest.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/EetakemonGo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1493490180667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
@@ -40,29 +65,15 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="EetakemonBBDDTest@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="eetakemonbbddtest" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="385" column="1" lean-forward="true" selection-start-line="385" selection-start-column="1" selection-end-line="385" selection-end-column="1" />
+            <state relative-caret-position="1054">
+              <caret line="385" column="1" lean-forward="false" selection-start-line="385" selection-start-column="1" selection-end-line="385" selection-end-column="1" />
               <folding>
                 <element signature="e#168#366#0" expanded="false" />
                 <element signature="e#384#2189#0" expanded="false" />
@@ -81,9 +92,17 @@
       <file leaf-file-name="JSONService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="37" column="70" lean-forward="true" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
-              <folding />
+            <state relative-caret-position="391">
+              <caret line="37" column="70" lean-forward="false" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2403#2404#0" expanded="false" />
+                <element signature="e#2458#2459#0" expanded="false" />
+                <element signature="e#3241#3242#0" expanded="false" />
+                <element signature="e#3285#3286#0" expanded="false" />
+                <element signature="e#4024#4025#0" expanded="false" />
+                <element signature="e#4073#4074#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,9 +110,48 @@
       <file leaf-file-name="indexv2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/indexv2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="93" column="41" lean-forward="true" selection-start-line="93" selection-start-column="41" selection-end-line="93" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="146" column="57" lean-forward="true" selection-start-line="146" selection-start-column="57" selection-end-line="146" selection-end-column="57" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1495542534000" expanded="false" signature="13788:13794" ph="©" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,7 +159,7 @@
       <file leaf-file-name="atacksdatabase.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/atacksdatabase.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="255">
               <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="40" />
               <folding />
             </state>
@@ -113,7 +171,28 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1495542534000" expanded="true" signature="1017:1288" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1066:1273" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1472:2601" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1486:1591" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1614:2586" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1652:2574" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1689:1975" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1727:1823" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="1861:1961" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2012:2157" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2038:2143" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2194:2350" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2220:2336" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2383:2560" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2409:2546" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2452:2531" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2646:3395" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="2670:3231" ph="..." />
+                <marker date="1495542534000" expanded="true" signature="3259:3381" ph="..." />
+                <marker date="1495542534000" expanded="false" signature="3271:3277" ph="©" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,6 +244,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -180,7 +260,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Dao/AtackDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dao/IEetakemonDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/AtacksEetakemon.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Eetakemon.java" />
@@ -231,6 +310,7 @@
         <option value="$PROJECT_DIR$/public/register2.html" />
         <option value="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
         <option value="$PROJECT_DIR$/public/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/public/indexv2.html" />
       </list>
     </option>
   </component>
@@ -264,8 +344,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -286,238 +366,36 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemId" value="EetakemonGoFinal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemId" value="EetakemonGoFinal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemId" value="EetakemonGoFinal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ApiRest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemId" value="EetakemonGoFinal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -879,13 +757,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -1050,6 +921,8 @@
       <workItem from="1495386678108" duration="844000" />
       <workItem from="1495552757969" duration="257000" />
       <workItem from="1495553018605" duration="3697000" />
+      <workItem from="1495569656317" duration="783000" />
+      <workItem from="1495575098664" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1167,7 +1040,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337176000" />
+    <option name="totallyTimeSpent" value="338602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1179,39 +1052,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4056604" sideWeight="0.7403125" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5733737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.314871" sideWeight="0.48700175" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4957537" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31241283" sideWeight="0.2596875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35213676" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34188035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4056604" sideWeight="0.7403125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5733737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34188035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2663126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26614583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.4957537" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1890625" sideWeight="0.48700175" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4957537" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31241283" sideWeight="0.2596875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951483" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35213676" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5042463" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1273,13 +1146,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/EetakemonType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Interfaces/IGenericDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
@@ -1439,18 +1305,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/70e1fa40/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/eetakemonbbddtest.userdto">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/70e1fa40/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/eetakemonbbddtest.userdto" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-536">
@@ -1466,13 +1321,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/main.js___jb_tmp___" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/console.sql" />
     <entry file="file://$PROJECT_DIR$/.gitignore.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1512,7 +1361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1173">
           <caret line="69" column="25" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="69" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1520,7 +1368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="77" column="112" lean-forward="false" selection-start-line="77" selection-start-column="112" selection-end-line="77" selection-end-column="112" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1556,9 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="287" lean-forward="false" selection-start-line="2" selection-start-column="286" selection-end-line="2" selection-end-column="287" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1566,13 +1410,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495542534000" expanded="true" signature="1017:1288" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1066:1273" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1472:2601" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1486:1591" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1614:2586" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1652:2574" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1689:1975" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1727:1823" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="1861:1961" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2012:2157" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2038:2143" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2194:2350" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2220:2336" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2383:2560" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2409:2546" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2452:2531" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2646:3395" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="2670:3231" ph="..." />
+            <marker date="1495542534000" expanded="true" signature="3259:3381" ph="..." />
+            <marker date="1495542534000" expanded="false" signature="3271:3277" ph="©" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/atacksdatabase.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
+        <state relative-caret-position="255">
           <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="40" />
           <folding />
         </state>
@@ -1580,8 +1445,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="385" column="1" lean-forward="true" selection-start-line="385" selection-start-column="1" selection-end-line="385" selection-end-column="1" />
+        <state relative-caret-position="1054">
+          <caret line="385" column="1" lean-forward="false" selection-start-line="385" selection-start-column="1" selection-end-line="385" selection-end-column="1" />
           <folding>
             <element signature="e#168#366#0" expanded="false" />
             <element signature="e#384#2189#0" expanded="false" />
@@ -1598,17 +1463,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="37" column="70" lean-forward="true" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+        <state relative-caret-position="391">
+          <caret line="37" column="70" lean-forward="false" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2403#2404#0" expanded="false" />
+            <element signature="e#2458#2459#0" expanded="false" />
+            <element signature="e#3241#3242#0" expanded="false" />
+            <element signature="e#3285#3286#0" expanded="false" />
+            <element signature="e#4024#4025#0" expanded="false" />
+            <element signature="e#4073#4074#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/indexv3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/indexv2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="93" column="41" lean-forward="true" selection-start-line="93" selection-start-column="41" selection-end-line="93" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="289">
+          <caret line="146" column="57" lean-forward="true" selection-start-line="146" selection-start-column="57" selection-end-line="146" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#div#3;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1495542534000" expanded="false" signature="13788:13794" ph="©" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/FlipCardOpcion2.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--NUEVO-->
 <link rel='stylesheet' id='avada-stylesheet-css'  href='https://www.boastr.net/wp-content/themes/Avada/assets/css/style.min.css?ver=5.0.6' type='text/css' media='all' />
@@ -16,57 +16,9 @@
 <script type='text/javascript' src='https://www.boastr.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
 <script type='text/javascript' src='https://www.boastr.net/wp-content/themes/Avada/assets/js/main.min.js?ver=5.0.6' async ></script> 
 <script type='text/javascript' src='js/jflipcards.js' async ></script> 
-<link rel="stylesheet" id="fusion-dynamic-css-css" href="//www.boastr.net/wp-content/uploads/fusion-styles/fusion-10709.css?ver=4.7.5" type="text/css" media="all">
-
-
-
-<style type='text/css'>/* entire container, keeps perspective */
-.flip-container {
-	perspective: 1000px;
-}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container, .front, .back {/*imagen tanaño*/
-	width: 120px;
-	height: 120px;
-}
-
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-	transform: rotateY(180deg);
-}</style>
-
-
-
-
 <!--ACABA AQUI NUEVO-->
+<link rel="stylesheet" href="assets/css/main.css" />
+
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -77,23 +29,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html" class="button">Inicio</a></li>
-							<li>
-								<a href="#" class="icon fa-angle-down">Submenus</a>
-								<ul>
-									<li><a href="pokedex.html">Pokédex</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
-									<li>
-										<a href="">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
+							
 							<li><a href="register2.html" class="button">Registrate!</a></li>
 						</ul>
 					</nav>
@@ -133,11 +69,12 @@
 							<h2>Juega al mejor juego
 							<br />
 							y diviertete capturando a tus profes preferidos</h2>
-							<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
-							adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+							<p>JUEGA YA!</p>
 						</header>
 						
 					</section>
+					<!--El JS para dar la vuelta necesita un retoque-->
+					<!-- OPCION1 -->
 					<div  class="fusion-fullwidth fullwidth-box fusion-parallax-none nonhundred-percent-fullwidth"  style='background-color: rgba(255,255,255,0);background-image: url("https://boastr.net/wp-content/uploads/2014/11/wood_dark_bkgd_bw1-compressor.jpg");background-position: left top;background-repeat: repeat;padding-top:65px;padding-right:30px;padding-bottom:30px;padding-left:30px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;background-attachment:none;'><div class="fusion-builder-row fusion-row "><div  class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1  fusion-one-full fusion-column-first fusion-column-last fusion-column-no-min-height 1_1"  style='margin-top:0px;margin-bottom:0px;'>
 			<div class="fusion-column-wrapper" style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;"  data-bg-url="">
 
@@ -157,8 +94,9 @@
 		
 								</div> <!-- fusion-fusion-copyright-content -->
 							</div> 
+							
 					
-					<section class="box special features">
+					<!--<section class="box special features">
 						<div class="features-row">
 							<section>
 								<img src="images\icons\captura.png">
@@ -200,26 +138,16 @@
 								</ul>
 							</section>
 						</div>
-					</section>
-				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-					<div class="flipper">
-						<div class="front" style="background: url(dwflip.jpg) 0 0 no-repeat;">
-						<span class="name">David Walsh</span>
-				</div>
-			<div class="back" style="background:#f8f8f8;">
-				<!-- back content -->
-						</div>
-					</div>
-				</div>
-
-					<div class="box">
-						
+					</section>--><div class="box">
+						<h2>Opcion de flip card 2</h2>
 						<div class="row">
+
 							<div class="3u 12u(mobilep)">
 								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 									<div class="flipper">
 										<div class="front" style="background: url(pokemons/blissey.png) 0 0 no-repeat;">
 											<span class="name">Blissey</span>
+
 										</div>
 										<div class="back" style="background:#f8f8f8;">
 											<p> El mas rosa</p>
@@ -258,16 +186,19 @@
 											<span class="name">Charizard</span>
 										</div>
 										<div class="back" style="background:#f8f8f8;">
-											<p> El mas quemado</p>
+											<p> El mas caliente</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
+					
 				</section>
 
+					
+<ul class="actions">
+										
 			
 			<!-- Footer -->
 				<footer id="footer">
