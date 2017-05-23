@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EetakemonGo.iml" afterPath="$PROJECT_DIR$/EetakemonGo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/indexv2.html" afterPath="$PROJECT_DIR$/public/indexv2.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1052,7 +1049,7 @@
       <workItem from="1495039885121" duration="4222000" />
       <workItem from="1495386678108" duration="844000" />
       <workItem from="1495552757969" duration="257000" />
-      <workItem from="1495553018605" duration="3543000" />
+      <workItem from="1495553018605" duration="3697000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1159,11 +1156,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494953386420</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="web">
+      <created>1495560651374</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1495560651374</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337022000" />
+    <option name="totallyTimeSpent" value="337176000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1232,7 +1236,8 @@
     <MESSAGE value="Intento de token (id user)" />
     <MESSAGE value="Sing In con id+DAO" />
     <MESSAGE value="API- service getAllUsers" />
-    <option name="LAST_COMMIT_MESSAGE" value="API- service getAllUsers" />
+    <MESSAGE value="web" />
+    <option name="LAST_COMMIT_MESSAGE" value="web" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
