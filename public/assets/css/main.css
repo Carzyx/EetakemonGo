@@ -2326,10 +2326,10 @@
 			color: #ffffff;
 			cursor: default;
 			display: inline-block;
-			height: 5.5em;
-			line-height: 5.5em;
+			height: 50.5em;
+			line-height: 50.5em;
 			margin: 0 0 2em 0;
-			width: 5.5em;
+			width: 50.5em; /*5.5em*/
 		}
 
 			.icon.major:before {
@@ -3105,6 +3105,136 @@
 			#banner input[type="reset"].special,
 			#banner input[type="button"].special,
 			#banner .button.special {
+				background: #fff;
+				color: #666 !important;
+			}
+
+/* Banner Home Page */
+	#banner2 {
+		background-attachment: scroll,							fixed;
+		background-color: #666;
+		background-image: url("images/overlay.png");/*, url("../../pokemons/back.jpeg");*/
+		background-position: top left,						center center;
+		background-repeat: repeat,							no-repeat;
+		background-size: auto,							cover;
+		color: #fff;
+		padding: 12em 0 20em 0;
+		text-align: center;
+	}
+
+		#banner2 :last-child {
+			margin-bottom: 0;
+		}
+
+		#banner2 h2, #banner2 h3, #banner2 h4, #banner2 h5, #banner2 h6 {
+			color: #fff;
+		}
+
+		#banner2 h2 {
+			font-size: 3.5em;
+			line-height: 1em;
+			margin: 0 0 0.5em 0;
+			padding: 0;
+		}
+
+		#banner2 p {
+			font-size: 1.25em;
+			margin-bottom: 1.75em;
+		}
+
+		#banner2 input[type="submit"],
+		#banner2 input[type="reset"],
+		#banner2 input[type="button"],
+		#banner2 .button {
+			background-color: transparent;
+			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+			color: #fff;
+			min-width: 12em;
+		}
+
+			#banner2 input[type="submit"]:hover,
+			#banner2 input[type="reset"]:hover,
+			#banner2 input[type="button"]:hover,
+			#banner2 .button:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+
+			#banner2 input[type="submit"]:active,
+			#banner2 input[type="reset"]:active,
+			#banner2 input[type="button"]:active,
+			#banner2 .button:active {
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+
+			#banner2 input[type="submit"].special,
+			#banner2 input[type="reset"].special,
+			#banner2 input[type="button"].special,
+			#banner2 .button.special {
+				background: #fff;
+				color: #666 !important;
+			}
+
+			/* Banner Home Page Middle Section */
+	#banner3 {
+		background-attachment: scroll,							fixed;
+		background-color: #666;
+		background-image: url("images/blanco.jpg");/*, url("../../pokemons/back.jpeg");*/
+		background-position: top left,						center center;
+		background-repeat: repeat,							no-repeat;
+		background-size: auto,							cover;
+		color: #646464;
+		padding: 12em 0 20em 0;
+		text-align: center;
+	}
+
+		#banner3 :last-child {
+			margin-bottom: 0;
+		}
+
+		#banner3 h2, #banner3 h3, #banner3 h4, #banner3 h5, #banner3 h6 {
+			color: #646464;
+		}
+
+		#banner3 h2 {
+			font-size: 3.5em;
+			line-height: 1em;
+			margin: 0 0 0.5em 0;
+			padding: 0;
+		}
+
+		#banner3 p {
+			font-size: 1.25em;
+			margin-bottom: 1.75em;
+		}
+
+		#banner3 input[type="submit"],
+		#banner3 input[type="reset"],
+		#banner3 input[type="button"],
+		#banner3 .button {
+			background-color: transparent;
+			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+			color: #fff;
+			min-width: 12em;
+		}
+
+			#banner3 input[type="submit"]:hover,
+			#banner3 input[type="reset"]:hover,
+			#banner3 input[type="button"]:hover,
+			#banner3 .button:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+
+			#banner3 input[type="submit"]:active,
+			#banner3 input[type="reset"]:active,
+			#banner3 input[type="button"]:active,
+			#banner3 .button:active {
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+
+			#banner3 input[type="submit"].special,
+			#banner3 input[type="reset"].special,
+			#banner3 input[type="button"].special,
+			#banner3 .button.special {
 				background: #fff;
 				color: #666 !important;
 			}

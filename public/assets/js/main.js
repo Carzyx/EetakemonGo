@@ -153,6 +153,24 @@ function GetAllUsers(selector) {
 
 };
 
+function GetAllEetakemons(selector) {
+    var arr = [ "name", "level", "ps", "type", "description",  "image" ];
+    var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
+
+    var jsonResult;
+    $.ajax({
+        type: "GET",
+        url: " http://localhost:8080/myapp/web/getAllEetakemons",
+        dataType: 'application/json',
+        complete: function (data) {
+            jsonResult = JSON.parse(data.responseText);
+            buildHtmlTable(selector, jsonResult)
+
+        }
+    });
+
+}
+
 function GetAllAtacks(selector) {
     var arr = [ "name", "type", "damageBase", "description"];
     var obj  = { name:1, type:2, damageBase:3, description:4};
@@ -384,6 +402,37 @@ function doActionDatabaseAtack() {
     });
 
 }
+
+
+function TablaVisibleParaOtros(selector, data) {//falta poner headers
+    var tr;
+    for (var i = 0; i < data.length; i++) {
+        tr = $('<tr/>');
+        tr.append("<td>" + data[i].username + "</td>");
+        tr.append("<td>" + data[i].name + "</td>");
+        tr.append("<td>" + data[i].surname + "</td>");
+        tr.append("<td>" + data[i].email + "</td>");
+        $(selector).append(tr);
+    }
+};
+function GetTablaVisibleUsersRegistrados(selector) {
+    var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
+    var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
+
+    var jsonResult;
+    $.ajax({
+        type: "GET",
+        url: " http://localhost:8080/myapp/web/getAllUsers",
+        dataType: 'application/json',
+        complete: function (data) {
+            jsonResult = JSON.parse(data.responseText);
+            TablaVisibleParaOtros(selector, jsonResult)
+
+        }
+    });
+
+};
+
 
 function TestAlert() {
     alert("hello world");
