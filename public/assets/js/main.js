@@ -425,14 +425,14 @@ function EetakedexConstructor(selector,json) {
 
         tr.push('<div class="6u 12u(mobilep)"><div class="flip-container"><div class="flipper">');
         tr.push('<div class="front" style="');
-        tr.push('background: url(pokemons/'+json.image+'.png) 0 0 no-repeat;">');//style front
+        tr.push('background: url(pokemons/'+json[i].image+'.gif) 0 0 no-repeat;">');//style front
 
-        tr.push('<span class="name">'+json.name+'</span></div>');//nombre front
+        tr.push('<span class="name">'+json[i].name+'</span></div>');//nombre front
 
         tr.push('<div class="back" style="');//style back
         tr.push('background:#f8f8f8;">');//style back
 
-        tr.push('<p>'+json.name+'</p><p>'+json.type+'</p><p>'+json.level+'</p><p>'+json.ps+'</p><p>'+json.description+'</p>');
+        tr.push('<p>Name: '+json[i].name+'</p><p>Type: '+json[i].type+'</p><p>Level: '+json[i].level+'</p><p>PS: '+json[i].ps+'</p><p>Descripción: '+json[i].description+'</p>');
 
         tr.push('</div> </div> </div> </div>');
 
