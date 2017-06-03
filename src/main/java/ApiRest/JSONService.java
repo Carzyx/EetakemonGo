@@ -3,7 +3,9 @@ import Controller.AtackService;
 import Controller.EetakemonService;
 import Controller.Interfaces.IAtackService;
 import Controller.Interfaces.IEetakemonService;
+import Controller.Interfaces.ILocation;
 import Controller.Interfaces.IUserService;
+import Controller.Location;
 import Controller.UserService;
 import Model.Atack;
 import Model.Eetakemon;
@@ -195,17 +197,15 @@ public class JSONService {
         return _serviceAtack.getAll();
 
     }
+
+    //Location implementation
+    private ILocation _serviceLocation=new Location();
     @Path("markers")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Markers> getMarkers(LatLng latLng){
-        List<Markers> markers=new ArrayList<Markers>();
-        Markers marker=new Markers();
-
-        markers.add(marker);
-
-        return markers;
+    public List<Markers> getMarkers(Markers markers){
+        return _serviceLocation.getMarkers(new LatLng(markers.getLat(),markers.getLng()));
     }
 
 

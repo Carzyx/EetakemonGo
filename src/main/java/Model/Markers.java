@@ -7,23 +7,32 @@ import com.google.maps.model.LatLng;
  */
 
 public class Markers {
-    LatLng latLng;
+    double lat;
+    double lng;
     Eetakemon eetakemon;
     public void Markers(){}
 
-    public LatLng getLatLng() {
-        return latLng;
+    public double getLat() {
+        return lat;
     }
 
-    public void setLatLng(LatLng latLng) {
-        this.latLng = latLng;
+    public void setLat(double lat) {
+        this.lat = lat;
     }
 
-    public Eetakemon getEetackemon() {
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    public Eetakemon getEetakemon() {
         return eetakemon;
     }
 
-    public void setEetackemon(Eetakemon eetackemon) {
-        this.eetakemon = eetackemon;
+    public void setEetakemon(Eetakemon eetakemon) {
+        this.eetakemon = eetakemon;
     }
 }
