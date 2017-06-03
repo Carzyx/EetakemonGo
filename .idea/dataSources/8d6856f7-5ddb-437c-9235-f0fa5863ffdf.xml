@@ -12,158 +12,159 @@
     <schema id="6" parent="1" name="sakila"/>
     <schema id="7" parent="1" name="sys"/>
     <schema id="8" parent="1" name="world"/>
-    <schema id="9" parent="1" name="examendsa"/>
-    <table id="10" parent="2" name="atack"/>
-    <table id="11" parent="2" name="atackseetakemon"/>
-    <table id="12" parent="2" name="eetakemondto"/>
-    <table id="13" parent="2" name="eetakemonsuser"/>
-    <table id="14" parent="2" name="userdto"/>
-    <column id="15" parent="10" name="name">
+    <schema id="9" parent="1" name="datos1"/>
+    <schema id="10" parent="1" name="examen"/>
+    <table id="11" parent="2" name="atack"/>
+    <table id="12" parent="2" name="atackseetakemon"/>
+    <table id="13" parent="2" name="eetakemondto"/>
+    <table id="14" parent="2" name="eetakemonsuser"/>
+    <table id="15" parent="2" name="userdto"/>
+    <column id="16" parent="11" name="name">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="10" name="type">
+    <column id="17" parent="11" name="type">
       <Position>2</Position>
       <DataType>enum(&apos;FUEGO&apos;, &apos;TIERRA&apos;, &apos;AGUA&apos;, &apos;AIRE&apos;, &apos;NEUTRO&apos;)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="10" name="damageBase">
+    <column id="18" parent="11" name="description">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="19" parent="11" name="damageBase">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="10" name="description">
-      <Position>4</Position>
-      <DataType>varchar(45)|0</DataType>
-    </column>
-    <key id="19" parent="10" name="PRIMARY">
+    <key id="20" parent="11" name="PRIMARY">
       <ColNames>name</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="20" parent="11" name="atackName">
+    <column id="21" parent="12" name="atackName">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="11" name="eetakemonName">
+    <column id="22" parent="12" name="eetakemonName">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="22" parent="11" name="eetakemonName">
+    <index id="23" parent="12" name="atackName">
+      <ColNames>atackName</ColNames>
+    </index>
+    <index id="24" parent="12" name="eetakemonName">
       <ColNames>eetakemonName</ColNames>
     </index>
-    <key id="23" parent="11" name="PRIMARY">
-      <ColNames>atackName</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="24" parent="11" name="atackseetakemon_ibfk_1">
+    <foreign-key id="25" parent="12" name="atackseetakemon_ibfk_1">
       <ColNames>atackName</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
       <RefTableName>atack</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <foreign-key id="25" parent="11" name="atackseetakemon_ibfk_2">
+    <foreign-key id="26" parent="12" name="atackseetakemon_ibfk_2">
       <ColNames>eetakemonName</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
       <RefTableName>eetakemondto</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <column id="26" parent="12" name="name">
+    <column id="27" parent="13" name="name">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="12" name="level">
+    <column id="28" parent="13" name="level">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <column id="28" parent="12" name="ps">
+    <column id="29" parent="13" name="ps">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;100&apos;</DefaultExpression>
     </column>
-    <column id="29" parent="12" name="type">
+    <column id="30" parent="13" name="type">
       <Position>4</Position>
       <DataType>enum(&apos;FUEGO&apos;, &apos;TIERRA&apos;, &apos;AGUA&apos;, &apos;AIRE&apos;, &apos;NEUTRO&apos;)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="12" name="image">
+    <column id="31" parent="13" name="image">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="31" parent="12" name="description">
+    <column id="32" parent="13" name="description">
       <Position>6</Position>
       <DataType>varchar(250)|0</DataType>
     </column>
-    <key id="32" parent="12" name="PRIMARY">
+    <key id="33" parent="13" name="PRIMARY">
       <ColNames>name</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="13" name="username">
+    <column id="34" parent="14" name="username">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="13" name="eetakemonName">
+    <column id="35" parent="14" name="eetakemonName">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="35" parent="13" name="eetakemonName">
+    <index id="36" parent="14" name="eetakemonName">
       <ColNames>eetakemonName</ColNames>
     </index>
-    <key id="36" parent="13" name="PRIMARY">
+    <index id="37" parent="14" name="username">
       <ColNames>username</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="37" parent="13" name="eetakemonsuser_ibfk_2">
+    </index>
+    <foreign-key id="38" parent="14" name="eetakemonsuser_ibfk_2">
       <ColNames>username</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
       <RefTableName>userdto</RefTableName>
       <RefColNames>username</RefColNames>
     </foreign-key>
-    <foreign-key id="38" parent="13" name="eetakemonsuser_ibfk_1">
+    <foreign-key id="39" parent="14" name="eetakemonsuser_ibfk_1">
       <ColNames>eetakemonName</ColNames>
       <RefSchemaName>eetakemonbbddtest</RefSchemaName>
       <RefTableName>eetakemondto</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <column id="39" parent="14" name="name">
+    <column id="40" parent="15" name="name">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="40" parent="14" name="surname">
+    <column id="41" parent="15" name="surname">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="41" parent="14" name="username">
+    <column id="42" parent="15" name="username">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="14" name="password">
+    <column id="43" parent="15" name="password">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="14" name="email">
+    <column id="44" parent="15" name="email">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="14" name="rol">
+    <column id="45" parent="15" name="rol">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="14" name="image">
+    <column id="46" parent="15" name="image">
       <Position>7</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="46" parent="14" name="PRIMARY">
+    <key id="47" parent="15" name="PRIMARY">
       <ColNames>username</ColNames>
       <Primary>1</Primary>
     </key>

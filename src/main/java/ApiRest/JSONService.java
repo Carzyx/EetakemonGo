@@ -7,12 +7,15 @@ import Controller.Interfaces.IUserService;
 import Controller.UserService;
 import Model.Atack;
 import Model.Eetakemon;
+import Model.Markers;
 import Model.User;
+import com.google.maps.model.LatLng;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -135,7 +138,8 @@ public class JSONService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Eetakemon> getAllEetakemons() {
-        return _serviceEetakemon.getAll();
+        List<Eetakemon> list=_serviceEetakemon.getAll();
+        return list;
     }
 
 
@@ -190,6 +194,18 @@ public class JSONService {
 
         return _serviceAtack.getAll();
 
+    }
+    @Path("markers")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Markers> getMarkers(LatLng latLng){
+        List<Markers> markers=new ArrayList<Markers>();
+        Markers marker=new Markers();
+
+        markers.add(marker);
+
+        return markers;
     }
 
 

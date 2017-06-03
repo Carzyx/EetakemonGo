@@ -23,9 +23,8 @@ CREATE TABLE EetakemonDto(
 CREATE TABLE AtacksEetakemon(
   atackName VARCHAR(45) NOT NULL,
   eetakemonName VARCHAR(45) NOT NULL,
-  PRIMARY  KEY (atackName),
   FOREIGN  KEY (atackName) REFERENCES Atack(name),
-  FOREIGN  KEY (eetakemonName) REFERENCES Eetakemon(name)
+  FOREIGN  KEY (eetakemonName) REFERENCES EetakemonDto(name)
 );
 
 CREATE TABLE UserDto(
@@ -42,7 +41,12 @@ CREATE TABLE UserDto(
 CREATE TABLE EetakemonsUser(
   username VARCHAR(45) NOT NULL,
   eetakemonName VARCHAR(45) NOT NULL,
-  PRIMARY KEY (username),
-  FOREIGN  KEY (eetakemonName) REFERENCES Eetakemon(name),
-  FOREIGN  KEY (username) REFERENCES User(username)
+  FOREIGN  KEY (eetakemonName) REFERENCES EetakemonDto(name),
+  FOREIGN  KEY (username) REFERENCES UserDto(username)
 );
+INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Nacho', 'Ballesteros', 'Nach', '1234', 'n.balle.lo@gmail.com', '0', 'profile/evoluciona.png');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Puñetazo', 'NEUTRO', '10', 'Un potente puñetazo en la cara');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `level`, `ps`, `type`, `image`, `description`) VALUES ('Charizard', '1', '100', 'FUEGO', 'pokemons/charizard.png', 'El de toda la vida pa que vamos a explicar mas');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `level`, `ps`, `type`, `image`, `description`) VALUES ('Charmander', '1', '100', 'FUEGO', 'pokemons/charmander.png', 'El tipico');
+INSERT INTO `eetakemonbbddtest`.`eetakemonsuser` (`username`, `eetakemonName`) VALUES ('Nach', 'Charizard');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemon` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Charizard');
