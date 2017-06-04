@@ -1,6 +1,6 @@
-package Controller;
+package Business;
 
-import Controller.Interfaces.IUserService;
+import Business.Interfaces.IUserService;
 import Dao.Interfaces.IUserDao;
 import Dao.UserDao;
 import Model.User;

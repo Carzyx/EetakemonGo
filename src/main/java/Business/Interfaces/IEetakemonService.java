@@ -1,10 +1,6 @@
-package Controller.Interfaces;
+package Business.Interfaces;
 
-import Model.AtacksEetakemon;
 import Model.Eetakemon;
-import Model.EetakemonType;
-
-import java.util.List;
 
 /**
  * Created by Miguel Angel on 13/03/2017.

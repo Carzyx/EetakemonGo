@@ -1,4 +1,4 @@
-package Controller.Interfaces;
+package Business.Interfaces;
 
 import Model.User;
 

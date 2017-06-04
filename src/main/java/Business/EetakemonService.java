@@ -1,6 +1,6 @@
-package Controller;
+package Business;
 
-import Controller.Interfaces.IEetakemonService;
+import Business.Interfaces.IEetakemonService;
 import Dao.EetakemonDao;
 import Dao.Interfaces.IEetakemonDao;
 import Model.Eetakemon;

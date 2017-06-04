@@ -1,1 +1,7 @@
 Error en la ejecucion MySQLRepository.update, Query: UPDATE atack SET name= ?, type= ?, damageBase= ?, description= ? WHERE name = ?
+Error en la validacion del token: JWT expired at 2017-06-04T20:13:45Z. Current time: 2017-06-04T20:13:58Z, a difference of 13340 milliseconds.  Allowed clock skew: 0 milliseconds.
+Error en la validacion del token: JWT expired at 2017-06-04T20:14:31Z. Current time: 2017-06-04T20:14:42Z, a difference of 11988 milliseconds.  Allowed clock skew: 0 milliseconds.
+Error en la validacion del token: JWT String argument cannot be null or empty.
+Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
+Error en la validacion del token: JWT String argument cannot be null or empty.
+Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0

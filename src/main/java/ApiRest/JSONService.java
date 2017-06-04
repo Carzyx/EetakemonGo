@@ -1,14 +1,15 @@
 package ApiRest;
-import Controller.AtackService;
-import Controller.EetakemonService;
-import Controller.Interfaces.IAtackService;
-import Controller.Interfaces.IEetakemonService;
-import Controller.Interfaces.IUserService;
-import Controller.UserService;
+import Business.AtackService;
+import Business.EetakemonService;
+import Business.Interfaces.IAtackService;
+import Business.Interfaces.IEetakemonService;
+import Business.Interfaces.IUserService;
+import Business.UserService;
 import Model.Atack;
 import Model.Eetakemon;
 import Model.User;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -18,13 +19,13 @@ import java.util.List;
 /**
  * Created by Ignacio on 21/04/2017.
  */
+
 @Path("/web")
 @Singleton
 public class JSONService {
 
     // User implementation
     private IUserService _serviceUser = new UserService();
-
 
     @Path("createUser")
     @POST

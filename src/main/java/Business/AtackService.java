@@ -1,10 +1,9 @@
-package Controller;
+package Business;
 
-import Controller.Interfaces.IAtackService;
+import Business.Interfaces.IAtackService;
 import Dao.AtackDao;
 import Dao.Interfaces.IAtackDao;
 import Model.Atack;
-import Model.AtacksEetakemon;
 
 import java.util.List;
 

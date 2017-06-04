@@ -1,4 +1,4 @@
-package Controller.Interfaces;
+package Business.Interfaces;
 import java.util.List;
 /**
  * Created by Miguel Angel on 03/05/2017.
