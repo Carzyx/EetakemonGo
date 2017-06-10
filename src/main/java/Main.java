@@ -13,9 +13,10 @@ public class Main {
 
         SignatureControlService sc = new SignatureControlService();
 
-        String key = sc.getKeySignature(user.getUsername());
+        //String key = sc.getKeySignature(user.getUsername());
 
-        boolean ok = sc.isValidSignature(key);
+        //boolean ok = sc.isValidSignature(key);
+        //boolean test = sc.isValidSignature(key, user.getUsername());
 
         System.out.println();
 

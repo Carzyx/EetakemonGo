@@ -1,9 +1,12 @@
 package ApiRest.Filters;
 import ApiRest.Filters.Interfaces.ISignatureControlService;
 import io.jsonwebtoken.*;
+import javafx.util.Pair;
 import org.apache.log4j.Logger;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Miguel Angel on 03/05/2017.
@@ -11,27 +14,13 @@ import java.util.Date;
 public class SignatureControlService implements ISignatureControlService{
 
     private static String secretKey = "eetakemonGoSecretKey";
-    final static Logger logger = Logger.getLogger(SignatureControlService.class);
-    final static int TTL = 15000;
+    private final static Logger logger = Logger.getLogger(SignatureControlService.class);
+    private final static int TTL = 900000; //15 min in ms
+    private static String authoritzation = "Authoritzation";
 
-    public String getKeySignature(String username)
-    {
-        Date dateNow = new Date(System.currentTimeMillis());
-        Date dateExpiration = new Date(System.currentTimeMillis()+TTL);
-
-        String compactJws = Jwts.builder()
-            .setSubject(username)
-            .setIssuedAt(dateNow)
-            .setExpiration(dateExpiration)
-            .signWith(SignatureAlgorithm.HS512, secretKey)
-            .compact();
-        return compactJws;
-    }
-
-    public boolean isValidSignature(String key, String username)
-    {
+    public boolean isValidSignature(String key, String subjectKey) {
         try {
-            boolean isSubjectValid = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(key).getBody().getSubject().equals(username);
+            boolean isSubjectValid = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(key).getBody().getSubject().equals(subjectKey);
 
             //OK, we can trust this JWT
             return isSubjectValid;
@@ -44,14 +33,13 @@ public class SignatureControlService implements ISignatureControlService{
         }
     }
 
-    public boolean isValidSignature(String key)
-    {
+    public boolean isSignatureExpired(String key) {
         try {
-            boolean isTest = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(key).getBody().getExpiration().before(new Date(System.currentTimeMillis()));
+            boolean isNotExpired = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(key).getBody().getExpiration().after(new Date(System.currentTimeMillis()));
             //boolean isSubjectValid = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(key).getBody().getSubject().equals(username);
 
             //OK, we can trust this JWT
-            return isTest;
+            return isNotExpired;
         }
         catch (Exception ex) {
 
@@ -61,10 +49,30 @@ public class SignatureControlService implements ISignatureControlService{
         }
     }
 
-    public String extendExpirationTime(String key)
-    {
+    public Pair<String, String> getKeySignature (String subjectKey) {
+        return new Pair<>(authoritzation, createKeySignature(subjectKey));
+    }
+
+    public Pair<String, String> getExtendExpirationTime (String key) {
+       return new Pair<>(authoritzation, extendExpirationTime(key));
+    }
+
+    private String extendExpirationTime(String key) {
+        String subjectKey = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(key).getBody().getSubject();
+        return createKeySignature(subjectKey);
+    }
+
+    private String createKeySignature(String subjectKey) {
+        Date dateNow = new Date(System.currentTimeMillis());
         Date dateExpiration = new Date(System.currentTimeMillis()+TTL);
 
-        return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(key).getBody().setExpiration(dateExpiration).getSubject();
+        String compactJws = Jwts.builder()
+            .setSubject(subjectKey)
+            .setIssuedAt(dateNow)
+            .setExpiration(dateExpiration)
+            .signWith(SignatureAlgorithm.HS512, secretKey)
+            .compact();
+        return compactJws;
     }
+
 }

@@ -5,3 +5,38 @@ Error en la validacion del token: JWT String argument cannot be null or empty.
 Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
 Error en la validacion del token: JWT String argument cannot be null or empty.
 Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Authorization header must be provided by request: org.glassfish.jersey.server.ContainerRequest@60089365
+Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
+Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
+Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
+Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
+Error en la validacion del token: JWT strings must contain exactly 2 period characters. Found: 0
+Authorization header must be provided by request: org.glassfish.jersey.server.ContainerRequest@73da2be3
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la validacion del token: JWT expired at 2017-06-11T00:24:26Z. Current time: 2017-06-11T00:31:00Z, a difference of 394916 milliseconds.  Allowed clock skew: 0 milliseconds.
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist

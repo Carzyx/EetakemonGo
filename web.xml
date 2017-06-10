@@ -4,15 +4,17 @@
          version="3.1">
 
     <!-- Common JAX-RS Servlet Definition -->
-    <servlet>
+    <!-- <servlet>
         <servlet-name>javax.ws.rs.core.Application</servlet-name>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>javax.ws.rs.core.Application</servlet-name>
-        <url-pattern>/web/*</url-pattern>
-    </servlet-mapping>
 
+
+<servlet-mapping>
+        <servlet-name>javax.ws.rs.core.Application</servlet-name>
+        <url-pattern>/private/*</url-pattern>
+    </servlet-mapping>
+-->
     <!-- This is another type to add filter configuration
     <servlet>
         //...

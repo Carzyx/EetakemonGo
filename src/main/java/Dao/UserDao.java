@@ -112,7 +112,10 @@ public class UserDao implements IUserDao {
         conditions.put("username", user.getUsername());
         List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
 
-        user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));
+        if(result != null)
+        {
+            user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));
+        }
 
         return user;
     }
@@ -123,8 +126,8 @@ public class UserDao implements IUserDao {
 
             for (Eetakemon eetakemon : user.getEetakemons()) {
                 EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getUsername(), eetakemon.getName());
-                boolean result = _serviceEetakemonsUser.add(eetakemonsUserDto);
-                if (result == false) {
+                boolean eetakemonAdded = _serviceEetakemonsUser.add(eetakemonsUserDto);
+                if (!eetakemonAdded) {
                     actionResult = false;
                 }
             }
@@ -140,8 +143,8 @@ public class UserDao implements IUserDao {
             conditions.put("username", user.getUsername());
             conditions.put("eetakemonName", eetakemon.getName());
             EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getUsername(), eetakemon.getName());
-            boolean result = _serviceEetakemonsUser.removeByConditions(eetakemonsUserDto, conditions);
-            if(result == false)
+            boolean relationRemoved = _serviceEetakemonsUser.removeByConditions(eetakemonsUserDto, conditions);
+            if(!relationRemoved)
             {
                 actionResult = false;
             }
@@ -154,7 +157,17 @@ public class UserDao implements IUserDao {
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", username);
         conditions.put("password", password);
-        return modelMapper.map(_service.getByParameters(userDto, conditions), User.class);
+        User user = modelMapper.map(_service.getByParameters(userDto, conditions), User.class);
+
+        conditions.put("username", user.getUsername());
+        List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
+
+        if(result != null)
+        {
+            user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));
+        }
+        //TODO Object response that contains Token and succes.
+        return user;
     }
 
     public boolean isUsernameAlreadyInUse(String username) {
