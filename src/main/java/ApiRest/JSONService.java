@@ -1,64 +1,45 @@
 package ApiRest;
-import ApiRest.Filters.Interfaces.ISignatureControlService;
-import ApiRest.Filters.SignatureControlService;
-import Business.AtackService;
-import Business.EetakemonService;
-import Business.Interfaces.IAtackService;
-import Business.Interfaces.IEetakemonService;
-import Business.Interfaces.IUserService;
-import Business.UserService;
+import Controller.AtackService;
+import Controller.EetakemonService;
+import Controller.Interfaces.IAtackService;
+import Controller.Interfaces.IEetakemonService;
+import Controller.Interfaces.ILocation;
+import Controller.Interfaces.IUserService;
+import Controller.LocationService;
+import Controller.UserService;
 import Model.Atack;
 import Model.Eetakemon;
+import Model.Markers;
 import Model.User;
+import com.google.maps.model.LatLng;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
- * Created by Miguel Angel on 21/04/2017.
+ * Created by Ignacio on 21/04/2017.
  */
 @Path("/web")
 @Singleton
 public class JSONService {
 
     // User implementation
-    private static final IUserService _serviceUser = new UserService();
-    private static final ISignatureControlService _signatureControl = new SignatureControlService();
+    private IUserService _serviceUser = new UserService();
+
 
     @Path("createUser")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     public Response createUser(User user){
         if(_serviceUser.create(user))
         {
-            return Response.status(201).entity(user).build();
+            return Response.status(201).entity("User created OK").build();
         }
         return Response.status(200).entity("User created KO").build();
-    }
-
-    @Path("singIn")
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response.ResponseBuilder singIn(User user){
-
-        user = _serviceUser.signIn(user.getUsername(), user.getPassword());
-        if(user.getUsername() != null)
-        {
-            Map<String, String> authToken = new HashMap<>();
-            return Response.ok(user);
-           //Response.ok(authToken);
-            //return Response.status(201).entity(user).entity(authToken).build();
-        }
-
-        //return Response.status(200).entity("User created KO").build();
-        return Response.ok();
     }
 
 
@@ -158,7 +139,8 @@ public class JSONService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Eetakemon> getAllEetakemons() {
-        return _serviceEetakemon.getAll();
+        List<Eetakemon> list=_serviceEetakemon.getAll();
+        return list;
     }
 
 
@@ -214,5 +196,17 @@ public class JSONService {
         return _serviceAtack.getAll();
 
     }
+
+    //LocationService implementation
+    private ILocation _serviceLocation=new LocationService();
+    @Path("markers")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Markers> getMarkers(Markers markers){
+        return _serviceLocation.getMarkers(markers);
+    }
+
+
 }
 

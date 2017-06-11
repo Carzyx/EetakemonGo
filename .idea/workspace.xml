@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Dao/Entity/MarkersDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IMarkersDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Dao/MarkersDao.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Controller/Location.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/LocationService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/Main.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/databaseInfo.txt" afterPath="$PROJECT_DIR$/databaseInfo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller/Interfaces/ILocation.java" afterPath="$PROJECT_DIR$/src/main/java/Controller/Interfaces/ILocation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -14,10 +23,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EetakemonGo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1496600091654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/EetakemonGo$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1494189670865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ApiRest.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/EetakemonGo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1493490180667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -41,50 +50,45 @@
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="EetakemonGo" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="Index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/View/Index.jsp">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JSONService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserApi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/UserApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1848">
-              <caret line="70" column="17" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="70" selection-end-column="17" />
+            <state relative-caret-position="313">
+              <caret line="205" column="53" lean-forward="false" selection-start-line="205" selection-start-column="53" selection-end-line="205" selection-end-column="53" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="method#updateUser#0;class#UserApi#0" expanded="false" />
-                <element signature="method#addAEetakemonsToUser#0;class#UserApi#0" expanded="false" />
+                <element signature="e#5964#5965#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpResponseHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Helpers/HttpResponseHelper.java">
+      <file leaf-file-name="databaseInfo.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/databaseInfo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="35" column="86" lean-forward="false" selection-start-line="35" selection-start-column="86" selection-end-line="35" selection-end-column="86" />
+            <state relative-caret-position="239">
+              <caret line="65" column="211" lean-forward="true" selection-start-line="65" selection-start-column="189" selection-end-line="65" selection-end-column="211" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LocationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="23" column="54" lean-forward="false" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,41 +96,90 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQLRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/MySQLRepository.java">
+      <file leaf-file-name="Markers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Markers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="244" column="40" lean-forward="false" selection-start-line="244" selection-start-column="40" selection-end-line="244" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="176">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="e#236#237#0" expanded="false" />
+                <element signature="e#262#263#0" expanded="false" />
+                <element signature="e#300#301#0" expanded="false" />
+                <element signature="e#330#331#0" expanded="false" />
+                <element signature="e#360#361#0" expanded="false" />
+                <element signature="e#386#387#0" expanded="false" />
+                <element signature="e#424#425#0" expanded="false" />
+                <element signature="e#454#455#0" expanded="false" />
+                <element signature="e#493#494#0" expanded="false" />
+                <element signature="e#525#526#0" expanded="false" />
+                <element signature="e#578#579#0" expanded="false" />
+                <element signature="e#620#621#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="SignatureControl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SignatureControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
-              <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="132">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JSONService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
+      <file leaf-file-name="EetakemonService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EetakemonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="352">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#374#375#0" expanded="false" />
+                <element signature="e#428#429#0" expanded="false" />
+                <element signature="e#591#592#0" expanded="false" />
+                <element signature="e#655#656#0" expanded="false" />
+                <element signature="e#711#712#0" expanded="false" />
+                <element signature="e#775#776#0" expanded="false" />
+                <element signature="e#918#919#0" expanded="false" />
+                <element signature="e#967#968#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Main.java">
+      <file leaf-file-name="ILocation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Interfaces/ILocation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+            <state relative-caret-position="176">
+              <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MarkersDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MarkersDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IMarkersDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Interfaces/IMarkersDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -140,13 +193,32 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>propertyClass</find>
+      <find>propertyClass[</find>
+      <find>propertyClass[i].get(t)</find>
+      <find>t.</find>
+      <find>index</find>
+      <find>resultset</find>
+      <find>while</find>
+      <find>package Controller\;\nimport Dao\.IAtackDao\;\nimport Model\.\*\;\nimport Dao\.IEetakemonDao\;\n\nimport java\.util\.ArrayList\;\nimport java\.util\.List\;\n\n\/\*\*\n \* Created by Miguel Angel on 13\/03\/2017\.\n \*\/\npublic class EetakemonService implements IEetakemonService \{\n\n    private static IEetakemonDao _eetakemonDAO\;\n    private static IAtackDao _atackDao\;\n\n    public EetakemonService\(IEetakemonDao service\,IAtackDao _extra\)\{\n        _eetakemonDAO\=service\;\n        _atackDao\=_extra\;\n    \}\n    \/\/Eetakemon\n    \@Override\n    public boolean createEetakemon\(Eetakemon eetakemon\) \{\n    try \{\n    return _eetakemonDAO\.add\(eetakemon\)\;\n    \}\n    catch \(Exception e\)\{\}\n        \/\/before need to Check null values and input ID\?\n        \/\/_eetakemonDAO\.createEetakemon\(eetakemon\)\;\n    return false\;\n    \}\n    public  List\&lt;Eetakemon\&gt; getUserEetakemons\(int id\) \{\n        try \{\n            List\&lt;EetakemonsUser\&gt; list \= _eetakemonDAO\.getAllEetakemonsToUser\(id\)\;\n            List\&lt;Eetakemon\&gt; eetakemons \= new ArrayList\&lt;Eetakemon\&gt;\(\)\;\n            for \(int i\=0\;i\&lt;list\.size\(\)\;i\+\+\)\{\n                Eetakemon eetakemon\=new Eetakemon\(\)\;\n                List\&lt;Atack\&gt; atackList\=new ArrayList\&lt;Atack\&gt;\(\)\;\n                eetakemon\=_eetakemonDAO\.getById\(list\.get\(i\)\.getIdeetakemon\(\)\)\;\n                List\&lt;AtacksEetakemon\&gt; atacksEetakemons\=_atackDao\.getAllAtacksToEetakemon\(eetakemon\.getId\(\)\)\;\n                for\(int j\=0\;j\&lt;atacksEetakemons\.size\(\)\;j\+\+\)\{\n                atackList\.add\(_atackDao\.getAtackTById\(atacksEetakemons\.get\(j\)\.getIdatack\(\)\)\)\;\}\n                eetakemon\.setEetakemonAtack\(atackList\)\;\n                eetakemons\.add\(eetakemon\)\;\n            \}\n            return eetakemons\;\n        \} catch \(Exception e\) \{\n            return null\;\n        \}\n    \}\n    public List\&lt;AtacksEetakemon\&gt; getAtacks\(String name\)\{return null\;\}\n    \@Override\n    public boolean removeEetakemon\(int id\) \{\n        return false\;\n    \}\n\n    \@Override\n    public boolean updateEetakemon\(int id\, Eetakemon eetakemon\) \{\n        return false\;\n    \}\n\n    \@Override\n    public Eetakemon getEetakemon\(int id\) \{\n       try \{\n           return _eetakemonDAO\.getById\(id\)\;\n       \}\n       catch \(Exception e\)\{e\.printStackTrace\(\)\;\n       return null\;\}\n    \}\n    \/\/Eetakemons To User\n    public List\&lt;AtacksEetakemon\&gt; getRandomAtacks\(EetakemonType type\) \{\n        return null\;\n    \}\n\n    public boolean addEetakemonToUser\(int id_user\,Eetakemon eetakemon\)\{\n        \/\/return _eetakemonDAO\.addEetakemonToUser\(id_user\,eetakemon\.getId\(\)\)\;\}\n        return _eetakemonDAO\.addEetakemonToUser\(id_user\,1\)\;\}\/\/CAMBIAR\n    public boolean addAtackToEetakemon\(int id_Eetakemon\,AtacksEetakemon atacksEetakemon\)\{\n        return _atackDao\.addAtackToEetakemon\(id_Eetakemon\,1\)\;\/\/CAMBIAR\n    \}\n    \/\/Atakcs\n    public boolean addAtack\(Atack atack\)\{return _atackDao\.addAtack\(atack\)\;\}\n\}\n</find>
+      <find>getIdeetakemon</find>
+      <find>isUsernameAlreadyInUse</find>
+      <find>getUserByUsernameAndPassword</find>
+      <find>t get</find>
+      <find>getProperty</find>
+      <find>setProperty</find>
+      <find>getByParameter</find>
+      <find>getbyid</find>
+      <find>registerConditions</find>
+      <find>_extra</find>
+      <find>removeata</find>
+      <find>null</find>
       <find>getConvertValueType</find>
       <find>getById</find>
       <find>Registrate para pasarlo pipa</find>
@@ -156,27 +228,7 @@
       <find>TestAlert</find>
       <find>Idata</find>
       <find>email</find>
-      <find>PathParam</find>
-      <find>generateKey</find>
-      <find>signWith</find>
-      <find>key</find>
-      <find>id</find>
-      <find>servlet</find>
-      <find>getcom</find>
-      <find>getCompleteUserByUsername</find>
-      <find>getCompleteUserBy</find>
-      <find>getuserby</find>
-      <find>main</find>
-      <find>authorization</find>
-      <find>getSuccessResponse</find>
-      <find>getuserbyuser</find>
-      <find>JSONService</find>
-      <find>ApiResr</find>
-      <find>dateExpiration</find>
       <find>getall</find>
-      <find>jersey</find>
-      <find>apir</find>
-      <find>getallu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,57 +248,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Controller/SignatureControl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Business/SignatureControl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Business/Interfaces/ISignatureControlService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Business/SignatureControlService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/SignatureControlService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/JaxRsFilterAuthentication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/SecurityFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/TokenAuthenticated.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/CustomFilters/TokenAuthenticated.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/AtackApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/SecurityFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Helpers/Interfaces/HttpResponseHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Helpers/IHttpResponseHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Enum/ActionCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/ISignatureControlService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Helpers/HttpResponseHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Helpers/Interfaces/IHttpResponseHelper.java" />
-        <option value="$PROJECT_DIR$/demoApplication.log" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/IUserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/IGenericDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Entity/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Entity/UserDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Entity/EetakemonDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IBasicDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IAtackDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/UserApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Interfaces/EetakemonApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/EetakemonApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/HttpResponseHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Interfaces/IUserApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Interfaces/IAtackApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/AtackApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/EetakemonApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Interfaces/IEetakemonApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Filters/SignatureControlService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Business/Dao/AtackDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IBasicService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IEetakemonService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Entity/AtacksEetakemonDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Entity/EetakemonsUserDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IEetakemonDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IUserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IAtackService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/EetakemonService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/EetakemonType.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dao/AtackDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/AtackDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Business/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/GenericDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/MySQLRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/UserApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/UserApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/View/Index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/View/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/View/test.jsp" />
-        <option value="$PROJECT_DIR$/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IGenericDao.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8d6856f7-5ddb-437c-9235-f0fa5863ffdf/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/AtackService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Atack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/EetakemonDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/public/assets/js/ie/ApiRest.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/ApiRest.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/util.js" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/User.java" />
+        <option value="$PROJECT_DIR$/public/signIn.html" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/register2.html" />
+        <option value="$PROJECT_DIR$/public/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/public/indexv2.html" />
+        <option value="$PROJECT_DIR$/public/home.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/AtackApi.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/ViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Markers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Entity/MarkersDto.java" />
+        <option value="$PROJECT_DIR$/databaseInfo.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/Location.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/Interfaces/ILocation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/Interfaces/IMarkersDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/LocationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Dao/MarkersDao.java" />
       </list>
     </option>
   </component>
@@ -278,32 +330,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-16" />
-    <option name="y" value="-16" />
-    <option name="width" value="3232" />
-    <option name="height" value="1732" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>J2ME issuesJava</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>SimplifiableIfStatement</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -323,8 +353,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -354,6 +385,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -377,13 +412,104 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApiRest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jjwt-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -400,18 +526,18 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Miguel Angel\Documents\GitHub\Universidad\EetakemonGo\public\assets\js" />
-    </key>
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="ApiRest.Api" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\src\main\java\Model" />
+      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\public\profile" />
+      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\public" />
+      <recent name="C:\Users\Gurkeerat Singh\IdeaProjects\EetakemonGo\public" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Dao.Entity" />
       <recent name="Controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Gurkeerat Singh\IdeaProjects\EetakemonGo\public" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Miguel Angel\Documents\GitHub\Universidad\EetakemonGo\public\assets\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -913,15 +1039,15 @@
       <workItem from="1495661553663" duration="84000" />
       <workItem from="1495712871792" duration="1122000" />
       <workItem from="1495734579670" duration="88000" />
-      <workItem from="1495983467341" duration="797000" />
-      <workItem from="1496167781927" duration="47000" />
-      <workItem from="1496169336619" duration="46000" />
-      <workItem from="1496170036569" duration="2234000" />
-      <workItem from="1496564273075" duration="35852000" />
-      <workItem from="1496664733144" duration="7000" />
-      <workItem from="1497080443088" duration="34164000" />
-      <workItem from="1497179918632" duration="338000" />
-      <workItem from="1497180884398" duration="111000" />
+      <workItem from="1496094092949" duration="1108000" />
+      <workItem from="1496415830868" duration="126000" />
+      <workItem from="1496415993238" duration="45000" />
+      <workItem from="1496484274853" duration="10409000" />
+      <workItem from="1496508601752" duration="4852000" />
+      <workItem from="1496850951894" duration="42000" />
+      <workItem from="1497114854189" duration="1185000" />
+      <workItem from="1497171052551" duration="3593000" />
+      <workItem from="1497174670568" duration="2241000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1056,46 +1182,25 @@
       <option name="project" value="LOCAL" />
       <updated>1495713032830</updated>
     </task>
-    <task id="LOCAL-00020" summary="Reorganize and Add control acces rest api by token validation">
-      <created>1496611809666</created>
+    <task id="LOCAL-00020" summary="Web Improvement&#10;Correcion: Tabla motrada correctamente">
+      <created>1496509856201</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1496611809666</updated>
+      <updated>1496509856201</updated>
     </task>
-    <task id="LOCAL-00021" summary="Refactor Rest implementation&#10;- Added security service using authToken&#10;- Added HttpResponseHelper&#10;- Reorganize rest structure&#10;- Added Gson to JsonSerialize objects">
-      <created>1497137293703</created>
+    <task id="LOCAL-00021" summary="Markers desde servidor">
+      <created>1496513966677</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1497137293703</updated>
+      <updated>1496513966677</updated>
     </task>
-    <task id="LOCAL-00022" summary="Reorganize project structure and fixed code style:&#10;- RestApi: acces control to ApiRest&#10;- Bussines: Bussines logic &#10;- DataAccesLayer: Acces to database, Dao and Repository">
-      <created>1497140644583</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1497140644583</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Merge from master">
-      <created>1497180942986</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1497180942986</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Merge from master">
-      <created>1497180992272</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1497180992272</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="415709000" />
+    <option name="totallyTimeSpent" value="365714000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1107,7 +1212,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1117,34 +1222,33 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18877716" sideWeight="0.48728815" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6188889" sideWeight="0.48700175" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4957537" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3493724" sideWeight="0.2596875" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32768363" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3493724" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31136364" sideWeight="0.2596875" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34886363" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34170154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32768363" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2183871" sideWeight="0.49624866" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34545454" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20837809" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.4957537" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21193549" sideWeight="0.50375134" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951483" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18806452" sideWeight="0.5127119" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5042463" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627118" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649574" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1168,410 +1272,410 @@
     <MESSAGE value="web" />
     <MESSAGE value="Web Improvement&#10;Index v2 + Home" />
     <MESSAGE value="Web Improvement&#10;Correcion: Tabla motrada correctamente" />
-    <MESSAGE value="Reorganize and Add control acces rest api by token validation" />
-    <MESSAGE value="Refactor Rest implementation&#10;- Added security service using authToken&#10;- Added HttpResponseHelper&#10;- Reorganize rest structure&#10;- Added Gson to JsonSerialize objects" />
-    <MESSAGE value="Reorganize project structure:&#10;- RestApi: acces control to ApiRest&#10;- Bussines: Bussines logic &#10;- DataAccesLayer: Acces to database, Dao and Repository" />
-    <MESSAGE value="Reorganize project structure and fixed code style:&#10;- RestApi: acces control to ApiRest&#10;- Bussines: Bussines logic &#10;- DataAccesLayer: Acces to database, Dao and Repository" />
-    <MESSAGE value="Merge from master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge from master" />
+    <MESSAGE value="Markers desde servidor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Markers desde servidor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>8</line>
-          <properties />
-          <option name="timeStamp" value="312" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/ViewController.java</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="341" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/ViewController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java</url>
           <line>33</line>
           <properties />
-          <option name="timeStamp" value="342" />
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/AtackDao.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/ViewController.java</url>
-          <line>40</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Dao/GenericDaoImpl.java</url>
+          <line>142</line>
           <properties />
-          <option name="timeStamp" value="343" />
+          <option name="timeStamp" value="254" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="344" />
+      <option name="time" value="269" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="_httpResponseHelper.getSuccessResponse(user, user.getUsername())" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Date.java">
+    <entry file="file://$PROJECT_DIR$/public/indexv3.html" />
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="915" column="19" lean-forward="false" selection-start-line="915" selection-start-column="19" selection-end-line="915" selection-end-column="19" />
+        <state relative-caret-position="391">
+          <caret line="23" column="79" lean-forward="false" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/util/Pair.java">
+    <entry file="file://$PROJECT_DIR$/public/assets/css/FlipCardOpcion2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="63" column="11" lean-forward="false" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar!/javax/ws/rs/POST.class">
+    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="2312">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-common/2.24/jersey-common-2.24.jar!/org/glassfish/jersey/message/internal/OutboundJaxrsResponse.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="274" column="31" lean-forward="false" selection-start-line="274" selection-start-column="31" selection-end-line="274" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Enum/ActionCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IUserApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="54" column="105" lean-forward="false" selection-start-line="54" selection-start-column="105" selection-end-line="54" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demoApplication.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-common/2.24/jersey-common-2.24.jar!/org/glassfish/jersey/message/internal/OutboundMessageContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-common/2.24/jersey-common-2.24.jar!/org/glassfish/jersey/internal/AbstractRuntimeDelegate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.24/jersey-server-2.24.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Helpers/Interfaces/IHttpResponseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IUserApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IAtackApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IEetakemonApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IAtackApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/ISignatureControlService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EetakemonGo.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/public/pokemons/sourcefont.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1429">
-          <caret line="168" column="27" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/pokemons/charizard.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="317" column="7" lean-forward="false" selection-start-line="317" selection-start-column="7" selection-end-line="317" selection-end-column="7" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/pokemons/blissey.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/AtackDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="42" column="60" lean-forward="false" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/pokemons/asa.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Business/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/images/pic01.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="150" column="8" lean-forward="false" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/images/pic03.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/EetakemonsUserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/GenericDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/EetakemonApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/images/icons/captura.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1782">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="792">
+          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
+    <entry file="file://$PROJECT_DIR$/public/UserList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="142" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/View/test.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/View/home.jsp" />
-    <entry file="file://$PROJECT_DIR$/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/indexv2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="162" column="107" lean-forward="false" selection-start-line="162" selection-start-column="107" selection-end-line="162" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/icons/evoluciona.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/icons/localizacion.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/profile/evoluciona.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/icons/logros.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/banner.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Interfaces/IBasicService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/AtacksEetakemon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-common/2.24/jersey-common-2.24.jar!/org/glassfish/jersey/internal/Errors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Entity/EetakemonDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        <state relative-caret-position="110">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/ViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MySQLRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="176">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Filters/SignatureControlService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Atack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="110">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Filters/CustomFilters/TokenAuthenticated.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Eetakemon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="36" />
+        <state relative-caret-position="154">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Interfaces/IEetakemonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/EetakemonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="22" column="43" lean-forward="false" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Filters/SecurityFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="1254">
+          <caret line="78" column="31" lean-forward="false" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Entity/MarkersDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="352">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Interfaces/IUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/AtackDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/UserApi.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1848">
-          <caret line="70" column="17" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="70" selection-end-column="17" />
+        <state relative-caret-position="374">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Entity/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Interfaces/MarkersDao.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Interfaces/ILocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="method#updateUser#0;class#UserApi#0" expanded="false" />
-            <element signature="method#addAEetakemonsToUser#0;class#UserApi#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/AtackApi.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/Interfaces/IMarkersDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="23" column="6" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/View/Index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        <state relative-caret-position="176">
+          <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SignatureControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="132">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#581#582#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Helpers/HttpResponseHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EetakemonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="35" column="86" lean-forward="false" selection-start-line="35" selection-start-column="86" selection-end-line="35" selection-end-column="86" />
+        <state relative-caret-position="352">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#374#375#0" expanded="false" />
+            <element signature="e#428#429#0" expanded="false" />
+            <element signature="e#591#592#0" expanded="false" />
+            <element signature="e#655#656#0" expanded="false" />
+            <element signature="e#711#712#0" expanded="false" />
+            <element signature="e#775#776#0" expanded="false" />
+            <element signature="e#918#919#0" expanded="false" />
+            <element signature="e#967#968#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/MySQLRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Markers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="244" column="40" lean-forward="false" selection-start-line="244" selection-start-column="40" selection-end-line="244" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="176">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#236#237#0" expanded="false" />
+            <element signature="e#262#263#0" expanded="false" />
+            <element signature="e#300#301#0" expanded="false" />
+            <element signature="e#330#331#0" expanded="false" />
+            <element signature="e#360#361#0" expanded="false" />
+            <element signature="e#386#387#0" expanded="false" />
+            <element signature="e#424#425#0" expanded="false" />
+            <element signature="e#454#455#0" expanded="false" />
+            <element signature="e#493#494#0" expanded="false" />
+            <element signature="e#525#526#0" expanded="false" />
+            <element signature="e#578#579#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/containers/jersey-container-grizzly2-http/2.24/jersey-container-grizzly2-http-2.24.jar!/org/glassfish/jersey/grizzly2/httpserver/GrizzlyHttpServerFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="82" column="82" lean-forward="true" selection-start-line="82" selection-start-column="82" selection-end-line="82" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+        <state relative-caret-position="242">
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LocationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="23" column="54" lean-forward="false" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MarkersDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="205" column="53" lean-forward="false" selection-start-line="205" selection-start-column="53" selection-end-line="205" selection-end-column="53" />
+          <folding>
+            <element signature="e#5964#5965#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseInfo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="65" column="211" lean-forward="true" selection-start-line="65" selection-start-column="189" selection-end-line="65" selection-end-column="211" />
           <folding />
         </state>
       </provider>

@@ -8,8 +8,8 @@
 	}
 
 .flip-container, .front, .back {/*imagen tanaño*/
-	width: 120px;
-	height: 120px;
+	width: 500px;
+	height: 500px;
 }
 
 /* flip speed goes here */

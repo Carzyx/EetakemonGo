@@ -414,7 +414,57 @@ function TablaVisibleParaOtros(selector, data) {//falta poner headers
         tr.append("<td>" + data[i].email + "</td>");
         $(selector).append(tr);
     }
-};
+}
+////////////////////////////////////////////////////////////////////pruebas gurki etakedex
+
+
+function EetakedexConstructor(selector,json) {
+    var tr=[];
+    for (var i = 0; i < json.length; i++) {
+
+
+        tr.push('<div class="6u 12u(mobilep)"><div class="flip-container"><div class="flipper">');
+        tr.push('<div class="front" style="');
+        tr.push('background: url(pokemons/'+json[i].image+'.gif) 0 0 no-repeat;">');//style front
+
+        tr.push('<span class="name">'+json[i].name+'</span></div>');//nombre front
+
+        tr.push('<div class="back" style="');//style back
+        tr.push('background:#f8f8f8;">');//style back
+
+        tr.push('<p>Name: '+json[i].name+'</p><p>Type: '+json[i].type+'</p><p>Level: '+json[i].level+'</p><p>PS: '+json[i].ps+'</p><p>Descripción: '+json[i].description+'</p>');
+
+        tr.push('</div> </div> </div> </div>');
+
+        //tr.push("<td>" + json[i].User_Name + "</td>");
+        //tr.push("<td>" + json[i].score + "</td>");
+        //tr.push("<td>" + json[i].team + "</td>");
+        //tr.push('</tr>');
+    }
+    $(selector).append($(tr.join('')));
+}
+
+function GetAllEetakemonsPrueba(selector) {
+    var arr = [ "name", "level", "ps", "type", "description",  "image" ];
+    var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
+
+    var jsonResult;
+    $.ajax({
+        type: "GET",
+        url: " http://localhost:8080/myapp/web/getAllEetakemons",
+        dataType: 'application/json',
+        complete: function (data) {
+            jsonResult = JSON.parse(data.responseText);
+            console.log(jsonResult);
+            EetakedexConstructor(selector, jsonResult);
+
+        }
+    });
+
+}
+
+///////////////////////////////////////////////////////////////////////////
+
 function GetTablaVisibleUsersRegistrados(selector) {
     var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
     var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
@@ -431,7 +481,8 @@ function GetTablaVisibleUsersRegistrados(selector) {
         }
     });
 
-};
+}
+
 
 
 function TestAlert() {
