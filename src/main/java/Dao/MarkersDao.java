@@ -1,6 +1,6 @@
-package Controller;
+package Dao;
 
-import Controller.Interfaces.ILocation;
+import Dao.Interfaces.IMarkersDao;
 import Model.Eetakemon;
 import Model.EetakemonType;
 import Model.Markers;
@@ -10,11 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Ignacio on 03/06/2017.
+ * Created by Ignacio on 11/06/2017.
  */
-public class Location implements ILocation {
+public class MarkersDao implements IMarkersDao{
+
     @Override
-    public List<Markers> getMarkers(LatLng latLng) {
+    public List<Markers> getActiveMarkers(LatLng latLng) {
         List<Markers>markers=new ArrayList<Markers>();
         Markers marker=new Markers();
         marker.setLat(41.358975);

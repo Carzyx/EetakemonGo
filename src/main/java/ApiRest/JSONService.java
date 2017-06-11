@@ -5,7 +5,7 @@ import Controller.Interfaces.IAtackService;
 import Controller.Interfaces.IEetakemonService;
 import Controller.Interfaces.ILocation;
 import Controller.Interfaces.IUserService;
-import Controller.Location;
+import Controller.LocationService;
 import Controller.UserService;
 import Model.Atack;
 import Model.Eetakemon;
@@ -17,7 +17,6 @@ import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -198,14 +197,14 @@ public class JSONService {
 
     }
 
-    //Location implementation
-    private ILocation _serviceLocation=new Location();
+    //LocationService implementation
+    private ILocation _serviceLocation=new LocationService();
     @Path("markers")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public List<Markers> getMarkers(Markers markers){
-        return _serviceLocation.getMarkers(new LatLng(markers.getLat(),markers.getLng()));
+        return _serviceLocation.getMarkers(markers);
     }
 
 
