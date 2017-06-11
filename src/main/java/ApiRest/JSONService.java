@@ -1,17 +1,17 @@
 package ApiRest;
-import Controller.AtackService;
-import Controller.EetakemonService;
-import Controller.Interfaces.IAtackService;
-import Controller.Interfaces.IEetakemonService;
-import Controller.Interfaces.ILocation;
-import Controller.Interfaces.IUserService;
-import Controller.LocationService;
-import Controller.UserService;
+
+import Business.AtackService;
+import Business.EetakemonService;
+import Business.Interfaces.IAtackService;
+import Business.Interfaces.IEetakemonService;
+import Business.Interfaces.ILocation;
+import Business.Interfaces.IUserService;
+import Business.LocationService;
+import Business.UserService;
 import Model.Atack;
 import Model.Eetakemon;
 import Model.Markers;
 import Model.User;
-import com.google.maps.model.LatLng;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
