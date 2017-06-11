@@ -1,14 +1,11 @@
-package Controller;
+package Business;
 
-import Controller.Interfaces.ILocation;
-import Dao.Interfaces.IMarkersDao;
-import Dao.MarkersDao;
-import Model.Eetakemon;
-import Model.EetakemonType;
+import Business.Interfaces.ILocation;
+import DAL.Dao.Interfaces.IMarkersDao;
+import DAL.Dao.MarkersDao;
 import Model.Markers;
 import com.google.maps.model.LatLng;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

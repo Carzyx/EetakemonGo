@@ -1,4 +1,4 @@
-package Controller.Interfaces;
+package Business.Interfaces;
 
 import Model.Markers;
 import com.google.maps.model.LatLng;

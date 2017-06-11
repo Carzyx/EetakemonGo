@@ -1,4 +1,4 @@
-package Dao.Interfaces;
+package DAL.Dao.Interfaces;
 
 import Model.Markers;
 import com.google.maps.model.LatLng;

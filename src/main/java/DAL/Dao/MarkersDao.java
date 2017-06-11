@@ -1,6 +1,6 @@
-package Dao;
+package DAL.Dao;
 
-import Dao.Interfaces.IMarkersDao;
+import DAL.Dao.Interfaces.IMarkersDao;
 import Model.Eetakemon;
 import Model.EetakemonType;
 import Model.Markers;
