@@ -1,12 +1,9 @@
-package Dao.Interfaces;
+package DAL.Dao.Interfaces;
 
 
-import Dao.Entity.EetakemonsUserDto;
-import Model.AtacksEetakemon;
+import DAL.EntityDataBase.EetakemonsUserDto;
 import Model.Eetakemon;
-import Model.EetakemonsUser;
 
-import java.util.Hashtable;
 import java.util.List;
 
 /**

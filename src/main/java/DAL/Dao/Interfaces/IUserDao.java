@@ -1,9 +1,6 @@
-package Dao.Interfaces;
+package DAL.Dao.Interfaces;
 
-import Model.EetakemonsUser;
 import Model.User;
-
-import java.util.List;
 
 /**
  * Created by Miguel Angel on 04/04/2017.

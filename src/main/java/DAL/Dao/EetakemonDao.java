@@ -1,11 +1,11 @@
-package Dao;
+package DAL.Dao;
 
-import Dao.Entity.AtacksEetakemonDto;
-import Dao.Entity.EetakemonDto;
-import Dao.Entity.EetakemonsUserDto;
-import Dao.Interfaces.IAtackDao;
-import Dao.Interfaces.IEetakemonDao;
-import Dao.Interfaces.IGenericDao;
+import DAL.EntityDataBase.AtacksEetakemonDto;
+import DAL.EntityDataBase.EetakemonDto;
+import DAL.EntityDataBase.EetakemonsUserDto;
+import DAL.Dao.Interfaces.IAtackDao;
+import DAL.Dao.Interfaces.IEetakemonDao;
+import DAL.Dao.Interfaces.IGenericDao;
 import Model.*;
 import org.modelmapper.ModelMapper;
 
@@ -93,8 +93,8 @@ public class EetakemonDao implements IEetakemonDao {
             if(_serviceAtack.add(atack))
             {
                 AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
-                boolean result = _serviceAtackEetakemon.add(atacksEetakemonDto);
-                if (result == false) {
+                boolean atackAdded = _serviceAtackEetakemon.add(atacksEetakemonDto);
+                if (!atackAdded) {
                     actionResult = false;
                 }
             }
@@ -113,8 +113,8 @@ public class EetakemonDao implements IEetakemonDao {
             conditions.put("eetakemonName", eetakemon.getName());
             conditions.put("atackName", atack.getName());
             AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
-            boolean result = _serviceAtackEetakemon.removeByConditions(atacksEetakemonDto, conditions);
-            if (result == false) {
+            boolean atackRemoved = _serviceAtackEetakemon.removeByConditions(atacksEetakemonDto, conditions);
+            if (!atackRemoved) {
                 actionResult = false;
             }
         }
@@ -148,11 +148,7 @@ public class EetakemonDao implements IEetakemonDao {
 
     private boolean isValidAtackToEetakemon(Eetakemon eetakemon)
     {
-        if(eetakemon.getEetakemonAtack().size() == 4)
-        {
-            return true;
-        }
-        return false;
+        return eetakemon.getEetakemonAtack().size() == 4;
     }
 
 }

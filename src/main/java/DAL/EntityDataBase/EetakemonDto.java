@@ -1,9 +1,6 @@
-package Dao.Entity;
+package DAL.EntityDataBase;
 
-import Model.Atack;
 import Model.EetakemonType;
-
-import java.util.List;
 
 /**
  * Created by Miguel Angel on 06/05/2017.

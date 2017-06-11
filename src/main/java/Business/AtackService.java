@@ -1,8 +1,8 @@
 package Business;
 
 import Business.Interfaces.IAtackService;
-import Dao.AtackDao;
-import Dao.Interfaces.IAtackDao;
+import DAL.Dao.AtackDao;
+import DAL.Dao.Interfaces.IAtackDao;
 import Model.Atack;
 
 import java.util.List;

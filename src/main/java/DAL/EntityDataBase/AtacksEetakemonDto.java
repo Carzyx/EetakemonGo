@@ -1,6 +1,4 @@
-package Dao.Entity;
-
-import Model.AtacksEetakemon;
+package DAL.EntityDataBase;
 
 /**
  * Created by Miguel Angel on 06/05/2017.

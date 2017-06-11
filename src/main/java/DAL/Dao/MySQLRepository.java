@@ -1,13 +1,10 @@
-package Dao;
+package DAL.Dao;
 
 import Model.EetakemonType;
 import org.apache.log4j.Logger;
 
-import javax.rmi.CORBA.Util;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 import java.sql.*;
 import java.util.*;
 
@@ -15,10 +12,10 @@ import java.util.*;
  * Created by Miguel Angel on 06/04/2017.
  */
 public class MySQLRepository<T> {
-    final static Logger logger = Logger.getLogger(MySQLRepository.class);
+    private final static Logger logger = Logger.getLogger(MySQLRepository.class);
 
     //INSERT echo
-    public boolean add(String query, T t) {
+    protected boolean add(String query, T t) {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
@@ -43,7 +40,7 @@ public class MySQLRepository<T> {
         }
     }
 
-    public boolean update(String query, Hashtable<String, String> conditions, T t) {
+    protected boolean update(String query, Hashtable<String, String> conditions, T t) {
             Connection con = getConnection();
             try {
                 PreparedStatement stm = con.prepareStatement(query);
@@ -79,7 +76,7 @@ public class MySQLRepository<T> {
 
 
 
-    public boolean delete(String query, Hashtable<String, String> conditions, T t) throws Exception {
+    protected boolean delete(String query, Hashtable<String, String> conditions, T t) throws Exception {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
@@ -108,7 +105,7 @@ public class MySQLRepository<T> {
         }
     }
 
-    public List<T> select(String query, T t) {
+    protected List<T> select(String query, T t) {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
@@ -126,7 +123,7 @@ public class MySQLRepository<T> {
     }
 
     //revisar bucle
-    public List<T> selectByCondition(String query, Hashtable<String, String> conditions, T t) {
+    protected List<T> selectByCondition(String query, Hashtable<String, String> conditions, T t) {
         Connection con = getConnection();
         try {
             PreparedStatement stm = con.prepareStatement(query);
@@ -182,7 +179,7 @@ public class MySQLRepository<T> {
 
         try {
             Class nameClass = t.getClass();
-            List<T> list = new ArrayList<T>();
+            List<T> list = new ArrayList<>();
             Field[] propertyClass = nameClass.getDeclaredFields();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             while (resultSet.next()) {
@@ -246,8 +243,8 @@ public class MySQLRepository<T> {
         try {
             Method m = t.getClass().getMethod(getProperty(key));
             Object object = m.invoke(t, null);
-            String ret = String.valueOf(object);
-            return ret;
+            return String.valueOf(object);
+
         } catch (Exception ex) {
             logger.error("Error en la ejecucion MySQLRepository.getConvertValueType: "
                 + ex.getMessage());
@@ -257,14 +254,12 @@ public class MySQLRepository<T> {
 
     private String getProperty(String key) {
         String m = key.substring(0, 1).toUpperCase();
-        StringBuffer f = new StringBuffer("get").append(m).append(key.substring(1));
-        return f.toString();
+        return "get" + m + key.substring(1);
     }
 
     private String setProperty(String key) {
         String m = key.substring(0, 1).toUpperCase();
-        StringBuffer f = new StringBuffer("set").append(m).append(key.substring(1));
-        return f.toString();
+        return "set" + m + key.substring(1);
     }
 }
 

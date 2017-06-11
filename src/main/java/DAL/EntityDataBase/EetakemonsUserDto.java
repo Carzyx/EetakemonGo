@@ -1,4 +1,4 @@
-package Dao.Entity;
+package DAL.EntityDataBase;
 
 /**
  * Created by Miguel Angel on 06/05/2017.

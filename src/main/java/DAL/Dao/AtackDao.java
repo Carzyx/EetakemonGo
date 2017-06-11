@@ -1,10 +1,8 @@
-package Dao;
+package DAL.Dao;
 
-import Dao.Interfaces.IAtackDao;
-import Dao.Interfaces.IGenericDao;
+import DAL.Dao.Interfaces.IAtackDao;
+import DAL.Dao.Interfaces.IGenericDao;
 import Model.Atack;
-import Model.AtacksEetakemon;
-import Model.EetakemonsUser;
 
 import java.util.Hashtable;
 import java.util.List;
@@ -42,7 +40,7 @@ public class AtackDao implements IAtackDao {
     public Atack getByName(String name) {
 
         Atack eetakemon = new Atack();
-        Hashtable<String, String> condition = new Hashtable<String, String>();
+        Hashtable<String, String> condition = new Hashtable<>();
         condition.put("name", name);
 
         return _service.getByParameters(eetakemon, condition);

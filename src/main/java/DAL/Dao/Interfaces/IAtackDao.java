@@ -1,4 +1,4 @@
-package Dao.Interfaces;
+package DAL.Dao.Interfaces;
 
 import Model.Atack;
 

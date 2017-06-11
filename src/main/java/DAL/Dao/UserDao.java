@@ -1,10 +1,10 @@
-package Dao;
+package DAL.Dao;
 
-import Dao.Entity.EetakemonsUserDto;
-import Dao.Entity.UserDto;
-import Dao.Interfaces.IEetakemonDao;
-import Dao.Interfaces.IGenericDao;
-import Dao.Interfaces.IUserDao;
+import DAL.EntityDataBase.EetakemonsUserDto;
+import DAL.EntityDataBase.UserDto;
+import DAL.Dao.Interfaces.IEetakemonDao;
+import DAL.Dao.Interfaces.IGenericDao;
+import DAL.Dao.Interfaces.IUserDao;
 import Model.Eetakemon;
 import Model.User;
 import org.modelmapper.ModelMapper;

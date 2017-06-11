@@ -1,9 +1,9 @@
-package Dao;
+package DAL.Dao;
 
-import Dao.Interfaces.IGenericDao;
+import DAL.Dao.Interfaces.IGenericDao;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -12,10 +12,12 @@ import java.util.List;
  */
 public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao<T> {
 
+    private final static Logger logger = Logger.getLogger(GenericDaoImpl.class);
+
     public boolean add(T t) {
         try {
             Class nameClass = t.getClass();
-            StringBuffer query = new StringBuffer("INSERT INTO ")
+            StringBuilder query = new StringBuilder("INSERT INTO ")
                 .append(nameClass.getSimpleName().toLowerCase()).append("(");
             Field[] propertyClass = nameClass.getDeclaredFields();
             for (int i = 0; (i < propertyClass.length ); i++) {
@@ -32,8 +34,8 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             }
             query.append("?)");
             return add(query.toString(), t);
-        } catch (Exception e) {
-            System.out.println(e.getStackTrace());
+        } catch (Exception ex) {
+            logger.error("Error en la ejecución GenericDaoImpl<T>.add: ", ex);
             return false;
         }
     }
@@ -54,7 +56,8 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             }
             query = registerConditions(propertyClass, conditions, query);
             return update(query.toString(), conditions, t);
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            logger.error("Error en la ejecución GenericDaoImpl<T>.updateByConditions: ", ex);
             return false;
         }
     }
@@ -67,7 +70,8 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             Field[] propertyClass = nameClass.getDeclaredFields();
             query = registerConditions(propertyClass, conditions, query);
             return delete(query.toString(), conditions, t);
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            logger.error("Error en la ejecución GenericDaoImpl<T>.removeByConditions: ", ex);
             return false;
         }
     }
@@ -85,13 +89,14 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
 
     public List<T> getAll(T t) {
         try {
-            StringBuffer query = new StringBuffer();
+            StringBuilder query = new StringBuilder();
             Class nameClass = t.getClass();
             String simpleNameClass = nameClass.getSimpleName();
             query.append("SELECT * FROM ").append(simpleNameClass.toLowerCase());
 
             return select(query.toString(), t);
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            logger.error("Error en la ejecución GenericDaoImpl<T>.getAll: ", ex);
             return null;
         }
     }
@@ -105,8 +110,9 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
               }
               return null;
 
-          } catch (Exception e) {
-            return null;
+          } catch (Exception ex) {
+              logger.error("Error en la ejecución GenericDaoImpl<T>.getByParameters: ", ex);
+              return null;
         }
     }
 
@@ -125,7 +131,8 @@ public class GenericDaoImpl<T> extends MySQLRepository<T> implements IGenericDao
             }
 
             return selectByCondition(query.toString(), conditions, t);
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            logger.error("Error en la ejecución GenericDaoImpl<T>.getAllByParameters: ", ex);
             return null;
         }
     }

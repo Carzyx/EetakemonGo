@@ -1,8 +1,8 @@
 package Business;
 
 import Business.Interfaces.IEetakemonService;
-import Dao.EetakemonDao;
-import Dao.Interfaces.IEetakemonDao;
+import DAL.Dao.EetakemonDao;
+import DAL.Dao.Interfaces.IEetakemonDao;
 import Model.Eetakemon;
 
 import java.util.List;

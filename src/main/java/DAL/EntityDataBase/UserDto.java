@@ -1,9 +1,6 @@
-package Dao.Entity;
+package DAL.EntityDataBase;
 
-import Model.Eetakemon;
 import Model.User;
-
-import java.util.List;
 
 /**
  * Created by histo on 06/03/2017.

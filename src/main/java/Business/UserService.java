@@ -1,8 +1,8 @@
 package Business;
 
 import Business.Interfaces.IUserService;
-import Dao.Interfaces.IUserDao;
-import Dao.UserDao;
+import DAL.Dao.Interfaces.IUserDao;
+import DAL.Dao.UserDao;
 import Model.User;
 import com.mysql.jdbc.StringUtils;
 
@@ -21,10 +21,7 @@ public class UserService implements IUserService {
 
     public boolean create(User user) {
 
-        if (!isUsernameAlreadyInUse(user.getUsername()) & !isEmailAlreadyInUse(user.getEmail())) {
-            return _serviceUser.add(user);
-        }
-        return false;
+        return !isUsernameAlreadyInUse(user.getUsername()) & !isEmailAlreadyInUse(user.getEmail()) && _serviceUser.add(user);
     }
 
     public boolean removeByName(User user) {

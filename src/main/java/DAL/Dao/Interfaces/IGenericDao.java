@@ -1,4 +1,4 @@
-package Dao.Interfaces;
+package DAL.Dao.Interfaces;
 
 import java.util.Hashtable;
 import java.util.List;
