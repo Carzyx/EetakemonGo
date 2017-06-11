@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="Reorganize project structure and fixed code style:&#10;- RestApi: acces control to ApiRest&#10;- Bussines: Bussines logic &#10;- DataAccesLayer: Acces to database, Dao and Repository">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_containers_jersey_container_servlet_core_2_24.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_mvc_2_24.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_mvc_jsp_2_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/ViewController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/View/Index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EetakemonGo.iml" afterPath="$PROJECT_DIR$/EetakemonGo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log.out" afterPath="$PROJECT_DIR$/src/main/resources/log.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/log.out" afterPath="$PROJECT_DIR$/target/classes/log.out" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -932,7 +921,7 @@
       <workItem from="1496664733144" duration="7000" />
       <workItem from="1497080443088" duration="34164000" />
       <workItem from="1497179918632" duration="338000" />
-      <workItem from="1497180884398" duration="39000" />
+      <workItem from="1497180884398" duration="103000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1088,11 +1077,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497140644583</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Merge from master">
+      <created>1497180942986</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1497180942986</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="415637000" />
+    <option name="totallyTimeSpent" value="415701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1105,7 +1101,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1169,7 +1165,8 @@
     <MESSAGE value="Refactor Rest implementation&#10;- Added security service using authToken&#10;- Added HttpResponseHelper&#10;- Reorganize rest structure&#10;- Added Gson to JsonSerialize objects" />
     <MESSAGE value="Reorganize project structure:&#10;- RestApi: acces control to ApiRest&#10;- Bussines: Bussines logic &#10;- DataAccesLayer: Acces to database, Dao and Repository" />
     <MESSAGE value="Reorganize project structure and fixed code style:&#10;- RestApi: acces control to ApiRest&#10;- Bussines: Bussines logic &#10;- DataAccesLayer: Acces to database, Dao and Repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganize project structure and fixed code style:&#10;- RestApi: acces control to ApiRest&#10;- Bussines: Bussines logic &#10;- DataAccesLayer: Acces to database, Dao and Repository" />
+    <MESSAGE value="Merge from master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge from master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
