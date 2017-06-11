@@ -44,9 +44,30 @@ CREATE TABLE EetakemonsUser(
   FOREIGN  KEY (eetakemonName) REFERENCES EetakemonDto(name),
   FOREIGN  KEY (username) REFERENCES UserDto(username)
 );
+CREATE TABLE `eetakemonbbddtest`.`markersdto` (
+  `lat` DOUBLE NOT NULL,
+  `lng` DOUBLE NOT NULL);
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275461', '1.985169');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275211', '1.986160');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275710', '1.986649');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275635', '1.987184');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275655', '1.988927');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.276093', '1.988758');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275357', '1.986216');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275088', '1.98637');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275155', '1.986664');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275197', '1.986958');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275547', '1.987228');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275817', '1.985404');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275708', '1.984904');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275779', '1.990201');
+
+//TODO--PARA TEST
 INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Nacho', 'Ballesteros', 'Nach', '1234', 'n.balle.lo@gmail.com', '0', 'profile/evoluciona.png');
 INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Puñetazo', 'NEUTRO', '10', 'Un potente puñetazo en la cara');
 INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `level`, `ps`, `type`, `image`, `description`) VALUES ('Charizard', '1', '100', 'FUEGO', 'pokemons/charizard.png', 'El de toda la vida pa que vamos a explicar mas');
 INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `level`, `ps`, `type`, `image`, `description`) VALUES ('Charmander', '1', '100', 'FUEGO', 'pokemons/charmander.png', 'El tipico');
 INSERT INTO `eetakemonbbddtest`.`eetakemonsuser` (`username`, `eetakemonName`) VALUES ('Nach', 'Charizard');
 INSERT INTO `eetakemonbbddtest`.`atackseetakemon` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Charizard');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.358975','2.137715');
+INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.368803', '2.141817');
