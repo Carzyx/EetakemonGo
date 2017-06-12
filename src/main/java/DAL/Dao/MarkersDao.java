@@ -22,7 +22,7 @@ import java.util.Random;
  * Created by Ignacio on 11/06/2017.
  */
 public class MarkersDao implements IMarkersDao{
-    private static int radio=50;
+    private static int radio=500000000;
     private static IGenericDao<MarkersDto> _service;
     private static IEetakemonDao _seriveceEeteckemon;
     private ModelMapper modelMapper = new ModelMapper();

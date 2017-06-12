@@ -44,3 +44,11 @@ Authorization header must be provided by request: org.glassfish.jersey.server.Co
 Authorization header must be provided by request: org.glassfish.jersey.server.ContainerRequest@5ed765b5
 Authorization header must be provided by request: org.glassfish.jersey.server.ContainerRequest@30591f42
 Authorization header must be provided by request: org.glassfish.jersey.server.ContainerRequest@51bb09d1
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist
+Error en la ejecucion MySQLRepository.selectByCondition: 1146 Table 'eetakemonbbddtest.eetakemonsuserdto' doesn't exist

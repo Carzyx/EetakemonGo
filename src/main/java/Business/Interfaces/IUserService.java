@@ -16,6 +16,4 @@ public interface IUserService extends IBasicService <User> {
     boolean isUsernameAlreadyInUse(String username);
     boolean isEmailAlreadyInUse(String email);
     User getCompleteUserByUsername(String username);
-
-
 }

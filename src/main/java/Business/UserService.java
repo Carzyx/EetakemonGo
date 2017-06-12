@@ -41,8 +41,8 @@ public class UserService implements IUserService {
         return _serviceUser.updateByUsernameAndPassword(newUser);
     }
 
-    public User getByName(String username) {
-        return _serviceUser.getByName(username);
+    public User getByName(String name) {
+        return _serviceUser.getByName(name);
     }
 
     public List<User> getAll() {
@@ -53,6 +53,7 @@ public class UserService implements IUserService {
     {
        return _serviceUser.getCompleteUserByUsername(username);
     }
+
 
 
     public boolean deleteUser(String username, String password) {
