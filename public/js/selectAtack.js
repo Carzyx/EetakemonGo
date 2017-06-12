@@ -1,5 +1,3 @@
-<script type="text/javascript">
-   
 $(function() {
     
     var $formLogin = $('#login-form');
@@ -50,4 +48,3 @@ $(function() {
         }, $msgShowTime);
     }
 });
-</script>
