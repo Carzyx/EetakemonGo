@@ -1,25 +1,16 @@
 <!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
+
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css" src="js/profile.css"></style>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-		<title>Profile -  group Homogeni</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+    <style type="text/css" src="js/profile.css"></style> 
+	     	<title>Profile -  group Homogeni</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
 		<div id="page-wrapper">
-
 			<!-- Header -->
 				<header id="header" class="alt">
 					<h1><a href="Home.html">Etakemon Go</a> </h1>
@@ -45,10 +36,15 @@
 						</ul>
 					</nav>
 				</header>
-
 			<!-- Main -->
-		<div class="container">
-	<div class="row">
+<div class="container">
+
+    <div class="row">
+       
+         <form id="Perfil-Inicial" style="display:none;">
+                         <div class="modal-body">
+                            <div class="container">
+    <div class="row">
        <div class="col-md-7 ">
 
 <div class="panel panel-default">
@@ -67,43 +63,99 @@
               <br>
             </div>
             <div class="col-sm-6">
-            <h4 style="color:#00b1b1;">Poner aquí el username con el OnAction</h4></span>
+            <h4 style="color:#00b1b1;">Eetakemon Go</h4></span>
               <span><p>ROL  DEL USUARIO</p></span>            
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
     
               
-<div class="col-sm-5 col-xs-6 tital " >Nombre:</div><div class="col-sm-7 col-xs-6 ">Bruno</div>
+<div class="col-sm-5 col-xs-6 tital " >Nombre:</div>
+                            <input id="lost_email" class="" type="text" placeholder="Introduce el Nombre" required>
      <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Apellidos:</div><div class="col-sm-7"> Garcia</div>
+<div class="col-sm-5 col-xs-6 tital " >Apellidos:</div> <input id="lost_email" class="" type="text" placeholder="Introduce el cambio del apellido " required>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Nickname:</div><div class="col-sm-7"> DSAcon4.5</div>
+<div class="col-sm-5 col-xs-6 tital " >Nickname:</div> <input id="lost_email" class="" type="text" placeholder="Introduce tu nuevo Nickname" required>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Eetakemons:</div><div class="col-sm-7"></div>
-
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
-
-<div class="col-sm-5 col-xs-6 tital " >Email:</div><div class="col-sm-7">bruno.sanchez@adp.com</div>
+<div class="col-sm-5 col-xs-6 tital " >Eetakemons:</div> <input id="lost_email" class="" type="text" placeholder="Introduce los Eetakemons" required>
 
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
+<div class="col-sm-5 col-xs-6 tital " >Email:</div><input id="lost_email" class="" type="text" placeholder="Introduce el nuevo email" required>
 
-            <!-- /.box-body -->
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+<div class="col-sm-5 col-xs-6 tital " >Confirma el Email:</div><input id="lost_email" class="" type="text" placeholder="Introduce denuevo el email" required>
           </div>
-          <!-- /.box -->
+           </div>
+             </div>
+              </div>  
+    <script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+    </script> 
+   </div>
+</div>
+</div>
+<div>
+<button id="boton_cancelar_perfil" type="button" class="btn btn-link">Cancelar</button>
+</div>
+</div>
+</form>
+       <form id="Editar-Perfil" style="">
+         <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7 ">
+                <div class="panel panel-default">
+                <div class="panel-heading">  <h4 >Perfil de usuario</h4></div>
+                    <div class="panel-body">
+                     <div class="box box-info">
+                     <div class="box-body">
+                     <div class="col-sm-6">
+                        <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" width="100" height="100" id="profile-image1" class="img-circle img-responsive">       
+                        <input id="profile-image-upload" class="hidden" type="file">
+                        <div style="color:#999;" >Nodet: Nombre usuario</div>
+                        </div>
+                  <br>
+                      </div>
+      <div class="col-sm-6">
+      <h4 style="color:#00b1b1;">Eetakemon Go</h4>
+      <span><p>ROL  DEL USUARIO</p></span>            
+      </div>
+      <div class="clearfix"></div>
+      <hr style="margin:5px 0 5px 0;">
+            <div class="col-sm-5 col-xs-6 tital " >Nombre:</div><div class="col-sm-7 col-xs-6 ">Bruno</div>
+                 <div class="clearfix"></div>
+            <div class="bot-border"></div>
 
-        </div>
-       
-            
+            <div class="col-sm-5 col-xs-6 tital " >Apellidos:</div><div class="col-sm-7"> Garcia</div>
+              <div class="clearfix"></div>
+            <div class="bot-border"></div>
+
+            <div class="col-sm-5 col-xs-6 tital " >Nickname:</div><div class="col-sm-7"> DSAcon4.5</div>
+              <div class="clearfix"></div>
+            <div class="bot-border"></div>
+
+            <div class="col-sm-5 col-xs-6 tital " >Eetakemons:</div><div class="col-sm-7"></div>
+              <div class="clearfix"></div>
+            <div class="bot-border"></div>
+
+            <div class="col-sm-5 col-xs-6 tital " >Email:</div><div class="col-sm-7">bruno.sanchez@adp.com</div>
+              <div class="clearfix"></div>
+            <div class="bot-border"></div>
+          </div>
+           </div>            
     </div> 
     </div>
 </div>  
@@ -116,25 +168,38 @@
               </script> 
    </div>
 </div>
+ </div>
+ <div class="modal-footer">
+                          
+                            <div>
+                                <button id="boton_editar_perfil" type="button" class="btn btn-link">Edita tu Perfil</button>
+                            </div>
+                        </div>
+                    </form>
+        <p class="text-center"><a href="home.html" class="btn btn-primary btn-lg" >Home</a></p>
 
-
-
-
-         
-<script type="text/javascript">
-
-</script>
-			
-					
-        <!-- Scripts -->
+    </div>
+</div>
+# Selecciona el  form a mostrar
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="div-forms">
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Scripts -->
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="js/profile.js"></script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.dropotron.min.js"></script>
         <script src="assets/js/jquery.scrollgress.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
-        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
-
-
 	</body>
 </html>
