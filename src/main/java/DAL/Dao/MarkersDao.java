@@ -41,12 +41,14 @@ public class MarkersDao implements IMarkersDao{
         Markers markers=new Markers();
         Random r=new Random();
         int i=0;
+        System.out.println("Markers Activos:");
         while (i<10){
             markers=new Markers();
             modelMapper.map(markersDtos.get(r.nextInt(10)),markers);
             markers.setEetakemon(eetakemonList.get(r.nextInt(eetakemonList.size())));
             if(verificarMarker(markers)){
                 activeMarkers.add(markers);
+                System.out.println("Lat:"+markers.getLat()+" "+"Lng:"+markers.getLng());
                 i++;
             }
         }

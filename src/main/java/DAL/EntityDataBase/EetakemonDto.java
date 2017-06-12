@@ -8,7 +8,6 @@ import Model.EetakemonType;
 public class EetakemonDto {
 
     private String name;
-    private int level;
     private int ps;
     private EetakemonType type;
     private String image;
@@ -17,10 +16,9 @@ public class EetakemonDto {
     public EetakemonDto() {
     }
 
-    public EetakemonDto(String name, int level, int ps, EetakemonType type, String image, String descrption) {
+    public EetakemonDto(String name, int ps, EetakemonType type, String image, String descrption) {
         this.type = type;
         this.name = name;
-        this.level = level;
         this.ps = ps;
         this.image = image;
         this.description = descrption;
@@ -34,12 +32,9 @@ public class EetakemonDto {
         return name;
     }
 
-    public int getLevel() {
-        return level;
-    }
 
     public int getPs() {
-        return ps * level;
+        return ps ;
     }
 
     public void setType(EetakemonType type) {
@@ -50,9 +45,6 @@ public class EetakemonDto {
         this.name = name;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     public void setPs(int ps) {
         this.ps = ps;
