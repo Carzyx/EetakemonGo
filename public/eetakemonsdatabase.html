@@ -1,12 +1,14 @@
 <!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 <head>
     <title>Etakemon Go</title>
+      <style type="text/css" src="jsselectAtack.css"></style>
+      <script type="text/javascript" src="js/selectAtack.js"></script>
+      <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -56,7 +58,7 @@
             </header>
             <div>
                 <div id="Options">
-                    <p>Select an option: <select id="selectOptionDatabase" onchange="showDiv(this)">
+                    <p>Select an option: <select id="selectOptionDatabase" onchange="showAtacksList(this,'#OptionAtack')">
                         <option value="0">---</option>
                         <option type="Add" value="1">Add</option>
                         <option type="Remove" value="1">Remove</option>
@@ -79,8 +81,8 @@
                         <div class="6u 12u(mobilep)">
                             <input type="text" name="description" id="description" placeholder="Descripcion" />
                         </div>
-                        <div id="Atack" class="6u 12u(mobilep)">
-                            <p>Select an Atack: <select id="OptionAtackType">
+                        <div id="Type" class="6u 12u(mobilep)">
+                            <p>Select Type: <select id="OptionType">
                                 <option type="Neutro">Neutro</option>
                                 <option type="Fuego" >Fuego</option>
                                 <option type="Agua" >Agua</option>
@@ -90,7 +92,66 @@
 
                             </p>
                         </div>
-                        <div>
+                        <div class="6u 12u(mobilep)">
+                        <!-- B was here -->
+                             <a href="#" role="button" data-toggle="modal" data-target="#login-modal"><input type="button" value="Selecciona ataques" class="fit"/></a>
+                            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    	<div class="modal-header" align="center">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+                                    	</div>
+
+                            <!--  # DIV Form -->
+                            		<div id="div-forms">
+
+                            <!--  # 2 Form -->
+                           			 <form id="login-form">
+                        			<div class="modal-body">
+                            			<div id="div-login-msg">
+                                			<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                		<span id="text-login-msg">Selecciona los ataques</span>
+                            			</div>
+                            <center> <select multiple>
+                            <option value="1">Pikachuuuuuuuuuuuuuuuuuu</option>
+                            <option value="2">Squ</option>
+                            <option value="3">Bulb</option>
+                            <option value="4">Char</option>
+                            </select></center>
+                            <br>
+                            <div class="panel-group">
+                            <div class="panel panel-info">
+                            <div class="panel-heading">Nombre:</div>
+                            <div class="panel-body">Insertar AQUI Nombre Pokemon</div>
+                            <div class="panel-body">Insertar AQUI Tipo Pokemon</div>
+                            <div class="panel-body">Insertar AQUI Ataque Pokemon</div>
+                            <div class="panel-body">Insertar AQUI Descripcion Pokemon</div>
+                            </div>
+                            
+                            </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Guardar</button>
+                            </div>
+
+                            </div>
+                            </form>
+                            <!-- End #  Form -->
+                            </div>
+                            <!-- End # DIV Form -->
+
+                            </div>
+                            </div>
+                            </div>
+                            <!-- B left-->
+                        </div>
+                        <div class="4u 12u(mobilep)">
                             <input type="button" value="Do it!" class="fit" onclick="doActionDatabaseEetakemon()" />
                         </div>
                     </div>
