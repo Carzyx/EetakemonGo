@@ -14,23 +14,31 @@ import com.google.maps.model.LocationType;
 import org.modelmapper.ModelMapper;
 
 import javax.xml.stream.Location;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by Ignacio on 11/06/2017.
  */
-public class MarkersDao implements IMarkersDao{
-    private static int radio=500000000;
+public class MarkersDao implements IMarkersDao {
+    private static int radio=500000000;//Distancia en m de radio
+    private static int time=600000;//Se actualiza cada 10min
+    private  static Timer timer;
     private static IGenericDao<MarkersDto> _service;
     private static IEetakemonDao _seriveceEeteckemon;
     private ModelMapper modelMapper = new ModelMapper();
     private List<Markers>activeMarkers;
+    private TimerTask timerTask;
     public MarkersDao(){
+        timer=new Timer();
         _service = new GenericDaoImpl<>();
         _seriveceEeteckemon=new EetakemonDao();
-        actualizarMarkers();
+        timerTask=new TimerTask() {
+            @Override
+            public void run() {
+                actualizarMarkers();
+            }
+        };
+        timer.schedule(timerTask,0,time);
     }
     private void actualizarMarkers(){
         activeMarkers=new ArrayList<Markers>();
@@ -52,6 +60,7 @@ public class MarkersDao implements IMarkersDao{
                 i++;
             }
         }
+        System.out.println("");
     }
     private boolean verificarMarker(Markers markers) {
         for (int i=0;i<activeMarkers.size();i++){

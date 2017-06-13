@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Business/Interfaces/ILocation.class" afterPath="$PROJECT_DIR$/target/classes/Business/Interfaces/ILocation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Business/Interfaces/IUserService.class" afterPath="$PROJECT_DIR$/target/classes/Business/Interfaces/IUserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Business/LocationService.class" afterPath="$PROJECT_DIR$/target/classes/Business/LocationService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Business/UserService.class" afterPath="$PROJECT_DIR$/target/classes/Business/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/Dao/MarkersDao.class" afterPath="$PROJECT_DIR$/target/classes/DAL/Dao/MarkersDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/Dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/DAL/Dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8d6856f7-5ddb-437c-9235-f0fa5863ffdf.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8d6856f7-5ddb-437c-9235-f0fa5863ffdf.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/databaseInfo.txt" afterPath="$PROJECT_DIR$/databaseInfo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/ILocation.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/ILocation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IUserService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/LocationService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/LocationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Model/EetakemonsUser.java" afterPath="$PROJECT_DIR$/src/main/java/Model/EetakemonsUser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log.out" afterPath="$PROJECT_DIR$/src/main/resources/log.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/log.out" afterPath="$PROJECT_DIR$/target/classes/log.out" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -83,10 +65,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="2288">
               <caret line="120" column="68" lean-forward="false" selection-start-line="120" selection-start-column="68" selection-end-line="120" selection-end-column="68" />
               <folding />
             </state>
@@ -140,26 +122,22 @@
       <file leaf-file-name="LocationService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Business/LocationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="352">
               <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#381#382#0" expanded="false" />
-                <element signature="e#429#430#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarkersDao.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MarkersDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="396">
+              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2300#2301#0" expanded="false" />
-                <element signature="e#2336#2337#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1151#1283#0" expanded="true" />
+                <element signature="e#1282#1283#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -283,7 +261,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Controller/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/Business/Interfaces/ILocation.java" />
         <option value="$PROJECT_DIR$/src/main/java/Business/LocationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java" />
         <option value="$PROJECT_DIR$/databaseInfo.txt" />
         <option value="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Business/UserService.java" />
@@ -291,6 +268,7 @@
         <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/EetakemonsUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java" />
       </list>
     </option>
   </component>
@@ -1081,7 +1059,7 @@
       <workItem from="1497088336343" duration="636000" />
       <workItem from="1497217243762" duration="2152000" />
       <workItem from="1497268927286" duration="3419000" />
-      <workItem from="1497290961264" duration="8171000" />
+      <workItem from="1497290961264" duration="10704000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1230,11 +1208,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497217625122</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="LogIn">
+      <created>1497302769954</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1497302769954</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372874000" />
+    <option name="totallyTimeSpent" value="375407000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1247,7 +1232,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1546,30 +1531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Business/LocationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
-            <element signature="e#429#430#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2300#2301#0" expanded="false" />
-            <element signature="e#2336#2337#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/databaseInfo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1638,11 +1599,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Business/LocationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="2288">
           <caret line="120" column="68" lean-forward="false" selection-start-line="120" selection-start-column="68" selection-end-line="120" selection-end-column="68" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1151#1283#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
