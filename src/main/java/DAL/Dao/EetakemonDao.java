@@ -133,8 +133,8 @@ public class EetakemonDao implements IEetakemonDao {
         {
             atackList.add(_serviceAtack.getByName(relation.getAtackName()));
         }
-        EetakemonsUser eetakemonsUser=_serviceEetackemonUser.getByParameters(new EetakemonsUser(),conditions);
-        modelMapper.map(eetakemonsUser,eetakemonResult);
+        //EetakemonsUser eetakemonsUser=_serviceEetackemonUser.getByParameters(new EetakemonsUser(),conditions);
+        //modelMapper.map(eetakemonsUser,eetakemonResult);
         return eetakemonResult;
     }
 

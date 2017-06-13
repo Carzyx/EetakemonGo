@@ -114,12 +114,11 @@ public class UserDao implements IUserDao {
         return result;
     }
 
-    public User getCompleteUserByUsername(String username) {
+    public User getCompleteUserByName(String username) {
         User user = getByName(username);
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", user.getUsername());
         List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
-
         if(result != null)
         {
             user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));

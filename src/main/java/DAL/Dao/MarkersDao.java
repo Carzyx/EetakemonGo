@@ -60,7 +60,7 @@ public class MarkersDao implements IMarkersDao {
                 i++;
             }
         }
-        System.out.println("");
+        System.out.println(" ");
     }
     private boolean verificarMarker(Markers markers) {
         for (int i=0;i<activeMarkers.size();i++){

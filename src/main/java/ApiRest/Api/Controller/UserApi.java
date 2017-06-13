@@ -125,12 +125,12 @@ public class UserApi implements IUserApi {
     }
 
     @Override
-    @Path("getCompleteUserByUsername/{username}")
+    @Path("getCompleteUserByNme/{name}")
     @GET
     @TokenAuthenticated
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCompleteUserByUsername(@Context HttpHeaders httpHeaders, @PathParam("username") String username) {
-        return _httpResponseHelper.getSuccessResponse(_serviceUser.getCompleteUserByUsername(username), httpHeaders);
+    public Response getCompleteUserByUsername(@Context HttpHeaders httpHeaders, @PathParam("name") String username) {
+        return _httpResponseHelper.getSuccessResponse(_serviceUser.getCompleteUserByName(username), httpHeaders);
     }
 
     @Override

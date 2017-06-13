@@ -47,7 +47,8 @@ public class JSONService {
     public Response logIn(User user){
         if(_serviceUser.getByName(user.getName()).getPassword().equals(user.getPassword()))
         {
-            return Response.status(200).entity(_serviceUser.getCompleteUserByUsername(user.getName())).build();
+            user=_serviceUser.getByName(user.getName());
+            return Response.status(200).entity(_serviceUser.getCompleteUserByName(user.getName())).build();
         }
         return Response.status(201).entity(null).build();
     }
@@ -112,7 +113,7 @@ public class JSONService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public User getCompleteUserByUsername(@PathParam("username") String username) {
-        return _serviceUser.getCompleteUserByUsername(username);
+        return _serviceUser.getCompleteUserByName(username);
     }
 
     @Path("getAllUsers")

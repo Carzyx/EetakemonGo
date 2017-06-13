@@ -17,7 +17,7 @@ public interface IUserDao extends IBasicDao <User>{
 
     User getUserByUsernameAndPassword(String username, String password);
 
-    User getCompleteUserByUsername(String username);
+    User getCompleteUserByName(String name);
 
     boolean isUsernameAlreadyInUse(String username);
 
