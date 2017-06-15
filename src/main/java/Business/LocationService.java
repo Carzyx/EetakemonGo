@@ -18,6 +18,11 @@ public class LocationService implements ILocation {
         _serviceMarkers=new MarkersDao();
     }
     @Override
+    public List<Markers> getNearMarkers(Markers markers) {
+        return _serviceMarkers.getNearMarkers(new LatLng(markers.getLat(),markers.getLng()));}
+
+    @Override
     public List<Markers> getMarkers(Markers markers) {
-        return _serviceMarkers.getActiveMarkers(new LatLng(markers.getLat(),markers.getLng()));}
+        return _serviceMarkers.getActiveMarkers(new LatLng(markers.getLat(),markers.getLng()));
+    }
 }

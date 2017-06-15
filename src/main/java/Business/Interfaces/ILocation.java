@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface ILocation {
     List<Markers> getMarkers(Markers markers);
+    List<Markers> getNearMarkers(Markers markers);
 }

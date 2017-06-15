@@ -59,11 +59,19 @@ public class UserDao implements IUserDao {
         return _service.updateByConditions(userDto, conditions);
     }
 
+    public boolean updateByNameAndPassword(User user) {
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        Hashtable<String, String> conditions = new Hashtable<>();
+        conditions.put("name", user.getUsername());
+        conditions.put("password", user.getPassword());
+        return _service.updateByConditions(userDto, conditions);
+    }
+
 
     public boolean removeByName(User user) {
         UserDto userDto = modelMapper.map(user, UserDto.class);
         Hashtable<String, String> conditions = new Hashtable<>();
-        conditions.put("username", user.getUsername());
+        conditions.put("name", user.getUsername());
         boolean userConfirmation = _service.removeByConditions(userDto, conditions);
         if( !(user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation)
         {
@@ -91,7 +99,7 @@ public class UserDao implements IUserDao {
     public User getByName(String namer) {
         UserDto userDto = new UserDto();
         Hashtable<String, String> conditions = new Hashtable<>();
-        conditions.put("username", namer);
+        conditions.put("name", namer);
         return modelMapper.map(_service.getByParameters(userDto, conditions), User.class);
     }
 
@@ -106,12 +114,11 @@ public class UserDao implements IUserDao {
         return result;
     }
 
-    public User getCompleteUserByUsername(String username) {
+    public User getCompleteUserByName(String username) {
         User user = getByName(username);
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", user.getUsername());
         List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
-
         if(result != null)
         {
             user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));

@@ -8,6 +8,7 @@ public class EetakemonsUser {
 
     private String username;
     private String eetakemonName;
+    private int level;
 
     public EetakemonsUser() {
     }
@@ -27,5 +28,13 @@ public class EetakemonsUser {
 
     public void setEetakemonName(String eetakemonName) {
         this.eetakemonName = eetakemonName;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

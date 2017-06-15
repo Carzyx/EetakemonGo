@@ -29,7 +29,6 @@ public class JSONService {
     // User implementation
     private IUserService _serviceUser = new UserService();
 
-
     @Path("createUser")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -40,6 +39,18 @@ public class JSONService {
             return Response.status(201).entity("User created OK").build();
         }
         return Response.status(200).entity("User created KO").build();
+    }
+    @Path("LogIn")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response logIn(User user){
+        if(_serviceUser.getByName(user.getName()).getPassword().equals(user.getPassword()))
+        {
+            user=_serviceUser.getByName(user.getName());
+            return Response.status(200).entity(_serviceUser.getCompleteUserByName(user.getName())).build();
+        }
+        return Response.status(201).entity(null).build();
     }
 
 
@@ -102,7 +113,7 @@ public class JSONService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public User getCompleteUserByUsername(@PathParam("username") String username) {
-        return _serviceUser.getCompleteUserByUsername(username);
+        return _serviceUser.getCompleteUserByName(username);
     }
 
     @Path("getAllUsers")
@@ -205,6 +216,14 @@ public class JSONService {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Markers> getMarkers(Markers markers){
         return _serviceLocation.getMarkers(markers);
+    }
+
+    @Path("nearMarkers")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Markers> getNearMarkers(Markers markers){
+        return _serviceLocation.getNearMarkers(markers);
     }
 
 
