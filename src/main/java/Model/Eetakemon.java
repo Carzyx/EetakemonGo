@@ -41,7 +41,7 @@ public class Eetakemon {
     }
 
     public int getPs() {
-        return ps * level;
+        return ps;
     }
 
     public List<Atack> getEetakemonAtack() {
