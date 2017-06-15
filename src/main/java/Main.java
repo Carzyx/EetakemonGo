@@ -1,4 +1,4 @@
-import Game.Delete.ProviderTest;
+import Game.ProviderManager;
 
 /**
  * Created by Miguel Angel on 04/04/2017.
@@ -7,9 +7,8 @@ public class Main {
 
     public static void main(String [] args){
 
-        ProviderTest pv = new ProviderTest();
+        ProviderManager pv = new ProviderManager();
 
-        pv.run();
 
 
     }
