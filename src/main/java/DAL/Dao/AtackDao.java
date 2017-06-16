@@ -22,6 +22,7 @@ public class AtackDao implements IAtackDao {
     //TODO -- Validar: si existe Atack, no crearlo (repetir check de UserService/UserDao)
     //TODO -- Error: Porque no añade DamageBase del ataque ????
     public boolean add(Atack atack) {
+
         return _service.add(atack);
     }
 

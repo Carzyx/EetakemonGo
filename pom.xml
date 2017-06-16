@@ -44,6 +44,10 @@
         <artifactId>jjwt</artifactId>
         <version>0.7.0</version>
     </dependency>
+    <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-moxy</artifactId>
+    </dependency>
     <!-- AutoMapper -->
     <dependency>
         <groupId>org.modelmapper</groupId>
@@ -61,6 +65,7 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.40</version>
     </dependency>
+
     <!-- JUnit Test-->
     <dependency>
         <groupId>junit</groupId>
