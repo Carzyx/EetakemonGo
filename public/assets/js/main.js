@@ -99,6 +99,68 @@
 
 })(jQuery);
 
+//Define objects
+
+class User {
+    constructor() {
+        this.name;
+        this.surname;
+        this.username;
+        this.password;
+        this.email;
+        this.rol;
+        this.image;
+        this.authToken;
+        this.eetakemons;
+    }
+};
+var user;
+
+function getUserFromCookie()
+{
+    user = Cookies.get(user, User.class);
+    if(user.charAt(0) === '"' && user.charAt(user.length-1) ==='"')
+    {
+        user = user.substr(1,user.length-1);
+    }
+    responseToUser(user);
+    return user;
+}
+function redirectUrl(ulr)
+{
+    if (ulr !== undefined && ulr) {
+        window.location.href = ulr;
+    }
+}
+function doAjaxRequest(method, url, data, callback, param1, param2)
+{
+    $.ajax({
+        type: method,
+        url: url,
+        contentType: "application/json",
+        success: function (msg) {
+            responseToUser(msg, this.success.arguments[2].getResponseHeader("Authoritzation"));
+            callback(param1, param2);
+        },
+        error: function(){
+            return false;
+        },
+        data: JSON.stringify(data)
+    });
+}
+function responseToUser(response, authToken)
+{
+    user = new User();
+    user.name = response.name;
+    user.surname = response.surname;
+    user.username = response.username;
+    user.password = response.password;
+    user.email = response.email;
+    user.rol = response.rol;
+    user.image = response.image;
+    user.authToken = authToken;
+
+    Cookies.set('user', user, { expires: 1 });}
 
 function RegisterUser() {
 
@@ -133,41 +195,60 @@ function RegisterUser() {
     });
 };
 
+function SignIn()
+{
+    var username = $("#username").val();
+    var password = $("#password").val();
 
+    user = new User();
+    user.username = username;
+    user.password = password;
+
+    var url = "http://localhost:8080/myapp/UserService/singIn";
+    var method = "POST";
+
+    var redirect = "http://localhost:8080/home.html";
+
+    var successRequest = doAjaxRequest(method, url, user, redirectUrl, redirect);
+
+
+
+}
+
+function doAjaxRequestManageDtabase(method, url, authToken, callback, param1)
+{
+    $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', authToken);},
+        type: method,
+        url: url,
+        dataType: 'application/json',
+        complete: function (data) {
+            user.authToken = data.getResponseHeader("Authoritzation");
+            var jsonResult = JSON.parse(data.responseText);
+            callback(param1, jsonResult)
+        }
+    });
+}
 
 function GetAllUsers(selector) {
     var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
     var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
 
-    var jsonResult;
-    $.ajax({
-        type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllUsers",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            buildHtmlTable(selector, jsonResult)
 
-        }
-    });
-
+    var method = "GET";
+    var url = "http://localhost:8080/myapp/UserService/getAllUsers";
+    user =  JSON.parse(Cookies.get("user", User.class));
+    doAjaxRequestManageDtabase(method, url, user.authToken, buildHtmlTable, selector);
 };
 
 function GetAllEetakemons(selector) {
     var arr = [ "name", "level", "ps", "type", "description",  "image" ];
     var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
 
-    var jsonResult;
-    $.ajax({
-        type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllEetakemons",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            buildHtmlTable(selector, jsonResult)
-
-        }
-    });
+    var method = "GET";
+    var url = "http://localhost:8080/myapp/EetakemonService/getAllEetakemons";
+    user =  JSON.parse(Cookies.get("user", User.class));
+    doAjaxRequestManageDtabase(method, url, user.authToken, buildHtmlTable, selector);
 
 }
 
@@ -175,17 +256,11 @@ function GetAllAtacks(selector) {
     var arr = [ "name", "type", "damageBase", "description"];
     var obj  = { name:1, type:2, damageBase:3, description:4};
 
-    var jsonResult;
-    $.ajax({
-        type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllAtacks",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            buildHtmlTable(selector, jsonResult)
 
-        }
-    });
+    var method = "GET";
+    var url = "http://localhost:8080/myapp/AtackService/getAllAtacks";
+    user =  JSON.parse(Cookies.get("user", User.class));
+    doAjaxRequestManageDtabase(method, url, user.authToken, buildHtmlTable, selector);
 
 };
 
@@ -240,15 +315,15 @@ function doActionDatabaseUser() {
     switch(optionSelected)
     {
         case "Add":
-            urlAction = "http://localhost:8080/myapp/web/createUser";
+            urlAction = "http://localhost:8080/myapp/UserService/createUser";
             break;
 
         case "Remove":
-            urlAction = "http://localhost:8080/myapp/web/removeUserByUsernameAndPassword";
+            urlAction = "http://localhost:8080/myapp/UserService/removeUserByUsernameAndPassword";
             break;
 
         case "Update":
-            urlAction = "http://localhost:8080/myapp/web/updateByUsernameAndPassword";
+            urlAction = "http://localhost:8080/myapp/UserService/updateByUsernameAndPassword";
             break;
     }
 
@@ -266,7 +341,10 @@ function doActionDatabaseUser() {
         email: email
     };
 
+    user =  JSON.parse(Cookies.get("user", User.class));
+
     $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
         type: "POST",
         url: urlAction,
         contentType: "application/json",
@@ -296,15 +374,15 @@ function doActionDatabaseEetakemon() {
     switch(optionSelected)
     {
         case "Add":
-            urlAction = "http://localhost:8080/myapp/web/createEetakemon";
+            urlAction = "http://localhost:8080/myapp/EetakemonService/createEetakemon";
             break;
 
         case "Remove":
-            urlAction = "http://localhost:8080/myapp/web/removeEetakemon";
+            urlAction = "http://localhost:8080/myapp/EetakemonService/removeEetakemon";
             break;
 
         case "Update":
-            urlAction = "http://localhost:8080/myapp/web/updateEetakemon";
+            urlAction = "http://localhost:8080/myapp/EetakemonService/updateEetakemon";
             break;
     }
 
@@ -315,7 +393,6 @@ function doActionDatabaseEetakemon() {
 
     var type = $("#type").val();
     var description = $("#description").val();
-
     var sendInfo = {
         name: name,
         type: atackTypeSelected,
@@ -323,7 +400,10 @@ function doActionDatabaseEetakemon() {
         description: description,
     };
 
+    user =  JSON.parse(Cookies.get("user", User.class));
+
     $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
         type: "POST",
         url: urlAction,
         contentType: "application/json",
@@ -354,15 +434,15 @@ function doActionDatabaseAtack() {
     switch(optionSelected)
     {
         case "Add":
-            urlAction = "http://localhost:8080/myapp/web/createAtack";
+            urlAction = "http://localhost:8080/myapp/updateAtack/createAtack";
             break;
 
         case "Remove":
-            urlAction = "http://localhost:8080/myapp/web/removeAtack";
+            urlAction = "http://localhost:8080/myapp/updateAtack/removeAtack";
             break;
 
         case "Update":
-            urlAction = "http://localhost:8080/myapp/web/updateAtack";
+            urlAction = "http://localhost:8080/myapp/updateAtack/updateAtack";
             break;
     }
 
@@ -381,7 +461,10 @@ function doActionDatabaseAtack() {
         description: description,
     };
 
+    user =  JSON.parse(Cookies.get("user", User.class));
+
     $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
         type: "POST",
         url: urlAction,
         contentType: "application/json",

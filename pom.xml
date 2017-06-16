@@ -55,11 +55,21 @@
         <groupId>org.glassfish.jersey.containers</groupId>
         <artifactId>jersey-container-grizzly2-http</artifactId>
     </dependency>
+    <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-moxy</artifactId>
+    </dependency>
     <!-- MySql connector -->
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.40</version>
+    </dependency>
+    <!-- Cookie handler-->
+    <dependency>
+        <groupId>com.github.js-cookie</groupId>
+        <artifactId>java-cookie</artifactId>
+        <version>0.0.2</version>
     </dependency>
     <!-- JUnit Test-->
     <dependency>
