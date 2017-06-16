@@ -70,7 +70,7 @@ public class AtackApi implements IAtackApi {
     }
 
     @Override
-    @Path("private/getAllAtacks")
+    @Path("getAllAtacks")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllAtacks(@Context HttpHeaders httpHeaders){

@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
@@ -32,6 +33,7 @@ public class SecurityFilter implements ContainerRequestFilter {
     public void filter(ContainerRequestContext ctx) throws IOException {
 
         String authHeader = ctx.getHeaderString(HttpHeaders.AUTHORIZATION);
+        authHeader = authHeader == null ? ctx.getHeaders().get("authoritzation").get(0) : authHeader;
         // Check if the HTTP Authorization header is present and formatted correctly
         if (authHeader == null || authHeader.isEmpty()) {
             logger.info("Authorization header must be provided by request: " + ctx.getRequest());
