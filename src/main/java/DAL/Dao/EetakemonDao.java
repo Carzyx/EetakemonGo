@@ -20,7 +20,7 @@ public class EetakemonDao implements IEetakemonDao {
 
     //Acctions for Eetakemon BBDD
     private static IGenericDao<EetakemonDto> _service;
-    private static IGenericDao<EetakemonsUser>_serviceEetackemonUser;
+    private static IGenericDao<EetakemonsUserDto>_serviceEetackemonUser;
     private static IGenericDao<AtacksEetakemonDto> _serviceAtackEetakemon;
     private static IAtackDao _serviceAtack;
     private ModelMapper modelMapper = new ModelMapper();
@@ -133,8 +133,9 @@ public class EetakemonDao implements IEetakemonDao {
         {
             atackList.add(_serviceAtack.getByName(relation.getAtackName()));
         }
-        //EetakemonsUser eetakemonsUser=_serviceEetackemonUser.getByParameters(new EetakemonsUser(),conditions);
-        //modelMapper.map(eetakemonsUser,eetakemonResult);
+        eetakemonResult.setEetakemonAtack(atackList);
+        EetakemonsUserDto eetakemonsUser=_serviceEetackemonUser.getByParameters(new EetakemonsUserDto(),conditions);
+        modelMapper.map(eetakemonsUser,eetakemonResult);
         return eetakemonResult;
     }
 

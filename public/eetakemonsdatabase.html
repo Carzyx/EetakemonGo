@@ -58,7 +58,7 @@
             </header>
             <div>
                 <div id="Options">
-                    <p>Select an option: <select id="selectOptionDatabase" onchange="showAtacksList(this,'#OptionAtack')">
+                    <p>Select an option: <select id="selectOptionDatabase" onchange="showDiv(this)">
                         <option value="0">---</option>
                         <option type="Add" value="1">Add</option>
                         <option type="Remove" value="1">Remove</option>
@@ -68,86 +68,107 @@
                     </p>
                 </div>
                 <form>
-                    <div id="databaseForm" id="eetakemondatabaseForm"class="row uniform 50%">
+                    <div id="databaseForm" id="eetakemondatabaseForm" class="row uniform 50%">
                         <div class="6u 12u(mobilep)">
                             <input type="text" name="name" id="name" placeholder="Name" />
                         </div>
                         <div class="6u 12u(mobilep)">
-                            <input type="text" name="level" id="level" placeholder="Level" />
+                            <input type="text" name="level" id="editLevel" placeholder="Level" />
                         </div>
                         <div class="6u 12u(mobilep)">
-                            <input type="text" name="PS" id="PS" placeholder="PS" />
+                            <input type="text" name="PS" id="editPS" placeholder="PS" />
                         </div>
                         <div class="6u 12u(mobilep)">
                             <input type="text" name="description" id="description" placeholder="Descripcion" />
                         </div>
                         <div id="Type" class="6u 12u(mobilep)">
-                            <p>Select Type: <select id="OptionType">
-                                <option type="Neutro">Neutro</option>
-                                <option type="Fuego" >Fuego</option>
-                                <option type="Agua" >Agua</option>
-                                <option type="Tierra" >Tierra</option>
-                                <option type="Aire" >Aire</option>
+                            <p>Select Type: <select id="OptionAtackType">
+                                <option type="NEUTRO">NEUTRO</option>
+                                <option type="FUEGO" >FUEGO</option>
+                                <option type="AGUA" >AGUA</option>
+                                <option type="TIERRA" >TIERRA</option>
+                                <option type="AIRE" >AIRE</option>
                             </select>
 
                             </p>
                         </div>
                         <div class="6u 12u(mobilep)">
-                        <!-- B was here -->
-                             <a href="#" role="button" data-toggle="modal" data-target="#login-modal"><input type="button" value="Selecciona ataques" class="fit"/></a>
+                            <!-- B was here -->
+
+                            <a href="#" id="atackButton" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal"onclick="BotonElegirAtaques('#OptionAtack')">Selecciona los ataques</a>
                             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    	<div class="modal-header" align="center">
+                                    <div class="modal-content">
+                                        <div class="modal-header" align="center">
 
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                    </button>
-                                    	</div>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
 
-                            <!--  # DIV Form -->
-                            		<div id="div-forms">
+                                        <!-- Begin # DIV Form -->
+                                        <div id="div-forms">
 
-                            <!--  # 2 Form -->
-                           			 <form id="login-form">
-                        			<div class="modal-body">
-                            			<div id="div-login-msg">
-                                			<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                		<span id="text-login-msg">Selecciona los ataques</span>
-                            			</div>
-                            <center> <select multiple>
-                            <option value="1">Pikachuuuuuuuuuuuuuuuuuu</option>
-                            <option value="2">Squ</option>
-                            <option value="3">Bulb</option>
-                            <option value="4">Char</option>
-                            </select></center>
-                            <br>
-                            <div class="panel-group">
-                            <div class="panel panel-info">
-                            <div class="panel-heading">Nombre:</div>
-                            <div class="panel-body">Insertar AQUI Nombre Pokemon</div>
-                            <div class="panel-body">Insertar AQUI Tipo Pokemon</div>
-                            <div class="panel-body">Insertar AQUI Ataque Pokemon</div>
-                            <div class="panel-body">Insertar AQUI Descripcion Pokemon</div>
-                            </div>
-                            
-                            </div>
+                                            <!-- Begin # Login Form -->
+                                            <form id="login-form">
+                                                <div class="modal-body">
+                                                    <div id="div-login-msg">
+                                                        <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                        <span id="text-login-msg">Selecciona 4 ataques</span>
+                                                    </div>
+                                                    <select multiple="multiple" id="OptionAtack" onchange="clickAtaque(this.value)">
+                                                        <option value="0">Esto se llenara de ataques</option>
+
+                                                    </select>
+                                                    <br>
+                                                    <div class="panel-group">
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Nombre:</div>
+                                                                <div class="panel-body" id="nombre" ></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Tipo:</div>
+                                                                <div class="panel-body" id="tipo"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Damage:</div>
+                                                                <div class="panel-body" id="damage"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Descripcion:</div>
+                                                                <div class="panel-body" id="descripcion"></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
 
 
-                            </div>
-                            <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Guardar</button>
-                            </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div>
+                                                        <input type="button" value="Guardar" class="fit" onclick="guardarAtaque('#OptionAtack')" />
+                                                    </div>
 
-                            </div>
-                            </form>
-                            <!-- End #  Form -->
-                            </div>
-                            <!-- End # DIV Form -->
+                                                </div>
+                                            </form>
+                                            <!-- End # Login Form -->
 
-                            </div>
-                            </div>
+                                            <!-- Begin | Lost Password Form -->
+
+
+
+                                        </div>
+                                        <!-- End # DIV Form -->
+
+                                    </div>
+                                </div>
                             </div>
                             <!-- B left-->
                         </div>
@@ -160,7 +181,7 @@
 
             </div>
 
-    </div>
+
 
     <div>
         <table id="jsonTableEetakemonsResult" >

@@ -65,9 +65,15 @@ INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275779', 
 
 INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Nacho', 'Ballesteros', 'Ignacio', '1234', 'n.balle.lo@gmail.com', '0', 'profile/evoluciona.png');
 INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Puñetazo', 'NEUTRO', '10', 'Un potente puñetazo en la cara');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Patada', 'FUEGO', '100', 'Patada en toda la boca');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Salpicadura', 'AGUA', '50', 'Cual escupitajo');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Enterrar', 'TIERRA', '90', 'El propio nombre lo dice');
 INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Charizard', '100', 'FUEGO', 'pokemons/charizard.png', 'El de toda la vida pa que vamos a explicar mas');
 INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Charmander', '100', 'FUEGO', 'pokemons/charmander.png', 'El tipico');
 INSERT INTO `eetakemonbbddtest`.`eetakemonsuserdto` (`username`, `eetakemonName`,`level`) VALUES ('Ignacio', 'Charizard','3');
 INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Charizard');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Enterrar', 'Charizard');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Patada', 'Charizard');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Salpicadura', 'Charizard');
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.358975','2.137715');
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.368803', '2.141817');

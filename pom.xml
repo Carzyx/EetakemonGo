@@ -44,6 +44,12 @@
         <artifactId>jjwt</artifactId>
         <version>0.7.0</version>
     </dependency>
+
+    <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-moxy</artifactId>
+    </dependency>
+
     <!-- AutoMapper -->
     <dependency>
         <groupId>org.modelmapper</groupId>
