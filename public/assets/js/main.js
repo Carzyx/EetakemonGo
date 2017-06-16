@@ -96,8 +96,37 @@
 			}
 
 	});
+    $('[id^=edit]').keypress(validateNumber);//PARA SOLO INTRODUCIR NUMEROS
+    ////Hace que el boton de ataques este deshabilitado
+
+    var $input = $('input:text'),
+        $register = $('#atackButton');
+
+    $register.attr('disabled', true);
+    $input.keyup(function() {
+        var trigger = false;
+        $input.each(function() {
+            if (!$(this).val()) {
+                trigger = true;
+            }
+        });
+        trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
+    });
+
+    ////Acabo Prieba button disabled
 
 })(jQuery);
+
+function validateNumber(event) {
+    var key = window.event ? event.keyCode : event.which;
+    if (event.keyCode === 8 || event.keyCode === 46) {
+        return true;
+    } else if ( key < 48 || key > 57 ) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 
 function RegisterUser() {
@@ -131,7 +160,7 @@ function RegisterUser() {
 
         data: JSON.stringify(sendInfo)
     });
-};
+}
 
 
 
@@ -151,7 +180,72 @@ function GetAllUsers(selector) {
         }
     });
 
-};
+}
+
+
+function dropDownList(selector,data) {//borra las options anteriores y añade nuevas
+    $(selector).empty();//.append($('<option/>').attr("value", -666).text('Elije un ataque'));
+    $.each(data, function(i, option) {
+        $(selector).append($('<option/>').attr("value", option.name).text(option.name));
+    });
+}
+function BotonElegirAtaques(selector) {//consulta+guardar en session storage+crear lista dropdown
+    var jsonResult;
+    $.ajax({
+        type: "GET",
+        url: " http://localhost:8080/myapp/web/getAllAtacks",
+        dataType: 'application/json',
+        complete: function (data) {
+            jsonResult = JSON.parse(data.responseText);
+            sessionStorage.setItem("Ataques",JSON.stringify(jsonResult));
+            dropDownList(selector,jsonResult);
+        }
+    });
+}
+function clickAtaque(name) {//obtener ataques de session sorage y mostrar atributos
+    var data = JSON.parse(sessionStorage.getItem("Ataques"));
+    $.each(data, function(i, option){
+        if (option.name==name){
+            document.getElementById("nombre").innerHTML=option.name;
+            document.getElementById("tipo").innerHTML=option.type;
+            document.getElementById("damage").innerHTML=option.damageBase;
+            document.getElementById("descripcion").innerHTML=option.description;
+        }
+    });
+}
+function guardarAtaque() {
+
+    var select = document.getElementById('OptionAtack');
+
+    var selectedValues = $(select).val();
+    console.log(selectedValues);
+
+    /*var optionSelected = select.options[select.selectedIndex].text;
+    console.log(optionSelected);*/
+    if (selectedValues.length>4||selectedValues.length<4){
+        alert("Selecciona solo 4 ataques");
+        location.reload(true);
+    }
+
+    var data = JSON.parse(sessionStorage.getItem("Ataques"));
+    var Atack;
+    var Atack4=[];
+    for (var j = 0; j < selectedValues.length; j++){
+        $.each(data, function(i, option){
+            if (option.name==selectedValues[j]){
+                Atack = {
+                    name: option.name,
+                    type: option.type,
+                    damageBase: option.damageBase,
+                    description: option.description
+                };
+                Atack4.push(Atack);
+            }
+        });
+    }
+    sessionStorage.setItem('Atack4',JSON.stringify(Atack4));
+    console.log(sessionStorage.getItem('Atack4'));
+}
 
 function GetAllEetakemons(selector) {
     var arr = [ "name", "level", "ps", "type", "description",  "image" ];
@@ -160,7 +254,7 @@ function GetAllEetakemons(selector) {
     var jsonResult;
     $.ajax({
         type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllEetakemons",
+        url: "http://localhost:8080/myapp/web/getAllEetakemons",
         dataType: 'application/json',
         complete: function (data) {
             jsonResult = JSON.parse(data.responseText);
@@ -187,7 +281,7 @@ function GetAllAtacks(selector) {
         }
     });
 
-};
+}
 
 function buildHtmlTable(selector, myList) {
     var columns = addAllColumnHeaders(myList, selector);
@@ -225,12 +319,14 @@ function showDiv(elem){
     if(elem.value == 1)
     {
         document.getElementById('databaseForm').style.display = "block";
+
     }
     else
     {
         document.getElementById('databaseForm').style.display = "none";
     }
 }
+
 
 function doActionDatabaseUser() {
     var option = document.getElementById('selectOptionDatabase');
@@ -309,44 +405,76 @@ function doActionDatabaseEetakemon() {
     }
 
     var name = $("#name").val();
+    var level = $("#editLevel").val();
+    var ps = $("#editPS").val();
 
     var atackType = document.getElementById('OptionAtackType');
     var atackTypeSelected = atackType.options[atackType.selectedIndex].text;
 
-    var type = $("#type").val();
+    var image="pokemons/"+name+".png";
     var description = $("#description").val();
+
+    var atackList=JSON.parse(sessionStorage.getItem('Atack4'));
+
 
     var sendInfo = {
         name: name,
+        ps: ps,
         type: atackTypeSelected,
-        dagameBase: damage,
+        image: image,
         description: description,
+        eetakemonAtack: atackList
     };
 
+    console.log(sendInfo);
     $.ajax({
         type: "POST",
         url: urlAction,
         contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(sendInfo),
+
+        statusCode: {
+            201: function (msg) {
+                if (msg) {
+                    alert(msg.responseText.toString());
+                    //location.reload(true);
+                    var table = document.getElementById('jsonTableEetakemonsResult');
+                    table.parentNode.removeChild(table);
+                    GetAllUsers('#jsonTableEetakemonsResult');
+                } else {
+                    alert("Error in the execution...");
+                }
+            },
+            200: function (msg) {
+                if (msg) {
+                    alert(msg.responseText.toString());
+                    //location.reload(true);
+
+                } else {
+                    alert("Error in the execution...");
+                }
+            }
+        },
         success: function (msg) {
             if (msg) {
                 alert(msg);
                 location.reload(true);
-                var table = document.getElementById('jsonTableAtacksResult')
+                var table = document.getElementById('jsonTableAtacksResult');
                 table.parentNode.removeChild(table);
                 GetAllUsers('#jsonTableAtacksResult');
 
             } else {
                 alert("Error in the execution...");
             }
-        },
+        }
 
-        data: JSON.stringify(sendInfo)
     });
 
 }
 
 
-function doActionDatabaseAtack() {
+function doActionDatabaseAtack() {//demage base siempre es 0, NaN, undefined
     var option = document.getElementById('selectOptionDatabase');
     var optionSelected = option.options[option.selectedIndex].text;
     var urlAction;
@@ -369,38 +497,50 @@ function doActionDatabaseAtack() {
     var name = $("#name").val();
 
     var atackType = document.getElementById('OptionAtackType');
-    var atackTypeSelected = atackType.options[atackType.selectedIndex].text;
+    var type = atackType.options[atackType.selectedIndex].text;
 
-    var type = $("#type").val();
+    //var type = $("#type").val();
     var description = $("#description").val();
+    var damageBase = parseInt($("#edit1").val());
 
     var sendInfo = {
         name: name,
-        type: atackTypeSelected,
-        dagameBase: damage,
-        description: description,
-    };
+        type: type,
+        dagameBase: damageBase,
+        description: description
+    };console.log(sendInfo);
 
     $.ajax({
         type: "POST",
         url: urlAction,
         contentType: "application/json",
-        success: function (msg) {
-            if (msg) {
-                alert(msg);
-                location.reload(true);
-                var table = document.getElementById('jsonTableAtacksResult')
-                table.parentNode.removeChild(table);
-                GetAllUsers('#jsonTableAtacksResult');
+        dataType: "json",
+        data: JSON.stringify(sendInfo),
 
-            } else {
-                alert("Error in the execution...");
+        statusCode: {
+            201: function (msg) {
+                if (msg) {
+                    alert(msg.responseText.toString());
+
+                    location.reload(true);
+                    var table = document.getElementById('jsonTableAtacksResult');
+                    table.parentNode.removeChild(table);
+                    GetAllUsers('#jsonTableAtacksResult');
+                } else {
+                    alert("Error in the execution...");
+                }
+            },
+            200: function (msg) {
+                if (msg) {
+                    alert("Atack created KO");
+                    //location.reload(true);
+
+                } else {
+                    alert("Error in the execution...");
+                }
             }
-        },
-
-        data: JSON.stringify(sendInfo)
+        }
     });
-
 }
 
 
@@ -425,7 +565,7 @@ function EetakedexConstructor(selector,json) {
 
         tr.push('<div class="6u 12u(mobilep)"><div class="flip-container"><div class="flipper">');
         tr.push('<div class="front" style="');
-        tr.push('background: url(pokemons/'+json[i].image+'.gif) 0 0 no-repeat;">');//style front
+        tr.push('background: url('+json[i].image+') 0 0 no-repeat;">');//style front
 
         tr.push('<span class="name">'+json[i].name+'</span></div>');//nombre front
 
@@ -460,8 +600,27 @@ function GetAllEetakemonsPrueba(selector) {
 
         }
     });
-
 }
+
+function GetEtakemonsByUser(selector) {
+    var jsonResult;
+
+    var uname= $("#Usuario").val();//nombre del usuario a buscar
+    var url = "http://localhost:8080/myapp/web/getUserByUsername/";
+
+    $.ajax({
+        type: "GET",
+        url: url+uname,
+        dataType: 'application/json',
+        complete:function (data) {
+            jsonResult=JSON.parse(data.responseText);
+            console.log(jsonResult);
+            EetakedexConstructor(selector,jsonResult);
+        }
+    })
+}
+
+
 
 ///////////////////////////////////////////////////////////////////////////
 
