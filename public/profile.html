@@ -9,7 +9,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
-	<body>
+	<body onload="infoPerfilUsuario()">
 		<div id="page-wrapper">
 			<!-- Header -->
 				<header id="header" class="alt">
@@ -94,13 +94,13 @@
            </div>
              </div>
               </div>  
-    <script>
+   <!-- <script>
               $(function() {
     $('#profile-image1').on('click', function() {
         $('#profile-image-upload').click();
     });
 });       
-    </script> 
+    </script>-->
    </div>
 </div>
 </div>
@@ -120,22 +120,20 @@
                      <div class="box box-info">
                      <div class="box-body">
                      <div class="col-sm-6">
-                        <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" width="100" height="100" id="profile-image1" class="img-circle img-responsive">       
+                        <div  align="center"> <img alt="User Pic" src="profile/evoluciona.png" id="profile-image1" class="img-circle img-responsive">
                         <input id="profile-image-upload" class="hidden" type="file">
-                        <div style="color:#999;" >Nodet: Nombre usuario</div>
+                        <!--<div style="color:#999;" >Nodet: Nombre usuario</div>-->
                         </div>
                   <br>
                       </div>
       <div class="col-sm-6">
       <h4 style="color:#00b1b1;">Eetakemon Go</h4>
-      <span><p>ROL  DEL USUARIO</p></span>            
+      <span>Rol:<p id="rol">ROL  DEL USUARIO</p></span>
+
       </div>
       <div class="clearfix"></div>
       <hr style="margin:5px 0 5px 0;">
-                         <div class="col-sm-3 col-xs-6 tital " >Buscar</div><input id="usuarioabuscar" type="search" placeholder="Introduce el usuario a buscar" required>
-                         <div class="6u 12u(mobilep)">
-                             <button id="boton_buscar_usuario" type="button" class="btn btn-primary btn-lg" onclick="infoPerfilUsuario()">Buscar usuario</button>
-                         </div>
+
                          <div class="col-sm-5 col-xs-6 tital " >Nombre:</div><div id="Pname" class="col-sm-7 col-xs-6 ">Bruno</div>
                  <div class="clearfix"></div>
             <div class="bot-border"></div>
@@ -160,13 +158,13 @@
     </div> 
     </div>
 </div>  
-    <script>
+    <!--<script>
               $(function() {
     $('#profile-image1').on('click', function() {
         $('#profile-image-upload').click();
     });
 });       
-              </script> 
+              </script>-->
    </div>
 </div>
  </div>
@@ -202,5 +200,6 @@
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/cookieHandler.js"></script>
 	</body>
 </html>

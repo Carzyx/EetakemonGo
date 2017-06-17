@@ -41,17 +41,17 @@ public class UserService implements IUserService {
         return _serviceUser.updateByUsernameAndPassword(newUser);
     }
 
-    public User getByName(String name) {
-        return _serviceUser.getByName(name);
+    public User getByName(String username) {
+        return _serviceUser.getByName(username);
     }
 
     public List<User> getAll() {
         return _serviceUser.getAll();
     }
 
-    public User getCompleteUserByName(String name)
+    public User getCompleteUserByUsername(String name)
     {
-       return _serviceUser.getCompleteUserByName(name);
+       return _serviceUser.getCompleteUserByUsername(name);
     }
 
 

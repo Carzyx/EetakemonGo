@@ -1,5 +1,6 @@
 package DAL.Dao;
 
+import DAL.EntityDataBase.EetakemonDto;
 import DAL.EntityDataBase.EetakemonsUserDto;
 import DAL.EntityDataBase.UserDto;
 import DAL.Dao.Interfaces.IEetakemonDao;
@@ -99,7 +100,7 @@ public class UserDao implements IUserDao {
     public User getByName(String namer) {
         UserDto userDto = new UserDto();
         Hashtable<String, String> conditions = new Hashtable<>();
-        conditions.put("name", namer);
+        conditions.put("username", namer);
         return modelMapper.map(_service.getByParameters(userDto, conditions), User.class);
     }
 
@@ -114,7 +115,7 @@ public class UserDao implements IUserDao {
         return result;
     }
 
-    public User getCompleteUserByName(String username) {
+    public User getCompleteUserByUsername(String username) {
         User user = getByName(username);
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", user.getUsername());
@@ -129,15 +130,31 @@ public class UserDao implements IUserDao {
 
     public boolean addAEetakemonsToUser(User user) {
         boolean actionResult = true;
+        boolean eetakemonAdded=false;
         if(isValidEetakemonToUser(user)) {
-
+            Hashtable<String, String> conditions = new Hashtable<>();
+            conditions.put("username", user.getUsername());
+            List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
             for (Eetakemon eetakemon : user.getEetakemons()) {
-                EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getUsername(), eetakemon.getName());
-                boolean eetakemonAdded = _serviceEetakemonsUser.add(eetakemonsUserDto);
-                if (!eetakemonAdded) {
-                    actionResult = false;
+                for (EetakemonsUserDto myeetakemon:result) {
+                    if(eetakemon.getName().equals(myeetakemon.getEetakemonName())){
+                        myeetakemon.setLevel(myeetakemon.getLevel()+1);
+                        conditions.put("username",myeetakemon.getUsername());
+                        conditions.put("eetakemonName",myeetakemon.getEetakemonName());
+                        eetakemonAdded = _serviceEetakemonsUser.updateByConditions(myeetakemon,conditions);
+                    if (!eetakemonAdded) {
+                        actionResult = false;
+                        }
+                    }
                 }
+                if(!eetakemonAdded){
+                    EetakemonsUserDto eetakemonsUserDto=new EetakemonsUserDto(user.getUsername(),eetakemon.getName());
+                    _serviceEetakemonsUser.add(eetakemonsUserDto);
+                }
+                if (!eetakemonAdded)
+                    actionResult = false;
             }
+
         }
         return actionResult;
     }

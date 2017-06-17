@@ -38,23 +38,11 @@ $(function() {
 
 
 });
-function infoPerfilUsuario() {
-    sessionStorage.clear();
-    var usuarioabuscar = $("#usuarioabuscar").val();
-    var url = "http://localhost:8080/myapp/web/getUserByUsername/"+usuarioabuscar;
-    console.log(url);
-    var jsonResult;
 
-    $.ajax({
-        type: "GET",
-        url: url,
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            rellenarInfoPerfil(jsonResult);
-            sessionStorage.setItem("infoUser",JSON.stringify(jsonResult));
-        }
-    });
+function infoPerfilUsuario() {
+    user =  JSON.parse(Cookies.get("user", User.class));
+    rellenarInfoPerfil(user);
+
 }
 function rellenarInfoPerfil(data) {
     document.getElementById("Pname").innerHTML=data.name;
@@ -62,19 +50,72 @@ function rellenarInfoPerfil(data) {
     document.getElementById("Pusername").innerHTML=data.username;
     document.getElementById("PsizeEtakemons").innerHTML='-666';
     document.getElementById("Pemail").innerHTML=data.email;
+    if (data.rol==0){
+        document.getElementById("rol").innerHTML="Usuario"
+    }
+    if (data.rol==1){
+        document.getElementById("rol").innerHTML="Administrador"
+    }
+
+    $('#profile-image4').attr('src',user.image);
 }
 
 function rellenarInfoUpdate() {
-    var jsonUser=JSON.parse(sessionStorage.getItem("infoUser"));
-    $('#edditName').attr('placeholder',jsonUser.name);
-    $('#edditSurname').attr('placeholder',jsonUser.surname);
-    $('#edditUsername').attr('placeholder',jsonUser.username);
-    $('#edditEmail').attr('placeholder',jsonUser.email);
+    user =  JSON.parse(Cookies.get("user", User.class));
+    $('#edditName').attr('placeholder',user.name);
+    $('#edditSurname').attr('placeholder',user.surname);
+    $('#edditUsername').attr('placeholder',user.username);
+    $('#edditEmail').attr('placeholder',user.email);
 
 
 }
-
 function updateUser() {
+
+    var urlAction = "http://localhost:8080/myapp/web/updateByUsernameAndPassword";
+
+
+
+    var name = $("#edditName").val();
+    var surname = $("#edditSurname").val();
+    var username = $("#edditUsername").val();
+    var email = $("#edditEmail").val();
+    var pass= user.password;
+
+
+    var sendInfo = {
+        name: name,
+        surname: surname,
+        email: email,
+        username: username,
+        password: pass
+
+    };
+
+    user =  JSON.parse(Cookies.get("user", User.class));
+    console.log(user);
+
+    $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
+        type: "POST",
+        url: urlAction,
+        contentType: "application/json",
+        success: function (msg) {
+            if (msg) {
+
+               // location.reload(true);
+                alert(msg.responseText.toString());
+
+            } else {
+                alert("Error in the execution...");
+            }
+        },
+
+        data: JSON.stringify(sendInfo)
+    });
+
+
+
+/*function updateUser() {
     var jsonUser=JSON.parse(sessionStorage.getItem("infoUser"));
 
     var name = $("#edditName").val();
@@ -118,5 +159,5 @@ function updateUser() {
             }
         }
 
-    })
+    })*/
 }

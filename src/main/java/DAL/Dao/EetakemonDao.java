@@ -134,8 +134,6 @@ public class EetakemonDao implements IEetakemonDao {
             atackList.add(_serviceAtack.getByName(relation.getAtackName()));
         }
         eetakemonResult.setEetakemonAtack(atackList);
-        EetakemonsUserDto eetakemonsUser=_serviceEetackemonUser.getByParameters(new EetakemonsUserDto(),conditions);
-        modelMapper.map(eetakemonsUser,eetakemonResult);
         return eetakemonResult;
     }
 
@@ -146,7 +144,13 @@ public class EetakemonDao implements IEetakemonDao {
 
         for (EetakemonsUserDto item : eetakemonsToUserList)
         {
-            eetakemonResult.add(getCompleteEetakemonByName(item.getEetakemonName()));
+            Eetakemon eetakemon=new Eetakemon();
+                eetakemon=getCompleteEetakemonByName(item.getEetakemonName());
+            Hashtable<String, String> conditions = new Hashtable<>();
+            conditions.put("eetakemonName", item.getEetakemonName());
+            EetakemonsUserDto eetakemonsUser=_serviceEetackemonUser.getByParameters(new EetakemonsUserDto(),conditions);
+            modelMapper.map(eetakemonsUser,eetakemon);
+            eetakemonResult.add(eetakemon);
         }
         return eetakemonResult;
     }
