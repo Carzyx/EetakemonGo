@@ -43,9 +43,13 @@ public class MarkersDao implements IMarkersDao {
     private void actualizarMarkers(){
         activeMarkers=new ArrayList<Markers>();
         MarkersDto markersDto=new MarkersDto();
-        EetakemonDto eetakemonDto=new EetakemonDto();
         List<MarkersDto>markersDtos=_service.getAll(markersDto);
-        List<Eetakemon> eetakemonList=_seriveceEeteckemon.getAll();
+        List<Eetakemon>eetakemons=_seriveceEeteckemon.getAll();
+        List<Eetakemon> eetakemonList=new ArrayList<>();
+        for (Eetakemon eetakemon:eetakemons) {
+            eetakemonList.add(_seriveceEeteckemon.getCompleteEetakemonByName(eetakemon.getName()));
+        }
+
         Markers markers=new Markers();
         Random r=new Random();
         int i=0;
