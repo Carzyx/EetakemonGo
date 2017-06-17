@@ -13,6 +13,7 @@ import org.modelmapper.ModelMapper;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Miguel Angel on 04/04/2017.
@@ -42,6 +43,12 @@ public class UserDao implements IUserDao {
             return userConfirmation;
         }
 
+        addAEetakemonsToUser(user);
+        List<Eetakemon> list=_serviceEetakemon.getAll();
+        Random r=new Random();
+        List<Eetakemon>primerEetakemon=new ArrayList<>();
+        primerEetakemon.add(list.get(r.nextInt(list.size())));
+        user.setEetakemons(primerEetakemon);
         return addAEetakemonsToUser(user);
     }
 

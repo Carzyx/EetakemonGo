@@ -36,9 +36,9 @@ public class JSONService {
     public Response createUser(User user){
         if(_serviceUser.create(user))
         {
-            return Response.status(201).entity("User created OK").build();
+            return Response.status(201).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
         }
-        return Response.status(200).entity("User created KO").build();
+        return Response.status(200).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
     }
     @Path("SingIn")
     @POST
@@ -99,13 +99,13 @@ public class JSONService {
     @Path("addAEetakemonsToUser")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
         public Response addAEetakemonsToUser(User user) {
 
         if (_serviceUser.addAEetakemonsToUser(user)) {
             return Response.status(201).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
         }
-        return Response.status(200).entity("Eetakemons added KO").build();
+        return Response.status(200).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
     }
 
     @Path("getCompleteUserByUsername/{username}")
