@@ -62,10 +62,19 @@ function rellenarInfoPerfil(data) {
 
 function rellenarInfoUpdate() {
     user =  JSON.parse(Cookies.get("user", User.class));
-    $('#edditName').attr('placeholder',user.name);
-    $('#edditSurname').attr('placeholder',user.surname);
-    $('#edditUsername').attr('placeholder',user.username);
-    $('#edditEmail').attr('placeholder',user.email);
+    $('#edditName').attr('value',user.name);
+    $('#edditSurname').attr('value',user.surname);
+    $('#edditUsername').attr('value',user.username);
+    $('#edditEmail').attr('value',user.email);
+    if (user.rol==0){
+
+        document.getElementById("rol1").innerHTML="Usuario"
+    }
+    if (user.rol==1){
+        document.getElementById("rol1").innerHTML="Administrador"
+    }
+
+    $('#img1').attr('src',user.image);
 
 
 }
