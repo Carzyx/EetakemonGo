@@ -40,15 +40,14 @@ public class JSONService {
         }
         return Response.status(200).entity("User created KO").build();
     }
-    @Path("LogIn")
+    @Path("SingIn")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response logIn(User user){
-        if(_serviceUser.getByName(user.getName()).getPassword().equals(user.getPassword()))
+    public Response singIn(User user){
+        if(_serviceUser.getByName(user.getUsername()).getPassword().equals(user.getPassword()))
         {
-            user=_serviceUser.getByName(user.getName());
-            return Response.status(200).entity(_serviceUser.getCompleteUserByName(user.getName())).build();
+            return Response.status(200).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
         }
         return Response.status(201).entity(null).build();
     }
@@ -104,7 +103,7 @@ public class JSONService {
         public Response addAEetakemonsToUser(User user) {
 
         if (_serviceUser.addAEetakemonsToUser(user)) {
-            return Response.status(201).entity("Eetakemons added OK").build();
+            return Response.status(201).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
         }
         return Response.status(200).entity("Eetakemons added KO").build();
     }
@@ -113,7 +112,7 @@ public class JSONService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public User getCompleteUserByUsername(@PathParam("username") String username) {
-        return _serviceUser.getCompleteUserByName(username);
+        return _serviceUser.getCompleteUserByUsername(username);
     }
 
     @Path("getAllUsers")

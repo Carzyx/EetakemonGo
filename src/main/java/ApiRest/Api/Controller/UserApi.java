@@ -130,7 +130,7 @@ public class UserApi implements IUserApi {
     @TokenAuthenticated
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCompleteUserByUsername(@Context HttpHeaders httpHeaders, @PathParam("name") String username) {
-        return _httpResponseHelper.getSuccessResponse(_serviceUser.getCompleteUserByName(username), httpHeaders);
+        return _httpResponseHelper.getSuccessResponse(_serviceUser.getCompleteUserByUsername(username), httpHeaders);
     }
 
     @Override
