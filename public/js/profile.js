@@ -83,12 +83,11 @@ function updateUser() {
     var urlAction = "http://localhost:8080/myapp/web/updateByUsernameAndPassword";
 
 
-
     var name = $("#edditName").val();
     var surname = $("#edditSurname").val();
     var username = $("#edditUsername").val();
     var email = $("#edditEmail").val();
-    var pass= user.password;
+    var pass = user.password;
 
 
     var sendInfo = {
@@ -100,18 +99,20 @@ function updateUser() {
 
     };
 
-    user =  JSON.parse(Cookies.get("user", User.class));
+    user = JSON.parse(Cookies.get("user", User.class));
     console.log(user);
 
     $.ajax({
-        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authoritzation', user.authToken);
+        },
         type: "POST",
         url: urlAction,
         contentType: "application/json",
         success: function (msg) {
             if (msg) {
 
-               // location.reload(true);
+                // location.reload(true);
                 alert(msg.responseText.toString());
 
             } else {
@@ -122,7 +123,7 @@ function updateUser() {
         data: JSON.stringify(sendInfo)
     });
 
-
+}
 
 /*function updateUser() {
     var jsonUser=JSON.parse(sessionStorage.getItem("infoUser"));
@@ -168,5 +169,22 @@ function updateUser() {
             }
         }
 
-    })*/
+    })
+}*/
+
+function checkRol(){
+    user = JSON.parse(Cookies.get("user", User.class));
+    console.log(user.rol);
+    if (user.rol==0){
+
+        document.getElementById("adminOptions").style.display = "none";
+
+        alert("No eres administrador")
+    }
+    if (user.rol==1){
+        document.getElementById("adminOptions").style.display = "block";
+        console.log("aqusdffdsi")
+
+    }
+
 }
