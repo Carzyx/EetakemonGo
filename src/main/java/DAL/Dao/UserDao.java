@@ -43,12 +43,6 @@ public class UserDao implements IUserDao {
             return userConfirmation;
         }
 
-        addAEetakemonsToUser(user);
-        List<Eetakemon> list=_serviceEetakemon.getAll();
-        Random r=new Random();
-        List<Eetakemon>primerEetakemon=new ArrayList<>();
-        primerEetakemon.add(list.get(r.nextInt(list.size())));
-        user.setEetakemons(primerEetakemon);
         return addAEetakemonsToUser(user);
     }
 

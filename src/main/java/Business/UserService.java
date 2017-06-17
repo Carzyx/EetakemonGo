@@ -1,12 +1,17 @@
 package Business;
 
 import Business.Interfaces.IUserService;
+import DAL.Dao.EetakemonDao;
+import DAL.Dao.Interfaces.IEetakemonDao;
 import DAL.Dao.Interfaces.IUserDao;
 import DAL.Dao.UserDao;
+import Model.Eetakemon;
 import Model.User;
 import com.mysql.jdbc.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by histo on 07/03/2017.
@@ -14,14 +19,23 @@ import java.util.List;
 public class UserService implements IUserService {
 
     private static IUserDao _serviceUser;
+    private static IEetakemonDao _serviceEetakemon;
 
     public UserService() {
         _serviceUser = new UserDao();
+        _serviceEetakemon=new EetakemonDao();
     }
 
     public boolean create(User user) {
+        boolean correcto;
+        if(!isUsernameAlreadyInUse(user.getUsername()) & !isEmailAlreadyInUse(user.getEmail())){
+        List<Eetakemon> list=_serviceEetakemon.getAll();
+        Random r=new Random();
+        List<Eetakemon>primerEetakemon=new ArrayList<>();
+        primerEetakemon.add(list.get(r.nextInt(list.size())));
+        user.setEetakemons(primerEetakemon);}
+        return _serviceUser.add(user)&&addAEetakemonsToUser(user);
 
-        return !isUsernameAlreadyInUse(user.getUsername()) & !isEmailAlreadyInUse(user.getEmail()) && _serviceUser.add(user);
     }
 
     public boolean removeByName(User user) {
