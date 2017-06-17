@@ -34,6 +34,7 @@ public class HttpResponseHelper implements IHttpResponseHelper {
         try
         {
             String OldAuthToken = httpHeaders.getHeaderString(HttpHeaders.AUTHORIZATION);
+            OldAuthToken = OldAuthToken == null ? httpHeaders.getHeaderString("authoritzation") : OldAuthToken;
             Pair<String, String> authToken = _signatureControlService.getExtendExpirationTime(OldAuthToken);
             return Response.status(200).header(authToken.getKey(), authToken.getValue()).entity(new Gson().toJson(element)).build();
         }
