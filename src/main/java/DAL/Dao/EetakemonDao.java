@@ -62,7 +62,7 @@ public class EetakemonDao implements IEetakemonDao {
         conditions.put("name", eetakemon.getName());
         boolean eetakemonConfirmation = _service.removeByConditions(eetakemonDto, conditions);
 
-        if (!(eetakemon.getEetakemonAtack().size() <= 0) || !eetakemonConfirmation) {
+        if (!(eetakemon.getAtacks().size() <= 0) || !eetakemonConfirmation) {
             return eetakemonConfirmation;
         }
 
@@ -92,7 +92,7 @@ public class EetakemonDao implements IEetakemonDao {
     public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
         boolean actionResult = true;
         List<Atack>atacks=_serviceAtack.getAll();
-        for (Atack atack : eetakemon.getEetakemonAtack()) {
+        for (Atack atack : eetakemon.getAtacks()) {
                 for (int i=0;i<atacks.size();i++){
                     if (atack.getName().equals(atacks.get(i)))
                     {
@@ -112,7 +112,7 @@ public class EetakemonDao implements IEetakemonDao {
 
     public boolean removeAtacksToEetakemon(Eetakemon eetakemon) {
         boolean actionResult = true;
-        for (Atack atack : eetakemon.getEetakemonAtack()) {
+        for (Atack atack : eetakemon.getAtacks()) {
             Hashtable<String, String> conditions = new Hashtable<>();
             conditions.put("eetakemonName", eetakemon.getName());
             conditions.put("atackName", atack.getName());
@@ -135,7 +135,7 @@ public class EetakemonDao implements IEetakemonDao {
         {
             atackList.add(_serviceAtack.getByName(relation.getAtackName()));
         }
-        eetakemonResult.setEetakemonAtack(atackList);
+        eetakemonResult.setAtacks(atackList);
         return eetakemonResult;
     }
 
@@ -159,7 +159,7 @@ public class EetakemonDao implements IEetakemonDao {
 
     private boolean isValidAtackToEetakemon(Eetakemon eetakemon)
     {
-        return eetakemon.getEetakemonAtack().size() == 4;
+        return eetakemon.getAtacks().size() == 4;
     }
 
 }
