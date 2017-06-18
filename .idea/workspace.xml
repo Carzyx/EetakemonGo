@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
+    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="LogIn desde service">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/profile/brock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/profile/byron.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/profile/candice.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/profile/cintia.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/profile/helio.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/profile/maylene.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/profile/paul.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/profile/bulbasaur.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/Dao/EetakemonDao.class" afterPath="$PROJECT_DIR$/target/classes/DAL/Dao/EetakemonDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Business/UserService.class" afterPath="$PROJECT_DIR$/target/classes/Business/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/Dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/DAL/Dao/UserDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/databaseInfo.txt" afterPath="$PROJECT_DIR$/databaseInfo.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,20 +58,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EetakemonDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2992">
-              <caret line="147" column="78" lean-forward="false" selection-start-line="147" selection-start-column="78" selection-end-line="147" selection-end-column="78" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#6109#6110#0" expanded="false" />
-                <element signature="e#6173#6174#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MarkersDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,7 +83,7 @@
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Business/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="330">
               <caret line="36" column="65" lean-forward="false" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
               <folding>
                 <element signature="e#2365#2366#0" expanded="true" />
@@ -109,11 +103,51 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexv2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/indexv2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2310">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="databaseInfo.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/databaseInfo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
+            <state relative-caret-position="-726">
               <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EetakemonType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/EetakemonType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -237,12 +271,12 @@
         <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/UserApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java" />
-        <option value="$PROJECT_DIR$/databaseInfo.txt" />
         <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Business/UserService.java" />
+        <option value="$PROJECT_DIR$/databaseInfo.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/ApiRest/Main.java" />
       </list>
     </option>
   </component>
@@ -372,62 +406,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DAL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGoWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGoWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DAL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGoWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EetakemonGoWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Business" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -458,6 +436,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGoWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EetakemonGoWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -482,22 +474,24 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Miguel Angel\Documents\GitHub\Universidad\EetakemonGo\src\main\java" />
-      <recent name="C:\Users\Miguel Angel\Documents\GitHub\Universidad\EetakemonGo\public\assets\js" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\UPC\6 Quatri\DSA\Project\EetakemonGoWeb\public\profile" />
+      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\src\main\java\Model" />
+      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\public\profile" />
+      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\public" />
+      <recent name="C:\Users\Gurkeerat Singh\IdeaProjects\EetakemonGo\public" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Dao.Entity" />
       <recent name="Controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\src\main\java\Model" />
-      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\public\profile" />
-      <recent name="C:\UPC\6 Quatri\DSA\EetakemonGo\public" />
-      <recent name="C:\Users\Gurkeerat Singh\IdeaProjects\EetakemonGo\public" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\UPC\6 Quatri\DSA\Project\EetakemonGoWeb\public\pokemons" />
+      <recent name="C:\Users\Miguel Angel\Documents\GitHub\Universidad\EetakemonGo\src\main\java" />
+      <recent name="C:\Users\Miguel Angel\Documents\GitHub\Universidad\EetakemonGo\public\assets\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1042,7 +1036,7 @@
       <workItem from="1497639819361" duration="8104000" />
       <workItem from="1497694958316" duration="11426000" />
       <workItem from="1497709035263" duration="371000" />
-      <workItem from="1497712379474" duration="3894000" />
+      <workItem from="1497712379474" duration="12877000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1240,11 +1234,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497715446340</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="LogIn desde service">
+      <created>1497716316283</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1497716316283</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="443697000" />
+    <option name="totallyTimeSpent" value="452680000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1261,7 +1262,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4056604" sideWeight="0.7403125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272727" sideWeight="0.5988185" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5733737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1277,10 +1278,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34318182" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3465909" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272727" sideWeight="0.40118152" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284091" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25134265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2508056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.4957537" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1324,7 +1325,8 @@
     <MESSAGE value="correcciones varias" />
     <MESSAGE value="Captura activity" />
     <MESSAGE value="LogIn correcto" />
-    <option name="LAST_COMMIT_MESSAGE" value="LogIn correcto" />
+    <MESSAGE value="LogIn desde service" />
+    <option name="LAST_COMMIT_MESSAGE" value="LogIn desde service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1371,25 +1373,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Atack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Delete/Requester.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/ClientRequest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/FlowControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Delete/Client.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game/Delete/Provider.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Filters/CustomFilters/TokenAuthenticated.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/ViewController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/Delete/ProviderTest.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/net/Socket.java">
@@ -1447,13 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12386">
           <caret line="567" column="50" lean-forward="false" selection-start-line="567" selection-start-column="50" selection-end-line="567" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/EetakemonType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1622,14 +1598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411">
-          <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1364">
@@ -1653,14 +1621,6 @@
           <folding>
             <element signature="e#759#760#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/databaseInfo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1704,6 +1664,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/profile/bulbasaur.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/profile/evoluciona.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jflipcards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1760">
@@ -1712,9 +1700,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/indexv2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2310">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pokemons/blackpikachu.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/EetakemonType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseInfo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Business/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="330">
           <caret line="36" column="65" lean-forward="false" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
           <folding>
             <element signature="e#2365#2366#0" expanded="true" />
