@@ -18,5 +18,6 @@ public interface IPartyService {
     Party doAtack(Party party);
 
     List<PartyDto> getAllRegisters();
+
     List<PartyDto> getAllRegistersByUser(String name);
 }

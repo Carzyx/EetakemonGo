@@ -21,7 +21,7 @@ public interface IGameApi {
     Response registerCandidate(@Context HttpHeaders httpHeaders, User candidate);
 
     @Path("getParty")
-    @GET
+    @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     Response getParty(@Context HttpHeaders httpHeaders, User candidate);
@@ -31,4 +31,16 @@ public interface IGameApi {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     Response doAtack(@Context HttpHeaders httpHeaders, Party party);
+
+    @Path("getAllRegisters")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    Response getAllRegisters(@Context HttpHeaders httpHeaders);
+
+    @Path("getAllRegistersByUser/{username}")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    Response getAllRegistersByUser(@Context HttpHeaders httpHeaders, @PathParam("username")String username);
 }

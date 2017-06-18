@@ -37,7 +37,7 @@ public class GameApi implements IGameApi {
     }
 
     @Path("getParty")
-    @GET
+    @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response getParty(@Context HttpHeaders httpHeaders, User candidate) {
@@ -60,11 +60,11 @@ public class GameApi implements IGameApi {
         return _httpResponseHelper.getSuccessResponse(_serviceParty.getAllRegisters(), httpHeaders);
     }
 
-    @Path("getAllRegistersByUser")
+    @Path("getAllRegistersByUser/{username}")
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllRegistersByUser(@Context HttpHeaders httpHeaders, String username) {
+    public Response getAllRegistersByUser(@Context HttpHeaders httpHeaders, @PathParam("username")String username) {
         return _httpResponseHelper.getSuccessResponse(_serviceParty.getAllRegistersByUser(username), httpHeaders);
     }
 }
