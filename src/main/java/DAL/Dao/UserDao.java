@@ -1,6 +1,5 @@
 package DAL.Dao;
 
-import DAL.EntityDataBase.EetakemonDto;
 import DAL.EntityDataBase.EetakemonsUserDto;
 import DAL.EntityDataBase.UserDto;
 import DAL.Dao.Interfaces.IEetakemonDao;
@@ -13,7 +12,6 @@ import org.modelmapper.ModelMapper;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by Miguel Angel on 04/04/2017.
@@ -218,7 +216,7 @@ public class UserDao implements IUserDao {
         {
             for (Eetakemon eetakemon : user.getEetakemons())
             {
-                if(eetakemon.getEetakemonAtack().size() != 4)
+                if(eetakemon.getAtacks().size() != 4)
                 {
                     return false;
                 }
