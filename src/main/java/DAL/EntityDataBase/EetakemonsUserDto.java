@@ -14,6 +14,11 @@ public class EetakemonsUserDto {
         this.username = username;
         this.eetakemonName = eetakemonName;
     }
+    public EetakemonsUserDto(String username, String eetakemonName,int level) {
+        this.username = username;
+        this.eetakemonName = eetakemonName;
+        this.level=level;
+    }
 
     public String getUsername() {
         return username;

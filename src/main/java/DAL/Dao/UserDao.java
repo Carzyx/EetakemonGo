@@ -149,7 +149,9 @@ public class UserDao implements IUserDao {
                     }
                 }
                 if(!eetakemonAdded){
-                    EetakemonsUserDto eetakemonsUserDto=new EetakemonsUserDto(user.getUsername(),eetakemon.getName());
+                    if(eetakemon.getLevel()==0)
+                        eetakemon.setLevel(1);
+                    EetakemonsUserDto eetakemonsUserDto=new EetakemonsUserDto(user.getUsername(),eetakemon.getName(),eetakemon.getLevel());
                     _serviceEetakemonsUser.add(eetakemonsUserDto);
                 }
                 if (!eetakemonAdded)
