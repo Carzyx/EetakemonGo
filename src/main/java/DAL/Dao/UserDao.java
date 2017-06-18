@@ -155,7 +155,6 @@ public class UserDao implements IUserDao {
                 if (!eetakemonAdded)
                     actionResult = false;
             }
-
         }
         return actionResult;
     }

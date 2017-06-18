@@ -88,6 +88,14 @@ public class EetakemonDao implements IEetakemonDao {
         }
         return result;
     }
+    public List<Eetakemon> getAllEetackemonsComplete(){
+        List<EetakemonDto> responseList = _service.getAll(new EetakemonDto());
+        List<Eetakemon> result = new ArrayList<>();
+        for (EetakemonDto response : responseList) {
+            result.add(getCompleteEetakemonByName(response.getName()));
+        }
+        return result;
+    }
 
     public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
         boolean actionResult = true;
