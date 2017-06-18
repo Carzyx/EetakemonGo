@@ -11,8 +11,6 @@ import Model.User;
 import com.mysql.jdbc.StringUtils;
 import org.joda.time.DateTime;
 
-import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 /**

@@ -232,6 +232,13 @@ function SignIn() {
 
 }
 
+function Salir() {
+    user =  JSON.parse(Cookies.get("user", User.class));
+    Cookies.remove("user",User.class);
+    sessionStorage.clear();
+    window.location.href = "http://localhost:8080/index.html";
+}
+
 function doAjaxRequestManageDtabase(method, url, authToken, callback, param1) {
     $.ajax({
         beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', authToken);},
@@ -653,7 +660,7 @@ function GetAllEetakemonsFlipCards(selector) {
 function GetTusEetakemonsFlipCards(selector) {
     user =  JSON.parse(Cookies.get("user", User.class));
     var method = "GET";
-    var url = "http://localhost:8080/myapp/UserService/getCompleteUserByNme/"+user.username;
+    var url = "http://localhost:8080/myapp/UserService/getCompleteUserByName/"+user.username;
     console.log(url);
 
     doAjaxRequestManageDtabase(method, url, user.authToken, SacarListaDeEtakemonsDeUnUsuario, selector);
@@ -687,8 +694,5 @@ function TestAlert() {
     alert("hello world");
 }
 
-function setImage(select){
-    var image = document.getElementsByName("image-swap")[0];
-    image.src = select.options[select.selectedIndex].value;
-}
+
 

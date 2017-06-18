@@ -12,6 +12,7 @@ import java.util.List;
 public interface IEetakemonDao extends IBasicDao <Eetakemon> {
 
     boolean addAtacksToEetakemon(Eetakemon eetakemon);
+    List<Eetakemon> getAllEetackemonsComplete();
     boolean removeAtacksToEetakemon(Eetakemon eetakemon);
     Eetakemon getCompleteEetakemonByName (String name);
     List<Eetakemon> getAllCompleteEetakemonByName (List<EetakemonsUserDto> eetakemonsToUserList);

@@ -35,4 +35,9 @@ public interface IEetakemonApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     Response getAllEetakemons(@Context HttpHeaders httpHeaders);
+
+    @Path("getAllCompleteEetakemons")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllCompleteEetakemons(@Context HttpHeaders httpHeaders);
 }

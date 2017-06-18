@@ -29,7 +29,7 @@ public class UserService implements IUserService {
     public boolean create(User user) {
         boolean correcto;
         if(!isUsernameAlreadyInUse(user.getUsername()) & !isEmailAlreadyInUse(user.getEmail())){
-        List<Eetakemon> list=_serviceEetakemon.getAll();
+        List<Eetakemon> list=_serviceEetakemon.getAllEetackemonsComplete();
         Random r=new Random();
         List<Eetakemon>primerEetakemon=new ArrayList<>();
         primerEetakemon.add(list.get(r.nextInt(list.size())));

@@ -40,6 +40,9 @@ public class EetakemonService implements IEetakemonService{
     public List<Eetakemon> getAll() {
         return _serviceEetakemon.getAll();
     }
+    public List<Eetakemon> getAllEetackemonsComplete(){
+        return _serviceEetakemon.getAllEetackemonsComplete();
+    }
 
     public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
         return _serviceEetakemon.addAtacksToEetakemon(eetakemon);

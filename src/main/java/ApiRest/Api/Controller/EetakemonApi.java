@@ -76,5 +76,13 @@ public class EetakemonApi implements IEetakemonApi {
     public Response getAllEetakemons(@Context HttpHeaders httpHeaders) {
         return  _httpResponseHelper.getSuccessResponse(_serviceEetakemon.getAll(), httpHeaders);
     }
+    @Override
+    @Path("getAllCompleteEetakemons")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllCompleteEetakemons(@Context HttpHeaders httpHeaders) {
+        return  _httpResponseHelper.getSuccessResponse(_serviceEetakemon.getAllEetackemonsComplete(), httpHeaders);
+    }
+
 
 }

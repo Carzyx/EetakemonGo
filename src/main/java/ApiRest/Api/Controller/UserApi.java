@@ -5,8 +5,11 @@ import ApiRest.Helpers.HttpResponseHelper;
 import ApiRest.Helpers.Interfaces.IHttpResponseHelper;
 import ApiRest.Api.Controller.Interfaces.IUserApi;
 import ApiRest.Filters.CustomFilters.TokenAuthenticated;
+import Business.Interfaces.ILocation;
 import Business.Interfaces.IUserService;
+import Business.LocationService;
 import Business.UserService;
+import Model.Markers;
 import Model.User;
 
 import javax.inject.Singleton;
@@ -15,6 +18,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 /**
  * Created by Miguel Angel on 10/06/2017.
@@ -27,6 +31,7 @@ public class UserApi implements IUserApi {
     // User implementation
     private static final IUserService _serviceUser = new UserService();
     private static final IHttpResponseHelper _httpResponseHelper = new HttpResponseHelper();
+    private static final ILocation _serviceLocation=new LocationService();
 
     @Override
     @Path("createUser")
@@ -117,11 +122,10 @@ public class UserApi implements IUserApi {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addAEetakemonsToUser(@Context HttpHeaders httpHeaders, User user) {
-
         if (_serviceUser.addAEetakemonsToUser(user)) {
-            return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
+            return _httpResponseHelper.getSuccessResponse(_serviceUser.getCompleteUserByUsername(user.getUsername()), httpHeaders);
         }
-        return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
+        return _httpResponseHelper.getSuccessResponse(_serviceUser.getCompleteUserByUsername(user.getUsername()), httpHeaders);
     }
 
     @Override
@@ -141,5 +145,25 @@ public class UserApi implements IUserApi {
     public Response getAllUsers(@Context HttpHeaders httpHeaders)
     {
         return  _httpResponseHelper.getSuccessResponse(_serviceUser.getAll(), httpHeaders);
+    }
+
+    @Path("markers")
+    @POST
+    @TokenAuthenticated
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getMarkers(@Context HttpHeaders httpHeaders, Markers markers){
+
+        return _httpResponseHelper.getSuccessResponse(_serviceLocation.getMarkers(markers),httpHeaders);
+    }
+
+    @Path("nearMarkers")
+    @POST
+    @TokenAuthenticated
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getNearMarkers(@Context HttpHeaders httpHeaders, Markers markers){
+
+        return _httpResponseHelper.getSuccessResponse(_serviceLocation.getNearMarkers(markers),httpHeaders);
     }
 }
