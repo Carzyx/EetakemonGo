@@ -1,244 +1,252 @@
 <!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-	<head>
-		<title>Etakemon Go</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-         <script type="text/javascript" src="js/selectAtack.js"></script>
-      <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
+<head>
+    <title>Etakemon Go</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <script type="text/javascript" src="js/selectAtack.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	</head>
-	<body class="landing" onLoad="GetAllUsers('#jsonTableUsersResult')">
-		<div id="page-wrapper">
+</head>
+<body class="landing" onLoad="GetAllUsers('#jsonTableUsersResult')">
+<div id="page-wrapper">
 
-			<!-- Header -->
-                <!-- Menu -->
-				<header id="header" class="alt" >
-					<h1><a href="index.html">Etakemon Go</a> </h1>
-                    <nav id="nav">
-                        <ul>
-                            <li><a href="home.html" class="button">Inicio</a></li>
-                            <li>
-                                <a href="#" class="icon fa-angle-down">Menu</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Administracion / Gestion </a>
-                                        <ul>
-                                            <li><a href="usersdatabase.html">Usuarios</a></li>
-                                            <li><a href="eetakemonsdatabase.html">Eetakemons</a></li>
-                                            <li><a href="atacksdatabase.html">Ataques</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="pokedex.html">Pokédex</a></li>
-                                    <li><a href="contact.html">Contactanos</a></li>
-                                </ul>
-                            </li>
-                            <li><a  class="button" onclick="Salir()">LogOut</a></li>
-                        </ul>
-                    </nav>
-				</header>
-        </div>
+    <!-- Header -->
+    <!-- Menu -->
+    <header id="header" class="alt" >
+        <h1><a href="index.html">Etakemon Go</a> </h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="home.html" class="button">Inicio</a></li>
+                <li>
+                    <a href="#" class="icon fa-angle-down">Menu</a>
+                    <ul>
+                        <li>
+                            <a href="">Administracion / Gestion </a>
+                            <ul>
+                                <li><a href="usersdatabase.html">Usuarios</a></li>
+                                <li><a href="eetakemonsdatabase.html">Eetakemons</a></li>
+                                <li><a href="atacksdatabase.html">Ataques</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="pokedex.html">Pokédex</a></li>
+                        <li><a href="contact.html">Contactanos</a></li>
+                    </ul>
+                </li>
+                <li><a  class="button" onclick="Salir()">LogOut</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
 
-			<!-- Main -->
+<!-- Main -->
 <div class="row">
-	<div class="12u">
-		<!-- Text -->
-		<section class="box">
-			<header>
-				<h3>Users database registered</h3>
-				<p>Manage all info about users</p>
-			</header>
+    <div class="12u">
+        <!-- Text -->
+        <section class="box">
+            <header>
+                <h3>Users database registered</h3>
+                <p>Manage all info about users</p>
+            </header>
             <div>
                 <div id="Options">
-            <p>Select an option: <select id="selectOptionDatabase" onchange="showDiv(this)">
-                  <option value="0">---</option>
-                <option type="Add" value="1">Add</option>
-                <option type="Remove" value="1">Remove</option>
-                <option type="Update" value="1">Update</option>
-</select>
-               
-</p>
-            </div>
-                   <form>
-                        <div id="databaseForm" id="userdatabaseForm"class="row uniform 50%">
+                    <p>Select an option: <select id="selectOptionDatabase" onchange="showDiv(this)">
+                        <option value="0">---</option>
+                        <option type="Add" value="1">Add</option>
+                        <option type="Remove" value="1">Remove</option>
+                        <option type="Update" value="1">Update</option>
+                    </select>
+
+                    </p>
+                </div>
+                <form>
+                    <div id="databaseForm" id="userdatabaseForm" class="row uniform 50%">
+                        <div class="6u 12u(mobilep)">
+                            <input type="text" name="username" id="username" placeholder="User nick" />
+                        </div>
+                        <div class="6u 12u(mobilep)">
+                            <input type="password" name="password" id="password" placeholder="User password" />
+                        </div>
+                        <div class="6u 12u(mobilep)">
+                            <input type="text" name="name" id="name" placeholder="Name" />
+                        </div>
+                        <div class="6u 12u(mobilep)">
+                            <input type="text" name="surname" id="surname" placeholder="Surname" />
+                        </div>
+                        <div class="6u 12u(mobilep)">
+                            <input type="text" name="email" id="email" placeholder="Email Address" />
+                        </div>
+                        <div class="6u 12u(mobilep)">
+                            <input type="text" name="rol" id="editrol" placeholder="rol" />
+                        </div>
+                        <div>
                             <div class="6u 12u(mobilep)">
-                                <input type="text" name="username" id="username" placeholder="User nick" />
-                            </div>
-                            <div class="6u 12u(mobilep)">
-                                <input type="password" name="password" id="password" placeholder="User password" />
-                            </div>
-                            <div class="6u 12u(mobilep)">
-                                <input type="text" name="name" id="name" placeholder="Name" />
-                            </div>
-                            <div class="6u 12u(mobilep)">
-                                <input type="text" name="surname" id="surname" placeholder="Surname" />
-                            </div>
-                            <div class="6u 12u(mobilep)">
-                                <input type="text" name="email" id="email" placeholder="Email Address" />
-                            </div>
-                            <div class="6u 12u(mobilep)">
-                                <input type="text" name="rol" id="rol" placeholder="rol" />
-                            </div>
-                            <div>
-                             <div class="6u 12u(mobilep)">
-                            <!-- B was here -->
+                                <!-- B was here -->
 
 
-                            <a href="#" id="atackButton" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal"onclick="BotonElegirEetakemons('#OptionAtack')">Selecciona los Eetakemons</a>
-                                 <select name="kitchen_color" id="kitchen_color" onchange="setImage(this);">
-                                     <option value="">Elige imagen</option>
-                                     <option value="profile/brock.png">Brock Lo Peta</option>
-                                     <option value="profile/byron.png">Byron</option>
-                                     <option value="profile/candice.png">Candice a ella petan</option>
-                                     <option value="profile/cintia.png">Cintia</option>
-                                     <option value="profile/helio.png">Helio</option>
-                                     <option value="profile/maylene.png">Maylene</option>
-                                     <option value="profile/paul.png">Paul</option>
-                                 </select>
-                                 <br />
-                                 <img src="" name="image-swap" />
-                            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header" align="center">
+                                <a href="#" id="atackButton" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal"onclick="BotonElegirEetakemons('#OptionEetakemon')">Selecciona los Eetakemons</a>
+                                <select name="kitchen_color" id="kitchen_color" onchange="setImage(this);">
+                                    <option value="profile/evoluciona.png">Elige imagen</option>
+                                    <option value="profile/brock.png">Brock Lo Peta</option>
+                                    <option value="profile/byron.png">Byron</option>
+                                    <option value="profile/candice.png">Candice a ella petan</option>
+                                    <option value="profile/cintia.png">Cintia</option>
+                                    <option value="profile/helio.png">Helio</option>
+                                    <option value="profile/maylene.png">Maylene</option>
+                                    <option value="profile/paul.png">Paul</option>
+                                </select>
+                                <br />
+                                <img src="" name="image-swap" />
+                                <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header" align="center">
 
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                            </button>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+
+                                            <!-- Begin # DIV Form -->
+                                            <div id="div-forms">
+
+                                                <!-- Begin # Login Form -->
+                                                <form id="login-form">
+                                                    <div class="modal-body">
+                                                        <div id="div-login-msg">
+                                                            <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                            <span id="text-login-msg">Selecciona los Eetakemons</span>
+                                                        </div>
+
+                                                        <select  id="OptionEetakemon" onchange="clickEetakemon(this.value)">
+                                                            <option value="0">Esto se llenara de Eetakemons</option>
+
+                                                        </select>
+                                                        <div id="div-login-msg">
+                                                            <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                            <span id="text-login-msg">Selecciona el nivel del Eetakemon</span>
+                                                        </div>
+                                                        <select  id="eligeNivel">
+                                                            <option value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+
+                                                        </select>
+                                                        <br>
+                                                        <div class="panel-group">
+                                                            <div class="12u 12u(mobilep)">
+                                                                <div class="panel panel-info">
+                                                                    <div class="panel-heading">Nombre:</div>
+                                                                    <div class="panel-body" id="nombre" ></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="12u 12u(mobilep)">
+                                                                <div class="panel panel-info">
+                                                                    <div class="panel-heading">Tipo:</div>
+                                                                    <div class="panel-body" id="type"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="12u 12u(mobilep)">
+                                                                <div class="panel panel-info">
+                                                                    <div class="panel-heading">Puntos de Salud:</div>
+                                                                    <div class="panel-body" id="PS"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="12u 12u(mobilep)">
+                                                                <div class="panel panel-info">
+                                                                    <div class="panel-heading">Descripcion:</div>
+                                                                    <div class="panel-body" id="descripcion"></div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div>
+                                                            <input type="button" value="Guardar" class="fit" onclick="guardarEetakemon('#OptionEetakemon')" />
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+
+                                                <!-- End # Login Form -->
+
+                                                <!-- Begin | Lost Password Form -->
+
+
+
+                                            </div>
+                                            <!-- End # DIV Form -->
+
                                         </div>
-
-                                        <!-- Begin # DIV Form -->
-                                        <div id="div-forms">
-
-                                            <!-- Begin # Login Form -->
-                                            <form id="login-form">
-                                                <div class="modal-body">
-                                                    <div id="div-login-msg">
-                                                        <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                                        <span id="text-login-msg">Selecciona los Eetakemons</span>
-                                                    </div>
-
-                                                    <select multiple="multiple" id="OptionEetakemon" onchange="clickEetakemon(this.value)">
-                                                        <option value="0">Esto se llenara de Eetakemons</option>
-
-                                                    </select>
-                                                    <div id="div-login-msg">
-                                                        <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                                        <span id="text-login-msg">Selecciona el nivel del Eetakemon</span>
-                                                    </div>
-                                                    <select  id="eligeNivel" onchange="clickNivel(this.value)">
-                                                        <option value="0">0</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-
-                                                    </select>
-                                                    <br>
-                                                    <div class="panel-group">
-                                                        <div class="12u 12u(mobilep)">
-                                                            <div class="panel panel-info">
-                                                                <div class="panel-heading">Nombre:</div>
-                                                                <div class="panel-body" id="nombre" ></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="12u 12u(mobilep)">
-                                                            <div class="panel panel-info">
-                                                                <div class="panel-heading">Nivel:</div>
-                                                                <div class="panel-body" id="tipo"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="12u 12u(mobilep)">
-                                                            <div class="panel panel-info">
-                                                                <div class="panel-heading">Puntos de Salud:</div>
-                                                                <div class="panel-body" id="damage"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="12u 12u(mobilep)">
-                                                            <div class="panel panel-info">
-                                                                <div class="panel-heading">Descripcion:</div>
-                                                                <div class="panel-body" id="descripcion"></div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <div>
-                                                        <input type="button" value="Guardar" class="fit" onclick="guardarAtaque('#OptionAtack')" />
-                                                    </div>
-
-                                                </div>
-                                            </form>
-
-                                            <!-- End # Login Form -->
-
-                                            <!-- Begin | Lost Password Form -->
-
-
-
-                                        </div>
-                                        <!-- End # DIV Form -->
-
                                     </div>
                                 </div>
-                            </div>
 
                                 <input type="button" value="Guardar " class="fit" onclick="doActionDatabaseUser()" />
                             </div>
                         </div>
-                    </form>
+                </form>
 
 
             </div>
 
-            </div>
-            
-            <div>
-                <table id="jsonTableUsersResult" >
-                
-                </table>
-                
-            </div>
-		</section>
-        
-	</div>
+    </div>
+
+    <div>
+        <table id="jsonTableUsersResult" >
+
+        </table>
+
+    </div>
+    </section>
+
 </div>
-        
-                          
-
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://atenea.upc.edu" target="_blank">Grup Homogeni</a></li>
-					</ul>
-				</footer>
+</div>
 
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-            <script src="assets/js/main.js"></script>
-            <script src="assets/js/cookieHandler.js"></script>
-	</body>
+
+<!-- Footer -->
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://atenea.upc.edu" target="_blank">Grup Homogeni</a></li>
+    </ul>
+</footer>
+
+
+<!-- Scripts -->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollgress.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/cookieHandler.js"></script>
+<script src="js/profile.js"></script>
+
+</body>
 </html>

@@ -408,14 +408,78 @@ function showDiv(elem){
     }
 }
 
+function BotonElegirEetakemons(selector) {
+    sessionStorage.removeItem("EtakemonsParaUsers");
+    var method = "GET";
+    var url = "http://localhost:8080/myapp/EetakemonService/getAllEetakemons";
+    user =  JSON.parse(Cookies.get("user", User.class));
+    console.log(user);
+    doAjaxRequestManageDtabase(method, url, user.authToken, RellenaEtakemons, selector);
+}
+function RellenaEtakemons(selector, data) {
+    console.log(data);
+    sessionStorage.setItem("EtakemonsParaUsers", JSON.stringify(data));
+    dropDownList(selector,data);
+}
+function clickEetakemon(name) {//obtener ataques de session sorage y mostrar atributos
+    var data = JSON.parse(sessionStorage.getItem("EtakemonsParaUsers"));
+
+    $.each(data, function(i, option){
+        if (option.name==name){
+            document.getElementById("nombre").innerHTML=option.name;
+            document.getElementById("type").innerHTML=option.type;
+            document.getElementById("PS").innerHTML=option.ps;
+            document.getElementById("descripcion").innerHTML=option.description;
+        }
+    });
+}
+
+function guardarEetakemon() {
+    sessionStorage.removeItem("EtakemonsList");
+
+    var select = document.getElementById('OptionEetakemon');
+
+    var selectedValues = $(select).val();
+    console.log(selectedValues);
+
+    /*var optionSelected = select.options[select.selectedIndex].text;
+     console.log(optionSelected);*/
+
+
+    var data = JSON.parse(sessionStorage.getItem("EtakemonsParaUsers"));
+    var Etakemon;
+    var EtakemonsList=[];
+
+    var level = $(document.getElementById('eligeNivel')).val();
+
+        $.each(data, function(i, option){
+            if (option.name==selectedValues){
+                Etakemon = {
+                    name: option.name,
+                    type: option.type,
+                    ps: option.ps,
+                    description: option.description,
+                    atacks: option.atacks,
+                    image: option.image,
+                    level: level
+                };
+                EtakemonsList.push(Etakemon);
+            }
+        });
+
+
+    sessionStorage.setItem('EtakemonsList',JSON.stringify(EtakemonsList));
+    console.log(sessionStorage.getItem('EtakemonsList'));
+}
+
 
 function doActionDatabaseUser() {
     var option = document.getElementById('selectOptionDatabase');
     var optionSelected = option.options[option.selectedIndex].text;
     var urlAction;
+    var addEtakemon = false;
 
-    switch(optionSelected)
-    {
+    switch (optionSelected) {
         case "Add":
             urlAction = "http://localhost:8080/myapp/UserService/createUser";
             break;
@@ -426,6 +490,7 @@ function doActionDatabaseUser() {
 
         case "Update":
             urlAction = "http://localhost:8080/myapp/UserService/updateByUsernameAndPassword";
+            addEtakemon = true;
             break;
     }
 
@@ -434,39 +499,96 @@ function doActionDatabaseUser() {
     var username = $("#username").val();
     var password = $("#password").val();
     var email = $("#email").val();
+    var rollll = $("#editrol").val();
+
+    if (rollll != 0 && rollll != 1) {
+        alert("Elige 0 o 1");
+        location.reload(true);
+    }
+    var Etakemons = JSON.parse(sessionStorage.getItem('EtakemonsList'));
+
+    var imagen = document.getElementById('kitchen_color');
+    var imagenUrl = imagen.options[imagen.selectedIndex].value;
 
     var sendInfo = {
         name: name,
         surname: surname,
         username: username,
         password: password,
-        email: email
+        email: email,
+        rol: rollll,
+        image: imagenUrl
+    };
+    var sendInfo2 = {
+        name: name,
+        surname: surname,
+        username: username,
+        password: password,
+        email: email,
+        rol: rollll,
+        eetakemons: Etakemons,
+        image: imagenUrl
     };
 
-    user =  JSON.parse(Cookies.get("user", User.class));
-    console.log(user);
+
+    user = JSON.parse(Cookies.get("user", User.class));
+
 
     $.ajax({
-        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authoritzation', user.authToken);
+        },
         type: "POST",
         url: urlAction,
         contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(sendInfo),
         success: function (msg) {
             if (msg) {
                 alert(msg);
+                if(!addEtakemon){
                 location.reload(true);
                 var table = document.getElementById('jsonTableUsersResult');
                 table.parentNode.removeChild(table);
                 GetAllUsers('#jsonTableUsersResult');
+                }
 
             } else {
                 alert("Error in the execution...");
             }
-        },
+        }
 
-        data: JSON.stringify(sendInfo)
     });
 
+
+    if (addEtakemon) {
+        console.log(sendInfo2);
+        $.ajax({
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authoritzation', user.authToken);
+            },
+            type: "POST",
+            url: "http://localhost:8080/myapp/UserService/addAEetakemonsToUser",
+            url: "http://localhost:8080/myapp/UserService/addAEetakemonsToUser",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(sendInfo2),
+            success: function (msg) {
+                if (msg) {
+                    alert(msg);
+                    location.reload(true);
+                    var table = document.getElementById('jsonTableUsersResult');
+                    table.parentNode.removeChild(table);
+                    GetAllUsers('#jsonTableUsersResult');
+
+                } else {
+                    alert("Error in the execution...");
+                }
+            }
+
+        });
+
+    }
 }
 
 function doActionDatabaseEetakemon() {
@@ -508,7 +630,7 @@ function doActionDatabaseEetakemon() {
         type: atackTypeSelected,
         image: image,
         description: description,
-        eetakemonAtack: atackList
+        atacks: atackList
     };
     console.log(sendInfo);
 
