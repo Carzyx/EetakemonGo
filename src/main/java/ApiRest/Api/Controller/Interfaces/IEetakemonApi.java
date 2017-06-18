@@ -18,6 +18,19 @@ public interface IEetakemonApi {
     @Produces(MediaType.TEXT_PLAIN)
     Response createEetakemon(@Context HttpHeaders httpHeaders, Eetakemon eetakemon);
 
+    @Path("removeEetakemon")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    Response removeEetakemon(@Context HttpHeaders httpHeaders, Eetakemon eetakemon);
+
+
+    @Path("updateEetakemon")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateEetakemon(@Context HttpHeaders httpHeaders, Eetakemon eetakemon);
+
     @Path("getAllEetakemons")
     @GET
     @Produces(MediaType.APPLICATION_JSON)

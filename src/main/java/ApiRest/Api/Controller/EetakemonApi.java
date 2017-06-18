@@ -44,6 +44,32 @@ public class EetakemonApi implements IEetakemonApi {
     }
 
     @Override
+    @Path("removeEetakemon")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response removeEetakemon(@Context HttpHeaders httpHeaders, Eetakemon eetakemon){
+        if(_serviceEetakemon.removeByName(eetakemon))
+        {
+            return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
+        }
+        return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
+    }
+
+    @Override
+    @Path("updateEetakemon")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateEetakemon(@Context HttpHeaders httpHeaders, Eetakemon eetakemon){
+        if(_serviceEetakemon.updateByName(eetakemon))
+        {
+            return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
+        }
+        return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
+    }
+
+    @Override
     @Path("getAllEetakemons")
     @GET
     @Produces(MediaType.APPLICATION_JSON)

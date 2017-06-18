@@ -80,7 +80,7 @@ function rellenarInfoUpdate() {
 }
 function updateUser() {
 
-    var urlAction = "http://localhost:8080/myapp/web/updateByUsernameAndPassword";
+    var urlAction = "http://localhost:8080/myapp/UserService/updateByUsernameAndPassword";
 
 
     var name = $("#edditName").val();
@@ -112,7 +112,7 @@ function updateUser() {
         success: function (msg) {
             if (msg) {
 
-                // location.reload(true);
+                location.reload(true);
                 alert(msg.responseText.toString());
 
             } else {
@@ -124,15 +124,18 @@ function updateUser() {
     });
 
 }
-
-/*function updateUser() {
-    var jsonUser=JSON.parse(sessionStorage.getItem("infoUser"));
+/*
+function updateUser() {
+    user =  JSON.parse(Cookies.get("user", User.class));
+    console.log(user);
 
     var name = $("#edditName").val();
     var surname = $("#edditSurname").val();
     var username = $("#edditUsername").val();
     var email = $("#edditEmail").val();
-    var pass= jsonUser.password;
+    var pass= user.password;
+
+
 
     var sendInfo = {
         name: name,
@@ -142,7 +145,10 @@ function updateUser() {
         password: pass
     };
 
+    console.log(sendInfo);
+
     $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
         type: "POST",
         url: "http://localhost:8080/myapp/web/updateUser",
         contentType: "application/json",

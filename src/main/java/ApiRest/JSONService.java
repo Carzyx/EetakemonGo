@@ -145,6 +145,30 @@ public class JSONService {
         return Response.status(200).entity("Eetakemon created KO").build();
     }
 
+    @Path("removeEetakemon")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response removeEetakemon(Eetakemon eetakemon){
+        if(_serviceEetakemon.removeByName(eetakemon))
+        {
+            return Response.status(201).entity("Eetakemon removed OK").build();
+        }
+        return Response.status(200).entity("Eetakemon removed KO").build();
+    }
+
+    @Path("updateEetakemon")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateEetakemon(Eetakemon eetakemon){
+        if(_serviceEetakemon.updateByName(eetakemon))
+        {
+            return Response.status(201).entity("Eetakemon removed OK").build();
+        }
+        return Response.status(200).entity("Eetakemon removed KO").build();
+    }
+
     @Path("getAllEetakemons")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
