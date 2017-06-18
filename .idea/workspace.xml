@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IPartyDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/PartyDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/PartyDto.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Business/PartyService.class" afterPath="$PROJECT_DIR$/target/classes/Business/PartyService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Model/Party.class" afterPath="$PROJECT_DIR$/target/classes/Model/Party.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/GameApi.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/GameApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IPartyService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IPartyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/PartyService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/PartyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Model/Party.java" afterPath="$PROJECT_DIR$/src/main/java/Model/Party.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,92 +47,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PartyService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Business/PartyService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="91" column="57" lean-forward="false" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#PartyService#0;class#PartyService#0" expanded="false" />
-                <element signature="method#registerCandidate#0;class#PartyService#0" expanded="false" />
-                <element signature="method#getParty#0;class#PartyService#0" expanded="false" />
-                <element signature="method#doAtack#0;class#PartyService#0" expanded="false" />
-                <element signature="method#checkWiner#0;class#PartyService#0" expanded="false" />
-                <element signature="method#updateParty#0;class#PartyService#0" expanded="false" />
-                <element signature="method#getAtack#0;class#PartyService#0" expanded="false" />
-                <element signature="method#calculateAtack#0;class#PartyService#0" expanded="false" />
-                <element signature="method#createParty#0;class#PartyService#0" expanded="false" />
-                <element signature="method#getCandidatesToFight#0;class#PartyService#0" expanded="false" />
-                <element signature="method#prepareParty#0;class#PartyService#0" expanded="false" />
-                <element signature="method#findMyParty#0;class#PartyService#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IPartyService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Business/Interfaces/IPartyService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IPartyDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IPartyDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="50" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameApi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/GameApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="67" column="90" lean-forward="false" selection-start-line="67" selection-start-column="90" selection-end-line="67" selection-end-column="90" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PartyDao.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/PartyDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#433#434#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Party.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Party.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1193,7 +1101,7 @@
       <workItem from="1497791906582" duration="7000" />
       <workItem from="1497791924011" duration="1518000" />
       <workItem from="1497796533181" duration="39000" />
-      <workItem from="1497796617720" duration="9888000" />
+      <workItem from="1497796617720" duration="9931000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1412,11 +1320,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497796956803</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Add Party service to database">
+      <created>1497807145365</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1497807145365</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475521000" />
+    <option name="totallyTimeSpent" value="475564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1429,7 +1344,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1452,7 +1367,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33826637" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284091" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26756757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26756757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.4957537" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32580262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1536,7 +1451,8 @@
     <MESSAGE value="Corrección addEetakemon" />
     <MESSAGE value="new eetakemons" />
     <MESSAGE value="Add Game service by Http" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Game service by Http" />
+    <MESSAGE value="Add Party service to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Party service to database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1961,46 +1877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Business/PartyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="91" column="57" lean-forward="false" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#PartyService#0;class#PartyService#0" expanded="false" />
-            <element signature="method#registerCandidate#0;class#PartyService#0" expanded="false" />
-            <element signature="method#getParty#0;class#PartyService#0" expanded="false" />
-            <element signature="method#doAtack#0;class#PartyService#0" expanded="false" />
-            <element signature="method#checkWiner#0;class#PartyService#0" expanded="false" />
-            <element signature="method#updateParty#0;class#PartyService#0" expanded="false" />
-            <element signature="method#getAtack#0;class#PartyService#0" expanded="false" />
-            <element signature="method#calculateAtack#0;class#PartyService#0" expanded="false" />
-            <element signature="method#createParty#0;class#PartyService#0" expanded="false" />
-            <element signature="method#getCandidatesToFight#0;class#PartyService#0" expanded="false" />
-            <element signature="method#prepareParty#0;class#PartyService#0" expanded="false" />
-            <element signature="method#findMyParty#0;class#PartyService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Business/Interfaces/IPartyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IPartyDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="50" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/GameApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="542">
@@ -2019,6 +1895,46 @@
             <element signature="imports" expanded="true" />
             <element signature="e#433#434#0" expanded="true" />
             <element signature="e#482#483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IPartyDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="50" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Business/Interfaces/IPartyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Business/PartyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="91" column="57" lean-forward="false" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#PartyService#0;class#PartyService#0" expanded="false" />
+            <element signature="method#registerCandidate#0;class#PartyService#0" expanded="false" />
+            <element signature="method#getParty#0;class#PartyService#0" expanded="false" />
+            <element signature="method#doAtack#0;class#PartyService#0" expanded="false" />
+            <element signature="method#checkWiner#0;class#PartyService#0" expanded="false" />
+            <element signature="method#updateParty#0;class#PartyService#0" expanded="false" />
+            <element signature="method#getAtack#0;class#PartyService#0" expanded="false" />
+            <element signature="method#calculateAtack#0;class#PartyService#0" expanded="false" />
+            <element signature="method#createParty#0;class#PartyService#0" expanded="false" />
+            <element signature="method#getCandidatesToFight#0;class#PartyService#0" expanded="false" />
+            <element signature="method#prepareParty#0;class#PartyService#0" expanded="false" />
+            <element signature="method#findMyParty#0;class#PartyService#0" expanded="false" />
           </folding>
         </state>
       </provider>
