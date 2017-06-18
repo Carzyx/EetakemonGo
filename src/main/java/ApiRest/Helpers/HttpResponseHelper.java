@@ -1,8 +1,8 @@
 package ApiRest.Helpers;
 
-import ApiRest.Helpers.Interfaces.IHttpResponseHelper;
 import ApiRest.Filters.Interfaces.ISignatureControlService;
 import ApiRest.Filters.SignatureControlService;
+import ApiRest.Helpers.Interfaces.IHttpResponseHelper;
 import com.google.gson.Gson;
 import javafx.util.Pair;
 
@@ -17,8 +17,7 @@ public class HttpResponseHelper implements IHttpResponseHelper {
     private static ISignatureControlService _signatureControlService;
     private static String errorMessage = "something error happens";
 
-    public HttpResponseHelper()
-    {
+    public HttpResponseHelper() {
         _signatureControlService = new SignatureControlService();
     }
 
@@ -31,27 +30,21 @@ public class HttpResponseHelper implements IHttpResponseHelper {
     }
 
     public Response getSuccessResponse(Object element, HttpHeaders httpHeaders) throws MyApplicationException {
-        try
-        {
+        try {
             String OldAuthToken = httpHeaders.getHeaderString(HttpHeaders.AUTHORIZATION);
             OldAuthToken = OldAuthToken == null ? httpHeaders.getHeaderString("authoritzation") : OldAuthToken;
             Pair<String, String> authToken = _signatureControlService.getExtendExpirationTime(OldAuthToken);
             return Response.status(200).header(authToken.getKey(), authToken.getValue()).entity(new Gson().toJson(element)).build();
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             throw new MyApplicationException(errorMessage, ex);
         }
     }
 
     public Response getSuccessResponse(Object element, String subjectKey) throws MyApplicationException {
-        try
-        {
+        try {
             Pair<String, String> authToken = _signatureControlService.getKeySignature(subjectKey);
             return Response.status(200).header(authToken.getKey(), authToken.getValue()).entity(new Gson().toJson(element)).build();
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             throw new MyApplicationException(errorMessage, ex);
         }
     }

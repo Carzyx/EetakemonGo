@@ -14,15 +14,17 @@ import java.util.List;
 public class LocationService implements ILocation {
     private static IMarkersDao _serviceMarkers;
 
-    public LocationService(){
-        _serviceMarkers=new MarkersDao();
+    public LocationService() {
+        _serviceMarkers = new MarkersDao();
     }
+
     @Override
     public List<Markers> getNearMarkers(Markers markers) {
-        return _serviceMarkers.getNearMarkers(new LatLng(markers.getLat(),markers.getLng()));}
+        return _serviceMarkers.getNearMarkers(new LatLng(markers.getLat(), markers.getLng()));
+    }
 
     @Override
     public List<Markers> getMarkers(Markers markers) {
-        return _serviceMarkers.getActiveMarkers(new LatLng(markers.getLat(),markers.getLng()));
+        return _serviceMarkers.getActiveMarkers(new LatLng(markers.getLat(), markers.getLng()));
     }
 }

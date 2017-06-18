@@ -1,16 +1,16 @@
 package Model;
 
-import com.google.maps.model.LatLng;
-
 /**
  * Created by Ignacio on 03/06/2017.
  */
 
 public class Markers {
-    double lat;
-    double lng;
-    Eetakemon eetakemon;
-    public void Markers(){}
+    private double lat;
+    private double lng;
+    private Eetakemon eetakemon;
+
+    public void Markers() {
+    }
 
     public double getLat() {
         return lat;

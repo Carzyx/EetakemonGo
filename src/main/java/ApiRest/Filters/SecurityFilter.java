@@ -1,13 +1,12 @@
 package ApiRest.Filters;
 
-import ApiRest.Filters.Interfaces.ISignatureControlService;
 import ApiRest.Filters.CustomFilters.TokenAuthenticated;
+import ApiRest.Filters.Interfaces.ISignatureControlService;
 import org.apache.log4j.Logger;
 
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
-import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
@@ -24,8 +23,7 @@ public class SecurityFilter implements ContainerRequestFilter {
     private static ISignatureControlService _signatureControl;
     final static Logger logger = Logger.getLogger(SecurityFilter.class);
 
-    public SecurityFilter()
-    {
+    public SecurityFilter() {
         _signatureControl = new SignatureControlService();
     }
 
@@ -41,8 +39,7 @@ public class SecurityFilter implements ContainerRequestFilter {
         }
 
         boolean isValid = _signatureControl.isSignatureExpired(authHeader);
-        if(!isValid)
-        {
+        if (!isValid) {
             ctx.abortWith(
                 Response.status(Response.Status.UNAUTHORIZED).build());
         }

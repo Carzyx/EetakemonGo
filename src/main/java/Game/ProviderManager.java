@@ -48,7 +48,7 @@ public class ProviderManager {
                 boolean communicationActived = true;
 
                 while (communicationActived) {
-                    messageAction = jsonSerializer.fromJson((String)in.readObject(), Message.class);
+                    messageAction = jsonSerializer.fromJson((String) in.readObject(), Message.class);
 
                     switch (messageAction.getAction()) {
 
@@ -91,8 +91,7 @@ public class ProviderManager {
 
     }
 
-    private static boolean isSocketCreated(String username)
-    {
+    private static boolean isSocketCreated(String username) {
         Socket socketGuest = usersConnections.get(username).userConnection;
         return socketGuest != null;
     }
@@ -104,7 +103,7 @@ public class ProviderManager {
     }
 
     private static void saveConnection(Message messageAction, Socket client, ObjectOutputStream out, ObjectInputStream in) throws IOException {
-        UserSocket socketToSave = new UserSocket(messageAction.getUserHome() ,client, out, in);
+        UserSocket socketToSave = new UserSocket(messageAction.getUserHome(), client, out, in);
         usersConnections.put(messageAction.getUserHome(), socketToSave);
     }
 

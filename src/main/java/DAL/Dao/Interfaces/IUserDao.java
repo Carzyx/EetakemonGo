@@ -5,7 +5,7 @@ import Model.User;
 /**
  * Created by Miguel Angel on 04/04/2017.
  */
-public interface IUserDao extends IBasicDao <User>{
+public interface IUserDao extends IBasicDao<User> {
 
     boolean removeByUsernameAndPassword(User user);
 

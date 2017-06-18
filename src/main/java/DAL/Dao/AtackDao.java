@@ -48,14 +48,8 @@ public class AtackDao implements IAtackDao {
     }
 
     public List<Atack> getAll() {
-       return _service.getAll(new Atack());
+        return _service.getAll(new Atack());
     }
-
-
-
-
-
-
 
 
 }

@@ -1,10 +1,10 @@
 package ApiRest.Api.Controller;
 
+import ApiRest.Api.Controller.Interfaces.IUserApi;
 import ApiRest.Enum.ActionCode;
+import ApiRest.Filters.CustomFilters.TokenAuthenticated;
 import ApiRest.Helpers.HttpResponseHelper;
 import ApiRest.Helpers.Interfaces.IHttpResponseHelper;
-import ApiRest.Api.Controller.Interfaces.IUserApi;
-import ApiRest.Filters.CustomFilters.TokenAuthenticated;
 import Business.Interfaces.IUserService;
 import Business.UserService;
 import Model.User;
@@ -33,9 +33,8 @@ public class UserApi implements IUserApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createUser(User user){
-        if(_serviceUser.create(user))
-        {
+    public Response createUser(User user) {
+        if (_serviceUser.create(user)) {
             return _httpResponseHelper.getSuccessResponse(ActionCode.OK);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO);
@@ -46,11 +45,10 @@ public class UserApi implements IUserApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response singIn(User user){
+    public Response singIn(User user) {
 
         user = _serviceUser.signIn(user.getUsername(), user.getPassword());
-        if(user.getUsername() != null)
-        {
+        if (user.getUsername() != null) {
             return _httpResponseHelper.getSuccessResponse(user, user.getUsername());
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO);
@@ -63,9 +61,8 @@ public class UserApi implements IUserApi {
     @TokenAuthenticated
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response removeUserByUsernameAndPassword(@Context HttpHeaders httpHeaders, User user){
-        if(_serviceUser.removeByUsernameAndPassword(user))
-        {
+    public Response removeUserByUsernameAndPassword(@Context HttpHeaders httpHeaders, User user) {
+        if (_serviceUser.removeByUsernameAndPassword(user)) {
             return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
@@ -77,9 +74,8 @@ public class UserApi implements IUserApi {
     @TokenAuthenticated
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateUser(@Context HttpHeaders httpHeaders, User user){
-        if(_serviceUser.updateByName(user))
-        {
+    public Response updateUser(@Context HttpHeaders httpHeaders, User user) {
+        if (_serviceUser.updateByName(user)) {
             return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
@@ -91,9 +87,8 @@ public class UserApi implements IUserApi {
     @TokenAuthenticated
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateByUsernameAndPassword(@Context HttpHeaders httpHeaders, User user){
-        if(_serviceUser.updateByUsernameAndPassword(user))
-        {
+    public Response updateByUsernameAndPassword(@Context HttpHeaders httpHeaders, User user) {
+        if (_serviceUser.updateByUsernameAndPassword(user)) {
             return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
@@ -138,8 +133,7 @@ public class UserApi implements IUserApi {
     @GET
     @TokenAuthenticated
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllUsers(@Context HttpHeaders httpHeaders)
-    {
-        return  _httpResponseHelper.getSuccessResponse(_serviceUser.getAll(), httpHeaders);
+    public Response getAllUsers(@Context HttpHeaders httpHeaders) {
+        return _httpResponseHelper.getSuccessResponse(_serviceUser.getAll(), httpHeaders);
     }
 }

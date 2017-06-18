@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 06/05/2017.
  */
-public interface IBasicDao <T> {
+public interface IBasicDao<T> {
     boolean add(T item);
 
     boolean updateByName(T newItem);

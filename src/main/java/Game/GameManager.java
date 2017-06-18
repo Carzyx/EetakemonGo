@@ -17,8 +17,7 @@ public class GameManager {
     private Gson jsonSerializer;
     private boolean isGameRunning = true;
 
-    public GameManager(UserSocket userHome, UserSocket userGuest)
-    {
+    public GameManager(UserSocket userHome, UserSocket userGuest) {
         this.userHome = userHome;
         this.userGuest = userGuest;
         jsonSerializer = new Gson();
@@ -26,8 +25,8 @@ public class GameManager {
 
     public boolean sendInvitation() throws IOException, ClassNotFoundException {
 
-        userGuest.out.writeObject("You have a invitation game from "+userHome.getUsername());
-        return jsonSerializer.fromJson((String)userGuest.in.readObject(), boolean.class);
+        userGuest.out.writeObject("You have a invitation game from " + userHome.getUsername());
+        return jsonSerializer.fromJson((String) userGuest.in.readObject(), boolean.class);
     }
 
     public void reciveEetakemons() throws IOException, ClassNotFoundException {
@@ -43,15 +42,14 @@ public class GameManager {
 
         Map<String, Eetakemon> eetakemons = new HashMap<>();
 
-        eetakemons.put("userHome",userHome.getEetakemon());
+        eetakemons.put("userHome", userHome.getEetakemon());
         eetakemons.put("userGuest", userGuest.getEetakemon());
 
         userHome.out.writeObject(jsonSerializer.toJson(eetakemons));
         userGuest.out.writeObject(jsonSerializer.toJson(eetakemons));
     }
 
-    public int calculateDamage()
-    {
+    public int calculateDamage() {
         return 5;
     }
 
@@ -83,8 +81,7 @@ public class GameManager {
         userGuest.out.writeObject(isUserGuestWinner);
     }
 
-    public void registerResult()
-    {
+    public void registerResult() {
 
     }
 
@@ -93,23 +90,19 @@ public class GameManager {
         boolean isAccepted = sendInvitation();
         userHome.out.writeObject(jsonSerializer.toJson(true));
 
-        if(isAccepted)
-        {
+        if (isAccepted) {
             reciveEetakemons();
             sendEetakemons();
 
             boolean userHomeTurn = true;
             boolean userGuestTurn = false;
-            while (isGameRunning)
-            {
-                if(userHomeTurn)
-                {
+            while (isGameRunning) {
+                if (userHomeTurn) {
                     doTurn(userHome, userGuest);
                     sendGameStatus();
                 }
 
-                if(userGuestTurn)
-                {
+                if (userGuestTurn) {
                     doTurn(userGuest, userHome);
                     sendGameStatus();
                 }

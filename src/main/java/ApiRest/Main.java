@@ -18,6 +18,7 @@ public class Main {
 
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
+     *
      * @return Grizzly HTTP server.
      */
     public static HttpServer startServer() {
@@ -33,6 +34,7 @@ public class Main {
 
     /**
      * Main method.
+     *
      * @param args
      * @throws IOException
      */
@@ -43,7 +45,7 @@ public class Main {
 
 
         System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
+            + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
 
         System.in.read();
         server.stop();

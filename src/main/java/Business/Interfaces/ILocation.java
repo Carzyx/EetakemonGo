@@ -1,7 +1,6 @@
 package Business.Interfaces;
 
 import Model.Markers;
-import com.google.maps.model.LatLng;
 
 import java.util.List;
 
@@ -10,5 +9,6 @@ import java.util.List;
  */
 public interface ILocation {
     List<Markers> getMarkers(Markers markers);
+
     List<Markers> getNearMarkers(Markers markers);
 }

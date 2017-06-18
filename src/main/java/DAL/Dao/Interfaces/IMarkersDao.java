@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface IMarkersDao {
     List<Markers> getActiveMarkers(LatLng latLng);
+
     List<Markers> getNearMarkers(LatLng latLng);
 
 }

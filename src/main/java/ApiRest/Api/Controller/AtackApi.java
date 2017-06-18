@@ -35,9 +35,8 @@ public class AtackApi implements IAtackApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response createAtack(Atack atack){
-        if(_serviceAtack.create(atack))
-        {
+    public Response createAtack(Atack atack) {
+        if (_serviceAtack.create(atack)) {
             _httpResponseHelper.getSuccessResponse(ActionCode.OK);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO);
@@ -48,9 +47,8 @@ public class AtackApi implements IAtackApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response updateAtack(@Context HttpHeaders httpHeaders, Atack atack){
-        if(_serviceAtack.updateByName(atack))
-        {
+    public Response updateAtack(@Context HttpHeaders httpHeaders, Atack atack) {
+        if (_serviceAtack.updateByName(atack)) {
             return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
@@ -61,9 +59,8 @@ public class AtackApi implements IAtackApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response removeAtack(@Context HttpHeaders httpHeaders, Atack atack){
-        if(_serviceAtack.removeByName(atack))
-        {
+    public Response removeAtack(@Context HttpHeaders httpHeaders, Atack atack) {
+        if (_serviceAtack.removeByName(atack)) {
             return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
@@ -73,8 +70,8 @@ public class AtackApi implements IAtackApi {
     @Path("getAllAtacks")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllAtacks(@Context HttpHeaders httpHeaders){
+    public Response getAllAtacks(@Context HttpHeaders httpHeaders) {
 
-        return  _httpResponseHelper.getSuccessResponse(_serviceAtack.getAll(), httpHeaders);
+        return _httpResponseHelper.getSuccessResponse(_serviceAtack.getAll(), httpHeaders);
     }
 }

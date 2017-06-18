@@ -9,7 +9,9 @@ public class EetakemonsUserDto {
     private String eetakemonName;
     private int level;
 
-    public EetakemonsUserDto(){}
+    public EetakemonsUserDto() {
+    }
+
     public EetakemonsUserDto(String username, String eetakemonName) {
         this.username = username;
         this.eetakemonName = eetakemonName;
