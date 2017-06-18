@@ -1,65 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="Game Service using Http">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/GameApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IGameApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IPartyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/PartyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Model/Party.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Api/View/Index.jsp" afterPath="" />
+    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/Main.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/Dao/EetakemonDao.class" afterPath="$PROJECT_DIR$/target/classes/DAL/Dao/EetakemonDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/Dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/DAL/Dao/UserDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Model/Eetakemon.class" afterPath="$PROJECT_DIR$/target/classes/Model/Eetakemon.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/AtackApi.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/AtackApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/EetakemonApi.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/EetakemonApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/UserApi.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/UserApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Enum/ActionCode.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Enum/ActionCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/CustomFilters/TokenAuthenticated.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/CustomFilters/TokenAuthenticated.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/ISignatureControlService.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/Interfaces/ISignatureControlService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/SecurityFilter.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/SecurityFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/SignatureControlService.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Filters/SignatureControlService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/HttpResponseHelper.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/HttpResponseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/Interfaces/IHttpResponseHelper.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/Interfaces/IHttpResponseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationException.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationExceptionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Helpers/MyApplicationExceptionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/JSONService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Main.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/EetakemonService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/EetakemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IAtackService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IAtackService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IBasicService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IBasicService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IEetakemonService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IEetakemonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/ILocation.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/ILocation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IUserService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/Interfaces/IUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/LocationService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/LocationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/AtackDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/AtackDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/EetakemonDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/GenericDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/GenericDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IBasicDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IBasicDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IEetakemonDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IEetakemonDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IGenericDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IGenericDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IMarkersDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IMarkersDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/Interfaces/IUserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/MarkersDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/MySQLRepository.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/MySQLRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/Dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/AtacksEetakemonDto.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/AtacksEetakemonDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/EetakemonDto.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/EetakemonDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/EetakemonsUserDto.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/EetakemonsUserDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/MarkersDto.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/MarkersDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Game/ActionAtack.java" afterPath="$PROJECT_DIR$/src/main/java/Game/ActionAtack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Game/GameManager.java" afterPath="$PROJECT_DIR$/src/main/java/Game/GameManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Game/Message.java" afterPath="$PROJECT_DIR$/src/main/java/Game/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Game/ProviderManager.java" afterPath="$PROJECT_DIR$/src/main/java/Game/ProviderManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Game/UserSocket.java" afterPath="$PROJECT_DIR$/src/main/java/Game/UserSocket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Model/Eetakemon.java" afterPath="$PROJECT_DIR$/src/main/java/Model/Eetakemon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Model/Markers.java" afterPath="$PROJECT_DIR$/src/main/java/Model/Markers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1004,7 +951,7 @@
       <workItem from="1497694958316" duration="11426000" />
       <workItem from="1497709035263" duration="371000" />
       <workItem from="1497713188367" duration="57000" />
-      <workItem from="1497784591229" duration="9098000" />
+      <workItem from="1497784591229" duration="9116000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1195,11 +1142,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497709199079</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Game Service using Http">
+      <created>1497795657787</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1497795657787</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="448958000" />
+    <option name="totallyTimeSpent" value="448976000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
