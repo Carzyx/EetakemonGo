@@ -41,6 +41,7 @@ $(function() {
 
 function infoPerfilUsuario() {
     user =  JSON.parse(Cookies.get("user", User.class));
+    sessionStorage.removeItem("imagenElegidaProfile");
     rellenarInfoPerfil(user);
 
 }
@@ -48,7 +49,7 @@ function rellenarInfoPerfil(data) {
     document.getElementById("Pname").innerHTML=data.name;
     document.getElementById("Psurname").innerHTML=data.surname;
     document.getElementById("Pusername").innerHTML=data.username;
-    document.getElementById("PsizeEtakemons").innerHTML='-666';
+
     document.getElementById("Pemail").innerHTML=data.email;
     if (data.rol==0){
         document.getElementById("rol").innerHTML="Usuario"
@@ -58,13 +59,15 @@ function rellenarInfoPerfil(data) {
     }
 
     $('#profile-image4').attr('src',user.image);
+    sessionStorage.setItem("imagenElegidaProfile",user.image);
 }
 
 function rellenarInfoUpdate() {
     user =  JSON.parse(Cookies.get("user", User.class));
     $('#edditName').attr('value',user.name);
     $('#edditSurname').attr('value',user.surname);
-    $('#edditUsername').attr('value',user.username);
+    /*$('#edditUsername').attr('value',user.username);*/
+    document.getElementById("edditUsername").innerHTML=user.username;
     $('#edditEmail').attr('value',user.email);
     if (user.rol==0){
 
@@ -78,6 +81,20 @@ function rellenarInfoUpdate() {
 
 
 }
+
+function setImage(select){
+    var image = document.getElementsByName("image-swap")[0];
+    image.src = select.options[select.selectedIndex].value;
+}
+
+function guardarImagen() {
+    sessionStorage.removeItem("imagenElegidaProfile");
+    var imagen = document.getElementById('kitchen_color');
+    var imagenUrl = imagen.options[imagen.selectedIndex ].value;
+    sessionStorage.setItem("imagenElegidaProfile",imagenUrl);
+}
+
+
 function updateUser() {
 
     var urlAction = "http://localhost:8080/myapp/UserService/updateByUsernameAndPassword";
@@ -85,9 +102,13 @@ function updateUser() {
 
     var name = $("#edditName").val();
     var surname = $("#edditSurname").val();
-    var username = $("#edditUsername").val();
+    var username = user.username;
     var email = $("#edditEmail").val();
     var pass = user.password;
+    var image = sessionStorage.getItem("imagenElegidaProfile");
+    var rol = user.rol;
+    var token = user.authToken;
+
 
 
     var sendInfo = {
@@ -95,9 +116,12 @@ function updateUser() {
         surname: surname,
         email: email,
         username: username,
-        password: pass
+        password: pass,
+        image: image,
+        rol: rol
 
     };
+    console.log(sendInfo);
 
     user = JSON.parse(Cookies.get("user", User.class));
     console.log(user);
@@ -109,18 +133,33 @@ function updateUser() {
         type: "POST",
         url: urlAction,
         contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(sendInfo),
         success: function (msg) {
             if (msg) {
+                alert(msg);
+                console.log(msg);
 
+                    user = new User();
+                    user.name = name;
+                    user.surname = surname;
+                    user.username = username;
+                    user.password = pass;
+                    user.email = email;
+                    user.rol = rol;
+                    user.image = image;
+                    user.authToken = token;
+
+                    Cookies.set('user', user, { expires: 1 })
                 location.reload(true);
-                alert(msg.responseText.toString());
+
 
             } else {
                 alert("Error in the execution...");
             }
         },
 
-        data: JSON.stringify(sendInfo)
+
     });
 
 }
