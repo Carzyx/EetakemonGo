@@ -24,7 +24,7 @@ import javax.ws.rs.core.Response;
 @Singleton
 public class GameApi implements IGameApi {
     //Party implementation
-    private IPartyService _serviceParty = new PartyService();
+    private IPartyService _serviceParty = PartyService.getInstance();
     private static final IHttpResponseHelper _httpResponseHelper = new HttpResponseHelper();
 
 

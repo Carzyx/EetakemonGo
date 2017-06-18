@@ -21,8 +21,16 @@ public class PartyService implements IPartyService {
     private List<User> usersPendingToFight;
     private List<Party> partiesInCurse;
     private static IPartyDao _servicePartyDao;
+    private static PartyService instance = null;
 
-    public PartyService() {
+    public static PartyService getInstance() {
+        if(instance == null) {
+            instance = new PartyService();
+        }
+        return instance;
+    }
+
+    private PartyService() {
         usersPendingToFight = new ArrayList<>();
         partiesInCurse = new ArrayList<>();
         _servicePartyDao = new PartyDao();
