@@ -91,18 +91,20 @@ public class EetakemonDao implements IEetakemonDao {
 
     public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
         boolean actionResult = true;
+        List<Atack>atacks=_serviceAtack.getAll();
         for (Atack atack : eetakemon.getEetakemonAtack()) {
-            if(_serviceAtack.add(atack))
-            {
-                AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
-                boolean atackAdded = _serviceAtackEetakemon.add(atacksEetakemonDto);
-                if (!atackAdded) {
-                    actionResult = false;
+                for (int i=0;i<atacks.size();i++){
+                    if (atack.getName().equals(atacks.get(i)))
+                    {
+                        AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
+                        boolean atackAdded = _serviceAtackEetakemon.add(atacksEetakemonDto);
+                        if (!atackAdded) {
+                            actionResult = false;
+                        }
+                    }
+                    else {
+                        actionResult = false;
                 }
-            }
-            else {
-
-                actionResult = false;
             }
         }
         return actionResult;
