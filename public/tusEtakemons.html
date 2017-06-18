@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/FlipCardOpcion2.css" />
 
 </head>
-<body>
+<body onLoad="GetTusEetakemonsFlipCards('#jsonTableEetakemonResult')">
     <div id="page-wrapper">
 
     <!-- Header -->
@@ -26,14 +26,7 @@
                         <li><a href="pokedex.html">Pokédex</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="indexv2.html">Elements</a></li>
-                        <li>
-                            <a href="">DataBase</a>
-                            <ul>
-                                <li><a href="usersdatabase.html">Users</a></li>
-                                <li><a href="eetakemonsdatabase.html">Eetakemons</a></li>
-                                <li><a href="atacksdatabase.html">Atacks</a></li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </li>
             </ul>
@@ -42,57 +35,19 @@
 
     <!-- Main -->
     <section id="main" class="container">
-        <!--Botones-->
         <header>
             <div>
                 <ul class="actions fit">
                     <li><a href="#" class="button special fit icon fa-check">Luchar</a></li>
                     <li><a onclick="alert('Ya te lo estoy mostando')" class="button fit icon fa-check">Tus Pokemons</a></li>
-                    <li><a href="#" class="button alt fit icon fa-check">Perfil</a></li>
+                    <li><a href="profile.html" class="button alt fit icon fa-check">Perfil</a></li>
                     <li><a href="UserList.html" class="button special fit icon fa-check">Lista de usuarios</a></li>
                 </ul>
             </div>
         </header>
 
-        <!--Buscador-->
-        <form class="box">
-            <div id="EtakemonSearcher" class="row uniform 50%">
-                <div class="6u 12u(mobilep)">
-                    <input type="text" name="Usuario" class="fit" id="Usuario" placeholder="User nick" />
-                </div>
-                <div>
-                    <input type="button" value="Listar Etakemons" onclick="GetEtakemonsByUser('#jsonTableEetakemonResult')" />
-                </div>
-            </div>
-        </form>
-
-        <form>
-            <div id="databaseForm" id="userdatabaseForm"class="row uniform 50%">
-                <div class="6u 12u(mobilep)">
-                    <input type="text" name="username" id="username" placeholder="User nick" />
-                </div>
-                <div class="6u 12u(mobilep)">
-                    <input type="password" name="password" id="password" placeholder="User password" />
-                </div>
-                <div class="6u 12u(mobilep)">
-                    <input type="text" name="name" id="name" placeholder="Name" />
-                </div>
-                <div class="6u 12u(mobilep)">
-                    <input type="text" name="surname" id="surname" placeholder="Surname" />
-                </div>
-                <div class="6u 12u(mobilep)">
-                    <input type="text" name="email" id="email" placeholder="Email Address" />
-                </div>
-                <div>
-                    <input type="button" value="Do it!" class="fit" onclick="AddEtakemonToUser()" />
-                </div>
-            </div>
-        </form>
-
-        <!--Mostrador-->
-
         <div class="box">
-            <h2>Opcion de flip card 2</h2>
+            <h2>Tus Etakemons</h2>
             <div class="row" id="jsonTableEetakemonResult">
 
 
@@ -127,6 +82,7 @@
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
     <script type='text/javascript' src='js/jflipcards.js' async ></script>
+    <script src="assets/js/cookieHandler.js"></script>
 
 </body>
 </html>

@@ -125,7 +125,7 @@ public class UserApi implements IUserApi {
     }
 
     @Override
-    @Path("getCompleteUserByNme/{name}")
+    @Path("getCompleteUserByName/{name}")
     @GET
     @TokenAuthenticated
     @Produces(MediaType.APPLICATION_JSON)

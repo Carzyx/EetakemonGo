@@ -13,6 +13,7 @@ import org.modelmapper.ModelMapper;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Miguel Angel on 04/04/2017.
@@ -148,7 +149,9 @@ public class UserDao implements IUserDao {
                     }
                 }
                 if(!eetakemonAdded){
-                    EetakemonsUserDto eetakemonsUserDto=new EetakemonsUserDto(user.getUsername(),eetakemon.getName());
+                    if(eetakemon.getLevel()==0)
+                        eetakemon.setLevel(1);
+                    EetakemonsUserDto eetakemonsUserDto=new EetakemonsUserDto(user.getUsername(),eetakemon.getName(),eetakemon.getLevel());
                     _serviceEetakemonsUser.add(eetakemonsUserDto);
                 }
                 if (!eetakemonAdded)

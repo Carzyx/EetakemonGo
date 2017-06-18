@@ -62,24 +62,32 @@ function rellenarInfoPerfil(data) {
 
 function rellenarInfoUpdate() {
     user =  JSON.parse(Cookies.get("user", User.class));
-    $('#edditName').attr('placeholder',user.name);
-    $('#edditSurname').attr('placeholder',user.surname);
-    $('#edditUsername').attr('placeholder',user.username);
-    $('#edditEmail').attr('placeholder',user.email);
+    $('#edditName').attr('value',user.name);
+    $('#edditSurname').attr('value',user.surname);
+    $('#edditUsername').attr('value',user.username);
+    $('#edditEmail').attr('value',user.email);
+    if (user.rol==0){
+
+        document.getElementById("rol1").innerHTML="Usuario"
+    }
+    if (user.rol==1){
+        document.getElementById("rol1").innerHTML="Administrador"
+    }
+
+    $('#img1').attr('src',user.image);
 
 
 }
 function updateUser() {
 
-    var urlAction = "http://localhost:8080/myapp/web/updateByUsernameAndPassword";
-
+    var urlAction = "http://localhost:8080/myapp/UserService/updateByUsernameAndPassword";
 
 
     var name = $("#edditName").val();
     var surname = $("#edditSurname").val();
     var username = $("#edditUsername").val();
     var email = $("#edditEmail").val();
-    var pass= user.password;
+    var pass = user.password;
 
 
     var sendInfo = {
@@ -91,18 +99,20 @@ function updateUser() {
 
     };
 
-    user =  JSON.parse(Cookies.get("user", User.class));
+    user = JSON.parse(Cookies.get("user", User.class));
     console.log(user);
 
     $.ajax({
-        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authoritzation', user.authToken);
+        },
         type: "POST",
         url: urlAction,
         contentType: "application/json",
         success: function (msg) {
             if (msg) {
 
-               // location.reload(true);
+                location.reload(true);
                 alert(msg.responseText.toString());
 
             } else {
@@ -113,16 +123,19 @@ function updateUser() {
         data: JSON.stringify(sendInfo)
     });
 
-
-
-/*function updateUser() {
-    var jsonUser=JSON.parse(sessionStorage.getItem("infoUser"));
+}
+/*
+function updateUser() {
+    user =  JSON.parse(Cookies.get("user", User.class));
+    console.log(user);
 
     var name = $("#edditName").val();
     var surname = $("#edditSurname").val();
     var username = $("#edditUsername").val();
     var email = $("#edditEmail").val();
-    var pass= jsonUser.password;
+    var pass= user.password;
+
+
 
     var sendInfo = {
         name: name,
@@ -132,7 +145,10 @@ function updateUser() {
         password: pass
     };
 
+    console.log(sendInfo);
+
     $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
         type: "POST",
         url: "http://localhost:8080/myapp/web/updateUser",
         contentType: "application/json",
@@ -159,5 +175,22 @@ function updateUser() {
             }
         }
 
-    })*/
+    })
+}*/
+
+function checkRol(){
+    user = JSON.parse(Cookies.get("user", User.class));
+    console.log(user.rol);
+    if (user.rol==0){
+
+        document.getElementById("adminOptions").style.display = "none";
+
+        alert("No eres administrador")
+    }
+    if (user.rol==1){
+        document.getElementById("adminOptions").style.display = "block";
+        console.log("aqusdffdsi")
+
+    }
+
 }

@@ -4,7 +4,10 @@
 
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css" />
-    <style type="text/css" src="js/profile.css"></style> 
+    <style type="text/css" src="js/profile.css"></style>
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	     	<title>Profile -  group Homogeni</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +16,7 @@
 		<div id="page-wrapper">
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="Home.html">Etakemon Go</a> </h1>
+					<h1><a href="home.html">Etakemon Go</a> </h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="home.html" class="button">Inicio</a></li>
@@ -23,14 +26,6 @@
 									<li><a href="pokedex.html">Pokédex</a></li>
 									<li><a href="contact.html">Contact</a></li>
 									<li><a href="indexv2.html">Elements</a></li>
-									<li>
-										<a href="">DataBase</a>
-										<ul>
-											<li><a href="usersdatabase.html">Users</a></li>
-											<li><a href="eetakemonsdatabase.html">Eetakemons</a></li>
-											<li><a href="atacksdatabase.html">Atacks</a></li>
-										</ul>
-									</li>
 								</ul>
 							</li>
 						</ul>
@@ -55,16 +50,88 @@
         
             <div class="box-body">
                      <div class="col-sm-6">
-                     <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" width="100" height="100" id="profile-image1" class="img-circle img-responsive">
+                     <div  align="center"> <img id= "img1" alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" width="100" height="100" id="profile-image1" class="img-circle img-responsive">
                 
                 <input id="profile-image-upload" class="hidden" type="file">
-<div style="color:#999;" >clicka para cambiar la imagen</div>
+                         <div class="6u 12u(mobilep)">
+                             <!-- B was here -->
+
+
+                             <a href="#" id="cambiarimagen" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal"onclick="BotonElegirEetakemons('#OptionAtack')">Click aqui para cambiar la imagen</a>
+
+                             <br />
+
+                             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                 <div class="modal-dialog">
+                                     <div class="modal-content">
+                                         <div class="modal-header" align="center">
+
+                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                             </button>
+                                         </div>
+
+                                         <!-- Begin # DIV Form -->
+                                         <div id="div-forms">
+
+                                             <!-- Begin # Login Form -->
+                                             <form id="login-form">
+                                                 <div class="modal-body">
+                                                     <div id="div-login-msg">
+                                                         <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                         <span id="text-login-msg">Selecciona los Eetakemons</span>
+                                                     </div>
+
+                                                     <select name="kitchen_color" id="kitchen_color" onchange="setImage(this);">
+                                                         <option value="">Elige imagen</option>
+                                                         <option value="profile/brock.png">Brock Lo Peta</option>
+                                                         <option value="profile/byron.png">Byron</option>
+                                                         <option value="profile/candice.png">Candice a ella petan</option>
+                                                         <option value="profile/cintia.png">Cintia</option>
+                                                         <option value="profile/helio.png">Helio</option>
+                                                         <option value="profile/maylene.png">Maylene</option>
+                                                         <option value="profile/paul.png">Paul</option>
+
+                                                     </select>
+
+
+                                                     <br>
+                                                     <div class="panel-group">
+                                                         <img src="" name="image-swap" />
+
+                                                     </div>
+
+
+                                                 </div>
+                                                 <div class="modal-footer">
+                                                     <div>
+                                                         <input type="button" value="Guardar" class="fit" onclick="guardarAtaque('#OptionAtack')" />
+                                                     </div>
+
+                                                 </div>
+                                             </form>
+
+                                             <!-- End # Login Form -->
+
+                                             <!-- Begin | Lost Password Form -->
+
+
+
+                                         </div>
+                                         <!-- End # DIV Form -->
+
+                                     </div>
+                                 </div>
+                             </div>
+
+
+                         </div>
                      </div>
               <br>
             </div>
             <div class="col-sm-6">
             <h4 style="color:#00b1b1;">Eetakemon Go</h4></span>
-              <span><p>ROL  DEL USUARIO</p></span>            
+                <span>Rol:<p id="rol1">ROL  DEL USUARIO</p></span>
             </div>
             <div class="clearfix"></div>
             <hr style="margin:5px 0 5px 0;">
@@ -200,6 +267,7 @@
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+            <script type="text/javascript" src="js/selectAtack.js"></script>
         <script src="assets/js/cookieHandler.js"></script>
 	</body>
 </html>

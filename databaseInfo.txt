@@ -47,6 +47,8 @@ CREATE TABLE EetakemonsUserDto(
 CREATE TABLE `eetakemonbbddtest`.`markersdto` (
   `lat` DOUBLE NOT NULL,
   `lng` DOUBLE NOT NULL);
+
+
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275461', '1.985169');
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275211', '1.986160');
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275710', '1.986649');
@@ -63,21 +65,70 @@ INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275708', 
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275779', '1.990201');
 
 
-INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Nacho', 'Ballesteros', 'Ignacio', '1234', 'n.balle.lo@gmail.com', '0', 'profile/evoluciona.png');
-INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Puñetazo', 'NEUTRO', '10', 'Un potente puñetazo en la cara');
-INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Patada', 'FUEGO', '100', 'Patada en toda la boca');
-INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Salpicadura', 'AGUA', '50', 'Cual escupitajo');
-INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Enterrar', 'TIERRA', '90', 'El propio nombre lo dice');
-INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Charizard', '100', 'FUEGO', 'pokemons/charizard.png', 'El de toda la vida pa que vamos a explicar mas');
-INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Charmander', '100', 'FUEGO', 'pokemons/charmander.png', 'El tipico');
-INSERT INTO `eetakemonbbddtest`.`eetakemonsuserdto` (`username`, `eetakemonName`,`level`) VALUES ('Ignacio', 'Charizard','3');
+INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Ignacio', 'Ballesteros', 'Nacho', '1234', 'n.balle.lo@gmail.com', '1', 'profile/brock.png');
+INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Miguel', 'Archilla', 'Kay', '1234', 'histonzy@gmail.com', '1', 'profile/paul.png');
+INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Gurkeerat', 'Singh', 'Gurky', '1234', 'gurkeeratsingh@gmail.com', '0', 'profile/byron.png');
+INSERT INTO `eetakemonbbddtest`.`userdto` (`name`, `surname`, `username`, `password`, `email`, `rol`, `image`) VALUES ('Bruno', 'Garcia', 'Nodet', '1234', 'noodet@gmail.com', '0', 'profile/candice.png');
+
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Charizard', '200', 'FUEGO', 'pokemons/charizard.png', 'El de toda la vida pa que vamos a explicar mas');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Angel', '50', 'AIRE', 'pokemons/angel.png', 'La obeja negra de la familia');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Explorer', '10', 'NEUTRO', 'pokemons/explorer.png', 'Como no lo quiere nadie nos lo hemos traido al juego');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Blastoiser', '150', 'AGUA', 'pokemons/blastoiser.png', 'Con sus potentes cañonen te limpia el coche en un momento');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Charmander', '90', 'FUEGO', 'pokemons/charmander.png', 'Quien lo no eligió de pequeño al empezar la partida?');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Snorlax', '400', 'NEUTRO', 'pokemons/snorlax.png', 'Tan dulce... e inocente...');
+INSERT INTO `eetakemonbbddtest`.`eetakemondto` (`name`, `ps`, `type`, `image`, `description`) VALUES ('Venasaur', '90', 'TIERRA', 'pokemons/venasaur.png', 'Que buena sombra que tiene que hacer este bicho en verano');
+
+
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Puñetazo', 'NEUTRO', '20', 'Mas de uno se lo merece');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Patada', 'NEUTRO', '90', 'Patada en toda la boca');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Salpicadura', 'AGUA', '5', 'Cual escupitajo');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Hidrochorro', 'AGUA', '30', 'Pa limpiar el coche');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Buceo', 'AGUA', '25', 'Para el que no sepa nadar');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Bloqueo', 'TIERRA', '0', 'No hace nada, simplemente se queda bloqueado');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Terremoto', 'TIERRA', '70', 'Los hay que no se saben estar quietos');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Vuelo', 'AIRE', '10', 'No hace gran cosa');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Lanzallams', 'FUEGO', '80', 'Alguno bueno tenia que haber');
+INSERT INTO `eetakemonbbddtest`.`atack` (`name`, `type`, `damageBase`, `description`) VALUES ('Repetir', 'TIERRA', '0', 'No por dios!! Que no me lancen este a mi');
+
+
+INSERT INTO `eetakemonbbddtest`.`eetakemonsuserdto` (`username`, `eetakemonName`,`level`) VALUES ('Nacho', 'Angel','20');
+INSERT INTO `eetakemonbbddtest`.`eetakemonsuserdto` (`username`, `eetakemonName`,`level`) VALUES ('Kay', 'Charizard','2');
+INSERT INTO `eetakemonbbddtest`.`eetakemonsuserdto` (`username`, `eetakemonName`,`level`) VALUES ('Gurky', 'Snorlax','5');
+INSERT INTO `eetakemonbbddtest`.`eetakemonsuserdto` (`username`, `eetakemonName`,`level`) VALUES ('Nodet', 'Explorer','6');
+
+
 INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Charizard');
-INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Enterrar', 'Charizard');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Vuelo', 'Charizard');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Lanzallams', 'Charizard');
 INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Patada', 'Charizard');
-INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Salpicadura', 'Charizard');
+
 INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Charmander');
-INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Enterrar', 'Charmander');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Lanzallams', 'Charmander');
 INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Patada', 'Charmander');
-INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Salpicadura', 'Charmander');
-INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.358975','2.137715');
-INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.368803', '2.141817');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Terremoto', 'Charmander');
+
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Vuelo', 'Angel');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Patada', 'Angel');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Angel');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Angel');
+
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Salpicadura', 'Blastoiser');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Buceo', 'Blastoiser');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Blastoiser');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Hidrochorro', 'Blastoiser');
+
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Repetir', 'Explorer');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Bloqueo', 'Explorer');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Salpicadura', 'Explorer');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Vuelo', 'Explorer');
+
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Terremoto', 'Venasaur');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Patada', 'Venasaur');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Venasaur');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Salpicadura', 'Venasaur');
+
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Terremoto', 'Snorlax');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Puñetazo', 'Snorlax');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Bloqueo', 'Snorlax');
+INSERT INTO `eetakemonbbddtest`.`atackseetakemondto` (`atackName`, `eetakemonName`) VALUES ('Repetir', 'Snorlax');
+

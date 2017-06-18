@@ -247,24 +247,6 @@ function doAjaxRequestManageDtabase(method, url, authToken, callback, param1) {
 }
 
 
-
-/*function GetAllUsers(selector) {
-    var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
-    var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
-
-    var jsonResult;
-    $.ajax({
-        type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllUsers",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            buildHtmlTable(selector, jsonResult)
-
-        }
-    });
-
-}*/
 function GetAllUsers(selector) {
     var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
     var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
@@ -279,10 +261,14 @@ function GetAllUsers(selector) {
 
 function BotonElegirAtaques(selector) {//consulta+guardar en session storage+crear lista dropdown
 
-    $.ajax({
+    sessionStorage.removeItem("Ataques");
 
+    user =  JSON.parse(Cookies.get("user", User.class));
+
+    $.ajax({
+        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
         type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllAtacks",
+        url: " http://localhost:8080/myapp/AtackService/getAllAtacks",
         dataType: 'application/json',
         complete: function (data) {
             var jsonResult = JSON.parse(data.responseText);
@@ -311,6 +297,7 @@ function clickAtaque(name) {//obtener ataques de session sorage y mostrar atribu
     });
 }
 function guardarAtaque() {
+    sessionStorage.removeItem("Atack4");
 
     var select = document.getElementById('OptionAtack');
 
@@ -340,27 +327,12 @@ function guardarAtaque() {
             }
         });
     }
+
     sessionStorage.setItem('Atack4',JSON.stringify(Atack4));
     console.log(sessionStorage.getItem('Atack4'));
 }
 
-/*function GetAllEetakemons(selector) {
-    var arr = [ "name", "level", "ps", "type", "description",  "image" ];
-    var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
 
-    var jsonResult;
-    $.ajax({
-        type: "GET",
-        url: "http://localhost:8080/myapp/web/getAllEetakemons",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            buildHtmlTable(selector, jsonResult)
-
-        }
-    });
-
-}*/
 function GetAllEetakemons(selector) {
     var arr = [ "name", "level", "ps", "type", "description",  "image" ];
     var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
@@ -372,23 +344,7 @@ function GetAllEetakemons(selector) {
 
 }
 
-/*function GetAllAtacks(selector) {
-    var arr = [ "name", "type", "damageBase", "description"];
-    var obj  = { name:1, type:2, damageBase:3, description:4};
 
-    var jsonResult;
-    $.ajax({
-        type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllAtacks",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            buildHtmlTable(selector, jsonResult)
-
-        }
-    });
-
-}*/
 function GetAllAtacks(selector) {
     var arr = [ "name", "type", "damageBase", "description"];
     var obj  = { name:1, type:2, damageBase:3, description:4};
@@ -454,15 +410,15 @@ function doActionDatabaseUser() {
     switch(optionSelected)
     {
         case "Add":
-            urlAction = "http://localhost:8080/myapp/web/createUser";
+            urlAction = "http://localhost:8080/myapp/UserService/createUser";
             break;
 
         case "Remove":
-            urlAction = "http://localhost:8080/myapp/web/removeUserByUsernameAndPassword";
+            urlAction = "http://localhost:8080/myapp/UserService/removeUserByUsernameAndPassword";
             break;
 
         case "Update":
-            urlAction = "http://localhost:8080/myapp/web/updateByUsernameAndPassword";
+            urlAction = "http://localhost:8080/myapp/UserService/updateByUsernameAndPassword";
             break;
     }
 
@@ -514,15 +470,15 @@ function doActionDatabaseEetakemon() {
     switch(optionSelected)
     {
         case "Add":
-            urlAction = "http://localhost:8080/myapp/web/createEetakemon";
+            urlAction = "http://localhost:8080/myapp/EetakemonService/createEetakemon";
             break;
 
         case "Remove":
-            urlAction = "http://localhost:8080/myapp/web/removeEetakemon";
+            urlAction = "http://localhost:8080/myapp/EetakemonService/removeEetakemon";
             break;
 
         case "Update":
-            urlAction = "http://localhost:8080/myapp/web/updateEetakemon";
+            urlAction = "http://localhost:8080/myapp/EetakemonService/updateEetakemon";
             break;
     }
 
@@ -560,26 +516,16 @@ function doActionDatabaseEetakemon() {
         dataType: "json",
         data: JSON.stringify(sendInfo),
 
-        statusCode: {
-            201: function (msg) {
-                if (msg) {
-                    alert(msg.responseText.toString());
-                    location.reload(true);
-                    var table = document.getElementById('jsonTableEetakemonsResult');
-                    table.parentNode.removeChild(table);
-                    GetAllUsers('#jsonTableEetakemonsResult');
-                } else {
-                    alert("Error in the execution...");
-                }
-            },
-            200: function (msg) {
-                if (msg) {
-                    alert(msg.responseText.toString());
-                    location.reload(true);
+        success: function (msg) {
+            if (msg) {
+                alert(msg);
+                location.reload(true);
+                var table = document.getElementById('jsonTableUsersResult');
+                table.parentNode.removeChild(table);
+                GetAllUsers('#jsonTableUsersResult');
 
-                } else {
-                    alert("Error in the execution...");
-                }
+            } else {
+                alert("Error in the execution...");
             }
         }
 
@@ -596,15 +542,15 @@ function doActionDatabaseAtack() {//demage base siempre es 0, NaN, undefined
     switch(optionSelected)
     {
         case "Add":
-            urlAction = "http://localhost:8080/myapp/web/createAtack";
+            urlAction = "http://localhost:8080/myapp/AtackService/createAtack";
             break;
 
         case "Remove":
-            urlAction = "http://localhost:8080/myapp/web/removeAtack";
+            urlAction = "http://localhost:8080/myapp/AtackService/removeAtack";
             break;
 
         case "Update":
-            urlAction = "http://localhost:8080/myapp/web/updateAtack";
+            urlAction = "http://localhost:8080/myapp/AtackService/updateAtack";
             break;
     }
 
@@ -636,26 +582,16 @@ function doActionDatabaseAtack() {//demage base siempre es 0, NaN, undefined
         dataType: "json",
         data: JSON.stringify(sendInfo),
 
-        statusCode: {
-            201: function (msg) {
-                if (msg) {
-                    alert(msg.responseText.toString());
-                    location.reload(true);
-                    var table = document.getElementById('jsonTableAtacksResult');
-                    table.parentNode.removeChild(table);
-                    GetAllUsers('#jsonTableAtacksResult');
-                } else {
-                    alert("Error in the execution...");
-                }
-            },
-            200: function (msg) {
-                if (msg) {
-                    alert("Atack created KO");
-                    location.reload(true);
+        success: function (msg) {
+            if (msg) {
+                alert(msg);
+                location.reload(true);
+                var table = document.getElementById('jsonTableUsersResult');
+                table.parentNode.removeChild(table);
+                GetAllUsers('#jsonTableUsersResult');
 
-                } else {
-                    alert("Error in the execution...");
-                }
+            } else {
+                alert("Error in the execution...");
             }
         }
     });
@@ -707,37 +643,26 @@ function GetAllEetakemonsFlipCards(selector) {
     var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
 
     var jsonResult;
-    $.ajax({
-        type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllEetakemons",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            console.log(jsonResult);
-            EetakedexConstructor(selector, jsonResult);
 
-        }
-    });
+    var method = "GET";
+    var url = "http://localhost:8080/myapp/EetakemonService/getAllEetakemons";
+    user =  JSON.parse(Cookies.get("user", User.class));
+    doAjaxRequestManageDtabase(method, url, user.authToken, EetakedexConstructor, selector);
+
+}
+function GetTusEetakemonsFlipCards(selector) {
+    user =  JSON.parse(Cookies.get("user", User.class));
+    var method = "GET";
+    var url = "http://localhost:8080/myapp/UserService/getCompleteUserByNme/"+user.username;
+    console.log(url);
+
+    doAjaxRequestManageDtabase(method, url, user.authToken, SacarListaDeEtakemonsDeUnUsuario, selector);
 }
 
-function GetEtakemonsByUser(selector) {
-    var jsonResult;
-
-    var uname= $("#Usuario").val();//nombre del usuario a buscar
-    var url = "http://localhost:8080/myapp/web/getUserByUsername/";
-
-    $.ajax({
-        type: "GET",
-        url: url+uname,
-        dataType: 'application/json',
-        complete:function (data) {
-            jsonResult=JSON.parse(data.responseText);
-            console.log(jsonResult);
-            EetakedexConstructor(selector,jsonResult);
-        }
-    })
+function SacarListaDeEtakemonsDeUnUsuario(selector,jsonResult) {
+    var eetakemons = jsonResult.eetakemons;
+    EetakedexConstructor(selector,eetakemons);
 }
-
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -747,22 +672,12 @@ function GetTablaVisibleUsersRegistrados(selector) {
     var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
 
     var jsonResult;
-    /*
+
     var method = "GET";
     var url = "http://localhost:8080/myapp/UserService/getAllUsers";
     user =  JSON.parse(Cookies.get("user", User.class));
     doAjaxRequestManageDtabase(method, url, user.authToken, NormalUserTableConstructor, selector);
-     */
-   $.ajax({
-        type: "GET",
-        url: " http://localhost:8080/myapp/web/getAllUsers",
-        dataType: 'application/json',
-        complete: function (data) {
-            jsonResult = JSON.parse(data.responseText);
-            NormalUserTableConstructor(selector, jsonResult)
 
-        }
-    });
 
 }
 
@@ -771,3 +686,9 @@ function GetTablaVisibleUsersRegistrados(selector) {
 function TestAlert() {
     alert("hello world");
 }
+
+function setImage(select){
+    var image = document.getElementsByName("image-swap")[0];
+    image.src = select.options[select.selectedIndex].value;
+}
+

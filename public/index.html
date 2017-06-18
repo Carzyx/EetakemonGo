@@ -24,31 +24,25 @@
 									<li><a href="pokedex.html">Pokédex</a></li>
 									<li><a href="contact.html">Contact</a></li>
 									<li><a href="elements.html">Elements</a></li>
-									<li>
-										<a href="">DataBase</a>
-										<ul>
-											<li><a href="usersdatabase.html">Users</a></li>
-											<li><a href="eetakemonsdatabase">Eetakemons</a></li>
-											<li><a href="atacksdatabase">Atacks</a></li>
-										</ul>
-									</li>
 								</ul>
 							</li>
-							<li><a href="signIn.html" class="button">Registrate!</a></li>
+							<li><a href="register2.html" class="button">Registrate!</a></li>
+                            <li><a href="signIn.html" class="button">Iniciar sesión!</a></li>
 						</ul>
 					</nav>
 				</header>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2> <div>
-                    <a> <img src="pokemons/Etakemon.png"></a></div></h2>
+					<h2>
+                    <a> <img src="pokemons/Etakemon.png"></a>
+                    </h2>
 					
 					<section id="cta2">
 					<form>
                         <div class="row uniform 50%">
                             <div class="12u 12u(mobilep)">
-                                <input type="text" name="name" id="name" placeholder="User nick" />
+                                <input type="text" name="username" id="username" placeholder="Nick name" />
                             </div>
                             <div class="12u 12u(mobilep)">
                                 <input type="password" name="password" id="password" placeholder="User password" />
@@ -60,7 +54,8 @@
                     </form></section>
 					<ul class="actions">
 						<li><a href="register2.html" class="button">Aun sin cuenta?</a></li>
-						<li><a href="home.html" class="button">Iniciar Sesion</a></li>
+						<input type="button" value="Iniciar Sesion" onclick="SignIn()" />
+
 					</ul>
 				</section>
 
@@ -131,13 +126,15 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollgress.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/cookieHandler.js"></script>
 
-	</body>
+
+    </body>
 </html>
