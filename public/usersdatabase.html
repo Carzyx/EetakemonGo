@@ -12,6 +12,11 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+         <script type="text/javascript" src="js/selectAtack.js"></script>
+      <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	</head>
 	<body class="landing" onLoad="GetAllUsers('#jsonTableUsersResult')">
 		<div id="page-wrapper">
@@ -82,15 +87,125 @@
                             <div class="6u 12u(mobilep)">
                                 <input type="text" name="email" id="email" placeholder="Email Address" />
                             </div>
+                            <div class="6u 12u(mobilep)">
+                                <input type="text" name="rol" id="rol" placeholder="rol" />
+                            </div>
                             <div>
-                                <input type="button" value="Do it!" class="fit" onclick="doActionDatabaseUser()" />
+                             <div class="6u 12u(mobilep)">
+                            <!-- B was here -->
+
+
+                            <a href="#" id="atackButton" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal"onclick="BotonElegirEetakemons('#OptionAtack')">Selecciona los Eetakemons</a>
+                                 <select name="kitchen_color" id="kitchen_color" onchange="setImage(this);">
+                                     <option value="">Elige imagen</option>
+                                     <option value="profile/brock.png">Brock Lo Peta</option>
+                                     <option value="profile/byron.png">Byron</option>
+                                     <option value="profile/candice.png">Candice a ella petan</option>
+                                     <option value="profile/cintia.png">Cintia</option>
+                                     <option value="profile/helio.png">Helio</option>
+                                     <option value="profile/maylene.png">Maylene</option>
+                                     <option value="profile/paul.png">Paul</option>
+                                 </select>
+                                 <br />
+                                 <img src="" name="image-swap" />
+                            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" align="center">
+
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+
+                                        <!-- Begin # DIV Form -->
+                                        <div id="div-forms">
+
+                                            <!-- Begin # Login Form -->
+                                            <form id="login-form">
+                                                <div class="modal-body">
+                                                    <div id="div-login-msg">
+                                                        <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                        <span id="text-login-msg">Selecciona los Eetakemons</span>
+                                                    </div>
+
+                                                    <select multiple="multiple" id="OptionEetakemon" onchange="clickEetakemon(this.value)">
+                                                        <option value="0">Esto se llenara de Eetakemons</option>
+
+                                                    </select>
+                                                    <div id="div-login-msg">
+                                                        <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                        <span id="text-login-msg">Selecciona el nivel del Eetakemon</span>
+                                                    </div>
+                                                    <select  id="eligeNivel" onchange="clickNivel(this.value)">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+
+                                                    </select>
+                                                    <br>
+                                                    <div class="panel-group">
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Nombre:</div>
+                                                                <div class="panel-body" id="nombre" ></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Nivel:</div>
+                                                                <div class="panel-body" id="tipo"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Puntos de Salud:</div>
+                                                                <div class="panel-body" id="damage"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="12u 12u(mobilep)">
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading">Descripcion:</div>
+                                                                <div class="panel-body" id="descripcion"></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div>
+                                                        <input type="button" value="Guardar" class="fit" onclick="guardarAtaque('#OptionAtack')" />
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
+                                            <!-- End # Login Form -->
+
+                                            <!-- Begin | Lost Password Form -->
+
+
+
+                                        </div>
+                                        <!-- End # DIV Form -->
+
+                                    </div>
+                                </div>
+                            </div>
+
+                                <input type="button" value="Guardar " class="fit" onclick="doActionDatabaseUser()" />
                             </div>
                         </div>
                     </form>
-                    
-                
-                </div>
-                
+
+
+            </div>
+
             </div>
             
             <div>
