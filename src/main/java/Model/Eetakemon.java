@@ -13,13 +13,13 @@ public class Eetakemon {
     private EetakemonType type;
     private String image;
     private String description;
-    private List<Atack> atacks;
+    private List<Atack> eetakemonAtack;
 
     public Eetakemon() {
     }
 
     public Eetakemon(String name, int level, int ps, EetakemonType type, String image,
-                     String descrption) {
+        String descrption) {
         this.type = type;
         this.name = name;
         this.level = level;
@@ -44,8 +44,8 @@ public class Eetakemon {
         return ps;
     }
 
-    public List<Atack> getAtacks() {
-        return atacks;
+    public List<Atack> getEetakemonAtack() {
+        return eetakemonAtack;
     }
 
     public void setType(EetakemonType type) {
@@ -64,8 +64,8 @@ public class Eetakemon {
         this.ps = ps;
     }
 
-    public void setAtacks(List<Atack> atacks) {
-        this.atacks = atacks;
+    public void setEetakemonAtack(List<Atack> eetakemonAtack) {
+        this.eetakemonAtack = eetakemonAtack;
     }
 
     public String getImage() {
@@ -87,8 +87,8 @@ public class Eetakemon {
         int typeDamage=1;
         AtacksEetakemon eetackemonatack=new AtacksEetakemon();
         for (int i=0;i<4;i++){
-            if(atacks[i].getIdatack()==id)
-                eetackemonatack=atacks[i];
+            if(eetakemonAtack[i].getIdatack()==id)
+                eetackemonatack=eetakemonAtack[i];
         }
         return eetackemonatack.damageBase*typeDamage*level;
     }*/

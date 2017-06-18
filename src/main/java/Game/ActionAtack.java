@@ -8,8 +8,7 @@ public class ActionAtack {
     private String atackName;
     private int damageBase;
 
-    public ActionAtack() {
-    }
+    public ActionAtack(){}
 
     public String getAtackName() {
         return atackName;

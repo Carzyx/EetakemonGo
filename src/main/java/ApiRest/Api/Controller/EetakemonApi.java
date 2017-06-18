@@ -35,8 +35,9 @@ public class EetakemonApi implements IEetakemonApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response createEetakemon(@Context HttpHeaders httpHeaders, Eetakemon eetakemon) {
-        if (_serviceEetakemon.create(eetakemon)) {
+    public Response createEetakemon(@Context HttpHeaders httpHeaders, Eetakemon eetakemon){
+        if(_serviceEetakemon.create(eetakemon))
+        {
             return _httpResponseHelper.getSuccessResponse(ActionCode.OK, httpHeaders);
         }
         return _httpResponseHelper.getSuccessResponse(ActionCode.KO, httpHeaders);
@@ -47,7 +48,7 @@ public class EetakemonApi implements IEetakemonApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllEetakemons(@Context HttpHeaders httpHeaders) {
-        return _httpResponseHelper.getSuccessResponse(_serviceEetakemon.getAll(), httpHeaders);
+        return  _httpResponseHelper.getSuccessResponse(_serviceEetakemon.getAll(), httpHeaders);
     }
 
 }

@@ -1,6 +1,8 @@
 package Game;
 
+import Game.ActionAtack;
 import Model.Eetakemon;
+import Model.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -15,16 +17,15 @@ public class UserSocket {
     private String username;
     private Eetakemon eetakemon;
     private ActionAtack actionAtack;
-
+ 
     public Socket userConnection;
     public ObjectOutputStream out;
     public ObjectInputStream in;
 
 
-    public UserSocket() {
-    }
+    public UserSocket(){}
 
-    public UserSocket(String username, Socket socket, ObjectOutputStream out, ObjectInputStream in) throws IOException {
+    public UserSocket(String username, Socket socket, ObjectOutputStream out, ObjectInputStream in ) throws IOException {
         this.username = username;
         userConnection = socket;
         this.out = out;

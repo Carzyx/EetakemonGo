@@ -8,10 +8,10 @@ public class AtacksEetakemonDto {
     private String atackName;
     private String eetakemonName;
 
-    public AtacksEetakemonDto() {
-    }
+    public AtacksEetakemonDto() { }
 
-    public AtacksEetakemonDto(String eetakemonName, String atackName) {
+    public AtacksEetakemonDto(String eetakemonName, String atackName)
+    {
         this.eetakemonName = eetakemonName;
         this.atackName = atackName;
     }

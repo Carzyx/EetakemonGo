@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 /**
@@ -19,7 +20,6 @@ public class User {
 
     public User() {
     }
-
     public User(String name, String surname, String username, String password, String email) {
         this.name = name;
         this.surname = surname;
@@ -27,7 +27,6 @@ public class User {
         this.password = password;
         this.email = email;
     }
-
     public User(String name, String surname, String username, String password, String email, int rol, String image) {
         this.name = name;
         this.surname = surname;

@@ -6,10 +6,7 @@ import org.apache.log4j.Logger;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * Created by Miguel Angel on 06/04/2017.
@@ -25,55 +22,58 @@ public class MySQLRepository<T> {
             Class nameClass = t.getClass();
             Field[] propertyClass = nameClass.getDeclaredFields();
             for (int i = 0; (i < propertyClass.length); i++) {
-                stm.setObject(i + 1, getMethod(t, propertyClass[i].getName()));
+                stm.setObject(i+1, getMethod(t, propertyClass[i].getName()));
             }
             int success = stm.executeUpdate();
             con.close();
-            if (!(success > 0)) {
-                logger.info("Error en la ejecucion MySQLRepository.add, Query: " + query);
+            if(!(success > 0))
+            {
+                logger.info("Error en la ejecucion MySQLRepository.add, Query: "+query);
             }
             return success > 0;
 
         } catch (SQLException sqle) {
 
-            logger.error("Error en la ejecución MySQLRepository.add:"
+           logger.error("Error en la ejecución MySQLRepository.add:"
                 + sqle.getErrorCode() + " " + sqle.getMessage());
             return false;
         }
     }
 
     protected boolean update(String query, Hashtable<String, String> conditions, T t) {
-        Connection con = getConnection();
-        try {
-            PreparedStatement stm = con.prepareStatement(query);
-            Class nameClass = t.getClass();
-            Field[] propertyClass = nameClass.getDeclaredFields();
+            Connection con = getConnection();
+            try {
+                PreparedStatement stm = con.prepareStatement(query);
+                Class nameClass = t.getClass();
+                Field[] propertyClass = nameClass.getDeclaredFields();
 
-            //set new attributes
-            for (int i = 0; (i < propertyClass.length); i++) {
-                stm.setObject(i + 1, getMethod(t, propertyClass[i].getName()));
-            }
-            //set conditions
-            int maxIndex = 1 + propertyClass.length + conditions.size();
-            for (int i = 0; i < propertyClass.length; i++) {
-                if (conditions.containsKey(propertyClass[i].getName()) && conditions.size() > 0) {
-                    stm.setObject(maxIndex - conditions.size(), conditions.get(propertyClass[i].getName()));
-                    conditions.remove(propertyClass[i].getName());
+                //set new attributes
+                for (int i = 0; (i < propertyClass.length); i++) {
+                    stm.setObject(i+1, getMethod(t, propertyClass[i].getName()));
                 }
-            }
-            int success = stm.executeUpdate();
-            con.close();
+                //set conditions
+                int maxIndex = 1 + propertyClass.length + conditions.size();
+                for (int i = 0; i < propertyClass.length; i++) {
+                    if (conditions.containsKey(propertyClass[i].getName()) && conditions.size() > 0) {
+                        stm.setObject(maxIndex - conditions.size(), conditions.get(propertyClass[i].getName()));
+                        conditions.remove(propertyClass[i].getName());
+                    }
+                }
+                int success = stm.executeUpdate();
+                con.close();
 
-            if (!(success > 0)) {
-                logger.info("Error en la ejecucion MySQLRepository.update, Query: " + query);
-            }
-            return success > 0;
+                if(!(success > 0))
+                {
+                    logger.info("Error en la ejecucion MySQLRepository.update, Query: "+query);
+                }
+                return success > 0;
         } catch (SQLException sqle) {
-            logger.error("Error en la ejecución MySQLRepository.update"
+                logger.error("Error en la ejecución MySQLRepository.update"
                 + sqle.getErrorCode() + " " + sqle.getMessage());
             return false;
         }
     }
+
 
 
     protected boolean delete(String query, Hashtable<String, String> conditions, T t) throws Exception {
@@ -92,8 +92,9 @@ public class MySQLRepository<T> {
             int success = stm.executeUpdate();
             con.close();
 
-            if (!(success > 0)) {
-                logger.info("Error en la ejecucion MySQLRepository.delete, Query: " + query);
+            if(!(success > 0))
+            {
+                logger.info("Error en la ejecucion MySQLRepository.delete, Query: "+query);
             }
             return success > 0;
 
@@ -137,8 +138,9 @@ public class MySQLRepository<T> {
             }
             boolean success = stm.execute();
 
-            if (!success) {
-                logger.info("Error en la ejecucion MySQLRepository.selectByCondition, Query: " + query);
+            if(!success)
+            {
+                logger.info("Error en la ejecucion MySQLRepository.selectByCondition, Query: "+query);
             }
 
             ResultSet resultSet = stm.getResultSet();
@@ -207,7 +209,8 @@ public class MySQLRepository<T> {
         }
     }
 
-    private Object getConvertValueType(String columnType, ResultSet resultSet, int index) {
+    private Object getConvertValueType(String columnType, ResultSet resultSet, int index)
+        {
         try {
             switch (columnType) {
                 case "VARCHAR":
@@ -236,7 +239,7 @@ public class MySQLRepository<T> {
         }
     }
 
-    private String getMethod(T t, String key) {
+    private String getMethod(T t, String key){
         try {
             Method m = t.getClass().getMethod(getProperty(key));
             Object object = m.invoke(t, null);

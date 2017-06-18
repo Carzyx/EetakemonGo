@@ -8,6 +8,5 @@ import Model.Eetakemon;
 public interface IEetakemonService extends IBasicService<Eetakemon> {
 
     boolean addAtacksToEetakemon(Eetakemon eetakemon);
-
     boolean removeAtacksToEetakemon(Eetakemon eetakemon);
 }

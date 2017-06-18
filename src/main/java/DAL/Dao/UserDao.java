@@ -1,10 +1,11 @@
 package DAL.Dao;
 
+import DAL.EntityDataBase.EetakemonDto;
+import DAL.EntityDataBase.EetakemonsUserDto;
+import DAL.EntityDataBase.UserDto;
 import DAL.Dao.Interfaces.IEetakemonDao;
 import DAL.Dao.Interfaces.IGenericDao;
 import DAL.Dao.Interfaces.IUserDao;
-import DAL.EntityDataBase.EetakemonsUserDto;
-import DAL.EntityDataBase.UserDto;
 import Model.Eetakemon;
 import Model.User;
 import org.modelmapper.ModelMapper;
@@ -36,7 +37,8 @@ public class UserDao implements IUserDao {
         UserDto userDto = modelMapper.map(user, UserDto.class);
         boolean userConfirmation = _service.add(userDto);
 
-        if (!userConfirmation || user.getEetakemons() == null || !(user.getEetakemons().size() > 0)) {
+        if(!userConfirmation || user.getEetakemons() == null || !(user.getEetakemons().size() > 0) )
+        {
             return userConfirmation;
         }
 
@@ -46,7 +48,7 @@ public class UserDao implements IUserDao {
     public boolean updateByName(User user) {
         UserDto userDto = modelMapper.map(user, UserDto.class);
         Hashtable<String, String> conditions = new Hashtable<>();
-        conditions.put("username", user.getUsername());
+        conditions.put("username",user.getUsername());
         return _service.updateByConditions(userDto, conditions);
     }
 
@@ -72,7 +74,8 @@ public class UserDao implements IUserDao {
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("name", user.getUsername());
         boolean userConfirmation = _service.removeByConditions(userDto, conditions);
-        if (!(user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation) {
+        if( !(user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation)
+        {
             return userConfirmation;
         }
 
@@ -86,7 +89,8 @@ public class UserDao implements IUserDao {
 
         UserDto userDto = modelMapper.map(user, UserDto.class);
         boolean userConfirmation = _service.removeByConditions(userDto, conditions);
-        if ((user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation) {
+        if((user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation)
+        {
             return userConfirmation;
         }
 
@@ -104,7 +108,8 @@ public class UserDao implements IUserDao {
 
         List<UserDto> responseList = _service.getAll(new UserDto());
         List<User> result = new ArrayList<>();
-        for (UserDto response : responseList) {
+        for(UserDto response : responseList)
+        {
             result.add(modelMapper.map(response, User.class));
         }
         return result;
@@ -115,7 +120,8 @@ public class UserDao implements IUserDao {
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", user.getUsername());
         List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
-        if (result != null) {
+        if(result != null)
+        {
             user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));
         }
 
@@ -124,25 +130,25 @@ public class UserDao implements IUserDao {
 
     public boolean addAEetakemonsToUser(User user) {
         boolean actionResult = true;
-        boolean eetakemonAdded = false;
-        if (isValidEetakemonToUser(user)) {
+        boolean eetakemonAdded=false;
+        if(isValidEetakemonToUser(user)) {
             Hashtable<String, String> conditions = new Hashtable<>();
             conditions.put("username", user.getUsername());
             List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
             for (Eetakemon eetakemon : user.getEetakemons()) {
-                for (EetakemonsUserDto myeetakemon : result) {
-                    if (eetakemon.getName().equals(myeetakemon.getEetakemonName())) {
-                        myeetakemon.setLevel(myeetakemon.getLevel() + 1);
-                        conditions.put("username", myeetakemon.getUsername());
-                        conditions.put("eetakemonName", myeetakemon.getEetakemonName());
-                        eetakemonAdded = _serviceEetakemonsUser.updateByConditions(myeetakemon, conditions);
-                        if (!eetakemonAdded) {
-                            actionResult = false;
+                for (EetakemonsUserDto myeetakemon:result) {
+                    if(eetakemon.getName().equals(myeetakemon.getEetakemonName())){
+                        myeetakemon.setLevel(myeetakemon.getLevel()+1);
+                        conditions.put("username",myeetakemon.getUsername());
+                        conditions.put("eetakemonName",myeetakemon.getEetakemonName());
+                        eetakemonAdded = _serviceEetakemonsUser.updateByConditions(myeetakemon,conditions);
+                    if (!eetakemonAdded) {
+                        actionResult = false;
                         }
                     }
                 }
-                if (!eetakemonAdded) {
-                    EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getUsername(), eetakemon.getName());
+                if(!eetakemonAdded){
+                    EetakemonsUserDto eetakemonsUserDto=new EetakemonsUserDto(user.getUsername(),eetakemon.getName());
                     _serviceEetakemonsUser.add(eetakemonsUserDto);
                 }
                 if (!eetakemonAdded)
@@ -155,13 +161,15 @@ public class UserDao implements IUserDao {
 
     public boolean removeEetakemonsToUser(User user) {
         boolean actionResult = true;
-        for (Eetakemon eetakemon : user.getEetakemons()) {
+        for (Eetakemon eetakemon : user.getEetakemons())
+        {
             Hashtable<String, String> conditions = new Hashtable<>();
             conditions.put("username", user.getUsername());
             conditions.put("eetakemonName", eetakemon.getName());
             EetakemonsUserDto eetakemonsUserDto = new EetakemonsUserDto(user.getUsername(), eetakemon.getName());
             boolean relationRemoved = _serviceEetakemonsUser.removeByConditions(eetakemonsUserDto, conditions);
-            if (!relationRemoved) {
+            if(!relationRemoved)
+            {
                 actionResult = false;
             }
         }
@@ -178,7 +186,8 @@ public class UserDao implements IUserDao {
         conditions.put("username", user.getUsername());
         List<EetakemonsUserDto> result = _serviceEetakemonsUser.getAllByParameters(new EetakemonsUserDto(), conditions);
 
-        if (result != null) {
+        if(result != null)
+        {
             user.setEetakemons(_serviceEetakemon.getAllCompleteEetakemonByName(result));
         }
         //TODO Object response that contains Token and succes.
@@ -202,9 +211,12 @@ public class UserDao implements IUserDao {
     }
 
     private boolean isValidEetakemonToUser(User user) {
-        if (user.getEetakemons().size() > 0) {
-            for (Eetakemon eetakemon : user.getEetakemons()) {
-                if (eetakemon.getAtacks().size() != 4) {
+        if(user.getEetakemons().size() > 0)
+        {
+            for (Eetakemon eetakemon : user.getEetakemons())
+            {
+                if(eetakemon.getEetakemonAtack().size() != 4)
+                {
                     return false;
                 }
             }

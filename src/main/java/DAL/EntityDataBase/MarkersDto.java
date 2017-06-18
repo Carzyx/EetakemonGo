@@ -4,16 +4,14 @@ package DAL.EntityDataBase;
  * Created by Ignacio on 11/06/2017.
  */
 public class MarkersDto {
-    private double lat;
-    private double lng;
-
-    public MarkersDto() {
+    double lat;
+    double lng;
+    public MarkersDto(){
 
     }
-
-    public MarkersDto(double lat, double lng) {
-        this.lat = lat;
-        this.lng = lng;
+    public MarkersDto(double lat,double lng){
+        this.lat=lat;
+        this.lng=lng;
     }
 
     public double getLat() {

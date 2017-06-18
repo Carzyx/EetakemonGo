@@ -8,10 +8,7 @@ import javafx.util.Pair;
 public interface ISignatureControlService {
 
     boolean isValidSignature(String key, String subjectKey);
-
     boolean isSignatureExpired(String key);
-
-    Pair<String, String> getKeySignature(String subjectKey);
-
-    Pair<String, String> getExtendExpirationTime(String key);
+    Pair<String, String> getKeySignature (String subjectKey);
+    Pair<String, String> getExtendExpirationTime (String key);
 }

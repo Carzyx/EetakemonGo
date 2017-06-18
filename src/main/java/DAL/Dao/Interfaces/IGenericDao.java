@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 05/04/2017.
  */
-public interface IGenericDao<T> {
+public interface IGenericDao<T>  {
 
     boolean add(T t);
 

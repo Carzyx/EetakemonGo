@@ -33,19 +33,20 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response createUser(User user) {
-        if (_serviceUser.create(user)) {
+    public Response createUser(User user){
+        if(_serviceUser.create(user))
+        {
             return Response.status(201).entity("User created OK").build();
         }
         return Response.status(200).entity("User created KO").build();
     }
-
     @Path("SingIn")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response singIn(User user) {
-        if (_serviceUser.getByName(user.getUsername()).getPassword().equals(user.getPassword())) {
+    public Response singIn(User user){
+        if(_serviceUser.getByName(user.getUsername()).getPassword().equals(user.getPassword()))
+        {
             return Response.status(200).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
         }
         return Response.status(201).entity(null).build();
@@ -56,8 +57,9 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response removeUserByUsernameAndPassword(User user) {
-        if (_serviceUser.removeByUsernameAndPassword(user)) {
+    public Response removeUserByUsernameAndPassword(User user){
+        if(_serviceUser.removeByUsernameAndPassword(user))
+        {
             return Response.status(201).entity("User removed OK").build();
         }
         return Response.status(200).entity("User removed KO").build();
@@ -67,8 +69,9 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateUser(User user) {
-        if (_serviceUser.updateByName(user)) {
+    public Response updateUser(User user){
+        if(_serviceUser.updateByName(user))
+        {
             return Response.status(201).entity("User updated OK").build();
         }
         return Response.status(200).entity("User updated KO").build();
@@ -78,8 +81,9 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateByUsernameAndPassword(User user) {
-        if (_serviceUser.updateByUsernameAndPassword(user)) {
+    public Response updateByUsernameAndPassword(User user){
+        if(_serviceUser.updateByUsernameAndPassword(user))
+        {
             return Response.status(201).entity("User updated OK").build();
         }
         return Response.status(200).entity("User updated KO").build();
@@ -96,7 +100,7 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response addAEetakemonsToUser(User user) {
+        public Response addAEetakemonsToUser(User user) {
 
         if (_serviceUser.addAEetakemonsToUser(user)) {
             return Response.status(201).entity(_serviceUser.getCompleteUserByUsername(user.getUsername())).build();
@@ -114,9 +118,13 @@ public class JSONService {
     @Path("getAllUsers")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getAllUsers() {
+    public List<User> getAllUsers()
+    {
         return _serviceUser.getAll();
     }
+
+
+
 
 
     //SignIn deberia de responder toda la info del usuario que necesitariamos en la cookie
@@ -129,8 +137,9 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response createEetakemon(Eetakemon eetakemon) {
-        if (_serviceEetakemon.create(eetakemon)) {
+    public Response createEetakemon(Eetakemon eetakemon){
+        if(_serviceEetakemon.create(eetakemon))
+        {
             return Response.status(201).entity("Eetakemon created OK").build();
         }
         return Response.status(200).entity("Eetakemon created KO").build();
@@ -140,9 +149,14 @@ public class JSONService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Eetakemon> getAllEetakemons() {
-        List<Eetakemon> list = _serviceEetakemon.getAll();
+        List<Eetakemon> list=_serviceEetakemon.getAll();
         return list;
     }
+
+
+
+
+
 
 
     //Atack implementation
@@ -152,8 +166,9 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response createAtack(Atack atack) {
-        if (_serviceAtack.create(atack)) {
+    public Response createAtack(Atack atack){
+        if(_serviceAtack.create(atack))
+        {
             return Response.status(201).entity("Atack created OK").build();
         }
         return Response.status(200).entity("Atack created KO").build();
@@ -163,8 +178,9 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateAtack(Atack atack) {
-        if (_serviceAtack.updateByName(atack)) {
+    public Response updateAtack(Atack atack){
+        if(_serviceAtack.updateByName(atack))
+        {
             return Response.status(201).entity("Atack updated OK").build();
         }
         return Response.status(200).entity("Atack updated KO").build();
@@ -174,8 +190,9 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response removeAtack(Atack atack) {
-        if (_serviceAtack.removeByName(atack)) {
+    public Response removeAtack(Atack atack){
+        if(_serviceAtack.removeByName(atack))
+        {
             return Response.status(201).entity("Atack removed OK").build();
         }
         return Response.status(200).entity("Atack removed KO").build();
@@ -184,20 +201,19 @@ public class JSONService {
     @Path("getAllAtacks")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Atack> getAllAtacks() {
+    public List<Atack> getAllAtacks(){
 
         return _serviceAtack.getAll();
 
     }
 
     //LocationService implementation
-    private ILocation _serviceLocation = new LocationService();
-
+    private ILocation _serviceLocation=new LocationService();
     @Path("markers")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Markers> getMarkers(Markers markers) {
+    public List<Markers> getMarkers(Markers markers){
         return _serviceLocation.getMarkers(markers);
     }
 
@@ -205,7 +221,7 @@ public class JSONService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Markers> getNearMarkers(Markers markers) {
+    public List<Markers> getNearMarkers(Markers markers){
         return _serviceLocation.getNearMarkers(markers);
     }
 

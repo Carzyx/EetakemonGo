@@ -34,7 +34,7 @@ public class EetakemonDto {
 
 
     public int getPs() {
-        return ps;
+        return ps ;
     }
 
     public void setType(EetakemonType type) {

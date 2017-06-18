@@ -1,13 +1,12 @@
 package DAL.Dao;
 
-import DAL.Dao.Interfaces.IAtackDao;
-import DAL.Dao.Interfaces.IEetakemonDao;
-import DAL.Dao.Interfaces.IGenericDao;
 import DAL.EntityDataBase.AtacksEetakemonDto;
 import DAL.EntityDataBase.EetakemonDto;
 import DAL.EntityDataBase.EetakemonsUserDto;
-import Model.Atack;
-import Model.Eetakemon;
+import DAL.Dao.Interfaces.IAtackDao;
+import DAL.Dao.Interfaces.IEetakemonDao;
+import DAL.Dao.Interfaces.IGenericDao;
+import Model.*;
 import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
@@ -21,14 +20,14 @@ public class EetakemonDao implements IEetakemonDao {
 
     //Acctions for Eetakemon BBDD
     private static IGenericDao<EetakemonDto> _service;
-    private static IGenericDao<EetakemonsUserDto> _serviceEetackemonUser;
+    private static IGenericDao<EetakemonsUserDto>_serviceEetackemonUser;
     private static IGenericDao<AtacksEetakemonDto> _serviceAtackEetakemon;
     private static IAtackDao _serviceAtack;
     private ModelMapper modelMapper = new ModelMapper();
 
     public EetakemonDao() {
         _service = new GenericDaoImpl<>();
-        _serviceEetackemonUser = new GenericDaoImpl<>();
+        _serviceEetackemonUser=new GenericDaoImpl<>();
         _serviceAtackEetakemon = new GenericDaoImpl<>();
         _serviceAtack = new AtackDao();
     }
@@ -36,10 +35,12 @@ public class EetakemonDao implements IEetakemonDao {
     //TODO -- Validar: si existe Eetakemon, no crearlo (repetir check de UserService/UserDao)
     public boolean add(Eetakemon eetakemon) {
 
-        if (isValidAtackToEetakemon(eetakemon)) {
+        if(isValidAtackToEetakemon(eetakemon))
+        {
             EetakemonDto eetakemonDto = modelMapper.map(eetakemon, EetakemonDto.class);
             boolean eetakemonConfirmation = _service.add(eetakemonDto);
-            if (eetakemonConfirmation) {
+            if (eetakemonConfirmation)
+            {
                 return addAtacksToEetakemon(eetakemon);
             }
         }
@@ -61,7 +62,7 @@ public class EetakemonDao implements IEetakemonDao {
         conditions.put("name", eetakemon.getName());
         boolean eetakemonConfirmation = _service.removeByConditions(eetakemonDto, conditions);
 
-        if (!(eetakemon.getAtacks().size() <= 0) || !eetakemonConfirmation) {
+        if (!(eetakemon.getEetakemonAtack().size() <= 0) || !eetakemonConfirmation) {
             return eetakemonConfirmation;
         }
 
@@ -90,14 +91,16 @@ public class EetakemonDao implements IEetakemonDao {
 
     public boolean addAtacksToEetakemon(Eetakemon eetakemon) {
         boolean actionResult = true;
-        for (Atack atack : eetakemon.getAtacks()) {
-            if (_serviceAtack.add(atack)) {
+        for (Atack atack : eetakemon.getEetakemonAtack()) {
+            if(_serviceAtack.add(atack))
+            {
                 AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
                 boolean atackAdded = _serviceAtackEetakemon.add(atacksEetakemonDto);
                 if (!atackAdded) {
                     actionResult = false;
                 }
-            } else {
+            }
+            else {
 
                 actionResult = false;
             }
@@ -107,7 +110,7 @@ public class EetakemonDao implements IEetakemonDao {
 
     public boolean removeAtacksToEetakemon(Eetakemon eetakemon) {
         boolean actionResult = true;
-        for (Atack atack : eetakemon.getAtacks()) {
+        for (Atack atack : eetakemon.getEetakemonAtack()) {
             Hashtable<String, String> conditions = new Hashtable<>();
             conditions.put("eetakemonName", eetakemon.getName());
             conditions.put("atackName", atack.getName());
@@ -120,37 +123,41 @@ public class EetakemonDao implements IEetakemonDao {
         return actionResult;
     }
 
-    public Eetakemon getCompleteEetakemonByName(String name) {
+    public Eetakemon getCompleteEetakemonByName (String name) {
         Eetakemon eetakemonResult = getByName(name);
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("eetakemonName", eetakemonResult.getName());
         List<AtacksEetakemonDto> atacksEetakemonDto = _serviceAtackEetakemon.getAllByParameters(new AtacksEetakemonDto(), conditions);
         List<Atack> atackList = new ArrayList<>();
-        for (AtacksEetakemonDto relation : atacksEetakemonDto) {
+        for(AtacksEetakemonDto relation : atacksEetakemonDto)
+        {
             atackList.add(_serviceAtack.getByName(relation.getAtackName()));
         }
-        eetakemonResult.setAtacks(atackList);
+        eetakemonResult.setEetakemonAtack(atackList);
         return eetakemonResult;
     }
 
 
-    public List<Eetakemon> getAllCompleteEetakemonByName(List<EetakemonsUserDto> eetakemonsToUserList) {
+    public List<Eetakemon> getAllCompleteEetakemonByName (List<EetakemonsUserDto> eetakemonsToUserList)
+    {
         List<Eetakemon> eetakemonResult = new ArrayList<>();
 
-        for (EetakemonsUserDto item : eetakemonsToUserList) {
-            Eetakemon eetakemon = new Eetakemon();
-            eetakemon = getCompleteEetakemonByName(item.getEetakemonName());
+        for (EetakemonsUserDto item : eetakemonsToUserList)
+        {
+            Eetakemon eetakemon=new Eetakemon();
+                eetakemon=getCompleteEetakemonByName(item.getEetakemonName());
             Hashtable<String, String> conditions = new Hashtable<>();
             conditions.put("eetakemonName", item.getEetakemonName());
-            EetakemonsUserDto eetakemonsUser = _serviceEetackemonUser.getByParameters(new EetakemonsUserDto(), conditions);
-            modelMapper.map(eetakemonsUser, eetakemon);
+            EetakemonsUserDto eetakemonsUser=_serviceEetackemonUser.getByParameters(new EetakemonsUserDto(),conditions);
+            modelMapper.map(eetakemonsUser,eetakemon);
             eetakemonResult.add(eetakemon);
         }
         return eetakemonResult;
     }
 
-    private boolean isValidAtackToEetakemon(Eetakemon eetakemon) {
-        return eetakemon.getAtacks().size() == 4;
+    private boolean isValidAtackToEetakemon(Eetakemon eetakemon)
+    {
+        return eetakemon.getEetakemonAtack().size() == 4;
     }
 
 }

@@ -28,7 +28,8 @@ public class UserService implements IUserService {
         return _serviceUser.removeByName(user);
     }
 
-    public boolean removeByUsernameAndPassword(User user) {
+    public boolean removeByUsernameAndPassword(User user)
+    {
         return _serviceUser.removeByUsernameAndPassword(user);
     }
 
@@ -48,9 +49,11 @@ public class UserService implements IUserService {
         return _serviceUser.getAll();
     }
 
-    public User getCompleteUserByUsername(String name) {
-        return _serviceUser.getCompleteUserByUsername(name);
+    public User getCompleteUserByUsername(String name)
+    {
+       return _serviceUser.getCompleteUserByUsername(name);
     }
+
 
 
     public boolean deleteUser(String username, String password) {
@@ -63,13 +66,14 @@ public class UserService implements IUserService {
         return _serviceUser.removeByUsernameAndPassword(user);
     }
 
-    public boolean addAEetakemonsToUser(User user) {
+    public boolean addAEetakemonsToUser(User user)
+    {
         return _serviceUser.addAEetakemonsToUser(user);
     }
 
     public boolean removeEetakemonsToUser(User user) {
-        return _serviceUser.removeEetakemonsToUser(user);
-    }
+    return _serviceUser.removeEetakemonsToUser(user);
+}
 
 
     public User signIn(String username, String password) {

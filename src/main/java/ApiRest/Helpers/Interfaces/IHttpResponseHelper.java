@@ -10,8 +10,6 @@ import javax.ws.rs.core.Response;
  */
 public interface IHttpResponseHelper {
     Response getSuccessResponse(Object element, HttpHeaders httpHeaders) throws MyApplicationException;
-
     Response getSuccessResponse(Object element, String subjectKey) throws MyApplicationException;
-
     Response getSuccessResponse(Object element) throws MyApplicationException;
 }

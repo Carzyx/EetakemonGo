@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Miguel Angel on 13/03/2017.
  */
-public class EetakemonService implements IEetakemonService {
+public class EetakemonService implements IEetakemonService{
 
     private static IEetakemonDao _serviceEetakemon;
 
@@ -48,6 +48,11 @@ public class EetakemonService implements IEetakemonService {
     public boolean removeAtacksToEetakemon(Eetakemon eetakemon) {
         return _serviceEetakemon.removeAtacksToEetakemon(eetakemon);
     }
+
+
+
+
+
 
 
 }
