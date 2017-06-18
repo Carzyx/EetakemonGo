@@ -719,6 +719,19 @@ function GetAllEetakemonsFlipCards(selector) {
         }
     });
 }
+function GetTusEetakemonsFlipCards(selector) {
+    user =  JSON.parse(Cookies.get("user", User.class));
+    var method = "GET";
+    var url = "http://localhost:8080/myapp/UserService/getCompleteUserByNme/"+user.username;
+    console.log(url);
+
+    doAjaxRequestManageDtabase(method, url, user.authToken, SacarListaDeEtakemonsDeUnUsuario, selector);
+}
+
+function SacarListaDeEtakemonsDeUnUsuario(selector,jsonResult) {
+    var eetakemons = jsonResult.eetakemons;
+    EetakedexConstructor(selector,eetakemons);
+}
 
 function GetEtakemonsByUser(selector) {
     var jsonResult;
@@ -752,7 +765,7 @@ function GetTablaVisibleUsersRegistrados(selector) {
     var url = "http://localhost:8080/myapp/UserService/getAllUsers";
     user =  JSON.parse(Cookies.get("user", User.class));
     doAjaxRequestManageDtabase(method, url, user.authToken, NormalUserTableConstructor, selector);
-     */
+    */
    $.ajax({
         type: "GET",
         url: " http://localhost:8080/myapp/web/getAllUsers",
