@@ -51,4 +51,20 @@ public class GameApi implements IGameApi {
     public Response doAtack(@Context HttpHeaders httpHeaders, Party party) {
         return _httpResponseHelper.getSuccessResponse(_serviceParty.doAtack(party), httpHeaders);
     }
+
+    @Path("getAllRegisters")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllRegisters(@Context HttpHeaders httpHeaders) {
+        return _httpResponseHelper.getSuccessResponse(_serviceParty.getAllRegisters(), httpHeaders);
+    }
+
+    @Path("getAllRegistersByUser")
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllRegistersByUser(@Context HttpHeaders httpHeaders, String username) {
+        return _httpResponseHelper.getSuccessResponse(_serviceParty.getAllRegistersByUser(username), httpHeaders);
+    }
 }

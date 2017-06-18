@@ -17,19 +17,27 @@
 			<!-- Header -->
 				<header id="header" class="alt">
 					<h1><a href="home.html">Etakemon Go</a> </h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="home.html" class="button">Inicio</a></li>
-							<li>
-								<a href="#" class="icon fa-angle-down">Menu</a>
-								<ul>
-									<li><a href="pokedex.html">Pokédex</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="indexv2.html">Elements</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="home.html" class="button">Inicio</a></li>
+                            <li>
+                                <a href="#" class="icon fa-angle-down">Menu</a>
+                                <ul>
+                                    <li>
+                                        <a href="">Administracion / Gestion </a>
+                                        <ul>
+                                            <li><a href="usersdatabase.html">Usuarios</a></li>
+                                            <li><a href="eetakemonsdatabase.html">Eetakemons</a></li>
+                                            <li><a href="atacksdatabase.html">Ataques</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="pokedex.html">Pokédex</a></li>
+                                    <li><a href="contact.html">Contactanos</a></li>
+                                </ul>
+                            </li>
+                            <li><a  class="button" onclick="Salir()">LogOut</a></li>
+                        </ul>
+                    </nav>
 				</header>
 			<!-- Main -->
 <div class="container">
@@ -57,7 +65,7 @@
                              <!-- B was here -->
 
 
-                             <a href="#" id="cambiarimagen" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal"onclick="BotonElegirEetakemons('#OptionAtack')">Click aqui para cambiar la imagen</a>
+                             <a href="#" id="cambiarimagen" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Click aqui para cambiar la imagen</a>
 
                              <br />
 
@@ -105,7 +113,7 @@
                                                  </div>
                                                  <div class="modal-footer">
                                                      <div>
-                                                         <input type="button" value="Guardar" class="fit" onclick="guardarAtaque('#OptionAtack')" />
+                                                         <input type="button" data-dismiss="modal" value="Guardar" class="fit" onclick="guardarImagen()" />
                                                      </div>
 
                                                  </div>
@@ -130,7 +138,7 @@
               <br>
             </div>
             <div class="col-sm-6">
-            <h4 style="color:#00b1b1;">Eetakemon Go</h4></span>
+            <span><h4 style="color:#00b1b1;" id="edditUsername">Eetakemon Go</h4></span>
                 <span>Rol:<p id="rol1">ROL  DEL USUARIO</p></span>
             </div>
             <div class="clearfix"></div>
@@ -146,9 +154,7 @@
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-<div class="col-sm-5 col-xs-6 tital " >Nickname:</div> <input id="edditUsername" class="" type="text" placeholder="Introduce tu nuevo Nickname" required>
-  <div class="clearfix"></div>
-<div class="bot-border"></div>
+
 
 
 <div class="col-sm-5 col-xs-6 tital " >Email:</div><input id="edditEmail" class="" type="text" placeholder="Introduce el nuevo email" required>
@@ -187,7 +193,7 @@
                      <div class="box box-info">
                      <div class="box-body">
                      <div class="col-sm-6">
-                        <div  align="center"> <img alt="User Pic" src="profile/evoluciona.png" id="profile-image1" class="img-circle img-responsive">
+                        <div  align="center"> <img alt="User Pic" src="profile/evoluciona.png" id="profile-image4" class="img-circle img-responsive">
                         <input id="profile-image-upload" class="hidden" type="file">
                         <!--<div style="color:#999;" >Nodet: Nombre usuario</div>-->
                         </div>
@@ -210,10 +216,6 @@
             <div class="bot-border"></div>
 
             <div class="col-sm-5 col-xs-6 tital " >Nickname:</div><div id="Pusername" class="col-sm-7"> DSAcon4.5</div>
-              <div class="clearfix"></div>
-            <div class="bot-border"></div>
-
-            <div class="col-sm-5 col-xs-6 tital " >Eetakemons:</div><div id="PsizeEtakemons" class="col-sm-7"></div>
               <div class="clearfix"></div>
             <div class="bot-border"></div>
 

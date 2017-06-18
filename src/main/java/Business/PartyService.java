@@ -1,11 +1,18 @@
 package Business;
 
 import Business.Interfaces.IPartyService;
+import DAL.Dao.Interfaces.IPartyDao;
+import DAL.Dao.PartyDao;
+import DAL.EntityDataBase.PartyDto;
 import Model.Atack;
 import Model.Eetakemon;
 import Model.Party;
 import Model.User;
+import com.mysql.jdbc.StringUtils;
+import org.joda.time.DateTime;
 
+import java.sql.*;
+import java.sql.Date;
 import java.util.*;
 
 /**
@@ -15,10 +22,12 @@ public class PartyService implements IPartyService {
 
     private List<User> usersPendingToFight;
     private List<Party> partiesInCurse;
+    private static IPartyDao _servicePartyDao;
 
     public PartyService() {
         usersPendingToFight = new ArrayList<>();
         partiesInCurse = new ArrayList<>();
+        _servicePartyDao = new PartyDao();
     }
 
     @Override
@@ -63,7 +72,41 @@ public class PartyService implements IPartyService {
         party.getTurnIndication().put(party.getCandidate1().getUsername(), !isCandidate1Turn);
         party.getTurnIndication().put(party.getCandidate2().getUsername(), isCandidate1Turn);
 
+        party = checkWiner(party);
         updateParty(party);
+
+        if(!StringUtils.isNullOrEmpty(party.getCandidateWiner()))
+        {
+            addRegisterGame(party);
+        }
+        return party;
+    }
+
+    @Override
+    public List<PartyDto> getAllRegisters() {
+        return _servicePartyDao.getAll();
+    }
+
+    @Override
+    public List<PartyDto> getAllRegistersByUser(String name) {
+        return _servicePartyDao.getAllByConditions(name);
+    }
+
+    private boolean addRegisterGame(Party party)
+    {
+        return _servicePartyDao.add(party);
+    }
+
+    private Party checkWiner(Party party) {
+        if (party.getCandidate1().getEetakemons().get(0).getPs() <= 0) {
+            party.setCandidateWiner(party.getCandidate2().getUsername());
+            party.setDateEnd(new DateTime());
+        }
+        if (party.getCandidate2().getEetakemons().get(0).getPs() <= 0) {
+
+            party.setCandidateWiner(party.getCandidate1().getUsername());
+            party.setDateEnd(new DateTime());
+        }
         return party;
     }
 
@@ -97,6 +140,8 @@ public class PartyService implements IPartyService {
         turnIndication.put(candidate2.getUsername(), false);
 
         party.setTurnIndication((HashMap<String, Boolean>) turnIndication);
+        party.setDateStart(new DateTime());
+        partiesInCurse.add(party);
     }
 
     private List<User> getCandidatesToFight(User candidate) {
