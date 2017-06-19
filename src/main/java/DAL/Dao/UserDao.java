@@ -85,16 +85,18 @@ public class UserDao implements IUserDao {
         Hashtable<String, String> conditions = new Hashtable<>();
         conditions.put("username", user.getUsername());
         conditions.put("password", user.getPassword());
-
+        user = getCompleteUserByUsername(user.getUsername());
         UserDto userDto = modelMapper.map(user, UserDto.class);
-        boolean userConfirmation = _service.removeByConditions(userDto, conditions);
-        if((user.getEetakemons() == null || user.getEetakemons().size() <= 0) || !userConfirmation)
+        boolean userConfirmation = removeEetakemonsToUser(user);;
+        if(!userConfirmation)
         {
             return userConfirmation;
         }
 
-        return removeEetakemonsToUser(user);
+        return _service.removeByConditions(userDto, conditions);
     }
+
+
 
     public User getByName(String namer) {
         UserDto userDto = new UserDto();
