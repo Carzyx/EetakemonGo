@@ -32,7 +32,7 @@ public class JSONService {
     @Path("createUser")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response createUser(User user){
         if(_serviceUser.create(user))
         {
