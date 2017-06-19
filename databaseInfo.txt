@@ -48,6 +48,15 @@ CREATE TABLE `eetakemonbbddtest`.`markersdto` (
   `lat` DOUBLE NOT NULL,
   `lng` DOUBLE NOT NULL);
 
+CREATE TABLE `eetakemonbbddtest`.`partydto` (
+  `candidate1` VARCHAR(45) NOT NULL,
+  `candidate2` VARCHAR(45) NOT NULL,
+  `datestart` DATETIME NULL,
+  `dateend` DATETIME NULL,
+  `candidatewiner` VARCHAR(45) NULL,
+    FOREIGN  KEY (candidate1) REFERENCES UserDto(username),
+    FOREIGN  KEY (candidate2) REFERENCES UserDto(username));
+
 
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275461', '1.985169');
 INSERT INTO `eetakemonbbddtest`.`markersdto` (`lat`,`lng`) VALUES ('41.275211', '1.986160');
