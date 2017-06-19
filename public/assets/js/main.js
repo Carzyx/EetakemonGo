@@ -121,6 +121,12 @@ function validateNumber(event) {
         return true;
     }
 }
+function validateAcces() {
+    user =  Cookies.get("user", User.class);
+    if (user==undefined){
+        window.location.href = "http://localhost:8080/index.html";
+    }
+}
 
 
 class User {
@@ -258,6 +264,8 @@ function GetAllUsers(selector) {
     var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
     var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
 
+    validateAcces();
+
 
     var method = "GET";
     var url = "http://localhost:8080/myapp/UserService/getAllUsers";
@@ -344,6 +352,8 @@ function GetAllEetakemons(selector) {
     var arr = [ "name", "level", "ps", "type", "description",  "image" ];
     var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
 
+    validateAcces();
+
     var method = "GET";
     var url = "http://localhost:8080/myapp/EetakemonService/getAllEetakemons";
     user =  JSON.parse(Cookies.get("user", User.class));
@@ -356,6 +366,8 @@ function GetAllAtacks(selector) {
     var arr = [ "name", "type", "damageBase", "description"];
     var obj  = { name:1, type:2, damageBase:3, description:4};
 
+
+    validateAcces();
 
     var method = "GET";
     var url = "http://localhost:8080/myapp/AtackService/getAllAtacks";
@@ -636,29 +648,35 @@ function doActionDatabaseEetakemon() {
 
     user =  JSON.parse(Cookies.get("user", User.class));
     console.log(user);
+    if (atackList!=null) {//para no añadir eetakemon sin ataques.
+        $.ajax({
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authoritzation', user.authToken);
+            },
+            type: "POST",
+            url: urlAction,
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(sendInfo),
 
-    $.ajax({
-        beforeSend: function(xhr){xhr.setRequestHeader('Authoritzation', user.authToken);},
-        type: "POST",
-        url: urlAction,
-        contentType: "application/json",
-        dataType: "json",
-        data: JSON.stringify(sendInfo),
+            success: function (msg) {
+                if (msg) {
+                    alert(msg);
+                    location.reload(true);
+                    var table = document.getElementById('jsonTableUsersResult');
+                    table.parentNode.removeChild(table);
+                    GetAllUsers('#jsonTableUsersResult');
 
-        success: function (msg) {
-            if (msg) {
-                alert(msg);
-                location.reload(true);
-                var table = document.getElementById('jsonTableUsersResult');
-                table.parentNode.removeChild(table);
-                GetAllUsers('#jsonTableUsersResult');
-
-            } else {
-                alert("Error in the execution...");
+                } else {
+                    alert("Error in the execution...");
+                }
             }
-        }
 
-    });
+        });
+    }else {
+        alert("elige 4 ataques");
+        location.reload(true);
+    }
 
 }
 
@@ -772,6 +790,7 @@ function GetAllEetakemonsFlipCards(selector) {
     var obj  = { name:1, level:2, ps:3, type:4, description:5,  image:6 };
 
     var jsonResult;
+    validateAcces();
 
     var method = "GET";
     var url = "http://localhost:8080/myapp/EetakemonService/getAllEetakemons";
@@ -780,6 +799,8 @@ function GetAllEetakemonsFlipCards(selector) {
 
 }
 function GetTusEetakemonsFlipCards(selector) {
+    validateAcces()
+
     user =  JSON.parse(Cookies.get("user", User.class));
     var method = "GET";
     var url = "http://localhost:8080/myapp/UserService/getCompleteUserByName/"+user.username;
@@ -797,6 +818,8 @@ function SacarListaDeEtakemonsDeUnUsuario(selector,jsonResult) {
 ///////////////////////////////////////////////////////////////////////////
 
 function GetTablaVisibleUsersRegistrados(selector) {
+    validateAcces();
+
     var arr = [ "name", "surname", "username", "password", "email", "rol", "image" ];
     var obj  = { name:1, surname:2, username:3, password:4, email:5, rol:6, image:7 };
 

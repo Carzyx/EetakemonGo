@@ -40,6 +40,7 @@ $(function() {
 });
 
 function infoPerfilUsuario() {
+    validateAcces()
     user =  JSON.parse(Cookies.get("user", User.class));
     sessionStorage.removeItem("imagenElegidaProfile");
     rellenarInfoPerfil(user);
