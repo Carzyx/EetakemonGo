@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/JSONService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/Main.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Business/PartyService.class" afterPath="$PROJECT_DIR$/target/classes/Business/PartyService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/Dao/PartyDao.class" afterPath="$PROJECT_DIR$/target/classes/DAL/Dao/PartyDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DAL/EntityDataBase/PartyDto.class" afterPath="$PROJECT_DIR$/target/classes/DAL/EntityDataBase/PartyDto.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Model/Party.class" afterPath="$PROJECT_DIR$/target/classes/Model/Party.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/Api/Controller/GameApi.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/Api/Controller/GameApi.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApiRest/Api/Controller/Interfaces/IGameApi.class" afterPath="$PROJECT_DIR$/target/classes/ApiRest/Api/Controller/Interfaces/IGameApi.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/GameApi.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/GameApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IGameApi.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Api/Controller/Interfaces/IGameApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ApiRest/Main.java" afterPath="$PROJECT_DIR$/src/main/java/ApiRest/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Business/PartyService.java" afterPath="$PROJECT_DIR$/src/main/java/Business/PartyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/PartyDto.java" afterPath="$PROJECT_DIR$/src/main/java/DAL/EntityDataBase/PartyDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Model/Party.java" afterPath="$PROJECT_DIR$/src/main/java/Model/Party.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1140,7 +1128,7 @@
       <workItem from="1497881831757" duration="5661000" />
       <workItem from="1497894056508" duration="3567000" />
       <workItem from="1497902361581" duration="27000" />
-      <workItem from="1497903092875" duration="10414000" />
+      <workItem from="1497903092875" duration="10490000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1380,11 +1368,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497902376842</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="bug fixed&#10;">
+      <created>1497914008391</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1497914008391</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="497320000" />
+    <option name="totallyTimeSpent" value="497396000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1396,7 +1391,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1480,7 +1475,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add own ORM, Add MySQL connection, Add Structure DAO and Repository, Add Simple User" />
     <MESSAGE value="Intro Web and Api-rest" />
     <MESSAGE value="BBDD" />
     <MESSAGE value="BBDD update" />
@@ -1505,7 +1499,8 @@
     <MESSAGE value="Add Game service by Http" />
     <MESSAGE value="Add Party service to database" />
     <MESSAGE value="Merge remote-tracking branch 'refs/remotes/origin/master' into Miguel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/ApiRest/Api/Controller/GameApi.class&#10;#&#9;target/classes/ApiRest/Api/Controller/Interfaces/IGameApi.class&#10;#&#9;target/classes/Business/Interfaces/IPartyService.class&#10;#&#9;target/classes/Business/PartyService.class&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'refs/remotes/origin/master' into Miguel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/ApiRest/Api/Controller/GameApi.class&#10;#&#9;target/classes/ApiRest/Api/Controller/Interfaces/IGameApi.class&#10;#&#9;target/classes/Business/Interfaces/IPartyService.class&#10;#&#9;target/classes/Business/PartyService.class&#10;" />
+    <MESSAGE value="bug fixed&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
