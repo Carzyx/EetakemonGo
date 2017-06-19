@@ -11,6 +11,8 @@ import Model.User;
 import com.mysql.jdbc.StringUtils;
 import org.joda.time.DateTime;
 
+import java.sql.*;
+import java.sql.Date;
 import java.util.*;
 
 /**
@@ -106,12 +108,13 @@ public class PartyService implements IPartyService {
     private Party checkWiner(Party party) {
         if (party.getCandidate1().getEetakemons().get(0).getPs() <= 0) {
             party.setCandidateWiner(party.getCandidate2().getUsername());
-            party.setDateEnd(new DateTime());
+            Date date = new Date(System.currentTimeMillis());
+            party.setDateEnd(new Date(System.currentTimeMillis()));
         }
         if (party.getCandidate2().getEetakemons().get(0).getPs() <= 0) {
 
             party.setCandidateWiner(party.getCandidate1().getUsername());
-            party.setDateEnd(new DateTime());
+            party.setDateEnd(new Date(System.currentTimeMillis()));
         }
         return party;
     }
@@ -146,7 +149,7 @@ public class PartyService implements IPartyService {
         turnIndication.put(candidate2.getUsername(), false);
 
         party.setTurnIndication((HashMap<String, Boolean>) turnIndication);
-        party.setDateStart(new DateTime());
+        party.setDateStart(new Date(System.currentTimeMillis()));
         partiesInCurse.add(party);
     }
 

@@ -30,7 +30,7 @@ public interface IGameApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    Response doAtack(@Context HttpHeaders httpHeaders, Party party);
+    Response doAtack(@Context HttpHeaders httpHeaders, String jsonParty);
 
     @Path("getAllRegisters")
     @GET

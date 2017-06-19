@@ -8,6 +8,7 @@ import Business.Interfaces.IPartyService;
 import Business.PartyService;
 import Model.Party;
 import Model.User;
+import com.google.gson.Gson;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
@@ -48,7 +49,8 @@ public class GameApi implements IGameApi {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response doAtack(@Context HttpHeaders httpHeaders, Party party) {
+    public Response doAtack(@Context HttpHeaders httpHeaders, String jsonParty) {
+        Party party = new Gson().fromJson(jsonParty, Party.class);
         return _httpResponseHelper.getSuccessResponse(_serviceParty.doAtack(party), httpHeaders);
     }
 

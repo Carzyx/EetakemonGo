@@ -14,8 +14,8 @@ public class Party {
     private User candidate2;
     private HashMap<String, Boolean> turnIndication;
     private String atack;
-    private DateTime dateStart;
-    private DateTime dateEnd;
+    private Date dateStart;
+    private Date dateEnd;
     private String candidateWiner;
 
     public User getCandidate1() {
@@ -51,19 +51,19 @@ public class Party {
         this.atack = atack;
     }
 
-    public DateTime getDateStart() {
+    public Date getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(DateTime dateStart) {
+    public void setDateStart(Date dateStart) {
         this.dateStart = dateStart;
     }
 
-    public DateTime getDateEnd() {
+    public Date getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(DateTime dateEnd) {
+    public void setDateEnd(Date dateEnd) {
         this.dateEnd = dateEnd;
     }
 

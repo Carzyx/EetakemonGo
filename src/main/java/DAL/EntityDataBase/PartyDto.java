@@ -4,6 +4,7 @@ import Model.Party;
 import Model.User;
 import org.joda.time.DateTime;
 
+import java.sql.Date;
 import java.util.HashMap;
 
 /**
@@ -13,13 +14,13 @@ public class PartyDto {
 
     private String candidate1;
     private String candidate2;
-    private DateTime dateStart;
-    private DateTime dateEnd;
+    private Date dateStart;
+    private Date dateEnd;
     private String candidateWiner;
 
     public PartyDto(){}
 
-    public PartyDto(String candidate1, String candidate2, DateTime dateStart, DateTime dateEnd, String candidateWiner)
+    public PartyDto(String candidate1, String candidate2, Date dateStart, Date dateEnd, String candidateWiner)
     {
         this.candidate1 = candidate1;
         this.candidate2 = candidate2;
@@ -44,19 +45,19 @@ public class PartyDto {
         this.candidate2 = candidate2;
     }
 
-    public DateTime getDateStart() {
+    public Date getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(DateTime dateStart) {
+    public void setDateStart(Date dateStart) {
         this.dateStart = dateStart;
     }
 
-    public DateTime getDateEnd() {
+    public Date getDateEnd() {
         return dateEnd;
     }
 
-    public void setDateEnd(DateTime dateEnd) {
+    public void setDateEnd(Date dateEnd) {
         this.dateEnd = dateEnd;
     }
 
