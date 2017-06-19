@@ -207,7 +207,7 @@ function RegisterUser() {
 
     $.ajax({
         type: "POST",
-        url: " http://localhost:8080/myapp/web/createUser",
+        url: " http://localhost:8080/myapp/UserService/createUser",
         contentType: "application/json",
         success: function (msg) {
             if (msg) {

@@ -102,7 +102,7 @@ public class EetakemonDao implements IEetakemonDao {
         List<Atack>atacks=_serviceAtack.getAll();
         for (Atack atack : eetakemon.getAtacks()) {
                 for (int i=0;i<atacks.size();i++){
-                    if (atack.getName().equals(atacks.get(i).getName()))//he puesto el getname que daba fallos al añadir eetakemon
+                    if (atack.getName().equals(atacks.get(i)))
                     {
                         AtacksEetakemonDto atacksEetakemonDto = new AtacksEetakemonDto(eetakemon.getName(), atack.getName());
                         boolean atackAdded = _serviceAtackEetakemon.add(atacksEetakemonDto);
