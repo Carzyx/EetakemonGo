@@ -194,13 +194,15 @@ function RegisterUser() {
     var username = $("#username").val();
     var password = $("#password").val();
     var email = $("#email").val();
+    var image = "profile/evoluciona.png";
 
     var sendInfo = {
         name: name,
         surname: surname,
         username: username,
         password: password,
-        email: email
+        email: email,
+        image: image
     };
 
     $.ajax({
@@ -706,12 +708,12 @@ function doActionDatabaseAtack() {//demage base siempre es 0, NaN, undefined
 
     //var type = $("#type").val();
     var description = $("#description").val();
-    var damageBase = parseInt($("#edit1").val());
+    var damageBase = $("#edit1").val();
 
     var sendInfo = {
         name: name,
         type: type,
-        dagameBase: damageBase,
+        damageBase: damageBase,
         description: description
     };
     console.log(sendInfo);
