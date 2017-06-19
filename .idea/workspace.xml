@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="Merge remote-tracking branch 'refs/remotes/origin/master' into Miguel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/ApiRest/Api/Controller/GameApi.class&#10;#&#9;target/classes/ApiRest/Api/Controller/Interfaces/IGameApi.class&#10;#&#9;target/classes/Business/Interfaces/IPartyService.class&#10;#&#9;target/classes/Business/PartyService.class&#10;">
+    <list default="true" id="eeaaf2bb-9094-4b9e-815b-dae89c539602" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1091,7 +1091,7 @@
       <workItem from="1497881342548" duration="297000" />
       <workItem from="1497881831757" duration="5661000" />
       <workItem from="1497894056508" duration="3567000" />
-      <workItem from="1497902361581" duration="8000" />
+      <workItem from="1497902361581" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1491256460668</created>
@@ -1324,11 +1324,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497825257488</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Merge remote-tracking branch 'refs/remotes/origin/master' into Miguel&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/ApiRest/Api/Controller/GameApi.class&#10;#&#9;target/classes/ApiRest/Api/Controller/Interfaces/IGameApi.class&#10;#&#9;target/classes/Business/Interfaces/IPartyService.class&#10;#&#9;target/classes/Business/PartyService.class&#10;">
+      <created>1497902376842</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1497902376842</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="486887000" />
+    <option name="totallyTimeSpent" value="486906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
