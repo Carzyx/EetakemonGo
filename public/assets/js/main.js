@@ -234,6 +234,7 @@ function SignIn() {
     var redirect = "http://localhost:8080/home.html";
 
     var successRequest = doAjaxRequest(method, url, user, redirectUrl, redirect);
+    console.log(successRequest);
 
 
 }
@@ -423,10 +424,11 @@ function showDiv(elem){
 function BotonElegirEetakemons(selector) {
     sessionStorage.removeItem("EtakemonsParaUsers");
     var method = "GET";
-    var url = "http://localhost:8080/myapp/EetakemonService/getAllEetakemons";
+    var url = "http://localhost:8080/myapp/EetakemonService/getAllCompleteEetakemons";
     user =  JSON.parse(Cookies.get("user", User.class));
     console.log(user);
     doAjaxRequestManageDtabase(method, url, user.authToken, RellenaEtakemons, selector);
+
 }
 function RellenaEtakemons(selector, data) {
     console.log(data);
@@ -459,6 +461,7 @@ function guardarEetakemon() {
 
 
     var data = JSON.parse(sessionStorage.getItem("EtakemonsParaUsers"));
+    console.log(data);
     var Etakemon;
     var EtakemonsList=[];
 
@@ -481,7 +484,7 @@ function guardarEetakemon() {
 
 
     sessionStorage.setItem('EtakemonsList',JSON.stringify(EtakemonsList));
-    console.log(sessionStorage.getItem('EtakemonsList'));
+    console.log(JSON.parse(sessionStorage.getItem('EtakemonsList')));
 }
 
 
@@ -541,6 +544,7 @@ function doActionDatabaseUser() {
         eetakemons: Etakemons,
         image: imagenUrl
     };
+
 
 
     user = JSON.parse(Cookies.get("user", User.class));
@@ -648,7 +652,7 @@ function doActionDatabaseEetakemon() {
 
     user =  JSON.parse(Cookies.get("user", User.class));
     console.log(user);
-    if (atackList!=null) {//para no añadir eetakemon sin ataques.
+
         $.ajax({
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Authoritzation', user.authToken);
@@ -671,13 +675,7 @@ function doActionDatabaseEetakemon() {
                     alert("Error in the execution...");
                 }
             }
-
         });
-    }else {
-        alert("elige 4 ataques");
-        location.reload(true);
-    }
-
 }
 
 
@@ -799,7 +797,7 @@ function GetAllEetakemonsFlipCards(selector) {
 
 }
 function GetTusEetakemonsFlipCards(selector) {
-    validateAcces()
+    validateAcces();
 
     user =  JSON.parse(Cookies.get("user", User.class));
     var method = "GET";
